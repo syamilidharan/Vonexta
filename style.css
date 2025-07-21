@@ -3204,6 +3204,12 @@ body{
   border-top-left-radius: 0.125rem;
   border-top-right-radius: 0.125rem;
 }
+.rounded-bl-lg{
+  border-bottom-left-radius: 0.5rem;
+}
+.rounded-br-lg{
+  border-bottom-right-radius: 0.5rem;
+}
 .rounded-br-none{
   border-bottom-right-radius: 0px;
 }
@@ -3291,6 +3297,9 @@ body{
 }
 .border-t{
   border-top-width: 1px;
+}
+.border-t-0{
+  border-top-width: 0px;
 }
 .border-solid{
   border-style: solid;
@@ -3967,6 +3976,9 @@ body{
 .py-\[7px\]{
   padding-top: 7px;
   padding-bottom: 7px;
+}
+.pb-0{
+  padding-bottom: 0px;
 }
 .pb-10{
   padding-bottom: 2.5rem;
