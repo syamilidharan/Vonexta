@@ -3213,6 +3213,9 @@ body{
 .rounded-tl-sm{
   border-top-left-radius: 0.125rem;
 }
+.rounded-tr-lg{
+  border-top-right-radius: 0.5rem;
+}
 .rounded-tr-sm{
   border-top-right-radius: 0.125rem;
 }
@@ -3294,6 +3297,9 @@ body{
 }
 .border-dashed{
   border-style: dashed;
+}
+.border-none{
+  border-style: none;
 }
 .border-\[\#13C296\]{
   --tw-border-opacity: 1;
@@ -4348,6 +4354,14 @@ body{
 .text-slate-700{
   --tw-text-opacity: 1;
   color: rgb(51 65 85 / var(--tw-text-opacity));
+}
+.text-slate-800{
+  --tw-text-opacity: 1;
+  color: rgb(30 41 59 / var(--tw-text-opacity));
+}
+.text-slate-900{
+  --tw-text-opacity: 1;
+  color: rgb(15 23 42 / var(--tw-text-opacity));
 }
 .text-stroke{
   --tw-text-opacity: 1;
