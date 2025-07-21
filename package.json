@@ -44,5 +44,13 @@
     "nouislider": "^15.7.1",
     "simple-datatables": "^7.2.0",
     "swiper": "^9.4.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syamilidharan/Vonexta.git"
+  },
+  "bugs": {
+    "url": "https://github.com/syamilidharan/Vonexta/issues"
+  },
+  "homepage": "https://github.com/syamilidharan/Vonexta#readme"
 }
