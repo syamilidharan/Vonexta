@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Stocks Dashboard | TailAdmin - Tailwind CSS Admin Dashboard Template
+  </title>
+</head>
+
+<body
+  x-data="{ page: 'stocks', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
+  x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+  :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}">
+  <!-- ===== Preloader Start ===== -->
+  <include src="./partials/preloader.html"></include>
+  <!-- ===== Preloader End ===== -->
+
+  <!-- ===== Page Wrapper Start ===== -->
+  <div class="flex h-screen overflow-hidden">
+    <!-- ===== Sidebar Start ===== -->
+    <include src="./partials/sidebar.html"></include>
+    <!-- ===== Sidebar End ===== -->
+
+    <!-- ===== Content Area Start ===== -->
+    <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+      <!-- ===== Header Start ===== -->
+      <include src="./partials/header.html" />
+      <!-- ===== Header End ===== -->
+
+      <!-- ===== Main Content Start ===== -->
+      <main>
+
+        <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+
+          <!-- ====== Data Stats Start -->
+          <div class="rounded-2xl border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+
+            <div x-data="
+                      {
+                      openTab: 1,
+                      activeClasses: 'text-primary border-primary',
+                      inactiveClasses: 'border-transparent',
+                      }
+                      " class="mb-14 w-full pt-4 p-7.5">
+              <div class="mb-6 flex flex-wrap gap-5 border-b border-stroke dark:border-strokedark sm:gap-10">
+                <a href="#" @click.prevent="openTab = 1" :class="openTab === 1 ? activeClasses : inactiveClasses"
+                  class="border-b-2 py-4 text-sm font-medium hover:text-primary md:text-base">
+                  Customer Information
+                </a>
+                <a href="#" @click.prevent="openTab = 2" :class="openTab === 2 ? activeClasses : inactiveClasses"
+                  class="border-b-2 py-4 text-sm font-medium hover:text-primary md:text-base">
+                  Plan Information
+                </a>
+                <a href="#" @click.prevent="openTab = 3" :class="openTab === 3 ? activeClasses : inactiveClasses"
+                  class="border-b-2 py-4 text-sm font-medium hover:text-primary md:text-base">
+                  Testing Web Tab
+                </a>
+
+              </div>
+              <div>
+                <div x-show="openTab === 1" class="font-medium leading-relaxed">
+                  <div>
+                    <form action="#">
+                      <div class="p-6.5">
+                        <div class="mb-6 flex flex-col gap-6 xl:flex-row">
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              First name
+                            </label>
+                            <input type="text" placeholder="Enter your first name"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              Last name
+                            </label>
+                            <input type="text" placeholder="Enter your last name"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              Gender
+                            </label>
+                            <input type="text" placeholder="Enter your gender"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+                        </div>
+
+                        <div class="mb-6">
+                          <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                            Address 1
+                          </label>
+                          <input type="text" placeholder="Enter your Address 1"
+                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                        </div>
+
+                        <div class="mb-6 flex flex-col gap-6 xl:flex-row">
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              City
+                            </label>
+                            <input type="text" placeholder="Enter your city"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              State
+                            </label>
+                            <input type="text" placeholder="Enter your state"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              Zip code
+                            </label>
+                            <input type="text" placeholder="Enter your Zip code"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+                        </div>
+
+                        <div class="mb-10 flex flex-col gap-6 xl:flex-row">
+
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              Medicare Password
+                            </label>
+                            <input type="password" placeholder="Enter your Medicare Password"
+                              autocomplete="new-password"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              Medicare ID
+                            </label>
+                            <input type="text" placeholder="Enter your Medicare ID"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+                        </div>
+
+
+                        <div class="flex gap-8 justify-end">
+                          <button
+                            class="inline-flex items-center justify-center rounded-md border border-stroke px-10 py-4 text-center font-medium text-black hover:bg-opacity-90 lg:px-8 xl:px-10">
+                            Reset
+                          </button>
+                          <button
+                            class="inline-flex items-center justify-center rounded-md bg-primary px-10 py-4 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
+                            Save Changes
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div x-show="openTab === 2" class="font-medium leading-relaxed" style="display: none">
+                  Tab2 ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse luctus ligula nec dolor placerat, a consequat
+                  elit volutpat. Quisque nibh lacus, posuere et turpis in,
+                  pretium facilisis nisl. Proin congue sem vel sollicitudin
+                  sagittis. Class aptent taciti sociosqu ad litora torquent
+                  per conubia nostra, per
+                </div>
+                <div x-show="openTab === 3" class="font-medium leading-relaxed" style="display: none">
+                  Tab3 ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse luctus ligula nec dolor placerat, a consequat
+                  elit volutpat. Quisque nibh lacus, posuere et turpis in,
+                  pretium facilisis nisl. Proin congue sem vel sollicitudin
+                  sagittis. Class aptent taciti sociosqu ad litora torquent
+                  per conubia nostra, per
+                </div>
+                <div x-show="openTab === 4" class="font-medium leading-relaxed" style="display: none">
+                  Tab4 Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Officia nisi, doloribus nulla cumque molestias
+                  corporis eaque harum vero! Quas sit odit optio debitis
+                  nulla quisquam, dolorum quaerat animi iusto quod.
+                </div>
+                <div x-show="openTab === 5" class="font-medium leading-relaxed" style="display: none">
+                  Tab5 Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Officia nisi, doloribus nulla cumque molestias
+                  corporis eaque harum vero! Quas sit odit optio debitis
+                  nulla quisquam, dolorum quaerat animi iusto quod.
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- ====== Data Stats End -->
+
+
+        </div>
+      </main>
+      <!-- ===== Main Content End ===== -->
+    </div>
+    <!-- ===== Content Area End ===== -->
+  </div>
+  <!-- ===== Page Wrapper End ===== -->
+</body>
+
+</html>
