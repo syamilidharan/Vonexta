@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v3
+        with:
+            persist-credentials: false
 
       - name: Install dependencies
         run: npm install
@@ -21,15 +23,11 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git clone --depth 1 --branch gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} gh-pages || mkdir gh-pages
-          rm -rf gh-pages/*
-          cp -r build/* gh-pages/
-          cd gh-pages
-          git init
-          git add .
-          git commit -m "Deploy from GitHub Actions"
-          git branch -M gh-pages
-          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git push -f origin gh-pages
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            cd build
+            git init
+            git checkout -b gh-pages
+            git add .
+            git commit -m "Deploy from GitHub Actions"
+            git push --force "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" gh-pages
