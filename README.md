@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Installation and Template Details
 
 [![tailwind admin template](https://ucarecdn.com/364f2f57-6e1a-4ca4-9fc8-ab721029f6c3/tailadmingh.png)](https://tailadmin.com/)
@@ -49,3 +50,6 @@ Now, in the browser go to <code>localhost:3000</code>
 Run : <code>npm run build</code>
 
 This command will generate a Build folder in the root of your template that you can upload to your server.
+=======
+# Vonexta
+>>>>>>> 7544936350d047aa2f82e6c92109f33206605e70
