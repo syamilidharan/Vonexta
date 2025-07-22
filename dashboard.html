@@ -36,7 +36,7 @@
   class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0"
   @click.outside="sidebarToggle = false">
   <!-- SIDEBAR HEADER -->
-  <div class="flex items-center justify-center gap-2 px-6 py-5.5 lg:py-6.5">
+  <div class="flex items-center justify-center gap-2 px-6 py-5.5 lg:py-6.5 ml-12.5 bg-slate-700">
     <a href="index.html">
       <img src="images/logo.svg" alt="Logo" />
     </a>
@@ -58,64 +58,64 @@
 
     <div x-data="{
                     openTab: 1,
-                    activeClasses: 'bg-white text-slate-700',
-                    inactiveClasses: 'bg-transparent dark:bg-meta-4 text-gray dark:text-white',
-                    }" class="mb-14 w-full p-2 flex flex-row gap-2.5 ">
-      <div class=" flex flex-col gap-2.5 rounded-lg bg-slate-700 px-2 py-3 dark:bg-slate-700">
+                    activeClasses: 'bg-slate-700 text-white stroke-white',
+                    inactiveClasses: 'bg-transparent dark:bg-meta-4 text-slate-300 dark:text-white stroke-slate-700',
+                    }" class="mb-14 w-full p-0 flex flex-row gap-2.5 bg-slate-700">
+      <div class=" flex flex-col gap-2.5 max-w-12.5 bg-black px-2 py-3">
         <a href="#" @click.prevent="openTab = 1" :class="openTab === 1 ? activeClasses : inactiveClasses"
-          class="size-15 rounded-full px-0 py-3 text-xs font-medium hover:bg-white hover:text-slate-700 dark:hover:bg-white md:text-xs lg:px-0 text-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"
-            class="mx-auto stroke-current duration-300 ease-in-out">
+          class="flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none p-1  text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
+            class="mx-auto  duration-300 ease-in-out p-1 rounded-lg">
             <path
-              d="M10.5 18.3333C7.16084 18.3333 5.49128 18.3333 4.45396 17.235C3.41663 16.1367 3.41663 14.3688 3.41663 10.8333C3.41663 7.29779 3.41663 5.53003 4.45396 4.43168C5.49128 3.33333 7.16084 3.33333 10.5 3.33333C13.839 3.33333 15.5086 3.33333 16.546 4.43168C17.5833 5.53003 17.5833 7.29779 17.5833 10.8333C17.5833 14.3688 17.5833 16.1367 16.546 17.235C15.5086 18.3333 13.839 18.3333 10.5 18.3333Z"
-              stroke="" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M7.16663 3.33334V1.66667" stroke="" stroke-linecap="round" />
-            <path d="M13.8334 3.33334V1.66667" stroke="" stroke-linecap="round" />
+              d="M14.0002 25.6666C9.3254 25.6666 6.98802 25.6666 5.53576 24.129C4.0835 22.5913 4.0835 20.1163 4.0835 15.1666C4.0835 10.2169 4.0835 7.74201 5.53576 6.20432C6.98802 4.66663 9.3254 4.66663 14.0002 4.66663C18.6749 4.66663 21.0123 4.66663 22.4646 6.20432C23.9168 7.74201 23.9168 10.2169 23.9168 15.1666C23.9168 20.1163 23.9168 22.5913 22.4646 24.129C21.0123 25.6666 18.6749 25.6666 14.0002 25.6666Z"
+              stroke="white" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9.3335 4.66671V2.33337" stroke="white" stroke-opacity="0.5" stroke-linecap="round" />
+            <path d="M18.6665 4.66671V2.33337" stroke="white" stroke-opacity="0.5" stroke-linecap="round" />
             <path
-              d="M12.1816 7.9105C12.1816 8.831 11.4355 9.57716 10.5151 9.57716C9.59456 9.57716 8.84839 8.831 8.84839 7.9105C8.84839 6.99006 9.59456 6.2439 10.5151 6.2439C11.4355 6.2439 12.1816 6.99006 12.1816 7.9105Z"
-              stroke="" stroke-linecap="round" stroke-linejoin="round" />
+              d="M16.3545 11.0747C16.3545 12.3634 15.3099 13.408 14.0213 13.408C12.7326 13.408 11.688 12.3634 11.688 11.0747C11.688 9.78609 12.7326 8.74146 14.0213 8.74146C15.3099 8.74146 16.3545 9.78609 16.3545 11.0747Z"
+              stroke="white" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round" />
             <path
-              d="M7.21911 13.9301C8.10107 12.5723 9.50163 12.0635 10.515 12.0645C11.5284 12.0656 12.888 12.5723 13.7699 13.9301C13.8269 14.0179 13.8426 14.126 13.7911 14.2172C13.5849 14.583 12.9445 15.3088 12.482 15.358C11.9505 15.4145 10.5602 15.4224 10.5161 15.4227C10.472 15.4224 9.03879 15.4145 8.50705 15.358C8.0445 15.3088 7.40409 14.583 7.19783 14.2172C7.14638 14.126 7.16209 14.0179 7.21911 13.9301Z"
-              stroke="" stroke-linecap="round" stroke-linejoin="round" />
+              d="M9.40697 19.5021C10.6417 17.6012 12.6025 16.8889 14.0213 16.8903C15.4399 16.8918 17.3434 17.6012 18.578 19.5021C18.6578 19.625 18.6799 19.7764 18.6078 19.9041C18.319 20.4162 17.4225 21.4322 16.775 21.5012C16.0309 21.5803 14.0845 21.5913 14.0228 21.5917C13.961 21.5913 11.9545 21.5803 11.2101 21.5012C10.5625 21.4322 9.66595 20.4162 9.37719 19.9041C9.30515 19.7764 9.32715 19.625 9.40697 19.5021Z"
+              stroke="white" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          Contacts
+          <spn class="hidden">Contacts</spn>
         </a>
         <a href="#" @click.prevent="openTab = 2" :class="openTab === 2 ? activeClasses : inactiveClasses"
-          class="size-15 rounded-full px-0 py-3 text-xs font-medium hover:bg-white hover:text-slate-700 dark:hover:bg-white md:text-xs lg:px-0 text-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"
-            class="mx-auto stroke-current duration-300 ease-in-out">
-            <path d="M6.75 10H11.75M6.75 6.66667H9.25" stroke="" stroke-opacity="1" stroke-linecap="round"
-              stroke-linejoin="round" />
+          class="flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
+            class="mx-auto  duration-300 ease-in-out p-1 rounded-lg">
+            <path d="M8.75 14H15.75M8.75 9.33337H12.25" stroke="white" stroke-opacity="0.5" stroke-linejoin="round" />
             <path
-              d="M7.58337 16.6667C8.45869 17.3914 9.51212 17.8532 10.7196 17.9323C11.671 17.9948 12.6643 17.9947 13.6138 17.9323C13.9407 17.9109 14.2971 17.8339 14.604 17.7092C14.9455 17.5704 15.1163 17.501 15.2031 17.5115C15.2899 17.522 15.4158 17.6137 15.6676 17.7969C16.1116 18.12 16.671 18.3521 17.5005 18.3322C17.9199 18.3221 18.1296 18.317 18.2235 18.1591C18.3174 18.0011 18.2005 17.7824 17.9665 17.3451C17.6422 16.7385 17.4367 16.0441 17.7481 15.4877C18.2845 14.6929 18.74 13.7518 18.8065 12.7353C18.8423 12.1891 18.8423 11.6234 18.8065 11.0773C18.7622 10.3999 18.5978 9.75609 18.3344 9.16667"
-              stroke="" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round" />
+              d="M9.9165 23.3334C11.1419 24.348 12.6168 24.9945 14.3073 25.1053C15.6392 25.1927 17.0298 25.1926 18.3591 25.1053C18.8168 25.0753 19.3158 24.9675 19.7454 24.7929C20.2234 24.5986 20.4626 24.5014 20.5842 24.5161C20.7056 24.5308 20.8819 24.6592 21.2345 24.9157C21.8561 25.368 22.6391 25.693 23.8004 25.6651C24.3876 25.651 24.6813 25.6438 24.8126 25.4228C24.9441 25.2016 24.7804 24.8954 24.4529 24.2832C23.9989 23.4339 23.7112 22.4618 24.1472 21.6828C24.898 20.5701 25.5357 19.2525 25.6289 17.8294C25.679 17.0648 25.679 16.2728 25.6289 15.5082C25.5669 14.5599 25.3367 13.6586 24.9679 12.8334"
+              stroke="white" stroke-opacity="0.5" stroke-linejoin="round" />
             <path
-              d="M10.7875 14.5723C13.7505 14.3772 16.1106 12.0058 16.3048 9.02867C16.3428 8.44609 16.3428 7.84276 16.3048 7.26016C16.1106 4.28308 13.7505 1.91168 10.7875 1.71655C9.77663 1.64998 8.72123 1.65011 7.71245 1.71655C4.74948 1.91168 2.38933 4.28308 2.19513 7.26016C2.15713 7.84276 2.15713 8.44609 2.19513 9.02867C2.26586 10.113 2.74989 11.1169 3.31973 11.9647C3.65059 12.5581 3.43223 13.2988 3.08761 13.9458C2.83913 14.4123 2.71488 14.6456 2.81464 14.8141C2.91439 14.9826 3.13723 14.988 3.58288 14.9988C4.46423 15.02 5.05853 14.7724 5.53028 14.4278C5.79783 14.2323 5.93161 14.1346 6.02381 14.1234C6.11601 14.1122 6.29746 14.1862 6.6603 14.3343C6.98641 14.4673 7.36506 14.5494 7.71245 14.5723C8.72123 14.6388 9.77663 14.6388 10.7875 14.5723Z"
-              stroke="" stroke-opacity="1" stroke-linejoin="round" />
+              d="M14.4027 20.4013C18.5509 20.1281 21.8551 16.8081 22.1269 12.6402C22.1801 11.8246 22.1801 10.9799 22.1269 10.1643C21.8551 5.99635 18.5509 2.67639 14.4027 2.4032C12.9875 2.31001 11.5099 2.31019 10.0977 2.4032C5.9495 2.67639 2.64529 5.99635 2.3734 10.1643C2.3202 10.9799 2.3202 11.8246 2.3734 12.6402C2.47242 14.1582 3.15007 15.5637 3.94784 16.7506C4.41105 17.5814 4.10535 18.6184 3.62287 19.5242C3.275 20.1773 3.10106 20.5039 3.24072 20.7398C3.38037 20.9757 3.69234 20.9832 4.31626 20.9983C5.55014 21.028 6.38216 20.6814 7.04261 20.199C7.41718 19.9253 7.60447 19.7885 7.73355 19.7728C7.86263 19.7571 8.11666 19.8607 8.62464 20.068C9.08119 20.2543 9.6113 20.3692 10.0977 20.4013C11.5099 20.4943 12.9875 20.4944 14.4027 20.4013Z"
+              stroke="white" stroke-opacity="0.5" stroke-linejoin="round" />
           </svg>
-          SMS
+          <spn class="hidden">SMS</spn>
         </a>
         <a href="#" @click.prevent="openTab = 3" :class="openTab === 3 ? activeClasses : inactiveClasses"
-          class="size-15 rounded-full px-0 py-3 text-xs font-medium hover:bg-white hover:text-slate-700 dark:hover:bg-white md:text-xs lg:px-0 text-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"
-            class="mx-auto stroke-current duration-300 ease-in-out">
+          class="flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
+            class="mx-auto  duration-300 ease-in-out p-1 rounded-lg">
             <path
-              d="M3.64798 9.95199C2.85796 8.57441 2.4765 7.44956 2.24649 6.30933C1.90631 4.62297 2.6848 2.97567 3.97444 1.92455C4.5195 1.48031 5.14432 1.63209 5.46663 2.21032L6.19428 3.51575C6.77103 4.55047 7.05941 5.06782 7.00221 5.61632C6.94502 6.16482 6.5561 6.61154 5.77827 7.505L3.64798 9.95199ZM3.64798 9.95199C5.24705 12.7402 7.75649 15.2511 10.548 16.852M10.548 16.852C11.9255 17.642 13.0504 18.0235 14.1906 18.2535C15.877 18.5937 17.5243 17.8152 18.5754 16.5255C19.0196 15.9805 18.8679 15.3557 18.2896 15.0333L16.9842 14.3057C15.9495 13.7289 15.4321 13.4406 14.8836 13.4977C14.3351 13.5549 13.8884 13.9438 12.995 14.7217L10.548 16.852Z"
-              stroke="" stroke-opacity="1" stroke-linejoin="round" />
+              d="M4.40738 13.9328C3.30136 12.0042 2.76732 10.4294 2.44531 8.83312C1.96905 6.47222 3.05894 4.16599 4.86444 2.69442C5.62752 2.07249 6.50226 2.28498 6.95349 3.09451L7.9722 4.9221C8.77966 6.37071 9.18339 7.095 9.10331 7.8629C9.02324 8.6308 8.47876 9.25621 7.38979 10.5071L4.40738 13.9328ZM4.40738 13.9328C6.64609 17.8364 10.1593 21.3516 14.0674 23.5928M14.0674 23.5928C15.996 24.6988 17.5707 25.2329 19.1671 25.5549C21.528 26.0312 23.8342 24.9413 25.3057 23.1357C25.9277 22.3727 25.7152 21.498 24.9057 21.0467L23.0781 20.028C21.6295 19.2205 20.9052 18.8169 20.1373 18.8969C19.3694 18.9769 18.7439 19.5214 17.4932 20.6104L14.0674 23.5928Z"
+              stroke="white" stroke-opacity="0.5" stroke-linejoin="round" />
           </svg>
-          Call
+          <spn class="hidden">Call</spn>
         </a>
         <a href="#" @click.prevent="openTab = 4" :class="openTab === 4 ? activeClasses : inactiveClasses"
-          class="size-15 rounded-full px-0 py-3 text-xs font-medium hover:bg-white hover:text-slate-700 dark:hover:bg-white md:text-xs lg:px-0 text-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"
-            class="mx-auto stroke-current duration-300 ease-in-out">
+          class="flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
+            class="mx-auto  duration-300 ease-in-out p-1 rounded-lg">
             <path
-              d="M3.64798 9.95199C2.85796 8.57441 2.4765 7.44956 2.24649 6.30933C1.90631 4.62297 2.6848 2.97567 3.97444 1.92455C4.5195 1.48031 5.14432 1.63209 5.46663 2.21032L6.19428 3.51575C6.77103 4.55047 7.05941 5.06782 7.00221 5.61632C6.94502 6.16482 6.5561 6.61154 5.77827 7.505L3.64798 9.95199ZM3.64798 9.95199C5.24705 12.7402 7.75649 15.2511 10.548 16.852M10.548 16.852C11.9255 17.642 13.0504 18.0235 14.1906 18.2535C15.877 18.5937 17.5243 17.8152 18.5754 16.5255C19.0196 15.9805 18.8679 15.3557 18.2896 15.0333L16.9842 14.3057C15.9495 13.7289 15.4321 13.4406 14.8836 13.4977C14.3351 13.5549 13.8884 13.9438 12.995 14.7217L10.548 16.852Z"
-              stroke="" stroke-opacity="1" stroke-linejoin="round" />
-            <path d="M12.1666 2.5V4.83333M16.2918 4.20898L14.6419 5.8589M18 8.33333H15.6666" stroke=""
-              stroke-opacity="1" stroke-linecap="round" />
+              d="M4.40738 13.9328C3.30136 12.0042 2.76732 10.4294 2.44531 8.83312C1.96905 6.47222 3.05894 4.16599 4.86444 2.69442C5.62752 2.07249 6.50226 2.28498 6.95349 3.09451L7.9722 4.9221C8.77966 6.37071 9.18339 7.095 9.10331 7.8629C9.02324 8.6308 8.47876 9.25621 7.38979 10.5071L4.40738 13.9328ZM4.40738 13.9328C6.64609 17.8364 10.1593 21.3516 14.0674 23.5928M14.0674 23.5928C15.996 24.6988 17.5707 25.2329 19.1671 25.5549C21.528 26.0312 23.8342 24.9413 25.3057 23.1357C25.9277 22.3727 25.7152 21.498 24.9057 21.0467L23.0781 20.028C21.6295 19.2205 20.9052 18.8169 20.1373 18.8969C19.3694 18.9769 18.7439 19.5214 17.4932 20.6104L14.0674 23.5928Z"
+              stroke="white" stroke-opacity="0.5" stroke-linejoin="round" />
+            <path d="M16.3335 3.5V6.76667M22.1087 5.89258L19.7988 8.20246M24.5002 11.6667H21.2335" stroke="white"
+              stroke-opacity="0.5" stroke-linecap="round" />
           </svg>
-          Queues
+          <spn class="hidden">Queues</spn>
         </a>
       </div>
       <div>
@@ -1816,350 +1816,302 @@
   <div class="flex items-center gap-2">
 
 
-    <form class="max-w-sm mx-auto">
-      <div class="flex items-center mt-2">
-        <button id="dropdown-phone-button" data-dropdown-toggle="dropdown-phone"
-          class="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
-          type="button">
-          <svg fill="none" aria-hidden="true" class="h-4 w-4 me-2" viewBox="0 0 20 15">
-            <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-            <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse">
+    <form action="" class="max-w-sm mx-auto flex gap-2 items-center">
+      <div>
+        <div x-data="{openDropDown: false}" class="relative mb-0 inline-block">
+          <button @click.prevent="openDropDown = !openDropDown"
+            class="text-base relative z-20 w-full min-h-9 flex items-center justify-center appearance-none rounded-3xl border border-stroke bg-transparent py-1 px-4 outline-none transition focus:border-primary active:border-primary ">
+            <svg fill="none" aria-hidden="true" class="h-6 w-6 me-2" viewBox="0 0 20 15">
               <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-            </mask>
-            <g mask="url(#a)">
-              <path fill="#D02F44" fill-rule="evenodd"
-                d="M19.6.5H0v.933h19.6V.5zm0 1.867H0V3.3h19.6v-.933zM0 4.233h19.6v.934H0v-.934zM19.6 6.1H0v.933h19.6V6.1zM0 7.967h19.6V8.9H0v-.933zm19.6 1.866H0v.934h19.6v-.934zM0 11.7h19.6v.933H0V11.7zm19.6 1.867H0v.933h19.6v-.933z"
-                clip-rule="evenodd" />
-              <path fill="#46467F" d="M0 .5h8.4v6.533H0z" />
-              <g filter="url(#filter0_d_343_121520)">
-                <path fill="url(#paint0_linear_343_121520)" fill-rule="evenodd"
-                  d="M1.867 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.866 0a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM7.467 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zM2.333 3.3a.467.467 0 100-.933.467.467 0 000 .933zm2.334-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.4.467a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm-2.334.466a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.466a.467.467 0 11-.933 0 .467.467 0 01.933 0zM1.4 4.233a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM6.533 4.7a.467.467 0 11-.933 0 .467.467 0 01.933 0zM7 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zM3.267 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0z"
+              <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse">
+                <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+              </mask>
+              <g mask="url(#a)">
+                <path fill="#D02F44" fill-rule="evenodd"
+                  d="M19.6.5H0v.933h19.6V.5zm0 1.867H0V3.3h19.6v-.933zM0 4.233h19.6v.934H0v-.934zM19.6 6.1H0v.933h19.6V6.1zM0 7.967h19.6V8.9H0v-.933zm19.6 1.866H0v.934h19.6v-.934zM0 11.7h19.6v.933H0V11.7zm19.6 1.867H0v.933h19.6v-.933z"
                   clip-rule="evenodd" />
+                <path fill="#46467F" d="M0 .5h8.4v6.533H0z" />
+                <g filter="url(#filter0_d_343_121520)">
+                  <path fill="url(#paint0_linear_343_121520)" fill-rule="evenodd"
+                    d="M1.867 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.866 0a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM7.467 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zM2.333 3.3a.467.467 0 100-.933.467.467 0 000 .933zm2.334-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.4.467a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm-2.334.466a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.466a.467.467 0 11-.933 0 .467.467 0 01.933 0zM1.4 4.233a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM6.533 4.7a.467.467 0 11-.933 0 .467.467 0 01.933 0zM7 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zM3.267 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0z"
+                    clip-rule="evenodd" />
+                </g>
               </g>
-            </g>
-            <defs>
-              <linearGradient id="paint0_linear_343_121520" x1=".933" x2=".933" y1="1.433" y2="6.1"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="#fff" />
-                <stop offset="1" stop-color="#F0F0F0" />
-              </linearGradient>
-              <filter id="filter0_d_343_121520" width="6.533" height="5.667" x=".933" y="1.433"
-                color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                <feOffset dy="1" />
-                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_343_121520" />
-                <feBlend in="SourceGraphic" in2="effect1_dropShadow_343_121520" result="shape" />
-              </filter>
-            </defs>
-          </svg>
-          +1 <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 10 6">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="m1 1 4 4 4-4" />
-          </svg>
-        </button>
-        <div id="dropdown-phone"
-          class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-52 dark:bg-gray-700">
-          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-phone-button">
-            <li>
-              <button type="button"
-                class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                role="menuitem">
-                <span class="inline-flex items-center">
-                  <svg fill="none" aria-hidden="true" class="h-4 w-4 me-2" viewBox="0 0 20 15">
-                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                    <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
-                      maskUnits="userSpaceOnUse">
+              <defs>
+                <linearGradient id="paint0_linear_343_121520" x1=".933" x2=".933" y1="1.433" y2="6.1"
+                  gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#fff" />
+                  <stop offset="1" stop-color="#F0F0F0" />
+                </linearGradient>
+                <filter id="filter0_d_343_121520" width="6.533" height="5.667" x=".933" y="1.433"
+                  color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                  <feOffset dy="1" />
+                  <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                  <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_343_121520" />
+                  <feBlend in="SourceGraphic" in2="effect1_dropShadow_343_121520" result="shape" />
+                </filter>
+              </defs>
+            </svg>
+
+            <svg class="fill-current duration-200 ease-linear" :class="openDropDown && 'rotate-180'" width="12"
+              height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.564864 0.879232C0.564864 0.808624 0.600168 0.720364 0.653125 0.667408C0.776689 0.543843 0.970861 0.543844 1.09443 0.649756L5.82517 5.09807C5.91343 5.18633 6.07229 5.18633 6.17821 5.09807L10.9089 0.649756C11.0325 0.526192 11.2267 0.543844 11.3502 0.667408C11.4738 0.790972 11.4562 0.985145 11.3326 1.10871L6.60185 5.55702C6.26647 5.85711 5.73691 5.85711 5.41917 5.55702L0.670776 1.10871C0.600168 1.0381 0.564864 0.967492 0.564864 0.879232Z"
+                fill="" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M1.4719 0.229332L6.00169 4.48868L10.5171 0.24288C10.9015 -0.133119 11.4504 -0.0312785 11.7497 0.267983C12.1344 0.652758 12.0332 1.2069 11.732 1.50812L11.7197 1.52041L6.97862 5.9781C6.43509 6.46442 5.57339 6.47872 5.03222 5.96853C5.03192 5.96825 5.03252 5.96881 5.03222 5.96853L0.271144 1.50833C0.123314 1.3605 -5.04223e-08 1.15353 -3.84322e-08 0.879226C-2.88721e-08 0.660517 0.0936127 0.428074 0.253705 0.267982C0.593641 -0.0719548 1.12269 -0.0699964 1.46204 0.220873L1.4719 0.229332ZM5.41917 5.55702C5.73691 5.85711 6.26647 5.85711 6.60185 5.55702L11.3326 1.10871C11.4562 0.985145 11.4738 0.790972 11.3502 0.667408C11.2267 0.543844 11.0325 0.526192 10.9089 0.649756L6.17821 5.09807C6.07229 5.18633 5.91343 5.18633 5.82517 5.09807L1.09443 0.649756C0.970861 0.543844 0.776689 0.543843 0.653125 0.667408C0.600168 0.720364 0.564864 0.808624 0.564864 0.879232C0.564864 0.967492 0.600168 1.0381 0.670776 1.10871L5.41917 5.55702Z"
+                fill="" />
+            </svg>
+          </button>
+          <div x-show="openDropDown" @click.outside="openDropDown = false"
+            class="min-w-max absolute left-0 top-full z-40 mt-2 w-full rounded-md border border-stroke bg-white py-3 shadow-card dark:border-strokedark dark:bg-boxdark">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-phone-button">
+              <li>
+                <button type="button"
+                  class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                  role="menuitem">
+                  <span class="inline-flex items-center">
+                    <svg fill="none" aria-hidden="true" class="h-4 w-4 me-2" viewBox="0 0 20 15">
                       <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                    </mask>
-                    <g mask="url(#a)">
-                      <path fill="#D02F44" fill-rule="evenodd"
-                        d="M19.6.5H0v.933h19.6V.5zm0 1.867H0V3.3h19.6v-.933zM0 4.233h19.6v.934H0v-.934zM19.6 6.1H0v.933h19.6V6.1zM0 7.967h19.6V8.9H0v-.933zm19.6 1.866H0v.934h19.6v-.934zM0 11.7h19.6v.933H0V11.7zm19.6 1.867H0v.933h19.6v-.933z"
-                        clip-rule="evenodd" />
-                      <path fill="#46467F" d="M0 .5h8.4v6.533H0z" />
-                      <g filter="url(#filter0_d_343_121520)">
-                        <path fill="url(#paint0_linear_343_121520)" fill-rule="evenodd"
-                          d="M1.867 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.866 0a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM7.467 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zM2.333 3.3a.467.467 0 100-.933.467.467 0 000 .933zm2.334-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.4.467a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm-2.334.466a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.466a.467.467 0 11-.933 0 .467.467 0 01.933 0zM1.4 4.233a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM6.533 4.7a.467.467 0 11-.933 0 .467.467 0 01.933 0zM7 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zM3.267 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0z"
+                      <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
+                        maskUnits="userSpaceOnUse">
+                        <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                      </mask>
+                      <g mask="url(#a)">
+                        <path fill="#D02F44" fill-rule="evenodd"
+                          d="M19.6.5H0v.933h19.6V.5zm0 1.867H0V3.3h19.6v-.933zM0 4.233h19.6v.934H0v-.934zM19.6 6.1H0v.933h19.6V6.1zM0 7.967h19.6V8.9H0v-.933zm19.6 1.866H0v.934h19.6v-.934zM0 11.7h19.6v.933H0V11.7zm19.6 1.867H0v.933h19.6v-.933z"
+                          clip-rule="evenodd" />
+                        <path fill="#46467F" d="M0 .5h8.4v6.533H0z" />
+                        <g filter="url(#filter0_d_343_121520)">
+                          <path fill="url(#paint0_linear_343_121520)" fill-rule="evenodd"
+                            d="M1.867 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.866 0a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM7.467 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zM2.333 3.3a.467.467 0 100-.933.467.467 0 000 .933zm2.334-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.4.467a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm-2.334.466a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.466a.467.467 0 11-.933 0 .467.467 0 01.933 0zM1.4 4.233a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM6.533 4.7a.467.467 0 11-.933 0 .467.467 0 01.933 0zM7 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zM3.267 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0z"
+                            clip-rule="evenodd" />
+                        </g>
+                      </g>
+                      <defs>
+                        <linearGradient id="paint0_linear_343_121520" x1=".933" x2=".933" y1="1.433" y2="6.1"
+                          gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#fff" />
+                          <stop offset="1" stop-color="#F0F0F0" />
+                        </linearGradient>
+                        <filter id="filter0_d_343_121520" width="6.533" height="5.667" x=".933" y="1.433"
+                          color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+                          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                          <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                          <feOffset dy="1" />
+                          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_343_121520" />
+                          <feBlend in="SourceGraphic" in2="effect1_dropShadow_343_121520" result="shape" />
+                        </filter>
+                      </defs>
+                    </svg>
+                    United States (+1)
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button type="button"
+                  class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                  role="menuitem">
+                  <span class="inline-flex items-center">
+                    <svg class="h-4 w-4 me-2" fill="none" viewBox="0 0 20 15">
+                      <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                      <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
+                        maskUnits="userSpaceOnUse">
+                        <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                      </mask>
+                      <g mask="url(#a)">
+                        <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
+                        <path fill="#fff" fill-rule="evenodd"
+                          d="M-.898-.842L7.467 4.8V-.433h4.667V4.8l8.364-5.642L21.542.706l-6.614 4.46H19.6v4.667h-4.672l6.614 4.46-1.044 1.549-8.365-5.642v5.233H7.467V10.2l-8.365 5.642-1.043-1.548 6.613-4.46H0V5.166h4.672L-1.941.706-.898-.842z"
+                          clip-rule="evenodd" />
+                        <path stroke="#DB1F35" stroke-linecap="round" stroke-width=".667"
+                          d="M13.067 4.933L21.933-.9M14.009 10.088l7.947 5.357M5.604 4.917L-2.686-.67M6.503 10.024l-9.189 6.093" />
+                        <path fill="#E6273E" fill-rule="evenodd"
+                          d="M0 8.9h8.4v5.6h2.8V8.9h8.4V6.1h-8.4V.5H8.4v5.6H0v2.8z" clip-rule="evenodd" />
+                      </g>
+                    </svg>
+                    United Kingdom (+44)
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button type="button"
+                  class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                  role="menuitem">
+                  <span class="inline-flex items-center">
+                    <svg class="h-4 w-4 me-2" fill="none" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                      <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
+                        maskUnits="userSpaceOnUse">
+                        <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                      </mask>
+                      <g mask="url(#a)">
+                        <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
+                        <path fill="#fff" stroke="#fff" stroke-width=".667"
+                          d="M0 .167h-.901l.684.586 3.15 2.7v.609L-.194 6.295l-.14.1v1.24l.51-.319L3.83 5.033h.73L7.7 7.276a.488.488 0 00.601-.767L5.467 4.08v-.608l2.987-2.134a.667.667 0 00.28-.543V-.1l-.51.318L4.57 2.5h-.73L.66.229.572.167H0z" />
+                        <path fill="url(#paint0_linear_374_135177)" fill-rule="evenodd"
+                          d="M0 2.833V4.7h3.267v2.133c0 .369.298.667.666.667h.534a.667.667 0 00.666-.667V4.7H8.2a.667.667 0 00.667-.667V3.5a.667.667 0 00-.667-.667H5.133V.5H3.267v2.333H0z"
+                          clip-rule="evenodd" />
+                        <path fill="url(#paint1_linear_374_135177)" fill-rule="evenodd"
+                          d="M0 3.3h3.733V.5h.934v2.8H8.4v.933H4.667v2.8h-.934v-2.8H0V3.3z" clip-rule="evenodd" />
+                        <path fill="#fff" fill-rule="evenodd"
+                          d="M4.2 11.933l-.823.433.157-.916-.666-.65.92-.133.412-.834.411.834.92.134-.665.649.157.916-.823-.433zm9.8.7l-.66.194.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.194zm0-8.866l-.66.193.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.193zm2.8 2.8l-.66.193.193-.66-.193-.66.66.193.66-.193-.193.66.193.66-.66-.193zm-5.6.933l-.66.193.193-.66-.193-.66.66.194.66-.194-.193.66.193.66-.66-.193zm4.2 1.167l-.33.096.096-.33-.096-.33.33.097.33-.097-.097.33.097.33-.33-.096z"
                           clip-rule="evenodd" />
                       </g>
-                    </g>
-                    <defs>
-                      <linearGradient id="paint0_linear_343_121520" x1=".933" x2=".933" y1="1.433" y2="6.1"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#fff" />
-                        <stop offset="1" stop-color="#F0F0F0" />
-                      </linearGradient>
-                      <filter id="filter0_d_343_121520" width="6.533" height="5.667" x=".933" y="1.433"
-                        color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                        <feOffset dy="1" />
-                        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_343_121520" />
-                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_343_121520" result="shape" />
-                      </filter>
-                    </defs>
-                  </svg>
-                  United States (+1)
-                </span>
-              </button>
-            </li>
-            <li>
-              <button type="button"
-                class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                role="menuitem">
-                <span class="inline-flex items-center">
-                  <svg class="h-4 w-4 me-2" fill="none" viewBox="0 0 20 15">
-                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                    <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
-                      maskUnits="userSpaceOnUse">
+                      <defs>
+                        <linearGradient id="paint0_linear_374_135177" x1="0" x2="0" y1=".5" y2="7.5"
+                          gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#fff" />
+                          <stop offset="1" stop-color="#F0F0F0" />
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_374_135177" x1="0" x2="0" y1=".5" y2="7.033"
+                          gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#FF2E3B" />
+                          <stop offset="1" stop-color="#FC0D1B" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    Australia (+61)
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button type="button"
+                  class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                  role="menuitem">
+                  <span class="inline-flex items-center">
+                    <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
                       <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                    </mask>
-                    <g mask="url(#a)">
-                      <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
-                      <path fill="#fff" fill-rule="evenodd"
-                        d="M-.898-.842L7.467 4.8V-.433h4.667V4.8l8.364-5.642L21.542.706l-6.614 4.46H19.6v4.667h-4.672l6.614 4.46-1.044 1.549-8.365-5.642v5.233H7.467V10.2l-8.365 5.642-1.043-1.548 6.613-4.46H0V5.166h4.672L-1.941.706-.898-.842z"
-                        clip-rule="evenodd" />
-                      <path stroke="#DB1F35" stroke-linecap="round" stroke-width=".667"
-                        d="M13.067 4.933L21.933-.9M14.009 10.088l7.947 5.357M5.604 4.917L-2.686-.67M6.503 10.024l-9.189 6.093" />
-                      <path fill="#E6273E" fill-rule="evenodd" d="M0 8.9h8.4v5.6h2.8V8.9h8.4V6.1h-8.4V.5H8.4v5.6H0v2.8z"
-                        clip-rule="evenodd" />
-                    </g>
-                  </svg>
-                  United Kingdom (+44)
-                </span>
-              </button>
-            </li>
-            <li>
-              <button type="button"
-                class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                role="menuitem">
-                <span class="inline-flex items-center">
-                  <svg class="h-4 w-4 me-2" fill="none" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                    <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
-                      maskUnits="userSpaceOnUse">
-                      <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                    </mask>
-                    <g mask="url(#a)">
-                      <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
-                      <path fill="#fff" stroke="#fff" stroke-width=".667"
-                        d="M0 .167h-.901l.684.586 3.15 2.7v.609L-.194 6.295l-.14.1v1.24l.51-.319L3.83 5.033h.73L7.7 7.276a.488.488 0 00.601-.767L5.467 4.08v-.608l2.987-2.134a.667.667 0 00.28-.543V-.1l-.51.318L4.57 2.5h-.73L.66.229.572.167H0z" />
-                      <path fill="url(#paint0_linear_374_135177)" fill-rule="evenodd"
-                        d="M0 2.833V4.7h3.267v2.133c0 .369.298.667.666.667h.534a.667.667 0 00.666-.667V4.7H8.2a.667.667 0 00.667-.667V3.5a.667.667 0 00-.667-.667H5.133V.5H3.267v2.333H0z"
-                        clip-rule="evenodd" />
-                      <path fill="url(#paint1_linear_374_135177)" fill-rule="evenodd"
-                        d="M0 3.3h3.733V.5h.934v2.8H8.4v.933H4.667v2.8h-.934v-2.8H0V3.3z" clip-rule="evenodd" />
-                      <path fill="#fff" fill-rule="evenodd"
-                        d="M4.2 11.933l-.823.433.157-.916-.666-.65.92-.133.412-.834.411.834.92.134-.665.649.157.916-.823-.433zm9.8.7l-.66.194.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.194zm0-8.866l-.66.193.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.193zm2.8 2.8l-.66.193.193-.66-.193-.66.66.193.66-.193-.193.66.193.66-.66-.193zm-5.6.933l-.66.193.193-.66-.193-.66.66.194.66-.194-.193.66.193.66-.66-.193zm4.2 1.167l-.33.096.096-.33-.096-.33.33.097.33-.097-.097.33.097.33-.33-.096z"
-                        clip-rule="evenodd" />
-                    </g>
-                    <defs>
-                      <linearGradient id="paint0_linear_374_135177" x1="0" x2="0" y1=".5" y2="7.5"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#fff" />
-                        <stop offset="1" stop-color="#F0F0F0" />
-                      </linearGradient>
-                      <linearGradient id="paint1_linear_374_135177" x1="0" x2="0" y1=".5" y2="7.033"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#FF2E3B" />
-                        <stop offset="1" stop-color="#FC0D1B" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                  Australia (+61)
-                </span>
-              </button>
-            </li>
-            <li>
-              <button type="button"
-                class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                role="menuitem">
-                <span class="inline-flex items-center">
-                  <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
-                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                    <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
-                      maskUnits="userSpaceOnUse">
-                      <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                    </mask>
-                    <g mask="url(#a)">
-                      <path fill="#262626" fill-rule="evenodd" d="M0 5.167h19.6V.5H0v4.667z" clip-rule="evenodd" />
-                      <g filter="url(#filter0_d_374_135180)">
-                        <path fill="#F01515" fill-rule="evenodd" d="M0 9.833h19.6V5.167H0v4.666z" clip-rule="evenodd" />
+                      <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
+                        maskUnits="userSpaceOnUse">
+                        <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                      </mask>
+                      <g mask="url(#a)">
+                        <path fill="#262626" fill-rule="evenodd" d="M0 5.167h19.6V.5H0v4.667z" clip-rule="evenodd" />
+                        <g filter="url(#filter0_d_374_135180)">
+                          <path fill="#F01515" fill-rule="evenodd" d="M0 9.833h19.6V5.167H0v4.666z"
+                            clip-rule="evenodd" />
+                        </g>
+                        <g filter="url(#filter1_d_374_135180)">
+                          <path fill="#FFD521" fill-rule="evenodd" d="M0 14.5h19.6V9.833H0V14.5z" clip-rule="evenodd" />
+                        </g>
                       </g>
-                      <g filter="url(#filter1_d_374_135180)">
-                        <path fill="#FFD521" fill-rule="evenodd" d="M0 14.5h19.6V9.833H0V14.5z" clip-rule="evenodd" />
-                      </g>
-                    </g>
-                    <defs>
-                      <filter id="filter0_d_374_135180" width="19.6" height="4.667" x="0" y="5.167"
-                        color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                        <feOffset />
-                        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180" />
-                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape" />
-                      </filter>
-                      <filter id="filter1_d_374_135180" width="19.6" height="4.667" x="0" y="9.833"
-                        color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                        <feOffset />
-                        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180" />
-                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape" />
-                      </filter>
-                    </defs>
-                  </svg>
-                  Germany (+49)
-                </span>
-              </button>
-            </li>
-            <li>
-              <button type="button"
-                class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                role="menuitem">
-                <span class="inline-flex items-center">
-                  <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
-                    <rect width="19.1" height="13.5" x=".25" y=".75" fill="#fff" stroke="#F5F5F5" stroke-width=".5"
-                      rx="1.75" />
-                    <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
-                      maskUnits="userSpaceOnUse">
-                      <rect width="19.1" height="13.5" x=".25" y=".75" fill="#fff" stroke="#fff" stroke-width=".5"
+                      <defs>
+                        <filter id="filter0_d_374_135180" width="19.6" height="4.667" x="0" y="5.167"
+                          color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+                          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                          <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                          <feOffset />
+                          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180" />
+                          <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape" />
+                        </filter>
+                        <filter id="filter1_d_374_135180" width="19.6" height="4.667" x="0" y="9.833"
+                          color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+                          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                          <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                          <feOffset />
+                          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180" />
+                          <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape" />
+                        </filter>
+                      </defs>
+                    </svg>
+                    Germany (+49)
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button type="button"
+                  class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                  role="menuitem">
+                  <span class="inline-flex items-center">
+                    <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
+                      <rect width="19.1" height="13.5" x=".25" y=".75" fill="#fff" stroke="#F5F5F5" stroke-width=".5"
                         rx="1.75" />
-                    </mask>
-                    <g mask="url(#a)">
-                      <path fill="#F44653" d="M13.067.5H19.6v14h-6.533z" />
-                      <path fill="#1035BB" fill-rule="evenodd" d="M0 14.5h6.533V.5H0v14z" clip-rule="evenodd" />
-                    </g>
-                  </svg>
-                  France (+33)
-                </span>
-              </button>
-            </li>
-            <li>
-              <button type="button"
-                class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                role="menuitem">
-                <span class="inline-flex items-center">
-                  <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
-                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                    <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
-                      maskUnits="userSpaceOnUse">
+                      <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
+                        maskUnits="userSpaceOnUse">
+                        <rect width="19.1" height="13.5" x=".25" y=".75" fill="#fff" stroke="#fff" stroke-width=".5"
+                          rx="1.75" />
+                      </mask>
+                      <g mask="url(#a)">
+                        <path fill="#F44653" d="M13.067.5H19.6v14h-6.533z" />
+                        <path fill="#1035BB" fill-rule="evenodd" d="M0 14.5h6.533V.5H0v14z" clip-rule="evenodd" />
+                      </g>
+                    </svg>
+                    France (+33)
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button type="button"
+                  class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                  role="menuitem">
+                  <span class="inline-flex items-center">
+                    <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
                       <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                    </mask>
-                    <g mask="url(#a)">
-                      <path fill="#262626" fill-rule="evenodd" d="M0 5.167h19.6V.5H0v4.667z" clip-rule="evenodd" />
-                      <g filter="url(#filter0_d_374_135180)">
-                        <path fill="#F01515" fill-rule="evenodd" d="M0 9.833h19.6V5.167H0v4.666z" clip-rule="evenodd" />
+                      <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
+                        maskUnits="userSpaceOnUse">
+                        <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                      </mask>
+                      <g mask="url(#a)">
+                        <path fill="#262626" fill-rule="evenodd" d="M0 5.167h19.6V.5H0v4.667z" clip-rule="evenodd" />
+                        <g filter="url(#filter0_d_374_135180)">
+                          <path fill="#F01515" fill-rule="evenodd" d="M0 9.833h19.6V5.167H0v4.666z"
+                            clip-rule="evenodd" />
+                        </g>
+                        <g filter="url(#filter1_d_374_135180)">
+                          <path fill="#FFD521" fill-rule="evenodd" d="M0 14.5h19.6V9.833H0V14.5z" clip-rule="evenodd" />
+                        </g>
                       </g>
-                      <g filter="url(#filter1_d_374_135180)">
-                        <path fill="#FFD521" fill-rule="evenodd" d="M0 14.5h19.6V9.833H0V14.5z" clip-rule="evenodd" />
-                      </g>
-                    </g>
-                    <defs>
-                      <filter id="filter0_d_374_135180" width="19.6" height="4.667" x="0" y="5.167"
-                        color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                        <feOffset />
-                        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180" />
-                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape" />
-                      </filter>
-                      <filter id="filter1_d_374_135180" width="19.6" height="4.667" x="0" y="9.833"
-                        color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                        <feOffset />
-                        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180" />
-                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape" />
-                      </filter>
-                    </defs>
-                  </svg>
-                  Germany (+49)
-                </span>
-              </button>
-            </li>
-          </ul>
+                      <defs>
+                        <filter id="filter0_d_374_135180" width="19.6" height="4.667" x="0" y="5.167"
+                          color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+                          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                          <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                          <feOffset />
+                          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180" />
+                          <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape" />
+                        </filter>
+                        <filter id="filter1_d_374_135180" width="19.6" height="4.667" x="0" y="9.833"
+                          color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+                          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                          <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                          <feOffset />
+                          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180" />
+                          <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape" />
+                        </filter>
+                      </defs>
+                    </svg>
+                    Germany (+49)
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
-        <label for="phone-input" class="text-sm font-medium sr-only text-gray-900 dark:text-white">Phone number:</label>
-        <div class="relative w-full">
-          <input type="text" id="phone-input" aria-describedby="helper-text-explanation"
-            class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 border-e-0 border-s-0 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required />
-        </div>
-        <button id="dropdown-verification-option-button" data-dropdown-toggle="dropdown-verification-option"
-          class="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-e-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
-          type="button">
-          Send SMS <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 10 6">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="m1 1 4 4 4-4" />
-          </svg>
-        </button>
-        <div id="dropdown-verification-option"
-          class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-36 dark:bg-gray-700">
-          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
-            aria-labelledby="dropdown-verification-option-button">
-            <li>
-              <button type="button"
-                class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                role="menuitem">
-                Send SMS
-              </button>
-            </li>
-            <li>
-              <button type="button"
-                class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                role="menuitem">
-                Call
-              </button>
-            </li>
-          </ul>
-        </div>
+
       </div>
 
-    </form>
 
+      <!-- Language Selector Area-->
 
+      <!-- Calling Section -->
 
-    <div x-data="{ isOptionSelected: false }" class="relative z-20 bg-white dark:bg-form-input">
-      <select
-        class="text-base relative z-20 w-full appearance-none rounded-3xl border border-stroke bg-transparent py-1 pl-3 pr-9 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
-        :class="isOptionSelected && 'text-black dark:text-white'" @change="isOptionSelected = true">
-        <option value="" class="text-body"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="8"
-            viewBox="0 0 16 8" fill="none">
-            <path
-              d="M7.99995 7.825C7.8312 7.825 7.69058 7.76875 7.54995 7.65625L1.0812 1.3C0.828076 1.04688 0.828076 0.653127 1.0812 0.400002C1.33433 0.146877 1.72808 0.146877 1.9812 0.400002L7.99995 6.27813L14.0187 0.343752C14.2718 0.0906265 14.6656 0.0906265 14.9187 0.343752C15.1718 0.596877 15.1718 0.990627 14.9187 1.24375L8.44995 7.6C8.30933 7.74063 8.1687 7.825 7.99995 7.825Z"
-              fill="#64748B" />
-          </svg>USA</option>
-        <option value="" class="text-body">UK</option>
-      </select>
-      <span class="absolute right-2 top-1/2 z-20 -translate-y-1/2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="8" viewBox="0 0 16 8" fill="none">
-          <path
-            d="M7.99995 7.825C7.8312 7.825 7.69058 7.76875 7.54995 7.65625L1.0812 1.3C0.828076 1.04688 0.828076 0.653127 1.0812 0.400002C1.33433 0.146877 1.72808 0.146877 1.9812 0.400002L7.99995 6.27813L14.0187 0.343752C14.2718 0.0906265 14.6656 0.0906265 14.9187 0.343752C15.1718 0.596877 15.1718 0.990627 14.9187 1.24375L8.44995 7.6C8.30933 7.74063 8.1687 7.825 7.99995 7.825Z"
-            fill="#64748B" />
-        </svg>
-      </span>
-    </div>
-    <!-- Language Selector Area-->
-
-    <!-- Calling Section -->
-    <form action="#">
       <div class="flex gap-2">
         <input type="text" placeholder="(321) 5555-0115"
-          class="w-full rounded-xl border-[1.5px] border-stroke bg-transparent px-4 py-1 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+          class="w-full min-h-9 rounded-xl border-[1.5px] border-stroke bg-transparent px-4 py-1 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
         <button
           class="flex w-10 justify-center items-center rounded-xl border-[1.5px] border-stroke bg-transparent p-1 font-medium text-gray hover:bg-opacity-90">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2177,9 +2129,7 @@
   <!-- Bottom Header Right Area -->
 </div>
 <!-- Bottom Header Area -->
-
-
-<!-- Bottom Header Dialing Area -->
+    <!-- Bottom Header Dialing Area -->
 <div
   class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11 bg-white max-h-16 dark:bg-boxdark dark:drop-shadow-none">
 
@@ -2264,9 +2214,9 @@
         <div class="flex flex-col mb-3">
             <!-- Accordion Item -->
             <div x-data="{ accordionOpen: false }" @click.outside="accordionOpen = false"
-                class="border-none dark:shadow-none mb-4">
+                class="dark:shadow-none mb-4 border border-stroke rounded-lg">
                 <button @click="accordionOpen = !accordionOpen"
-                    class="flex w-full items-center border border-stroke px-4 py-2 rounded-t-lg rounded-tr-lg">
+                    class="flex w-full items-center  px-4 py-2 border-b border-stroke">
                     <div class="flex items-center justify-between w-full">
                         <div class="flex items-center gap-1">
                             <div class="">
@@ -2289,7 +2239,7 @@
                             </div>
                             <div>
                                 <h4 class="text-sm font-medium text-slate-800 dark:text-white">
-                                    New Conversations
+                                    Undefined
                                 </h4>
                             </div>
                         </div>
@@ -2307,7 +2257,7 @@
                 </button>
 
                 <div x-show="accordionOpen"
-                    class="duration-200 ease-in-out border border-stroke p-4 pb-0 border-t-0 rounded-bl-lg rounded-br-lg">
+                    class="duration-200 ease-in-out  p-4 pb-0 ">
                     <!-- ====== Form checkbox -->
                     <form class="flex">
                         <div class="flex flex-wrap">
@@ -2409,10 +2359,10 @@
             <!-- Accordion Item Ends -->
 
             <!-- Accordion Item -->
-            <div x-data="{ accordionOpen: false }" @click.outside="accordionOpen = false"
-                class="border-none dark:shadow-none mb-4">
-                <button @click="accordionOpen = !accordionOpen"
-                    class="flex w-full items-center border border-stroke px-4 py-2 rounded-t-lg rounded-tr-lg">
+            <div x-data="{ accordionOpen: false }" @click.outside="accordionOpen = false" 
+                class="dark:shadow-none mb-4 border border-stroke rounded-lg hover:bg-slate-50 focus:bg-slate-50">
+                <button @click="accordionOpen = !accordionOpen" data-active-classes="bg-slate-50"
+                    class="flex w-full items-center px-4 py-2 border-b border-stroke">
                     <div class="flex items-center justify-between w-full">
                         <div class="flex items-center gap-1">
                             <div class="">
@@ -2453,9 +2403,9 @@
                 </button>
 
                 <div x-show="accordionOpen"
-                    class="duration-200 ease-in-out border border-stroke p-4 pb-0 border-t-0 rounded-bl-lg rounded-br-lg">
+                    class="duration-200 ease-in-out p-4 pb-0">
                     <form class="flex">
-                        <div class="flex flex-wrap">
+                        <div class="flex flex-wrap w-full">
 
                             <div x-data="{ checkboxToggle: false }" class="w-1/2 mb-4">
                                 <label for="AnswerMachines"
@@ -2509,20 +2459,113 @@
         </div>
         <!--Accordion Ends-->
 
-        <div class="-mx-3 flex flex-wrap gap-y-4">
-            <div class="w-full px-3 2xsm:w-1/2">
-                <button @click="modalOpen = false"
-                    class="block w-full rounded border border-stroke bg-gray p-3 text-center font-medium text-black transition hover:border-meta-1 hover:bg-meta-1 hover:text-white dark:border-strokedark dark:bg-meta-4 dark:text-white dark:hover:border-meta-1 dark:hover:bg-meta-1">
-                    Cancel
-                </button>
-            </div>
-            <div class="w-full px-3 2xsm:w-1/2">
-                <button
-                    class="block w-full rounded border border-primary bg-primary p-3 text-center font-medium text-white transition hover:bg-opacity-90">
-                    View Details
-                </button>
+        <!-- <div class="flex flex-wrap">
+            <div class="flex gap-2 items-center mb-4">
+                  <label class="mb-0 block text-base font-medium text-slate-800 dark:text-white">
+                    Set your status to :
+                  </label>
+                  <div x-data="{ isOptionSelected: false }" class="relative z-20 bg-white dark:bg-form-input grow">
+                    <select
+                      class="relative z-20 w-full text-slate-600 min-w-28 appearance-none rounded-lg border border-stroke bg-transparent py-1 pl-4 pr-5.5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
+                      :class="isOptionSelected && 'text-slate-600 dark:text-white'" @change="isOptionSelected = true">
+                      <option value="" class="">Available</option>                      
+                      <option value="" class="">Testing</option>
+                      <option value="" class="">Lunch</option>
+                      <option value="" class="">Bathroom</option>
+                    </select>
+                    <span class="absolute right-0.5 top-1/2 z-20 -translate-y-1/2">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.8">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                            fill="#637381"></path>
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+        </div> -->
+
+        <div class="flex flex-wrap">
+            <div class="flex gap-2 items-center mb-4">
+                  <p class="mb-0 block text-base font-medium text-slate-800 dark:text-white">
+                    Set your status to :
+                  </p>
+            <div
+                    x-data="{openDropDown: false}"
+                    class="relative mb-0 inline-block"
+                  >
+                    <a
+                      href="#"
+                      @click.prevent="openDropDown = !openDropDown"
+                      class="inline-flex items-center gap-2.5 text-slate-600 min-w-28 appearance-none rounded-lg border border-stroke bg-transparent py-1 pl-4 pr-5.5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
+                    >
+                      Available
+                      <svg
+                        class="fill-current duration-200 ease-linear"
+                        :class="openDropDown && 'rotate-180'"
+                        width="12"
+                        height="7"
+                        viewBox="0 0 12 7"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0.564864 0.879232C0.564864 0.808624 0.600168 0.720364 0.653125 0.667408C0.776689 0.543843 0.970861 0.543844 1.09443 0.649756L5.82517 5.09807C5.91343 5.18633 6.07229 5.18633 6.17821 5.09807L10.9089 0.649756C11.0325 0.526192 11.2267 0.543844 11.3502 0.667408C11.4738 0.790972 11.4562 0.985145 11.3326 1.10871L6.60185 5.55702C6.26647 5.85711 5.73691 5.85711 5.41917 5.55702L0.670776 1.10871C0.600168 1.0381 0.564864 0.967492 0.564864 0.879232Z"
+                          fill=""
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M1.4719 0.229332L6.00169 4.48868L10.5171 0.24288C10.9015 -0.133119 11.4504 -0.0312785 11.7497 0.267983C12.1344 0.652758 12.0332 1.2069 11.732 1.50812L11.7197 1.52041L6.97862 5.9781C6.43509 6.46442 5.57339 6.47872 5.03222 5.96853C5.03192 5.96825 5.03252 5.96881 5.03222 5.96853L0.271144 1.50833C0.123314 1.3605 -5.04223e-08 1.15353 -3.84322e-08 0.879226C-2.88721e-08 0.660517 0.0936127 0.428074 0.253705 0.267982C0.593641 -0.0719548 1.12269 -0.0699964 1.46204 0.220873L1.4719 0.229332ZM5.41917 5.55702C5.73691 5.85711 6.26647 5.85711 6.60185 5.55702L11.3326 1.10871C11.4562 0.985145 11.4738 0.790972 11.3502 0.667408C11.2267 0.543844 11.0325 0.526192 10.9089 0.649756L6.17821 5.09807C6.07229 5.18633 5.91343 5.18633 5.82517 5.09807L1.09443 0.649756C0.970861 0.543844 0.776689 0.543843 0.653125 0.667408C0.600168 0.720364 0.564864 0.808624 0.564864 0.879232C0.564864 0.967492 0.600168 1.0381 0.670776 1.10871L5.41917 5.55702Z"
+                          fill=""
+                        />
+                      </svg>
+                    </a>
+                    <div
+                      x-show="openDropDown"
+                      @click.outside="openDropDown = false"
+                      class="absolute left-0 top-full z-40 mt-2 w-full rounded-md border border-stroke bg-white shadow-card dark:border-strokedark dark:bg-boxdark"
+                    >
+                      <ul class="flex flex-col p-2">
+                        <li>
+                          <a
+                            href="#"
+                            class="flex px-2 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4"
+                          >
+                            Available
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4"
+                          >
+                            Testing
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4"
+                          >
+                            Lunch
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4"
+                          >
+                            Bathroom
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
             </div>
         </div>
+
     </div>
 </div>
     </div>
@@ -2532,6 +2575,7 @@
   <!-- Bottom Header Right Area -->
 </div>
 <!-- Bottom Header Dialing Area -->
+
 
 
 <!-- Bottom Header Live Call Area -->
@@ -2748,7 +2792,7 @@
                     <select
                       class="relative z-20 w-full text-slate-400 appearance-none rounded border border-stroke bg-transparent py-1 pl-4 pr-12 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
                       :class="isOptionSelected && 'text-slate-400 dark:text-white'" @change="isOptionSelected = true">
-                      <option value="" class="">Select a Queue</option>                      
+                      <option value="" class="">Select a Queue</option>
                       <option value="" class="">Option 1</option>
                       <option value="" class="">Option 2</option>
                       <option value="" class="">Option 3</option>
@@ -2768,7 +2812,8 @@
                 <div class="flex gap-3.5">
                   <button
                     class="flex grow justify-center items-center gap-2 rounded border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-500 hover:bg-opacity-90 hover:border-primary hover:text-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none" class="stroke-current">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                      class="stroke-current">
                       <path
                         d="M19.7498 9H7.40831C6.40252 9 5.89962 9 5.77447 8.69134C5.64932 8.38268 6.00492 8.01942 6.71612 7.29289L8.96066 5"
                         stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -2780,7 +2825,8 @@
                   </button>
                   <button
                     class="flex grow justify-center items-center gap-2 rounded border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-500 hover:bg-opacity-90 hover:border-primary hover:text-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none" class="stroke-current">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                      class="stroke-current">
                       <path
                         d="M19.7498 9H7.40831C6.40252 9 5.89962 9 5.77447 8.69134C5.64932 8.38268 6.00492 8.01942 6.71612 7.29289L8.96066 5"
                         stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -2801,7 +2847,7 @@
                     <select
                       class="relative z-20 w-full text-slate-400 appearance-none rounded border border-stroke bg-transparent py-1 pl-4 pr-12 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
                       :class="isOptionSelected && 'text-slate-400 dark:text-white'" @change="isOptionSelected = true">
-                      <option value="" class="">Luis Test Dev 2</option>                      
+                      <option value="" class="">Luis Test Dev 2</option>
                       <option value="" class="">Option 1</option>
                       <option value="" class="">Option 2</option>
                       <option value="" class="">Option 3</option>
@@ -2821,7 +2867,8 @@
                 <div class="flex gap-3.5">
                   <button
                     class="flex grow justify-center items-center gap-2 rounded border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-500 hover:bg-opacity-90 hover:border-primary hover:text-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none" class="stroke-current">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                      class="stroke-current">
                       <path
                         d="M19.7498 9H7.40831C6.40252 9 5.89962 9 5.77447 8.69134C5.64932 8.38268 6.00492 8.01942 6.71612 7.29289L8.96066 5"
                         stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -2833,7 +2880,8 @@
                   </button>
                   <button
                     class="flex grow justify-center items-center gap-2 rounded border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-500 hover:bg-opacity-90 hover:border-primary hover:text-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none" class="stroke-current">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                      class="stroke-current">
                       <path
                         d="M19.7498 9H7.40831C6.40252 9 5.89962 9 5.77447 8.69134C5.64932 8.38268 6.00492 8.01942 6.71612 7.29289L8.96066 5"
                         stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -2854,7 +2902,7 @@
                     <select
                       class="relative z-20 w-full text-slate-400 appearance-none rounded border border-stroke bg-transparent py-1 pl-4 pr-12 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
                       :class="isOptionSelected && 'text-slate-400 dark:text-white'" @change="isOptionSelected = true">
-                      <option value="" class="">(206) 235- 421</option>                      
+                      <option value="" class="">(206) 235- 421</option>
                       <option value="" class="">Option 1</option>
                       <option value="" class="">Option 2</option>
                       <option value="" class="">Option 3</option>
@@ -2874,7 +2922,8 @@
                 <div class="flex gap-3.5">
                   <button
                     class="flex grow justify-center items-center gap-2 rounded border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-500 hover:bg-opacity-90 hover:border-primary hover:text-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none" class="stroke-current">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                      class="stroke-current">
                       <path
                         d="M19.7498 9H7.40831C6.40252 9 5.89962 9 5.77447 8.69134C5.64932 8.38268 6.00492 8.01942 6.71612 7.29289L8.96066 5"
                         stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -2886,7 +2935,8 @@
                   </button>
                   <button
                     class="flex grow justify-center items-center gap-2 rounded border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-500 hover:bg-opacity-90 hover:border-primary hover:text-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none" class="stroke-current">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                      class="stroke-current">
                       <path
                         d="M19.7498 9H7.40831C6.40252 9 5.89962 9 5.77447 8.69134C5.64932 8.38268 6.00492 8.01942 6.71612 7.29289L8.96066 5"
                         stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -2926,6 +2976,9 @@
   <!-- Bottom Header Right Area -->
 </div>
 <!-- Bottom Header Live Call Area -->
+
+
+
       <!-- ===== Header End ===== -->
 
       <!-- ===== Main Content Start ===== -->
