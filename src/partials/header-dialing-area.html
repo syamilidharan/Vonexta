@@ -1,0 +1,73 @@
+    <!-- Bottom Header Dialing Area -->
+<div
+  class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11 bg-white max-h-16 dark:bg-boxdark dark:drop-shadow-none">
+
+  <!-- Select Country Area -->
+  <div class="">
+    <div class="flex items-center justify-between py-2 ">
+      <div class="flex items-center gap-2">
+        <div class=" text-slate-400 dark:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            class="fill-current">
+            <path
+              d="M1.49995 7.46265C1.04995 7.46265 0.637451 7.83765 0.637451 8.32515V15.7126C0.637451 16.1626 1.01245 16.5751 1.49995 16.5751C1.98745 16.5751 2.36245 16.2001 2.36245 15.7126V8.32515C2.36245 7.83765 1.94995 7.46265 1.49995 7.46265Z"
+              fill="" />
+            <path
+              d="M5.6999 5.4751C5.2499 5.4751 4.8374 5.8501 4.8374 6.3376V17.7001C4.8374 18.1501 5.2124 18.5626 5.6999 18.5626C6.1874 18.5626 6.5624 18.1876 6.5624 17.7001V6.3001C6.5624 5.8501 6.1499 5.4751 5.6999 5.4751Z"
+              fill="" />
+            <path
+              d="M9.89985 1.61255C9.44985 1.61255 9.03735 1.98755 9.03735 2.47505V21.5625C9.03735 22.0125 9.41235 22.425 9.89985 22.425C10.3874 22.425 10.7624 22.05 10.7624 21.5625V2.47505C10.7249 1.98755 10.3499 1.61255 9.89985 1.61255Z"
+              fill="" />
+            <path
+              d="M14.1 7.7251C13.65 7.7251 13.2375 8.1001 13.2375 8.5876V15.4876C13.2375 15.9376 13.6125 16.3501 14.1 16.3501C14.5875 16.3501 14.9625 15.9751 14.9625 15.4876V8.5501C14.925 8.1001 14.55 7.7251 14.1 7.7251Z"
+              fill="" />
+            <path
+              d="M18.3 4.65015C17.85 4.65015 17.4375 5.02515 17.4375 5.51265V18.4876C17.4375 18.9376 17.8125 19.3501 18.3 19.3501C18.7875 19.3501 19.1625 18.9751 19.1625 18.4876V5.51265C19.125 5.02515 18.75 4.65015 18.3 4.65015Z"
+              fill="" />
+            <path
+              d="M22.5 9.15015C22.05 9.15015 21.6375 9.52515 21.6375 10.0126V14.0251C21.6375 14.4751 22.0125 14.8876 22.5 14.8876C22.9875 14.8876 23.3625 14.5126 23.3625 14.0251V9.97515C23.3625 9.52515 22.95 9.15015 22.5 9.15015Z"
+              fill="" />
+          </svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-medium  dark:text-white">
+            Dialing
+          </h4>
+        </div>
+        <div>
+          <p class="text-sm font-normal text-slate-400 dark:text-white">
+            (206) 235- 421
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Select Country Area -->
+
+  <!-- Bottom Header Right Area -->
+  <div class="flex items-center gap-2">
+
+    <!-- Calling Section -->
+    <div class="flex gap-2" x-data="{modalOpen: false}">
+
+      <button @click="modalOpen = true"
+        class="flex justify-center items-center gap-2 rounded-xl border-[1.5px] border-red bg-transparent px-3 py-2 font-medium text-gray hover:bg-opacity-90">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M16.7133 13.5937C18.1939 13.9846 19.2229 14.4792 20.1589 15.0848C21.5432 15.9804 22.1367 17.5944 21.9737 19.1517C21.9049 19.8099 21.3744 20.1246 20.7592 19.9544L19.3705 19.57C18.2697 19.2653 17.7193 19.1129 17.3837 18.71C17.0481 18.307 17.0086 17.751 16.9296 16.6391L16.7133 13.5937ZM16.7133 13.5937C13.7164 12.8025 10.2871 12.8016 7.28669 13.5937M7.28669 13.5937C5.80606 13.9846 4.77711 14.4792 3.84113 15.0848C2.45683 15.9804 1.86334 17.5944 2.02628 19.1517C2.09514 19.8099 2.62563 20.1246 3.24078 19.9544L4.62954 19.57C5.73032 19.2653 6.28071 19.1129 6.61631 18.71C6.95191 18.307 6.9914 17.751 7.07038 16.6391L7.28669 13.5937Z"
+            stroke="#FB5454" stroke-width="1.5" stroke-linejoin="round" />
+          <path d="M12 4V6.85714M18 7.57143L15.6001 9M6 7.57143L8.39987 9" stroke="#FB5454" stroke-width="1.5"
+            stroke-linejoin="round" />
+        </svg>
+        <span class="text-base font-medium text-red">Hang Up</span>
+      </button>
+      <include src="hangup-modal.html" />
+    </div>
+
+    <!-- Calling Section -->
+  </div>
+  <!-- Bottom Header Right Area -->
+</div>
+<!-- Bottom Header Dialing Area -->
+

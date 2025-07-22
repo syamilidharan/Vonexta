@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | TailAdmin - Tailwind CSS Admin Dashboard Template</title>
+<link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
+
+<body
+    x-data="{ page: 'profile', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
+    x-init="
+          darkMode = JSON.parse(localStorage.getItem('darkMode'));
+          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}">
+    <!-- ===== Preloader Start ===== -->
+    <div
+  x-show="loaded"
+  x-init="window.addEventListener('DOMContentLoaded', () => {setTimeout(() => loaded = false, 500)})"
+  class="fixed left-0 top-0 z-999999 flex h-screen w-screen items-center justify-center bg-white dark:bg-black"
+>
+  <div
+    class="h-16 w-16 animate-spin rounded-full border-4 border-solid border-primary border-t-transparent"
+  ></div>
+</div>
+
+    <!-- ===== Preloader End ===== -->
+
+    <!-- ===== Page Wrapper Start ===== -->
+    <div class="flex h-screen overflow-hidden">
+
+
+        <!-- ===== Content Area Start ===== -->
+        <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+
+            <!-- ===== Main Content Start ===== -->
+            <main>
+                <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+                    <div class="mx-auto max-w-242.5 flex flex-col items-center justify-center gap-16">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="161" height="27" viewBox="0 0 161 27"
+                                fill="none">
+                                <path
+                                    d="M104.616 1.12109H99.7407C99.8073 1.25545 106.064 11.0794 106.382 11.5773H80.5996V15.4006H106.049C105.802 15.7878 99.4938 25.7125 99.4036 25.8469H104.279C104.367 25.7125 112.229 13.3319 112.319 13.1955C112.231 13.0829 104.683 1.25545 104.616 1.12109Z"
+                                    fill="#00AEEF" />
+                                <path
+                                    d="M10.9657 15.9834C10.8776 15.7799 4.93615 1.76325 4.66181 1.12109H0C0.0901401 1.32461 10.8776 26.7973 10.9657 27.0008C11.0559 26.7973 21.8766 1.32461 21.9667 1.12109H17.3069C17.0306 1.76325 11.0559 15.7799 10.9657 15.9834Z"
+                                    fill="#1E2C3A" />
+                                <path d="M96.8817 1.12109H80.582V4.77839H96.8817V1.12109Z" fill="#1E2C3A" />
+                                <path
+                                    d="M149.999 0C149.909 0.203513 139.121 25.6426 139.033 25.8461H143.103L145.794 19.3337H154.237C154.551 20.1023 156.861 25.69 156.93 25.8461H161C160.91 25.6426 150.089 0.203513 149.999 0ZM147.207 15.8404L149.662 9.93853C149.662 9.9168 149.921 9.31021 149.997 9.09287C150.117 9.36356 150.085 9.27464 150.367 9.93853L152.789 15.8404H147.207Z"
+                                    fill="#1E2C3A" />
+                                <path
+                                    d="M120.293 1.12109H115.417C115.351 1.23372 112.77 5.67345 112.607 5.95205C113.438 7.25413 114.318 8.63525 115.088 9.83657C115.888 8.49497 120.232 1.22384 120.293 1.12109Z"
+                                    fill="#1E2C3A" />
+                                <path
+                                    d="M139.199 1.12109H123.086V5.0886H129.006V25.8469H133.144V5.0886H139.199V1.12109Z"
+                                    fill="#1E2C3A" />
+                                <path d="M97.354 21.9805H80.582V25.8452H97.354V21.9805Z" fill="#1E2C3A" />
+                                <path
+                                    d="M44.2011 4.61361C43.0567 3.45971 41.7242 2.54489 40.1977 1.86717C38.6731 1.18946 37.0585 0.849609 35.3536 0.849609C33.6253 0.849609 32.0067 1.18946 30.492 1.86717C28.9772 2.54489 27.6545 3.46168 26.5219 4.61361C25.3912 5.76553 24.4937 7.11306 23.8333 8.64829C23.171 10.1875 22.8398 11.8156 22.8398 13.5326C22.8398 15.2733 23.171 16.9073 23.8333 18.4347C24.4937 19.962 25.3912 21.2957 26.5238 22.4378C27.6565 23.5798 28.9792 24.4788 30.4939 25.1348C32.0087 25.7908 33.6273 26.1188 35.3556 26.1188C37.0604 26.1188 38.6751 25.7908 40.1996 25.1348C41.7262 24.4788 43.0587 23.5798 44.203 22.4378C45.3474 21.2957 46.2488 19.962 46.9112 18.4347C47.5715 16.9093 47.9027 15.2733 47.9027 13.5326C47.9027 11.8156 47.5715 10.1855 46.9112 8.64829C46.2488 7.11306 45.3455 5.76553 44.2011 4.61361ZM43.1429 16.9093C42.7059 17.9605 42.1102 18.8773 41.3597 19.6558C40.6072 20.4362 39.7215 21.0527 38.7025 21.5052C37.6816 21.9576 36.5999 22.1829 35.4555 22.1829C34.268 22.1829 33.1628 21.9576 32.1419 21.5052C31.121 21.0527 30.2235 20.4362 29.4495 19.6558C28.6754 18.8753 28.0699 17.9605 27.6329 16.9093C27.196 15.8582 26.9765 14.7319 26.9765 13.5346C26.9765 12.3352 27.196 11.211 27.6329 10.1598C28.0699 9.10867 28.6637 8.18792 29.4142 7.3956C30.1667 6.60329 31.0524 5.98287 32.0714 5.5304C33.0923 5.07793 34.1857 4.85268 35.3517 4.85268C36.5176 4.85268 37.6111 5.07991 38.632 5.5304C39.6529 5.98287 40.5445 6.60526 41.3068 7.3956C42.0691 8.18792 42.6746 9.10867 43.1233 10.1598C43.5721 11.2129 43.7955 12.3372 43.7955 13.5346C43.7974 14.7319 43.5799 15.8582 43.1429 16.9093Z"
+                                    fill="#1E2C3A" />
+                                <path
+                                    d="M112.796 20.1899C112.647 20.4507 112.543 20.6345 112.512 20.6878L115.653 25.8467H120.528L114.979 16.7559C114.299 17.8228 113.539 19.0222 112.796 20.1899Z"
+                                    fill="#1E2C3A" />
+                                <path
+                                    d="M74.2783 26.9862V1.12031H70.173L70.1769 16.7236C69.8046 16.366 52.6231 0.013831 52.6133 0V25.8461H56.7186L56.7029 9.82986C57.1144 10.2448 74.2783 26.9862 74.2783 26.9862Z"
+                                    fill="#1E2C3A" />
+                            </svg>
+                        </div>
+
+
+                        <form class="w-full max-w-142.5 rounded-lg bg-white p-6 text-center dark:bg-boxdark shadow-4">
+                            <div class="flex justify-between items-center mb-6">
+                                <h3 class="text-title-sm2 font-bold text-slate-900 dark:text-white">
+                                    Select Outbound Profile
+                                </h3>
+                            </div>
+                            <div class="mb-6">
+                                <div x-data="{ isOptionSelected: false }"
+                                    class="relative z-20 bg-white dark:bg-form-input grow mb-6">
+                                    <select
+                                        class="relative z-20 w-full text-slate-400 appearance-none rounded-lg border-[1.5px] border-stroke bg-transparent py-2 pl-5 pr-12 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
+                                        :class="isOptionSelected && 'text-slate-400 dark:text-white'"
+                                        @change="isOptionSelected = true">
+                                        <option value="" class="">Select Agent Profile</option>
+                                        <option value="" class="">Option 1</option>
+                                        <option value="" class="">Option 2</option>
+                                        <option value="" class="">Option 3</option>
+                                        <option value="" class="">Option 4</option>
+                                    </select>
+                                    <span class="absolute right-4 top-1/2 z-20 -translate-y-1/2">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g opacity="0.8">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                                                    fill="#637381"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <label
+                                        class="mb-3 block text-base text-left font-medium text-slate-900 dark:text-white">
+                                        Select Inbound Queus
+                                    </label>
+                                    <div>
+                                        <textarea rows="3" placeholder="Red group"
+                                            class="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="w-full flex justify-end">
+                                <button
+                                    class="block rounded border border-primary bg-primary px-6 py-2 text-center font-medium text-white transition hover:bg-opacity-90">
+                                    Continue
+                                </button>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+                </div>
+            </main>
+            <!-- ===== Main Content End ===== -->
+        </div>
+        <!-- ===== Content Area End ===== -->
+    </div>
+    <!-- ===== Page Wrapper End ===== -->
+<script defer src="bundle.js"></script></body>
+
+</html>
