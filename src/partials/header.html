@@ -449,8 +449,8 @@
 </header>
 
 <!-- Bottom Header Area -->
-<div
-  class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11 bg-white max-h-16 dark:bg-boxdark dark:drop-shadow-none">
+<div id="headerBottom">
+  <div class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11 bg-white max-h-16 dark:bg-boxdark dark:drop-shadow-none">
 
   <!-- Select Country Area -->
   <div class="flex items-center gap-2">
@@ -775,9 +775,9 @@
       <!-- Calling Section -->
 
       <div class="flex gap-2">
-        <input type="text" placeholder="(321) 5555-0115"
-          class="w-full min-h-9 rounded-xl border-[1.5px] border-stroke bg-transparent px-4 py-1 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-        <button
+        <input type="text" placeholder="(206) 235- 421"
+          class="max-w-45 min-h-9 rounded-xl border-[1.5px] border-stroke bg-transparent px-4 py-1 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+        <button id="headerDialingButton"
           class="flex w-10 justify-center items-center rounded-xl border-[1.5px] border-stroke bg-transparent p-1 font-medium text-gray hover:bg-opacity-90">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path
@@ -794,6 +794,5 @@
   </div>
   <!-- Bottom Header Right Area -->
 </div>
+</div>
 <!-- Bottom Header Area -->
-<include src="header-dialing-area.html" />
-<include src="header-livecall-area.html" />

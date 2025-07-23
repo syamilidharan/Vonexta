@@ -84,8 +84,9 @@
           <spn class="hidden">Queues</spn>
         </a>
       </div>
-      <div class="h-full">
-        <div x-show="openTab === 1" class="font-medium leading-relaxed text-xs flex flex-col gap-3 text-white px-1.5">
+      <div class="h-full flex-grow pr-4">
+        <div x-show="openTab === 1"
+          class="font-medium leading-relaxed text-xs flex flex-col gap-3 text-white px-1.5 h-full">
           <h4 class="text-base font-medium">Contact Information</h4>
           <div class="flex flex-col gap-2 w-full">
             <p>First Name</p>
@@ -101,221 +102,228 @@
             <p>Lead Source</p>
           </div>
         </div>
-        <div x-show="openTab === 2" class="font-medium leading-relaxed text-xs  text-white" style="display: none">
+        <div x-show="openTab === 2" class="font-medium leading-relaxed text-xs h-full text-white" style="display: none">
           <!-- SMS Tab Content-->
-          <div class="w-full">
-            <h4 class="text-base font-medium">Conversations</h4>
-            <div
-              class="flex w-full max-h-full flex-col overflow-auto p-2 bg-slate-700 dark:bg-slate-700 min-h-150 justify-between">
-              <div class="flex  max-h-full flex-col overflow overflow-auto">
-                <form class="sticky mb-2">
-                  <input type="text"
-                    class="w-full rounded border border-slate-900 bg-slate-900 py-2.5 pl-7 pr-4 text-sm outline-none focus:border-primary dark:border-slate-900 dark:bg-slate-900"
-                    placeholder="Search messages ..." />
-                  <button class="absolute left-1.5 top-1/2 -translate-y-1/2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M9.16663 3.33329C5.94496 3.33329 3.33329 5.94496 3.33329 9.16663C3.33329 12.3883 5.94496 15 9.16663 15C12.3883 15 15 12.3883 15 9.16663C15 5.94496 12.3883 3.33329 9.16663 3.33329ZM1.66663 9.16663C1.66663 5.02449 5.02449 1.66663 9.16663 1.66663C13.3088 1.66663 16.6666 5.02449 16.6666 9.16663C16.6666 13.3088 13.3088 16.6666 9.16663 16.6666C5.02449 16.6666 1.66663 13.3088 1.66663 9.16663Z"
-                        fill="#64748B" />
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M13.2857 13.2857C13.6111 12.9603 14.1388 12.9603 14.4642 13.2857L18.0892 16.9107C18.4147 17.2361 18.4147 17.7638 18.0892 18.0892C17.7638 18.4147 17.2361 18.4147 16.9107 18.0892L13.2857 14.4642C12.9603 14.1388 12.9603 13.6111 13.2857 13.2857Z"
-                        fill="#64748B" />
-                    </svg>
+          <div class="flex flex-col h-full w-full">
+            
+              <h4 class="text-base font-medium">Conversations</h4>
+              <div
+                class="flex w-full h-full  flex-col overflow-auto py-2 bg-slate-700 dark:bg-slate-700 min-h-150 justify-between">
+                <div class="flex  max-h-full flex-col overflow overflow-auto">
+                  <form class="sticky mb-2">
+                    <input type="text"
+                      class="w-full rounded border border-slate-900 bg-slate-900 py-2.5 pl-7 pr-4 text-sm outline-none focus:border-primary dark:border-slate-900 dark:bg-slate-900"
+                      placeholder="Search messages ..." />
+                    <button class="absolute left-1.5 top-1/2 -translate-y-1/2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M9.16663 3.33329C5.94496 3.33329 3.33329 5.94496 3.33329 9.16663C3.33329 12.3883 5.94496 15 9.16663 15C12.3883 15 15 12.3883 15 9.16663C15 5.94496 12.3883 3.33329 9.16663 3.33329ZM1.66663 9.16663C1.66663 5.02449 5.02449 1.66663 9.16663 1.66663C13.3088 1.66663 16.6666 5.02449 16.6666 9.16663C16.6666 13.3088 13.3088 16.6666 9.16663 16.6666C5.02449 16.6666 1.66663 13.3088 1.66663 9.16663Z"
+                          fill="#64748B" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M13.2857 13.2857C13.6111 12.9603 14.1388 12.9603 14.4642 13.2857L18.0892 16.9107C18.4147 17.2361 18.4147 17.7638 18.0892 18.0892C17.7638 18.4147 17.2361 18.4147 16.9107 18.0892L13.2857 14.4642C12.9603 14.1388 12.9603 13.6111 13.2857 13.2857Z"
+                          fill="#64748B" />
+                      </svg>
+                    </button>
+                  </form>
+                  <!-- ====== Chat List -->
+                  <div class="no-scrollbar max-h-full space-y-2.5 overflow-auto">
+                    <!-- Chat List Item -->
+                    <div
+                      class="flex cursor-pointer items-center px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400 dark:hover:bg-strokedark">
+                      <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
+                        <img src="./images/user/user-01.png" alt="profile" class="object-cover object-center size-7" />
+                        <span
+                          class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
+                      </div>
+                      <div class="w-full">
+                        <h5 class="text-sm font-medium text-white dark:text-white">
+                          Henry Dholi
+                        </h5>
+                        <p class="text-xs font-medium text-slate-300">
+                          I cam across your..
+                        </p>
+                      </div>
+                    </div>
+                    <!-- Chat List Item -->
+                    <div
+                      class="flex cursor-pointer items-center  px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
+                      <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
+                        <img src="./images/user/user-02.png" alt="profile" class="object-cover object-center size-7" />
+                        <span
+                          class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
+                      </div>
+                      <div class="w-full">
+                        <h5 class="text-sm font-medium text-white dark:text-white">
+                          Mariya Desoja
+                        </h5>
+                        <p class="text-xs font-medium text-slate-300">
+                          I like your confid..
+                        </p>
+                      </div>
+                    </div>
+                    <!-- Chat List Item -->
+                    <div
+                      class="flex cursor-pointer items-center  px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
+                      <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
+                        <img src="./images/user/user-03.png" alt="profile" class="object-cover object-center size-7" />
+                        <span
+                          class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
+                      </div>
+                      <div class="w-full">
+                        <h5 class="text-sm font-medium text-white dark:text-white">
+                          Robert Jhon
+                        </h5>
+                        <p class="text-xs font-medium text-slate-300">
+                          Can you share you..
+                        </p>
+                      </div>
+                    </div>
+                    <!-- Chat List Item -->
+                    <div
+                      class="flex cursor-pointer items-center  px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
+                      <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
+                        <img src="./images/user/user-04.png" alt="profile" class="object-cover object-center size-7" />
+                        <span
+                          class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
+                      </div>
+                      <div class="w-full">
+                        <h5 class="text-sm font-medium text-white dark:text-white">
+                          Cody Fisher
+                        </h5>
+                        <p class="text-xs font-medium text-slate-300">
+                          I'm waiting for your..
+                        </p>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+                <!-- ====== Chat List End -->
+
+
+              
+            
+
+
+            <div class="pt-6 pb-10 bg-slate-700">
+              <!--Accordion starts-->
+              <div class="flex flex-col mb-3">
+                <!-- Accordion Item -->
+                <div x-data="{ accordionOpen: false }" @click.outside="accordionOpen = false">
+                  <button @click="accordionOpen = !accordionOpen" class="flex w-full items-center ">
+                    <div class="flex items-center justify-between py-2 w-full">
+                      <div class="flex items-center gap-1">
+                        <div class="">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                            fill="none">
+                            <path d="M5.83337 5.83337H5.84085M10.8259 5.83337H10.8334" stroke="#DEE4EE"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14.9925 12.0834H15M11.6666 12.0834H11.6741" stroke="#DEE4EE"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M8.33337 13.3333C8.33337 15.6345 10.572 17.5 13.3334 17.5C14.0894 17.5 14.8061 17.3601 15.4485 17.1099C15.6055 17.0487 15.776 17.0267 15.9417 17.0574L18.3334 17.5L17.7903 15.8085C17.711 15.5615 17.7563 15.2944 17.8813 15.067C18.1715 14.5391 18.3334 13.952 18.3334 13.3333C18.3334 11.0321 16.0948 9.16663 13.3334 9.16663C10.572 9.16663 8.33337 11.0321 8.33337 13.3333Z"
+                              stroke="#DEE4EE" stroke-linejoin="round" />
+                            <path
+                              d="M14.8942 9.37375C14.9637 9.03617 15 8.68842 15 8.33333C15 5.11168 12.0152 2.5 8.33329 2.5C4.65139 2.5 1.66663 5.11168 1.66663 8.33333C1.66663 9.26033 1.91373 10.1368 2.35346 10.9151C2.47581 11.1317 2.51638 11.3878 2.44365 11.6256L1.66663 14.1667L4.92841 13.5328C5.10148 13.4992 5.28013 13.5228 5.44262 13.5912C6.3463 13.9718 7.36778 14.1798 8.43313 14.166"
+                              stroke="#DEE4EE" stroke-linejoin="round" />
+                          </svg>
+                        </div>
+                        <div>
+                          <h4 class="text-sm font-medium text-white dark:text-white">
+                            New Conversations
+                          </h4>
+                        </div>
+                      </div>
+                      <div class="flex flex-col justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                          :class="accordionOpen && 'rotate-180'" class="duration-200 ease-in-out ">
+                          <path
+                            d="M8.99995 12.825C8.8312 12.825 8.69058 12.7688 8.54995 12.6563L2.0812 6.30002C1.82808 6.0469 1.82808 5.65315 2.0812 5.40002C2.33433 5.1469 2.72808 5.1469 2.9812 5.40002L8.99995 11.2781L15.0187 5.34377C15.2718 5.09065 15.6656 5.09065 15.9187 5.34377C16.1718 5.5969 16.1718 5.99065 15.9187 6.24377L9.44995 12.6C9.30933 12.7406 9.1687 12.825 8.99995 12.825Z"
+                            fill="#DEE4EE" />
+                        </svg>
+
+                      </div>
+                    </div>
                   </button>
-                </form>
-                <!-- ====== Chat List -->
-                <div class="no-scrollbar max-h-full space-y-2.5 overflow-auto">
-                  <!-- Chat List Item -->
-                  <div
-                    class="flex cursor-pointer items-center px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400 dark:hover:bg-strokedark">
-                    <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                      <img src="./images/user/user-01.png" alt="profile" class="object-cover object-center size-7" />
-                      <span
-                        class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
-                    </div>
-                    <div class="w-full">
-                      <h5 class="text-sm font-medium text-white dark:text-white">
-                        Henry Dholi
-                      </h5>
-                      <p class="text-xs font-medium text-slate-300">
-                        I cam across your..
-                      </p>
-                    </div>
-                  </div>
-                  <!-- Chat List Item -->
-                  <div
-                    class="flex cursor-pointer items-center  px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
-                    <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                      <img src="./images/user/user-02.png" alt="profile" class="object-cover object-center size-7" />
-                      <span
-                        class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
-                    </div>
-                    <div class="w-full">
-                      <h5 class="text-sm font-medium text-white dark:text-white">
-                        Mariya Desoja
-                      </h5>
-                      <p class="text-xs font-medium text-slate-300">
-                        I like your confid..
-                      </p>
-                    </div>
-                  </div>
-                  <!-- Chat List Item -->
-                  <div
-                    class="flex cursor-pointer items-center  px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
-                    <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                      <img src="./images/user/user-03.png" alt="profile" class="object-cover object-center size-7" />
-                      <span
-                        class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
-                    </div>
-                    <div class="w-full">
-                      <h5 class="text-sm font-medium text-white dark:text-white">
-                        Robert Jhon
-                      </h5>
-                      <p class="text-xs font-medium text-slate-300">
-                        Can you share you..
-                      </p>
-                    </div>
-                  </div>
-                  <!-- Chat List Item -->
-                  <div
-                    class="flex cursor-pointer items-center  px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
-                    <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                      <img src="./images/user/user-04.png" alt="profile" class="object-cover object-center size-7" />
-                      <span
-                        class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
-                    </div>
-                    <div class="w-full">
-                      <h5 class="text-sm font-medium text-white dark:text-white">
-                        Cody Fisher
-                      </h5>
-                      <p class="text-xs font-medium text-slate-300">
-                        I'm waiting for your..
-                      </p>
-                    </div>
-                  </div>
 
+                  <div x-show="accordionOpen" class=" mt-2 mb-3 duration-200 ease-in-out">
+                    <!-- ====== Chat List -->
+                    <div class="no-scrollbar max-h-full space-y-2.5 overflow-auto">
+                      <!-- Chat List Item -->
+                      <div
+                        class="flex cursor-pointer items-center px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400 dark:hover:bg-strokedark">
+                        <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
+                          <img src="./images/user/user-01.png" alt="profile"
+                            class="object-cover object-center size-7" />
+                          <span
+                            class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
+                        </div>
+                        <div class="w-full">
+                          <h5 class="text-sm font-medium text-white dark:text-white">
+                            Henry Dholi
+                          </h5>
+                          <p class="text-xs font-medium text-slate-300">
+                            I cam across your..
+                          </p>
+                        </div>
+                      </div>
+                      <!-- Chat List Item -->
+                      <div
+                        class="flex cursor-pointer items-center  px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
+                        <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
+                          <img src="./images/user/user-02.png" alt="profile"
+                            class="object-cover object-center size-7" />
+                          <span
+                            class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
+                        </div>
+                        <div class="w-full">
+                          <h5 class="text-sm font-medium text-white dark:text-white">
+                            Mariya Desoja
+                          </h5>
+                          <p class="text-xs font-medium text-slate-300">
+                            I like your confid..
+                          </p>
+                        </div>
+                      </div>
+                    </div>
 
+                  </div>
                 </div>
               </div>
-              <!-- ====== Chat List End -->
-              <div class="mt-6">
+              <!--Accordion Ends-->
 
-
-                <!--Accordion starts-->
-                <div class="flex flex-col mb-3">
-                  <!-- Accordion Item -->
-                  <div x-data="{ accordionOpen: false }" @click.outside="accordionOpen = false">
-                    <button @click="accordionOpen = !accordionOpen" class="flex w-full items-center ">
-                      <div class="flex items-center justify-between py-2 w-full">
-                        <div class="flex items-center gap-1">
-                          <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
-                              fill="none">
-                              <path d="M5.83337 5.83337H5.84085M10.8259 5.83337H10.8334" stroke="#DEE4EE"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                              <path d="M14.9925 12.0834H15M11.6666 12.0834H11.6741" stroke="#DEE4EE"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                              <path
-                                d="M8.33337 13.3333C8.33337 15.6345 10.572 17.5 13.3334 17.5C14.0894 17.5 14.8061 17.3601 15.4485 17.1099C15.6055 17.0487 15.776 17.0267 15.9417 17.0574L18.3334 17.5L17.7903 15.8085C17.711 15.5615 17.7563 15.2944 17.8813 15.067C18.1715 14.5391 18.3334 13.952 18.3334 13.3333C18.3334 11.0321 16.0948 9.16663 13.3334 9.16663C10.572 9.16663 8.33337 11.0321 8.33337 13.3333Z"
-                                stroke="#DEE4EE" stroke-linejoin="round" />
-                              <path
-                                d="M14.8942 9.37375C14.9637 9.03617 15 8.68842 15 8.33333C15 5.11168 12.0152 2.5 8.33329 2.5C4.65139 2.5 1.66663 5.11168 1.66663 8.33333C1.66663 9.26033 1.91373 10.1368 2.35346 10.9151C2.47581 11.1317 2.51638 11.3878 2.44365 11.6256L1.66663 14.1667L4.92841 13.5328C5.10148 13.4992 5.28013 13.5228 5.44262 13.5912C6.3463 13.9718 7.36778 14.1798 8.43313 14.166"
-                                stroke="#DEE4EE" stroke-linejoin="round" />
-                            </svg>
-                          </div>
-                          <div>
-                            <h4 class="text-sm font-medium text-white dark:text-white">
-                              New Conversations
-                            </h4>
-                          </div>
-                        </div>
-                        <div class="flex flex-col justify-end">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"
-                            :class="accordionOpen && 'rotate-180'" class="duration-200 ease-in-out ">
-                            <path
-                              d="M8.99995 12.825C8.8312 12.825 8.69058 12.7688 8.54995 12.6563L2.0812 6.30002C1.82808 6.0469 1.82808 5.65315 2.0812 5.40002C2.33433 5.1469 2.72808 5.1469 2.9812 5.40002L8.99995 11.2781L15.0187 5.34377C15.2718 5.09065 15.6656 5.09065 15.9187 5.34377C16.1718 5.5969 16.1718 5.99065 15.9187 6.24377L9.44995 12.6C9.30933 12.7406 9.1687 12.825 8.99995 12.825Z"
-                              fill="#DEE4EE" />
-                          </svg>
-
-                        </div>
-                      </div>
-                    </button>
-
-                    <div x-show="accordionOpen" class=" mt-2 mb-3 duration-200 ease-in-out">
-                      <!-- ====== Chat List -->
-                      <div class="no-scrollbar max-h-full space-y-2.5 overflow-auto">
-                        <!-- Chat List Item -->
-                        <div
-                          class="flex cursor-pointer items-center px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400 dark:hover:bg-strokedark">
-                          <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                            <img src="./images/user/user-01.png" alt="profile"
-                              class="object-cover object-center size-7" />
-                            <span
-                              class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
-                          </div>
-                          <div class="w-full">
-                            <h5 class="text-sm font-medium text-white dark:text-white">
-                              Henry Dholi
-                            </h5>
-                            <p class="text-xs font-medium text-slate-300">
-                              I cam across your..
-                            </p>
-                          </div>
-                        </div>
-                        <!-- Chat List Item -->
-                        <div
-                          class="flex cursor-pointer items-center  px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
-                          <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                            <img src="./images/user/user-02.png" alt="profile"
-                              class="object-cover object-center size-7" />
-                            <span
-                              class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
-                          </div>
-                          <div class="w-full">
-                            <h5 class="text-sm font-medium text-white dark:text-white">
-                              Mariya Desoja
-                            </h5>
-                            <p class="text-xs font-medium text-slate-300">
-                              I like your confid..
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-                <!--Accordion Ends-->
-
-
-                <div class="flex gap-2 w-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path
-                      d="M1.66663 3.33329C1.66663 4.11897 1.66663 4.5118 1.9107 4.75588C2.15478 4.99996 2.54762 4.99996 3.33329 4.99996C4.11897 4.99996 4.5118 4.99996 4.75588 4.75588C4.99996 4.5118 4.99996 4.11897 4.99996 3.33329C4.99996 2.54762 4.99996 2.15478 4.75588 1.9107C4.5118 1.66663 4.11897 1.66663 3.33329 1.66663C2.54762 1.66663 2.15478 1.66663 1.9107 1.9107C1.66663 2.15478 1.66663 2.54762 1.66663 3.33329Z"
-                      stroke="#DEE4EE" />
-                    <path
-                      d="M1.66663 10C1.66663 10.7857 1.66663 11.1785 1.9107 11.4226C2.15478 11.6667 2.54762 11.6667 3.33329 11.6667C4.11897 11.6667 4.5118 11.6667 4.75588 11.4226C4.99996 11.1785 4.99996 10.7857 4.99996 10C4.99996 9.21437 4.99996 8.82154 4.75588 8.57746C4.5118 8.33337 4.11897 8.33337 3.33329 8.33337C2.54762 8.33337 2.15478 8.33337 1.9107 8.57746C1.66663 8.82154 1.66663 9.21437 1.66663 10Z"
-                      stroke="#DEE4EE" />
-                    <path
-                      d="M8.33337 3.33329C8.33337 4.11897 8.33337 4.5118 8.57746 4.75588C8.82154 4.99996 9.21437 4.99996 10 4.99996C10.7857 4.99996 11.1785 4.99996 11.4226 4.75588C11.6667 4.5118 11.6667 4.11897 11.6667 3.33329C11.6667 2.54762 11.6667 2.15478 11.4226 1.9107C11.1785 1.66663 10.7857 1.66663 10 1.66663C9.21437 1.66663 8.82154 1.66663 8.57746 1.9107C8.33337 2.15478 8.33337 2.54762 8.33337 3.33329Z"
-                      stroke="#DEE4EE" />
-                    <path
-                      d="M8.33337 10C8.33337 10.7857 8.33337 11.1785 8.57746 11.4226C8.82154 11.6667 9.21437 11.6667 10 11.6667C10.7857 11.6667 11.1785 11.6667 11.4226 11.4226C11.6667 11.1785 11.6667 10.7857 11.6667 10C11.6667 9.21437 11.6667 8.82154 11.4226 8.57746C11.1785 8.33337 10.7857 8.33337 10 8.33337C9.21437 8.33337 8.82154 8.33337 8.57746 8.57746C8.33337 8.82154 8.33337 9.21437 8.33337 10Z"
-                      stroke="#DEE4EE" />
-                    <path
-                      d="M8.33337 16.6667C8.33337 17.4523 8.33337 17.8452 8.57746 18.0892C8.82154 18.3333 9.21437 18.3333 10 18.3333C10.7857 18.3333 11.1785 18.3333 11.4226 18.0892C11.6667 17.8452 11.6667 17.4523 11.6667 16.6667C11.6667 15.881 11.6667 15.4882 11.4226 15.2441C11.1785 15 10.7857 15 10 15C9.21437 15 8.82154 15 8.57746 15.2441C8.33337 15.4882 8.33337 15.881 8.33337 16.6667Z"
-                      stroke="#DEE4EE" />
-                    <path
-                      d="M15 3.33329C15 4.11897 15 4.5118 15.2441 4.75588C15.4882 4.99996 15.881 4.99996 16.6667 4.99996C17.4523 4.99996 17.8452 4.99996 18.0892 4.75588C18.3333 4.5118 18.3333 4.11897 18.3333 3.33329C18.3333 2.54762 18.3333 2.15478 18.0892 1.9107C17.8452 1.66663 17.4523 1.66663 16.6667 1.66663C15.881 1.66663 15.4882 1.66663 15.2441 1.9107C15 2.15478 15 2.54762 15 3.33329Z"
-                      stroke="#DEE4EE" />
-                    <path
-                      d="M15 10C15 10.7857 15 11.1785 15.2441 11.4226C15.4882 11.6667 15.881 11.6667 16.6667 11.6667C17.4523 11.6667 17.8452 11.6667 18.0892 11.4226C18.3333 11.1785 18.3333 10.7857 18.3333 10C18.3333 9.21437 18.3333 8.82154 18.0892 8.57746C17.8452 8.33337 17.4523 8.33337 16.6667 8.33337C15.881 8.33337 15.4882 8.33337 15.2441 8.57746C15 8.82154 15 9.21437 15 10Z"
-                      stroke="#DEE4EE" />
-                  </svg>
-                  <p class="text-sm">(206) 235- 421</p>
-                </div>
+              <div class="flex gap-2 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M1.66663 3.33329C1.66663 4.11897 1.66663 4.5118 1.9107 4.75588C2.15478 4.99996 2.54762 4.99996 3.33329 4.99996C4.11897 4.99996 4.5118 4.99996 4.75588 4.75588C4.99996 4.5118 4.99996 4.11897 4.99996 3.33329C4.99996 2.54762 4.99996 2.15478 4.75588 1.9107C4.5118 1.66663 4.11897 1.66663 3.33329 1.66663C2.54762 1.66663 2.15478 1.66663 1.9107 1.9107C1.66663 2.15478 1.66663 2.54762 1.66663 3.33329Z"
+                    stroke="#DEE4EE" />
+                  <path
+                    d="M1.66663 10C1.66663 10.7857 1.66663 11.1785 1.9107 11.4226C2.15478 11.6667 2.54762 11.6667 3.33329 11.6667C4.11897 11.6667 4.5118 11.6667 4.75588 11.4226C4.99996 11.1785 4.99996 10.7857 4.99996 10C4.99996 9.21437 4.99996 8.82154 4.75588 8.57746C4.5118 8.33337 4.11897 8.33337 3.33329 8.33337C2.54762 8.33337 2.15478 8.33337 1.9107 8.57746C1.66663 8.82154 1.66663 9.21437 1.66663 10Z"
+                    stroke="#DEE4EE" />
+                  <path
+                    d="M8.33337 3.33329C8.33337 4.11897 8.33337 4.5118 8.57746 4.75588C8.82154 4.99996 9.21437 4.99996 10 4.99996C10.7857 4.99996 11.1785 4.99996 11.4226 4.75588C11.6667 4.5118 11.6667 4.11897 11.6667 3.33329C11.6667 2.54762 11.6667 2.15478 11.4226 1.9107C11.1785 1.66663 10.7857 1.66663 10 1.66663C9.21437 1.66663 8.82154 1.66663 8.57746 1.9107C8.33337 2.15478 8.33337 2.54762 8.33337 3.33329Z"
+                    stroke="#DEE4EE" />
+                  <path
+                    d="M8.33337 10C8.33337 10.7857 8.33337 11.1785 8.57746 11.4226C8.82154 11.6667 9.21437 11.6667 10 11.6667C10.7857 11.6667 11.1785 11.6667 11.4226 11.4226C11.6667 11.1785 11.6667 10.7857 11.6667 10C11.6667 9.21437 11.6667 8.82154 11.4226 8.57746C11.1785 8.33337 10.7857 8.33337 10 8.33337C9.21437 8.33337 8.82154 8.33337 8.57746 8.57746C8.33337 8.82154 8.33337 9.21437 8.33337 10Z"
+                    stroke="#DEE4EE" />
+                  <path
+                    d="M8.33337 16.6667C8.33337 17.4523 8.33337 17.8452 8.57746 18.0892C8.82154 18.3333 9.21437 18.3333 10 18.3333C10.7857 18.3333 11.1785 18.3333 11.4226 18.0892C11.6667 17.8452 11.6667 17.4523 11.6667 16.6667C11.6667 15.881 11.6667 15.4882 11.4226 15.2441C11.1785 15 10.7857 15 10 15C9.21437 15 8.82154 15 8.57746 15.2441C8.33337 15.4882 8.33337 15.881 8.33337 16.6667Z"
+                    stroke="#DEE4EE" />
+                  <path
+                    d="M15 3.33329C15 4.11897 15 4.5118 15.2441 4.75588C15.4882 4.99996 15.881 4.99996 16.6667 4.99996C17.4523 4.99996 17.8452 4.99996 18.0892 4.75588C18.3333 4.5118 18.3333 4.11897 18.3333 3.33329C18.3333 2.54762 18.3333 2.15478 18.0892 1.9107C17.8452 1.66663 17.4523 1.66663 16.6667 1.66663C15.881 1.66663 15.4882 1.66663 15.2441 1.9107C15 2.15478 15 2.54762 15 3.33329Z"
+                    stroke="#DEE4EE" />
+                  <path
+                    d="M15 10C15 10.7857 15 11.1785 15.2441 11.4226C15.4882 11.6667 15.881 11.6667 16.6667 11.6667C17.4523 11.6667 17.8452 11.6667 18.0892 11.4226C18.3333 11.1785 18.3333 10.7857 18.3333 10C18.3333 9.21437 18.3333 8.82154 18.0892 8.57746C17.8452 8.33337 17.4523 8.33337 16.6667 8.33337C15.881 8.33337 15.4882 8.33337 15.2441 8.57746C15 8.82154 15 9.21437 15 10Z"
+                    stroke="#DEE4EE" />
+                </svg>
+                <p class="text-sm">(206) 235- 421</p>
               </div>
             </div>
+            </div>
+            
+
+
           </div>
           <!-- SMS Tab Content-->
         </div>
@@ -445,6 +453,6 @@
     </div>
 
     <!-- New Sidebar Menu-->
-    
+
   </div>
 </aside>
