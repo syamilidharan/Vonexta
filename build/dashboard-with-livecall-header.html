@@ -264,11 +264,6 @@
                     </div>
                   </template>
                 </div>
-
-
-
-
-
               </div>
 
               <div class="pt-6 pb-10 bg-slate-700">
@@ -401,7 +396,110 @@
           <!-- Call Content-->
           <div>
             <h4 class="text-base font-medium">Call</h4>
+            <div class="p-0 ">
+              <div class="w-full py-2.5 ">
+                <div class="flex flex-col w-full gap-3">
 
+                  <div class="flex items-center justify-between py-2 w-full ">
+                    <div class="flex items-center gap-1 w-full">
+                      <div class="h-8 w-8 overflow-hidden rounded-full flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                          <rect x="0.5" y="0.5" width="26" height="26" rx="13" stroke="#DEE4EE" />
+                          <path d="M19.5 10.1667V7.5H16.8333M15.5 11.5L19.2294 7.77057" stroke="#8A99AF"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M11.6055 9.30815L11.3371 8.70417C11.1615 8.30925 11.0738 8.11179 10.9425 7.96067C10.778 7.77129 10.5636 7.63196 10.3238 7.55857C10.1324 7.5 9.91631 7.5 9.48414 7.5C8.85194 7.5 8.53583 7.5 8.27049 7.62153C7.95791 7.76468 7.67562 8.07552 7.56315 8.4004C7.46767 8.67619 7.49502 8.95962 7.54972 9.52647C8.13194 15.5601 11.4399 18.8681 17.4735 19.4503C18.0404 19.505 18.3238 19.5323 18.5996 19.4369C18.9245 19.3244 19.2353 19.0421 19.3785 18.7295C19.5 18.4641 19.5 18.1481 19.5 17.5159C19.5 17.0837 19.5 16.8676 19.4415 16.6762C19.3681 16.4363 19.2287 16.2219 19.0393 16.0575C18.8882 15.9262 18.6907 15.8385 18.2958 15.6629L17.6919 15.3945C17.2641 15.2044 17.0503 15.1094 16.833 15.0887C16.6251 15.0689 16.4154 15.0981 16.2207 15.1739C16.0173 15.2531 15.8375 15.4029 15.478 15.7025C15.1201 16.0008 14.9411 16.1499 14.7225 16.2298C14.5287 16.3006 14.2724 16.3269 14.0682 16.2967C13.8379 16.2628 13.6615 16.1686 13.3089 15.9801C12.2115 15.3937 11.6064 14.7885 11.0199 13.6911C10.8314 13.3385 10.7372 13.1621 10.7032 12.9318C10.6732 12.7276 10.6994 12.4713 10.7702 12.2775C10.8501 12.0589 10.9992 11.8799 11.2975 11.522C11.5971 11.1625 11.7469 10.9827 11.8261 10.7793C11.9019 10.5846 11.9311 10.3749 11.9113 10.167C11.8906 9.94968 11.7956 9.73584 11.6055 9.30815Z"
+                            stroke="#8A99AF" stroke-linecap="round" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 class="text-xs font-medium text-white dark:text-white">
+                          RED Queue
+                        </h4>
+                        <p class="text-xs min-w-29">(206) 235- 421</p>
+                      </div>
+                    </div>
+                    <div class="flex flex-col justify-end w-full">
+                      <div x-data="{openDropDown: false}" class="relative text-right">
+                        <button @click="openDropDown = !openDropDown">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                            fill="none">
+                            <path d="M7.99731 8H8.00331" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                            <path d="M11.9999 8H12.0059" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                            <path d="M3.99988 8H4.00586" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                        <div x-show="openDropDown" @click.outside="openDropDown = false"
+                          class="absolute right-0 top-full z-40 w-37.5 space-y-1 rounded bg-slate-500 p-2 shadow-card dark:bg-boxdark-2">
+                          <button
+                            class="w-full rounded px-3 py-1.5 text-left text-sm hover:bg-slate-600 dark:hover:bg-graydark">
+                            Edit
+                          </button>
+                          <button
+                            class="w-full rounded px-3 py-1.5 text-left text-sm hover:bg-slate-600 dark:hover:bg-graydark">
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                      <p class="text-right text-slate-500">NaNs</p>
+                    </div>
+                  </div>
+
+
+                  <div class="flex items-center w-full justify-between py-2 ">
+                    <div class="flex items-center gap-1 w-full">
+                      <div class="h-8 w-8 overflow-hidden rounded-full flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                          <rect x="0.5" y="0.5" width="26" height="26" rx="13" stroke="#DEE4EE" />
+                          <path d="M19.5 10.1667V7.5H16.8333M15.5 11.5L19.2294 7.77057" stroke="#8A99AF"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M11.6055 9.30815L11.3371 8.70417C11.1615 8.30925 11.0738 8.11179 10.9425 7.96067C10.778 7.77129 10.5636 7.63196 10.3238 7.55857C10.1324 7.5 9.91631 7.5 9.48414 7.5C8.85194 7.5 8.53583 7.5 8.27049 7.62153C7.95791 7.76468 7.67562 8.07552 7.56315 8.4004C7.46767 8.67619 7.49502 8.95962 7.54972 9.52647C8.13194 15.5601 11.4399 18.8681 17.4735 19.4503C18.0404 19.505 18.3238 19.5323 18.5996 19.4369C18.9245 19.3244 19.2353 19.0421 19.3785 18.7295C19.5 18.4641 19.5 18.1481 19.5 17.5159C19.5 17.0837 19.5 16.8676 19.4415 16.6762C19.3681 16.4363 19.2287 16.2219 19.0393 16.0575C18.8882 15.9262 18.6907 15.8385 18.2958 15.6629L17.6919 15.3945C17.2641 15.2044 17.0503 15.1094 16.833 15.0887C16.6251 15.0689 16.4154 15.0981 16.2207 15.1739C16.0173 15.2531 15.8375 15.4029 15.478 15.7025C15.1201 16.0008 14.9411 16.1499 14.7225 16.2298C14.5287 16.3006 14.2724 16.3269 14.0682 16.2967C13.8379 16.2628 13.6615 16.1686 13.3089 15.9801C12.2115 15.3937 11.6064 14.7885 11.0199 13.6911C10.8314 13.3385 10.7372 13.1621 10.7032 12.9318C10.6732 12.7276 10.6994 12.4713 10.7702 12.2775C10.8501 12.0589 10.9992 11.8799 11.2975 11.522C11.5971 11.1625 11.7469 10.9827 11.8261 10.7793C11.9019 10.5846 11.9311 10.3749 11.9113 10.167C11.8906 9.94968 11.7956 9.73584 11.6055 9.30815Z"
+                            stroke="#8A99AF" stroke-linecap="round" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 class="font-medium text-xs text-white dark:text-white">
+                          RED Queue
+                        </h4>
+                        <p class="text-xs min-w-29">(206) 235- 421</p>
+                      </div>
+                    </div>
+                    <div class="flex flex-col w-full justify-end">
+                      <div x-data="{openDropDown: false}" class="relative text-right">
+                        <button @click="openDropDown = !openDropDown">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                            fill="none">
+                            <path d="M7.99731 8H8.00331" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                            <path d="M11.9999 8H12.0059" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                            <path d="M3.99988 8H4.00586" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                        <div x-show="openDropDown" @click.outside="openDropDown = false"
+                          class="absolute right-0 top-full z-40 w-37.5 space-y-1 rounded bg-slate-500 p-2 shadow-card dark:bg-boxdark-2">
+                          <button
+                            class="w-full rounded px-3 py-1.5 text-left text-sm hover:bg-slate-600 dark:hover:bg-graydark">
+                            Edit
+                          </button>
+                          <button
+                            class="w-full rounded px-3 py-1.5 text-left text-sm hover:bg-slate-600 dark:hover:bg-graydark">
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                      <p class="text-right text-slate-500">0s</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
           </div>
           <!-- Call Content-->
         </div>
@@ -1810,7 +1908,7 @@
       <!-- ===== Main Content Start ===== -->
       <main>
 
-        <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+        <div class="mx-auto max-w-screen-2xl p-4 md:p-6">
 
           <!-- ====== Data Stats Start -->
           <div class="rounded-2xl border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
