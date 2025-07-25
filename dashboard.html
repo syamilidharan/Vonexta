@@ -33,7 +33,7 @@
   <div class="flex h-screen overflow-hidden">
     <!-- ===== Sidebar Start ===== -->
     <aside :class="sidebarToggle ? 'translate-x-0' : '-translate-x-full'"
-  class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0"
+  class="absolute left-0 top-0 z-999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0"
   @click.outside="sidebarToggle = false">
   <!-- SIDEBAR HEADER -->
   <div class="flex items-center justify-center gap-2 px-6 py-5.5 lg:py-6.5 ml-12.5 bg-slate-700">
@@ -57,68 +57,70 @@
     <!-- New Sidebar Menu-->
 
     <div x-data="{
-                    openTab: 1,
-                    activeClasses: 'bg-slate-700 text-white stroke-white',
-                    inactiveClasses: 'bg-transparent dark:bg-meta-4 text-slate-300 dark:text-white stroke-slate-700',
-                    }" class=" w-full p-0 flex flex-row gap-2.5 bg-slate-700 h-full">
+        openTab: 1,
+        activeClasses: 'bg-slate-700 text-white stroke-white',
+        inactiveClasses: 'bg-transparent dark:bg-meta-4 text-slate-300 dark:text-white stroke-slate-400',
+        }" class=" w-full p-0 flex flex-row  bg-slate-700 h-full">
       <div class=" flex flex-col gap-2.5 max-w-12.5 bg-black px-2 py-3">
         <a href="#" @click.prevent="openTab = 1" :class="openTab === 1 ? activeClasses : inactiveClasses"
           class="flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none p-1  text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
-
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto  duration-300 ease-in-out p-1 rounded-lg">
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
+            :class="openTab === 1 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M14.0002 25.6666C9.3254 25.6666 6.98802 25.6666 5.53576 24.129C4.0835 22.5913 4.0835 20.1163 4.0835 15.1666C4.0835 10.2169 4.0835 7.74201 5.53576 6.20432C6.98802 4.66663 9.3254 4.66663 14.0002 4.66663C18.6749 4.66663 21.0123 4.66663 22.4646 6.20432C23.9168 7.74201 23.9168 10.2169 23.9168 15.1666C23.9168 20.1163 23.9168 22.5913 22.4646 24.129C21.0123 25.6666 18.6749 25.6666 14.0002 25.6666Z"
-              stroke="white" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M9.3335 4.66671V2.33337" stroke="white" stroke-opacity="0.5" stroke-linecap="round" />
-            <path d="M18.6665 4.66671V2.33337" stroke="white" stroke-opacity="0.5" stroke-linecap="round" />
+               stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9.3335 4.66671V2.33337"  stroke-linecap="round" />
+            <path d="M18.6665 4.66671V2.33337" stroke-linecap="round" />
             <path
               d="M16.3545 11.0747C16.3545 12.3634 15.3099 13.408 14.0213 13.408C12.7326 13.408 11.688 12.3634 11.688 11.0747C11.688 9.78609 12.7326 8.74146 14.0213 8.74146C15.3099 8.74146 16.3545 9.78609 16.3545 11.0747Z"
-              stroke="white" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round" />
+              stroke-linecap="round" stroke-linejoin="round" />
             <path
               d="M9.40697 19.5021C10.6417 17.6012 12.6025 16.8889 14.0213 16.8903C15.4399 16.8918 17.3434 17.6012 18.578 19.5021C18.6578 19.625 18.6799 19.7764 18.6078 19.9041C18.319 20.4162 17.4225 21.4322 16.775 21.5012C16.0309 21.5803 14.0845 21.5913 14.0228 21.5917C13.961 21.5913 11.9545 21.5803 11.2101 21.5012C10.5625 21.4322 9.66595 20.4162 9.37719 19.9041C9.30515 19.7764 9.32715 19.625 9.40697 19.5021Z"
-              stroke="white" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round" />
+               stroke-linecap="round" stroke-linejoin="round" />
           </svg>
           <spn class="hidden">Contacts</spn>
         </a>
         <a href="#" @click.prevent="openTab = 2" :class="openTab === 2 ? activeClasses : inactiveClasses"
           class="flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto  duration-300 ease-in-out p-1 rounded-lg">
-            <path d="M8.75 14H15.75M8.75 9.33337H12.25" stroke="white" stroke-opacity="0.5" stroke-linejoin="round" />
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
+            :class="openTab === 2 ? 'bg-black' : 'bg-transparent'">
+            <path d="M8.75 14H15.75M8.75 9.33337H12.25"  stroke-linejoin="round" />
             <path
               d="M9.9165 23.3334C11.1419 24.348 12.6168 24.9945 14.3073 25.1053C15.6392 25.1927 17.0298 25.1926 18.3591 25.1053C18.8168 25.0753 19.3158 24.9675 19.7454 24.7929C20.2234 24.5986 20.4626 24.5014 20.5842 24.5161C20.7056 24.5308 20.8819 24.6592 21.2345 24.9157C21.8561 25.368 22.6391 25.693 23.8004 25.6651C24.3876 25.651 24.6813 25.6438 24.8126 25.4228C24.9441 25.2016 24.7804 24.8954 24.4529 24.2832C23.9989 23.4339 23.7112 22.4618 24.1472 21.6828C24.898 20.5701 25.5357 19.2525 25.6289 17.8294C25.679 17.0648 25.679 16.2728 25.6289 15.5082C25.5669 14.5599 25.3367 13.6586 24.9679 12.8334"
-              stroke="white" stroke-opacity="0.5" stroke-linejoin="round" />
+               stroke-linejoin="round" />
             <path
               d="M14.4027 20.4013C18.5509 20.1281 21.8551 16.8081 22.1269 12.6402C22.1801 11.8246 22.1801 10.9799 22.1269 10.1643C21.8551 5.99635 18.5509 2.67639 14.4027 2.4032C12.9875 2.31001 11.5099 2.31019 10.0977 2.4032C5.9495 2.67639 2.64529 5.99635 2.3734 10.1643C2.3202 10.9799 2.3202 11.8246 2.3734 12.6402C2.47242 14.1582 3.15007 15.5637 3.94784 16.7506C4.41105 17.5814 4.10535 18.6184 3.62287 19.5242C3.275 20.1773 3.10106 20.5039 3.24072 20.7398C3.38037 20.9757 3.69234 20.9832 4.31626 20.9983C5.55014 21.028 6.38216 20.6814 7.04261 20.199C7.41718 19.9253 7.60447 19.7885 7.73355 19.7728C7.86263 19.7571 8.11666 19.8607 8.62464 20.068C9.08119 20.2543 9.6113 20.3692 10.0977 20.4013C11.5099 20.4943 12.9875 20.4944 14.4027 20.4013Z"
-              stroke="white" stroke-opacity="0.5" stroke-linejoin="round" />
+               stroke-linejoin="round" />
           </svg>
           <spn class="hidden">SMS</spn>
         </a>
         <a href="#" @click.prevent="openTab = 3" :class="openTab === 3 ? activeClasses : inactiveClasses"
           class="flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto  duration-300 ease-in-out p-1 rounded-lg">
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
+            :class="openTab === 3 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M4.40738 13.9328C3.30136 12.0042 2.76732 10.4294 2.44531 8.83312C1.96905 6.47222 3.05894 4.16599 4.86444 2.69442C5.62752 2.07249 6.50226 2.28498 6.95349 3.09451L7.9722 4.9221C8.77966 6.37071 9.18339 7.095 9.10331 7.8629C9.02324 8.6308 8.47876 9.25621 7.38979 10.5071L4.40738 13.9328ZM4.40738 13.9328C6.64609 17.8364 10.1593 21.3516 14.0674 23.5928M14.0674 23.5928C15.996 24.6988 17.5707 25.2329 19.1671 25.5549C21.528 26.0312 23.8342 24.9413 25.3057 23.1357C25.9277 22.3727 25.7152 21.498 24.9057 21.0467L23.0781 20.028C21.6295 19.2205 20.9052 18.8169 20.1373 18.8969C19.3694 18.9769 18.7439 19.5214 17.4932 20.6104L14.0674 23.5928Z"
-              stroke="white" stroke-opacity="0.5" stroke-linejoin="round" />
+               stroke-linejoin="round" />
           </svg>
           <spn class="hidden">Call</spn>
         </a>
         <a href="#" @click.prevent="openTab = 4" :class="openTab === 4 ? activeClasses : inactiveClasses"
           class="flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto  duration-300 ease-in-out p-1 rounded-lg">
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
+            :class="openTab === 4 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M4.40738 13.9328C3.30136 12.0042 2.76732 10.4294 2.44531 8.83312C1.96905 6.47222 3.05894 4.16599 4.86444 2.69442C5.62752 2.07249 6.50226 2.28498 6.95349 3.09451L7.9722 4.9221C8.77966 6.37071 9.18339 7.095 9.10331 7.8629C9.02324 8.6308 8.47876 9.25621 7.38979 10.5071L4.40738 13.9328ZM4.40738 13.9328C6.64609 17.8364 10.1593 21.3516 14.0674 23.5928M14.0674 23.5928C15.996 24.6988 17.5707 25.2329 19.1671 25.5549C21.528 26.0312 23.8342 24.9413 25.3057 23.1357C25.9277 22.3727 25.7152 21.498 24.9057 21.0467L23.0781 20.028C21.6295 19.2205 20.9052 18.8169 20.1373 18.8969C19.3694 18.9769 18.7439 19.5214 17.4932 20.6104L14.0674 23.5928Z"
-              stroke="white" stroke-opacity="0.5" stroke-linejoin="round" />
-            <path d="M16.3335 3.5V6.76667M22.1087 5.89258L19.7988 8.20246M24.5002 11.6667H21.2335" stroke="white"
-              stroke-opacity="0.5" stroke-linecap="round" />
+               stroke-linejoin="round" />
+            <path d="M16.3335 3.5V6.76667M22.1087 5.89258L19.7988 8.20246M24.5002 11.6667H21.2335"  stroke-linecap="round" />
           </svg>
           <spn class="hidden">Queues</spn>
         </a>
       </div>
-      <div class="h-full flex-grow pr-4">
+      <div class="h-full flex-grow pr-4 pl-2.5">
         <div x-show="openTab === 1"
           class="font-medium leading-relaxed text-xs flex flex-col gap-3 text-white px-1.5 h-full">
           <h4 class="text-base font-medium">Contact Information</h4>
@@ -139,228 +141,261 @@
         <div x-show="openTab === 2" class="font-medium leading-relaxed text-xs h-full text-white" style="display: none">
           <!-- SMS Tab Content-->
           <div class="flex flex-col h-full w-full">
-            
-              <h4 class="text-base font-medium">Conversations</h4>
-              <div
-                class="flex w-full h-full  flex-col overflow-auto py-2 bg-slate-700 dark:bg-slate-700 min-h-150 justify-between">
-                <div class="flex  max-h-full flex-col overflow overflow-auto">
-                  <form class="sticky mb-2">
-                    <input type="text"
-                      class="w-full rounded border border-slate-900 bg-slate-900 py-2.5 pl-7 pr-4 text-sm outline-none focus:border-primary dark:border-slate-900 dark:bg-slate-900"
-                      placeholder="Search messages ..." />
-                    <button class="absolute left-1.5 top-1/2 -translate-y-1/2">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M9.16663 3.33329C5.94496 3.33329 3.33329 5.94496 3.33329 9.16663C3.33329 12.3883 5.94496 15 9.16663 15C12.3883 15 15 12.3883 15 9.16663C15 5.94496 12.3883 3.33329 9.16663 3.33329ZM1.66663 9.16663C1.66663 5.02449 5.02449 1.66663 9.16663 1.66663C13.3088 1.66663 16.6666 5.02449 16.6666 9.16663C16.6666 13.3088 13.3088 16.6666 9.16663 16.6666C5.02449 16.6666 1.66663 13.3088 1.66663 9.16663Z"
-                          fill="#64748B" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M13.2857 13.2857C13.6111 12.9603 14.1388 12.9603 14.4642 13.2857L18.0892 16.9107C18.4147 17.2361 18.4147 17.7638 18.0892 18.0892C17.7638 18.4147 17.2361 18.4147 16.9107 18.0892L13.2857 14.4642C12.9603 14.1388 12.9603 13.6111 13.2857 13.2857Z"
-                          fill="#64748B" />
-                      </svg>
-                    </button>
-                  </form>
-                  <!-- ====== Chat List -->
-                  <div class="no-scrollbar max-h-full space-y-2.5 overflow-auto">
-                    <!-- Chat List Item -->
-                    <div
-                      class="flex cursor-pointer items-center px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400 dark:hover:bg-strokedark">
-                      <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                        <img src="images/user-01.png" alt="profile" class="object-cover object-center size-7" />
-                        <span
-                          class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
-                      </div>
-                      <div class="w-full">
-                        <h5 class="text-sm font-medium text-white dark:text-white">
-                          Henry Dholi
-                        </h5>
-                        <p class="text-xs font-medium text-slate-300">
-                          I cam across your..
-                        </p>
-                      </div>
-                    </div>
-                    <!-- Chat List Item -->
-                    <div
-                      class="flex cursor-pointer items-center  px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
-                      <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                        <img src="images/user-02.png" alt="profile" class="object-cover object-center size-7" />
-                        <span
-                          class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
-                      </div>
-                      <div class="w-full">
-                        <h5 class="text-sm font-medium text-white dark:text-white">
-                          Mariya Desoja
-                        </h5>
-                        <p class="text-xs font-medium text-slate-300">
-                          I like your confid..
-                        </p>
-                      </div>
-                    </div>
-                    <!-- Chat List Item -->
-                    <div
-                      class="flex cursor-pointer items-center  px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
-                      <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                        <img src="images/user-03.png" alt="profile" class="object-cover object-center size-7" />
-                        <span
-                          class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
-                      </div>
-                      <div class="w-full">
-                        <h5 class="text-sm font-medium text-white dark:text-white">
-                          Robert Jhon
-                        </h5>
-                        <p class="text-xs font-medium text-slate-300">
-                          Can you share you..
-                        </p>
-                      </div>
-                    </div>
-                    <!-- Chat List Item -->
-                    <div
-                      class="flex cursor-pointer items-center  px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
-                      <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                        <img src="images/user-04.png" alt="profile" class="object-cover object-center size-7" />
-                        <span
-                          class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
-                      </div>
-                      <div class="w-full">
-                        <h5 class="text-sm font-medium text-white dark:text-white">
-                          Cody Fisher
-                        </h5>
-                        <p class="text-xs font-medium text-slate-300">
-                          I'm waiting for your..
-                        </p>
-                      </div>
-                    </div>
+
+            <h4 class="text-base font-medium">Conversations</h4>
+            <div
+              class="flex w-full h-full  flex-col overflow-auto pt-2 bg-slate-700 dark:bg-slate-700 min-h-150 justify-between">
+              <div class="flex  max-h-full flex-col overflow overflow-auto">
 
 
-                  </div>
-                </div>
-                <!-- ====== Chat List End -->
+                <div x-data="{
+  currentView: 'list',
+  selectedChat: null,
+  chats: [
+    { id: 1, name: 'Henry Dholi', avatar: './images/user-01.png', message: 'I came across your...' },
+    { id: 2, name: 'Mariya Desoja', avatar: './images/user-02.png', message: 'I like your confidence...' },
+    { id: 3, name: 'Robert Jhon', avatar: './images/user-03.png', message: 'Can you share your...' },
+    { id: 4, name: 'Cody Fisher', avatar: './images/user-04.png', message: 'I\'m waiting for your...' }
+  ]
+}">
 
 
-              
-            
 
-
-            <div class="pt-6 pb-10 bg-slate-700">
-              <!--Accordion starts-->
-              <div class="flex flex-col mb-3">
-                <!-- Accordion Item -->
-                <div x-data="{ accordionOpen: false }" @click.outside="accordionOpen = false">
-                  <button @click="accordionOpen = !accordionOpen" class="flex w-full items-center ">
-                    <div class="flex items-center justify-between py-2 w-full">
-                      <div class="flex items-center gap-1">
-                        <div class="">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
-                            fill="none">
-                            <path d="M5.83337 5.83337H5.84085M10.8259 5.83337H10.8334" stroke="#DEE4EE"
-                              stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M14.9925 12.0834H15M11.6666 12.0834H11.6741" stroke="#DEE4EE"
-                              stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                              d="M8.33337 13.3333C8.33337 15.6345 10.572 17.5 13.3334 17.5C14.0894 17.5 14.8061 17.3601 15.4485 17.1099C15.6055 17.0487 15.776 17.0267 15.9417 17.0574L18.3334 17.5L17.7903 15.8085C17.711 15.5615 17.7563 15.2944 17.8813 15.067C18.1715 14.5391 18.3334 13.952 18.3334 13.3333C18.3334 11.0321 16.0948 9.16663 13.3334 9.16663C10.572 9.16663 8.33337 11.0321 8.33337 13.3333Z"
-                              stroke="#DEE4EE" stroke-linejoin="round" />
-                            <path
-                              d="M14.8942 9.37375C14.9637 9.03617 15 8.68842 15 8.33333C15 5.11168 12.0152 2.5 8.33329 2.5C4.65139 2.5 1.66663 5.11168 1.66663 8.33333C1.66663 9.26033 1.91373 10.1368 2.35346 10.9151C2.47581 11.1317 2.51638 11.3878 2.44365 11.6256L1.66663 14.1667L4.92841 13.5328C5.10148 13.4992 5.28013 13.5228 5.44262 13.5912C6.3463 13.9718 7.36778 14.1798 8.43313 14.166"
-                              stroke="#DEE4EE" stroke-linejoin="round" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h4 class="text-sm font-medium text-white dark:text-white">
-                            New Conversations
-                          </h4>
-                        </div>
-                      </div>
-                      <div class="flex flex-col justify-end">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"
-                          :class="accordionOpen && 'rotate-180'" class="duration-200 ease-in-out ">
-                          <path
-                            d="M8.99995 12.825C8.8312 12.825 8.69058 12.7688 8.54995 12.6563L2.0812 6.30002C1.82808 6.0469 1.82808 5.65315 2.0812 5.40002C2.33433 5.1469 2.72808 5.1469 2.9812 5.40002L8.99995 11.2781L15.0187 5.34377C15.2718 5.09065 15.6656 5.09065 15.9187 5.34377C16.1718 5.5969 16.1718 5.99065 15.9187 6.24377L9.44995 12.6C9.30933 12.7406 9.1687 12.825 8.99995 12.825Z"
-                            fill="#DEE4EE" />
+                  <div x-show="currentView === 'list'" class="no-scrollbar max-h-full space-y-2.5 overflow-auto">
+                    <form class="sticky mb-2">
+                      <input type="text"
+                        class="w-full rounded border border-slate-500 bg-slate-900 py-2.5 pl-7 pr-4 text-sm outline-none focus:border-primary dark:border-slate-900 dark:bg-slate-900"
+                        placeholder="Search messages ..." />
+                      <button class="absolute left-1.5 top-1/2 -translate-y-1/2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M9.16663 3.33329C5.94496 3.33329 3.33329 5.94496 3.33329 9.16663C3.33329 12.3883 5.94496 15 9.16663 15C12.3883 15 15 12.3883 15 9.16663C15 5.94496 12.3883 3.33329 9.16663 3.33329ZM1.66663 9.16663C1.66663 5.02449 5.02449 1.66663 9.16663 1.66663C13.3088 1.66663 16.6666 5.02449 16.6666 9.16663C16.6666 13.3088 13.3088 16.6666 9.16663 16.6666C5.02449 16.6666 1.66663 13.3088 1.66663 9.16663Z"
+                            fill="#64748B" />
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M13.2857 13.2857C13.6111 12.9603 14.1388 12.9603 14.4642 13.2857L18.0892 16.9107C18.4147 17.2361 18.4147 17.7638 18.0892 18.0892C17.7638 18.4147 17.2361 18.4147 16.9107 18.0892L13.2857 14.4642C12.9603 14.1388 12.9603 13.6111 13.2857 13.2857Z"
+                            fill="#64748B" />
                         </svg>
+                      </button>
+                    </form>
 
-                      </div>
-                    </div>
-                  </button>
 
-                  <div x-show="accordionOpen" class=" mt-2 mb-3 duration-200 ease-in-out">
-                    <!-- ====== Chat List -->
-                    <div class="no-scrollbar max-h-full space-y-2.5 overflow-auto">
-                      <!-- Chat List Item -->
-                      <div
-                        class="flex cursor-pointer items-center px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400 dark:hover:bg-strokedark">
+                    <template x-for="chat in chats" :key="chat.id">
+                      <div @click="selectedChat = chat; currentView = 'detail'"
+                        class="flex cursor-pointer items-center px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
                         <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                          <img src="images/user-01.png" alt="profile"
-                            class="object-cover object-center size-7" />
+                          <img :src="chat.avatar" alt="profile" class="object-cover object-center size-7" />
                           <span
                             class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
                         </div>
                         <div class="w-full">
-                          <h5 class="text-sm font-medium text-white dark:text-white">
-                            Henry Dholi
-                          </h5>
-                          <p class="text-xs font-medium text-slate-300">
-                            I cam across your..
-                          </p>
+                          <h5 class="text-sm font-medium text-white" x-text="chat.name"></h5>
+                          <p class="text-xs font-medium text-slate-300" x-text="chat.message"></p>
                         </div>
                       </div>
-                      <!-- Chat List Item -->
-                      <div
-                        class="flex cursor-pointer items-center  px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
-                        <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                          <img src="images/user-02.png" alt="profile"
-                            class="object-cover object-center size-7" />
-                          <span
-                            class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
-                        </div>
-                        <div class="w-full">
-                          <h5 class="text-sm font-medium text-white dark:text-white">
-                            Mariya Desoja
-                          </h5>
-                          <p class="text-xs font-medium text-slate-300">
-                            I like your confid..
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                    </template>
+                  </div>
 
+                  <template x-if="selectedChat">
+                    <div x-show="currentView === 'detail'" style="display: none;">
+
+                      <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center">
+                          <div class=" mr-3.5 h-7 w-full max-w-7 rounded-full">
+                            <img :src="selectedChat.avatar" alt="profile" class="object-cover object-center size-7" />
+
+                          </div>
+                          <div>
+                            <p class="text-sm font-medium" x-text="selectedChat.name"></p>
+                            <div class="relative  text-xs text-slate-300">
+                              <span>Online</span>
+                              <span
+                                class="absolute top-0 -left-2 block h-2 w-2 rounded-full border-2 border-gray-2 bg-success"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <button @click="currentView = 'list'; selectedChat = null"
+                          class="mb-4 flex items-center gap-2 text-sm font-medium text-white hover:text-slate-300">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                            fill="none">
+                            <path d="M12 4.00073L4.00054 12.0002M11.9995 12.0007L4 4.0013" stroke="white"
+                              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+
+                        </button>
+                      </div>
+
+                      <form class="sticky mb-2">
+                        <input type="text"
+                          class="w-full rounded border border-slate-500 bg-slate-900 py-2.5 pl-7 pr-4 text-sm outline-none focus:border-primary dark:border-slate-900 dark:bg-slate-900"
+                          placeholder="Search messages ..." />
+                        <button class="absolute left-1.5 top-1/2 -translate-y-1/2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
+                            fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M9.16663 3.33329C5.94496 3.33329 3.33329 5.94496 3.33329 9.16663C3.33329 12.3883 5.94496 15 9.16663 15C12.3883 15 15 12.3883 15 9.16663C15 5.94496 12.3883 3.33329 9.16663 3.33329ZM1.66663 9.16663C1.66663 5.02449 5.02449 1.66663 9.16663 1.66663C13.3088 1.66663 16.6666 5.02449 16.6666 9.16663C16.6666 13.3088 13.3088 16.6666 9.16663 16.6666C5.02449 16.6666 1.66663 13.3088 1.66663 9.16663Z"
+                              fill="#64748B" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M13.2857 13.2857C13.6111 12.9603 14.1388 12.9603 14.4642 13.2857L18.0892 16.9107C18.4147 17.2361 18.4147 17.7638 18.0892 18.0892C17.7638 18.4147 17.2361 18.4147 16.9107 18.0892L13.2857 14.4642C12.9603 14.1388 12.9603 13.6111 13.2857 13.2857Z"
+                              fill="#64748B" />
+                          </svg>
+                        </button>
+                      </form>
+
+                      <div class="flex flex-col items-center gap-2 mb-2">
+                        <span class="text-slate-400">Feb 21, 2025</span>
+                        <div class="p-2 rounded-lg rounded-tl-none bg-slate-800 w-full">
+                          <p class="text-sm font-normal">Lorem ipsum dolororooor </p>
+                          <p class="text-sm font-normal">10:25 AM </p>
+                        </div>
+                        <div class="p-2 rounded-lg rounded-br-none bg-indigo-400 w-full">
+                          <p class="text-sm font-normal">Lorem ipsum dolororooor </p>
+                          <p class="text-sm font-normal">10:25 AM </p>
+                        </div>
+                      </div>
+
+                      <div class="flex flex-col items-center gap-2">
+                        <span class="text-slate-400">Feb 22, 2025</span>
+                        <div class="p-2 rounded-lg rounded-br-none bg-indigo-400 w-full">
+                          <p class="text-sm font-normal">Lorem ipsum dolororooor </p>
+                          <p class="text-sm font-normal">10:25 AM </p>
+                        </div>
+                      </div>
+
+                    </div>
+                  </template>
+                </div>
+
+
+
+
+
+              </div>
+
+              <div class="pt-6 pb-10 bg-slate-700">
+                <!--Accordion starts-->
+                <div class="flex flex-col mb-3">
+                  <!-- Accordion Item -->
+                  <div x-data="{ accordionOpen: false }" @click.outside="accordionOpen = false">
+                    <button @click="accordionOpen = !accordionOpen" class="flex w-full items-center ">
+                      <div class="flex items-center justify-between py-2 w-full">
+                        <div class="flex items-center gap-1">
+                          <div class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                              fill="none">
+                              <path d="M5.83337 5.83337H5.84085M10.8259 5.83337H10.8334" stroke="#DEE4EE"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                              <path d="M14.9925 12.0834H15M11.6666 12.0834H11.6741" stroke="#DEE4EE"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                              <path
+                                d="M8.33337 13.3333C8.33337 15.6345 10.572 17.5 13.3334 17.5C14.0894 17.5 14.8061 17.3601 15.4485 17.1099C15.6055 17.0487 15.776 17.0267 15.9417 17.0574L18.3334 17.5L17.7903 15.8085C17.711 15.5615 17.7563 15.2944 17.8813 15.067C18.1715 14.5391 18.3334 13.952 18.3334 13.3333C18.3334 11.0321 16.0948 9.16663 13.3334 9.16663C10.572 9.16663 8.33337 11.0321 8.33337 13.3333Z"
+                                stroke="#DEE4EE" stroke-linejoin="round" />
+                              <path
+                                d="M14.8942 9.37375C14.9637 9.03617 15 8.68842 15 8.33333C15 5.11168 12.0152 2.5 8.33329 2.5C4.65139 2.5 1.66663 5.11168 1.66663 8.33333C1.66663 9.26033 1.91373 10.1368 2.35346 10.9151C2.47581 11.1317 2.51638 11.3878 2.44365 11.6256L1.66663 14.1667L4.92841 13.5328C5.10148 13.4992 5.28013 13.5228 5.44262 13.5912C6.3463 13.9718 7.36778 14.1798 8.43313 14.166"
+                                stroke="#DEE4EE" stroke-linejoin="round" />
+                            </svg>
+                          </div>
+                          <div>
+                            <h4 class="text-sm font-medium text-white dark:text-white">
+                              New Conversations
+                            </h4>
+                          </div>
+                        </div>
+                        <div class="flex flex-col justify-end">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                            :class="accordionOpen && 'rotate-180'" class="duration-200 ease-in-out ">
+                            <path
+                              d="M8.99995 12.825C8.8312 12.825 8.69058 12.7688 8.54995 12.6563L2.0812 6.30002C1.82808 6.0469 1.82808 5.65315 2.0812 5.40002C2.33433 5.1469 2.72808 5.1469 2.9812 5.40002L8.99995 11.2781L15.0187 5.34377C15.2718 5.09065 15.6656 5.09065 15.9187 5.34377C16.1718 5.5969 16.1718 5.99065 15.9187 6.24377L9.44995 12.6C9.30933 12.7406 9.1687 12.825 8.99995 12.825Z"
+                              fill="#DEE4EE" />
+                          </svg>
+
+                        </div>
+                      </div>
+                    </button>
+
+                    <div x-show="accordionOpen" class=" mt-2 mb-3 duration-200 ease-in-out">
+                      <!-- ====== Chat List -->
+                      <div x-data="{ activeChat: null }" @click.away="activeChat = null"
+                        class="no-scrollbar max-h-full space-y-2.5 ">
+                        <!-- Chat List Item -->
+                        <div
+                          class="flex cursor-pointer items-center px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400"
+                          :class="{ 'bg-slate-500 border-slate-400': activeChat === 1 }" @click="activeChat = 1">
+                          <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
+                            <img src="images/user-01.png" alt="profile"
+                              class="object-cover object-center size-7" />
+                            <span
+                              class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
+                          </div>
+                          <div class="w-full">
+                            <h5 class="text-sm font-medium text-white dark:text-white">
+                              Henry Dholi
+                            </h5>
+                            <p class="text-xs font-medium text-slate-300">
+                              I cam across your..
+                            </p>
+                          </div>
+                        </div>
+                        <!-- Chat List Item -->
+                        <div
+                          class="flex cursor-pointer items-center px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400"
+                          :class="{ 'bg-slate-500 border-slate-400': activeChat === 2 }" @click="activeChat = 2">
+                          <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
+                            <img src="images/user-02.png" alt="profile"
+                              class="object-cover object-center size-7" />
+                            <span
+                              class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
+                          </div>
+                          <div class="w-full">
+                            <h5 class="text-sm font-medium text-white dark:text-white">
+                              Mariya Desoja
+                            </h5>
+                            <p class="text-xs font-medium text-slate-300">
+                              I like your confid..
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
                   </div>
                 </div>
-              </div>
-              <!--Accordion Ends-->
+                <!--Accordion Ends-->
 
-              <div class="flex gap-2 w-full">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M1.66663 3.33329C1.66663 4.11897 1.66663 4.5118 1.9107 4.75588C2.15478 4.99996 2.54762 4.99996 3.33329 4.99996C4.11897 4.99996 4.5118 4.99996 4.75588 4.75588C4.99996 4.5118 4.99996 4.11897 4.99996 3.33329C4.99996 2.54762 4.99996 2.15478 4.75588 1.9107C4.5118 1.66663 4.11897 1.66663 3.33329 1.66663C2.54762 1.66663 2.15478 1.66663 1.9107 1.9107C1.66663 2.15478 1.66663 2.54762 1.66663 3.33329Z"
-                    stroke="#DEE4EE" />
-                  <path
-                    d="M1.66663 10C1.66663 10.7857 1.66663 11.1785 1.9107 11.4226C2.15478 11.6667 2.54762 11.6667 3.33329 11.6667C4.11897 11.6667 4.5118 11.6667 4.75588 11.4226C4.99996 11.1785 4.99996 10.7857 4.99996 10C4.99996 9.21437 4.99996 8.82154 4.75588 8.57746C4.5118 8.33337 4.11897 8.33337 3.33329 8.33337C2.54762 8.33337 2.15478 8.33337 1.9107 8.57746C1.66663 8.82154 1.66663 9.21437 1.66663 10Z"
-                    stroke="#DEE4EE" />
-                  <path
-                    d="M8.33337 3.33329C8.33337 4.11897 8.33337 4.5118 8.57746 4.75588C8.82154 4.99996 9.21437 4.99996 10 4.99996C10.7857 4.99996 11.1785 4.99996 11.4226 4.75588C11.6667 4.5118 11.6667 4.11897 11.6667 3.33329C11.6667 2.54762 11.6667 2.15478 11.4226 1.9107C11.1785 1.66663 10.7857 1.66663 10 1.66663C9.21437 1.66663 8.82154 1.66663 8.57746 1.9107C8.33337 2.15478 8.33337 2.54762 8.33337 3.33329Z"
-                    stroke="#DEE4EE" />
-                  <path
-                    d="M8.33337 10C8.33337 10.7857 8.33337 11.1785 8.57746 11.4226C8.82154 11.6667 9.21437 11.6667 10 11.6667C10.7857 11.6667 11.1785 11.6667 11.4226 11.4226C11.6667 11.1785 11.6667 10.7857 11.6667 10C11.6667 9.21437 11.6667 8.82154 11.4226 8.57746C11.1785 8.33337 10.7857 8.33337 10 8.33337C9.21437 8.33337 8.82154 8.33337 8.57746 8.57746C8.33337 8.82154 8.33337 9.21437 8.33337 10Z"
-                    stroke="#DEE4EE" />
-                  <path
-                    d="M8.33337 16.6667C8.33337 17.4523 8.33337 17.8452 8.57746 18.0892C8.82154 18.3333 9.21437 18.3333 10 18.3333C10.7857 18.3333 11.1785 18.3333 11.4226 18.0892C11.6667 17.8452 11.6667 17.4523 11.6667 16.6667C11.6667 15.881 11.6667 15.4882 11.4226 15.2441C11.1785 15 10.7857 15 10 15C9.21437 15 8.82154 15 8.57746 15.2441C8.33337 15.4882 8.33337 15.881 8.33337 16.6667Z"
-                    stroke="#DEE4EE" />
-                  <path
-                    d="M15 3.33329C15 4.11897 15 4.5118 15.2441 4.75588C15.4882 4.99996 15.881 4.99996 16.6667 4.99996C17.4523 4.99996 17.8452 4.99996 18.0892 4.75588C18.3333 4.5118 18.3333 4.11897 18.3333 3.33329C18.3333 2.54762 18.3333 2.15478 18.0892 1.9107C17.8452 1.66663 17.4523 1.66663 16.6667 1.66663C15.881 1.66663 15.4882 1.66663 15.2441 1.9107C15 2.15478 15 2.54762 15 3.33329Z"
-                    stroke="#DEE4EE" />
-                  <path
-                    d="M15 10C15 10.7857 15 11.1785 15.2441 11.4226C15.4882 11.6667 15.881 11.6667 16.6667 11.6667C17.4523 11.6667 17.8452 11.6667 18.0892 11.4226C18.3333 11.1785 18.3333 10.7857 18.3333 10C18.3333 9.21437 18.3333 8.82154 18.0892 8.57746C17.8452 8.33337 17.4523 8.33337 16.6667 8.33337C15.881 8.33337 15.4882 8.33337 15.2441 8.57746C15 8.82154 15 9.21437 15 10Z"
-                    stroke="#DEE4EE" />
-                </svg>
-                <p class="text-sm">(206) 235- 421</p>
+                <a class="flex gap-2 w-full" href="tel:(206) 235- 421">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M1.66663 3.33329C1.66663 4.11897 1.66663 4.5118 1.9107 4.75588C2.15478 4.99996 2.54762 4.99996 3.33329 4.99996C4.11897 4.99996 4.5118 4.99996 4.75588 4.75588C4.99996 4.5118 4.99996 4.11897 4.99996 3.33329C4.99996 2.54762 4.99996 2.15478 4.75588 1.9107C4.5118 1.66663 4.11897 1.66663 3.33329 1.66663C2.54762 1.66663 2.15478 1.66663 1.9107 1.9107C1.66663 2.15478 1.66663 2.54762 1.66663 3.33329Z"
+                      stroke="#DEE4EE" />
+                    <path
+                      d="M1.66663 10C1.66663 10.7857 1.66663 11.1785 1.9107 11.4226C2.15478 11.6667 2.54762 11.6667 3.33329 11.6667C4.11897 11.6667 4.5118 11.6667 4.75588 11.4226C4.99996 11.1785 4.99996 10.7857 4.99996 10C4.99996 9.21437 4.99996 8.82154 4.75588 8.57746C4.5118 8.33337 4.11897 8.33337 3.33329 8.33337C2.54762 8.33337 2.15478 8.33337 1.9107 8.57746C1.66663 8.82154 1.66663 9.21437 1.66663 10Z"
+                      stroke="#DEE4EE" />
+                    <path
+                      d="M8.33337 3.33329C8.33337 4.11897 8.33337 4.5118 8.57746 4.75588C8.82154 4.99996 9.21437 4.99996 10 4.99996C10.7857 4.99996 11.1785 4.99996 11.4226 4.75588C11.6667 4.5118 11.6667 4.11897 11.6667 3.33329C11.6667 2.54762 11.6667 2.15478 11.4226 1.9107C11.1785 1.66663 10.7857 1.66663 10 1.66663C9.21437 1.66663 8.82154 1.66663 8.57746 1.9107C8.33337 2.15478 8.33337 2.54762 8.33337 3.33329Z"
+                      stroke="#DEE4EE" />
+                    <path
+                      d="M8.33337 10C8.33337 10.7857 8.33337 11.1785 8.57746 11.4226C8.82154 11.6667 9.21437 11.6667 10 11.6667C10.7857 11.6667 11.1785 11.6667 11.4226 11.4226C11.6667 11.1785 11.6667 10.7857 11.6667 10C11.6667 9.21437 11.6667 8.82154 11.4226 8.57746C11.1785 8.33337 10.7857 8.33337 10 8.33337C9.21437 8.33337 8.82154 8.33337 8.57746 8.57746C8.33337 8.82154 8.33337 9.21437 8.33337 10Z"
+                      stroke="#DEE4EE" />
+                    <path
+                      d="M8.33337 16.6667C8.33337 17.4523 8.33337 17.8452 8.57746 18.0892C8.82154 18.3333 9.21437 18.3333 10 18.3333C10.7857 18.3333 11.1785 18.3333 11.4226 18.0892C11.6667 17.8452 11.6667 17.4523 11.6667 16.6667C11.6667 15.881 11.6667 15.4882 11.4226 15.2441C11.1785 15 10.7857 15 10 15C9.21437 15 8.82154 15 8.57746 15.2441C8.33337 15.4882 8.33337 15.881 8.33337 16.6667Z"
+                      stroke="#DEE4EE" />
+                    <path
+                      d="M15 3.33329C15 4.11897 15 4.5118 15.2441 4.75588C15.4882 4.99996 15.881 4.99996 16.6667 4.99996C17.4523 4.99996 17.8452 4.99996 18.0892 4.75588C18.3333 4.5118 18.3333 4.11897 18.3333 3.33329C18.3333 2.54762 18.3333 2.15478 18.0892 1.9107C17.8452 1.66663 17.4523 1.66663 16.6667 1.66663C15.881 1.66663 15.4882 1.66663 15.2441 1.9107C15 2.15478 15 2.54762 15 3.33329Z"
+                      stroke="#DEE4EE" />
+                    <path
+                      d="M15 10C15 10.7857 15 11.1785 15.2441 11.4226C15.4882 11.6667 15.881 11.6667 16.6667 11.6667C17.4523 11.6667 17.8452 11.6667 18.0892 11.4226C18.3333 11.1785 18.3333 10.7857 18.3333 10C18.3333 9.21437 18.3333 8.82154 18.0892 8.57746C17.8452 8.33337 17.4523 8.33337 16.6667 8.33337C15.881 8.33337 15.4882 8.33337 15.2441 8.57746C15 8.82154 15 9.21437 15 10Z"
+                      stroke="#DEE4EE" />
+                  </svg>
+                  <p class="text-sm">(206) 235- 421</p>
+                </a>
               </div>
             </div>
-            </div>
-            
-
-
           </div>
-          <!-- SMS Tab Content-->
+
+
         </div>
+
+        <!-- SMS Tab Content-->
+
 
         <div x-show="openTab === 3" class="font-medium leading-relaxed text-xs text-white" style="display: none">
           <!-- Call Content-->
@@ -495,43 +530,44 @@
     <!-- ===== Content Area Start ===== -->
     <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
       <!-- ===== Header Start ===== -->
-      <header class="sticky top-0 z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
-  <div class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11">
-    <div class="flex items-center gap-2 sm:gap-4 lg:hidden">
-      <!-- Hamburger Toggle BTN -->
-      <button
-        class="z-99999 block rounded-sm border border-stroke bg-white p-1.5 shadow-sm dark:border-strokedark dark:bg-boxdark lg:hidden"
-        @click.stop="sidebarToggle = !sidebarToggle">
-        <span class="relative block h-5.5 w-5.5 cursor-pointer">
-          <span class="du-block absolute right-0 h-full w-full">
-            <span
-              class="relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-[0] duration-200 ease-in-out dark:bg-white"
-              :class="{ '!w-full delay-300': !sidebarToggle }"></span>
-            <span
-              class="relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-150 duration-200 ease-in-out dark:bg-white"
-              :class="{ '!w-full delay-400': !sidebarToggle }"></span>
-            <span
-              class="relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-200 duration-200 ease-in-out dark:bg-white"
-              :class="{ '!w-full delay-500': !sidebarToggle }"></span>
+      <header class="sticky top-0 z-999 flex w-full flex-col">
+  <div class="bg-white border-b border-slate-100 dark:bg-boxdark dark:drop-shadow-none">
+    <div class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11">
+      <div class="flex items-center gap-2 sm:gap-4 lg:hidden">
+        <!-- Hamburger Toggle BTN -->
+        <button
+          class="z-99999 block rounded-sm border border-stroke bg-white p-1.5 shadow-sm dark:border-strokedark dark:bg-boxdark lg:hidden"
+          @click.stop="sidebarToggle = !sidebarToggle">
+          <span class="relative block h-5.5 w-5.5 cursor-pointer">
+            <span class="du-block absolute right-0 h-full w-full">
+              <span
+                class="relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-[0] duration-200 ease-in-out dark:bg-white"
+                :class="{ '!w-full delay-300': !sidebarToggle }"></span>
+              <span
+                class="relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-150 duration-200 ease-in-out dark:bg-white"
+                :class="{ '!w-full delay-400': !sidebarToggle }"></span>
+              <span
+                class="relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-200 duration-200 ease-in-out dark:bg-white"
+                :class="{ '!w-full delay-500': !sidebarToggle }"></span>
+            </span>
+            <span class="du-block absolute right-0 h-full w-full rotate-45">
+              <span
+                class="absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black delay-300 duration-200 ease-in-out dark:bg-white"
+                :class="{ '!h-0 delay-[0]': !sidebarToggle }"></span>
+              <span
+                class="delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-black duration-200 ease-in-out dark:bg-white"
+                :class="{ '!h-0 dealy-200': !sidebarToggle }"></span>
+            </span>
           </span>
-          <span class="du-block absolute right-0 h-full w-full rotate-45">
-            <span
-              class="absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black delay-300 duration-200 ease-in-out dark:bg-white"
-              :class="{ '!h-0 delay-[0]': !sidebarToggle }"></span>
-            <span
-              class="delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-black duration-200 ease-in-out dark:bg-white"
-              :class="{ '!h-0 dealy-200': !sidebarToggle }"></span>
-          </span>
-        </span>
-      </button>
-      <!-- Hamburger Toggle BTN -->
-      <a class="block flex-shrink-0 lg:hidden" href="index.html">
-        <img src="images/logo-icon.svg" alt="Logo" />
-      </a>
-    </div>
-    <div class="hidden sm:block">
-      <p class="text-sm">Remember to sell life insurance</p>
-      <!-- <form action="https://formbold.com/s/unique_form_id" method="POST">
+        </button>
+        <!-- Hamburger Toggle BTN -->
+        <a class="block flex-shrink-0 lg:hidden" href="index.html">
+          <img src="images/logo-icon.svg" alt="Logo" />
+        </a>
+      </div>
+      <div class="hidden sm:block">
+        <p class="text-sm">Remember to sell life insurance</p>
+        <!-- <form action="https://formbold.com/s/unique_form_id" method="POST">
         <div class="relative">
           <button class="absolute left-0 top-1/2 -translate-y-1/2">
             <svg
@@ -564,742 +600,938 @@
           />
         </div>
       </form> -->
-    </div>
-
-    <div class="flex items-center gap-3 2xsm:gap-7">
-      <ul class="flex items-center gap-2 2xsm:gap-4">
-        <li>
-          <!-- Dark Mode Toggler -->
-          <label :class="darkMode ? 'bg-primary' : 'bg-stroke'" class="relative m-0 block h-7.5 w-14 rounded-full">
-            <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode"
-              class="absolute top-0 z-50 m-0 h-full w-full cursor-pointer opacity-0" />
-            <span :class="darkMode && '!right-1 !translate-x-full'"
-              class="absolute left-1 top-1/2 flex h-6 w-6 -translate-y-1/2 translate-x-0 items-center justify-center rounded-full bg-white shadow-switcher duration-75 ease-linear">
-              <span class="dark:hidden">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M7.99992 12.6666C10.5772 12.6666 12.6666 10.5772 12.6666 7.99992C12.6666 5.42259 10.5772 3.33325 7.99992 3.33325C5.42259 3.33325 3.33325 5.42259 3.33325 7.99992C3.33325 10.5772 5.42259 12.6666 7.99992 12.6666Z"
-                    fill="#969AA1" />
-                  <path
-                    d="M8.00008 15.3067C7.63341 15.3067 7.33342 15.0334 7.33342 14.6667V14.6134C7.33342 14.2467 7.63341 13.9467 8.00008 13.9467C8.36675 13.9467 8.66675 14.2467 8.66675 14.6134C8.66675 14.9801 8.36675 15.3067 8.00008 15.3067ZM12.7601 13.4267C12.5867 13.4267 12.4201 13.3601 12.2867 13.2334L12.2001 13.1467C11.9401 12.8867 11.9401 12.4667 12.2001 12.2067C12.4601 11.9467 12.8801 11.9467 13.1401 12.2067L13.2267 12.2934C13.4867 12.5534 13.4867 12.9734 13.2267 13.2334C13.1001 13.3601 12.9334 13.4267 12.7601 13.4267ZM3.24008 13.4267C3.06675 13.4267 2.90008 13.3601 2.76675 13.2334C2.50675 12.9734 2.50675 12.5534 2.76675 12.2934L2.85342 12.2067C3.11342 11.9467 3.53341 11.9467 3.79341 12.2067C4.05341 12.4667 4.05341 12.8867 3.79341 13.1467L3.70675 13.2334C3.58008 13.3601 3.40675 13.4267 3.24008 13.4267ZM14.6667 8.66675H14.6134C14.2467 8.66675 13.9467 8.36675 13.9467 8.00008C13.9467 7.63341 14.2467 7.33342 14.6134 7.33342C14.9801 7.33342 15.3067 7.63341 15.3067 8.00008C15.3067 8.36675 15.0334 8.66675 14.6667 8.66675ZM1.38675 8.66675H1.33341C0.966748 8.66675 0.666748 8.36675 0.666748 8.00008C0.666748 7.63341 0.966748 7.33342 1.33341 7.33342C1.70008 7.33342 2.02675 7.63341 2.02675 8.00008C2.02675 8.36675 1.75341 8.66675 1.38675 8.66675ZM12.6734 3.99341C12.5001 3.99341 12.3334 3.92675 12.2001 3.80008C11.9401 3.54008 11.9401 3.12008 12.2001 2.86008L12.2867 2.77341C12.5467 2.51341 12.9667 2.51341 13.2267 2.77341C13.4867 3.03341 13.4867 3.45341 13.2267 3.71341L13.1401 3.80008C13.0134 3.92675 12.8467 3.99341 12.6734 3.99341ZM3.32675 3.99341C3.15341 3.99341 2.98675 3.92675 2.85342 3.80008L2.76675 3.70675C2.50675 3.44675 2.50675 3.02675 2.76675 2.76675C3.02675 2.50675 3.44675 2.50675 3.70675 2.76675L3.79341 2.85342C4.05341 3.11342 4.05341 3.53341 3.79341 3.79341C3.66675 3.92675 3.49341 3.99341 3.32675 3.99341ZM8.00008 2.02675C7.63341 2.02675 7.33342 1.75341 7.33342 1.38675V1.33341C7.33342 0.966748 7.63341 0.666748 8.00008 0.666748C8.36675 0.666748 8.66675 0.966748 8.66675 1.33341C8.66675 1.70008 8.36675 2.02675 8.00008 2.02675Z"
-                    fill="#969AA1" />
-                </svg>
-              </span>
-              <span class="hidden dark:inline-block">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M14.3533 10.62C14.2466 10.44 13.9466 10.16 13.1999 10.2933C12.7866 10.3667 12.3666 10.4 11.9466 10.38C10.3933 10.3133 8.98659 9.6 8.00659 8.5C7.13993 7.53333 6.60659 6.27333 6.59993 4.91333C6.59993 4.15333 6.74659 3.42 7.04659 2.72666C7.33993 2.05333 7.13326 1.7 6.98659 1.55333C6.83326 1.4 6.47326 1.18666 5.76659 1.48C3.03993 2.62666 1.35326 5.36 1.55326 8.28666C1.75326 11.04 3.68659 13.3933 6.24659 14.28C6.85993 14.4933 7.50659 14.62 8.17326 14.6467C8.27993 14.6533 8.38659 14.66 8.49326 14.66C10.7266 14.66 12.8199 13.6067 14.1399 11.8133C14.5866 11.1933 14.4666 10.8 14.3533 10.62Z"
-                    fill="#969AA1" />
-                </svg>
-              </span>
-            </span>
-          </label>
-          <!-- Dark Mode Toggler -->
-        </li>
-
-        <!-- Notification Menu Area -->
-        <li class="relative" x-data="{ dropdownOpen: false, notifying: true }" @click.outside="dropdownOpen = false">
-          <a class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white"
-            href="#" @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false">
-            <span :class="!notifying && 'hidden'" class="absolute -top-0.5 right-0 z-1 h-2 w-2 rounded-full bg-meta-1">
-              <span
-                class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
-            </span>
-
-            <svg class="fill-current duration-300 ease-in-out" width="18" height="18" viewBox="0 0 18 18" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M16.1999 14.9343L15.6374 14.0624C15.5249 13.8937 15.4687 13.7249 15.4687 13.528V7.67803C15.4687 6.01865 14.7655 4.47178 13.4718 3.31865C12.4312 2.39053 11.0812 1.7999 9.64678 1.6874V1.1249C9.64678 0.787402 9.36553 0.478027 8.9999 0.478027C8.6624 0.478027 8.35303 0.759277 8.35303 1.1249V1.65928C8.29678 1.65928 8.24053 1.65928 8.18428 1.6874C4.92178 2.05303 2.4749 4.66865 2.4749 7.79053V13.528C2.44678 13.8093 2.39053 13.9499 2.33428 14.0343L1.7999 14.9343C1.63115 15.2155 1.63115 15.553 1.7999 15.8343C1.96865 16.0874 2.2499 16.2562 2.55928 16.2562H8.38115V16.8749C8.38115 17.2124 8.6624 17.5218 9.02803 17.5218C9.36553 17.5218 9.6749 17.2405 9.6749 16.8749V16.2562H15.4687C15.778 16.2562 16.0593 16.0874 16.228 15.8343C16.3968 15.553 16.3968 15.2155 16.1999 14.9343ZM3.23428 14.9905L3.43115 14.653C3.5999 14.3718 3.68428 14.0343 3.74053 13.6405V7.79053C3.74053 5.31553 5.70928 3.23428 8.3249 2.95303C9.92803 2.78428 11.503 3.2624 12.6562 4.2749C13.6687 5.1749 14.2312 6.38428 14.2312 7.67803V13.528C14.2312 13.9499 14.3437 14.3437 14.5968 14.7374L14.7655 14.9905H3.23428Z"
-                fill="" />
-            </svg>
-          </a>
-
-          <!-- Dropdown Start -->
-          <div x-show="dropdownOpen"
-            class="absolute -right-27 mt-2.5 flex h-90 w-75 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
-            <div class="px-4.5 py-3">
-              <h5 class="text-sm font-medium text-bodydark2">Notification</h5>
-            </div>
-
-            <ul class="flex h-auto flex-col overflow-y-auto">
-              <li>
-                <a class="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                  href="#">
-                  <p class="text-sm">
-                    <span class="text-black dark:text-white">Edit your information in a swipe</span>
-                    Sint occaecat cupidatat non proident, sunt in culpa qui
-                    officia deserunt mollit anim.
-                  </p>
-
-                  <p class="text-xs">12 May, 2025</p>
-                </a>
-              </li>
-              <li>
-                <a class="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                  href="#">
-                  <p class="text-sm">
-                    <span class="text-black dark:text-white">It is a long established fact</span>
-                    that a reader will be distracted by the readable.
-                  </p>
-
-                  <p class="text-xs">24 Feb, 2025</p>
-                </a>
-              </li>
-              <li>
-                <a class="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                  href="#">
-                  <p class="text-sm">
-                    <span class="text-black dark:text-white">There are many variations</span>
-                    of passages of Lorem Ipsum available, but the majority have
-                    suffered
-                  </p>
-
-                  <p class="text-xs">04 Jan, 2025</p>
-                </a>
-              </li>
-              <li>
-                <a class="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                  href="#">
-                  <p class="text-sm">
-                    <span class="text-black dark:text-white">There are many variations</span>
-                    of passages of Lorem Ipsum available, but the majority have
-                    suffered
-                  </p>
-
-                  <p class="text-xs">01 Dec, 2024</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!-- Dropdown End -->
-        </li>
-        <!-- Notification Menu Area -->
-
-        <!-- Chat Notification Area -->
-        <li class="relative" x-data="{ dropdownOpen: false, notifying: true }" @click.outside="dropdownOpen = false">
-          <a class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white"
-            href="#" @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false">
-            <span :class="!notifying && 'hidden'"
-              class="absolute -right-0.5 -top-0.5 z-1 h-2 w-2 rounded-full bg-meta-1">
-              <span
-                class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
-            </span>
-
-            <svg class="fill-current duration-300 ease-in-out" width="18" height="18" viewBox="0 0 18 18" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M10.9688 1.57495H7.03135C3.43135 1.57495 0.506348 4.41558 0.506348 7.90308C0.506348 11.3906 2.75635 13.8375 8.26885 16.3125C8.40947 16.3687 8.52197 16.3968 8.6626 16.3968C8.85947 16.3968 9.02822 16.3406 9.19697 16.2281C9.47822 16.0593 9.64697 15.75 9.64697 15.4125V14.2031H10.9688C14.5688 14.2031 17.522 11.3625 17.522 7.87495C17.522 4.38745 14.5688 1.57495 10.9688 1.57495ZM10.9688 12.9937H9.3376C8.80322 12.9937 8.35322 13.4437 8.35322 13.9781V15.0187C3.6001 12.825 1.74385 10.8 1.74385 7.9312C1.74385 5.14683 4.10635 2.8687 7.03135 2.8687H10.9688C13.8657 2.8687 16.2563 5.14683 16.2563 7.9312C16.2563 10.7156 13.8657 12.9937 10.9688 12.9937Z"
-                fill="" />
-              <path
-                d="M5.42812 7.28442C5.0625 7.28442 4.78125 7.56567 4.78125 7.9313C4.78125 8.29692 5.0625 8.57817 5.42812 8.57817C5.79375 8.57817 6.075 8.29692 6.075 7.9313C6.075 7.56567 5.79375 7.28442 5.42812 7.28442Z"
-                fill="" />
-              <path
-                d="M9.00015 7.28442C8.63452 7.28442 8.35327 7.56567 8.35327 7.9313C8.35327 8.29692 8.63452 8.57817 9.00015 8.57817C9.33765 8.57817 9.64702 8.29692 9.64702 7.9313C9.64702 7.56567 9.33765 7.28442 9.00015 7.28442Z"
-                fill="" />
-              <path
-                d="M12.5719 7.28442C12.2063 7.28442 11.925 7.56567 11.925 7.9313C11.925 8.29692 12.2063 8.57817 12.5719 8.57817C12.9375 8.57817 13.2188 8.29692 13.2188 7.9313C13.2188 7.56567 12.9094 7.28442 12.5719 7.28442Z"
-                fill="" />
-            </svg>
-          </a>
-
-          <!-- Dropdown Start -->
-          <div x-show="dropdownOpen"
-            class="absolute -right-16 mt-2.5 flex h-90 w-75 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
-            <div class="px-4.5 py-3">
-              <h5 class="text-sm font-medium text-bodydark2">Messages</h5>
-            </div>
-
-            <ul class="flex h-auto flex-col overflow-y-auto">
-              <li>
-                <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                  href="messages.html">
-                  <div class="h-12.5 w-12.5 rounded-full">
-                    <img src="images/user-02.png" alt="User" />
-                  </div>
-
-                  <div>
-                    <h6 class="text-sm font-medium text-black dark:text-white">
-                      Mariya Desoja
-                    </h6>
-                    <p class="text-sm">I like your confidence 💪</p>
-                    <p class="text-xs">2min ago</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                  href="messages.html">
-                  <div class="h-12.5 w-12.5 rounded-full">
-                    <img src="images/user-01.png" alt="User" />
-                  </div>
-
-                  <div>
-                    <h6 class="text-sm font-medium text-black dark:text-white">
-                      Robert Jhon
-                    </h6>
-                    <p class="text-sm">Can you share your offer?</p>
-                    <p class="text-xs">10min ago</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                  href="messages.html">
-                  <div class="h-12.5 w-12.5 rounded-full">
-                    <img src="images/user-03.png" alt="User" />
-                  </div>
-
-                  <div>
-                    <h6 class="text-sm font-medium text-black dark:text-white">
-                      Henry Dholi
-                    </h6>
-                    <p class="text-sm">I cam across your profile and...</p>
-                    <p class="text-xs">1day ago</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                  href="messages.html">
-                  <div class="h-12.5 w-12.5 rounded-full">
-                    <img src="images/user-04.png" alt="User" />
-                  </div>
-
-                  <div>
-                    <h6 class="text-sm font-medium text-black dark:text-white">
-                      Cody Fisher
-                    </h6>
-                    <p class="text-sm">I’m waiting for you response!</p>
-                    <p class="text-xs">5days ago</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                  href="messages.html">
-                  <div class="h-12.5 w-12.5 rounded-full">
-                    <img src="images/user-02.png" alt="User" />
-                  </div>
-
-                  <div>
-                    <h6 class="text-sm font-medium text-black dark:text-white">
-                      Mariya Desoja
-                    </h6>
-                    <p class="text-sm">I like your confidence 💪</p>
-                    <p class="text-xs">2min ago</p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!-- Dropdown End -->
-        </li>
-        <!-- Chat Notification Area -->
-
-        <!-- Calendar Notification Area -->
-        <li class="relative" x-data="{ dropdownOpen: false, notifying: true }" @click.outside="dropdownOpen = false">
-          <a class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white"
-            href="#" @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false">
-            <span :class="!notifying && 'hidden'"
-              class="absolute -right-0.5 -top-0.5 z-1 h-2 w-2 rounded-full bg-meta-1">
-              <span
-                class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
-            </span>
-
-            <svg xmlns="http://www.w3.org/2000/svg" class="fill-current duration-300 ease-in-out" width="18" height="18"
-              viewBox="0 0 18 18">
-              <g clip-path="url(#clip0_34708_62)">
-                <path
-                  d="M5.76543 10.2938H4.89355C4.7248 10.2938 4.6123 10.4063 4.6123 10.575V11.4188C4.6123 11.5875 4.7248 11.7 4.89355 11.7H5.76543C5.93418 11.7 6.04668 11.5875 6.04668 11.4188V10.575C6.04668 10.4344 5.90605 10.2938 5.76543 10.2938Z"
-                  fill="" />
-                <path
-                  d="M9.42168 10.2938H8.5498C8.38105 10.2938 8.26855 10.4063 8.26855 10.575V11.4188C8.26855 11.5875 8.38105 11.7 8.5498 11.7H9.42168C9.59043 11.7 9.70293 11.5875 9.70293 11.4188V10.575C9.70293 10.4344 9.59043 10.2938 9.42168 10.2938Z"
-                  fill="" />
-                <path
-                  d="M13.1062 10.2938H12.2344C12.0656 10.2938 11.9531 10.4063 11.9531 10.575V11.4188C11.9531 11.5875 12.0656 11.7 12.2344 11.7H13.1062C13.275 11.7 13.3875 11.5875 13.3875 11.4188V10.575C13.3875 10.4344 13.275 10.2938 13.1062 10.2938Z"
-                  fill="" />
-                <path
-                  d="M5.76543 13.9219H4.89355C4.7248 13.9219 4.6123 14.0344 4.6123 14.2031V15.0469C4.6123 15.2156 4.7248 15.3281 4.89355 15.3281H5.76543C5.93418 15.3281 6.04668 15.2156 6.04668 15.0469V14.2031C6.04668 14.0625 5.90605 13.9219 5.76543 13.9219Z"
-                  fill="" />
-                <path
-                  d="M9.42168 13.9219H8.5498C8.38105 13.9219 8.26855 14.0344 8.26855 14.2031V15.0469C8.26855 15.2156 8.38105 15.3281 8.5498 15.3281H9.42168C9.59043 15.3281 9.70293 15.2156 9.70293 15.0469V14.2031C9.70293 14.0625 9.59043 13.9219 9.42168 13.9219Z"
-                  fill="" />
-                <path
-                  d="M13.1062 13.9219H12.2344C12.0656 13.9219 11.9531 14.0344 11.9531 14.2031V15.0469C11.9531 15.2156 12.0656 15.3281 12.2344 15.3281H13.1062C13.275 15.3281 13.3875 15.2156 13.3875 15.0469V14.2031C13.3875 14.0625 13.275 13.9219 13.1062 13.9219Z"
-                  fill="" />
-                <path
-                  d="M15.7499 4.33125H9.64678V3.79688C10.2937 3.54375 10.7437 2.925 10.7437 2.19375C10.7437 1.2375 9.95615 0.478127 8.9999 0.478127C8.04365 0.478127 7.25615 1.2375 7.25615 2.19375C7.25615 2.925 7.70615 3.54375 8.35303 3.79688V4.33125H2.2499C1.29365 4.33125 0.478027 5.11875 0.478027 6.10313V15.75C0.478027 16.7063 1.26553 17.5219 2.2499 17.5219H15.7499C16.7062 17.5219 17.5218 16.7344 17.5218 15.75V6.075C17.5218 5.11875 16.7062 4.33125 15.7499 4.33125ZM8.9999 1.74375C9.25303 1.74375 9.47803 1.94063 9.47803 2.19375C9.47803 2.44688 9.28115 2.64375 8.9999 2.64375C8.71865 2.64375 8.52178 2.44688 8.52178 2.19375C8.52178 1.94063 8.74678 1.74375 8.9999 1.74375ZM2.2499 5.59688H15.7499C16.0312 5.59688 16.2562 5.82188 16.2562 6.10313V7.84688H1.77178V6.10313C1.77178 5.79375 1.96865 5.59688 2.2499 5.59688ZM15.7499 16.2563H2.2499C1.96865 16.2563 1.74365 16.0313 1.74365 15.75V9.08438H16.228V15.75C16.2562 16.0313 16.0312 16.2563 15.7499 16.2563Z"
-                  fill="" />
-              </g>
-              <defs>
-                <clipPath id="clip0_34708_62">
-                  <rect width="18" height="18" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-
-
-          </a>
-
-          <!-- Dropdown Start -->
-          <div x-show="dropdownOpen"
-            class="absolute -right-16 mt-2.5 flex h-90 w-75 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
-            <div class="px-4.5 py-3">
-              <h5 class="text-sm font-medium text-bodydark2">Calendar</h5>
-            </div>
-
-            <!-- ====== Calendar Section Start -->
-
-            <!-- ====== Calendar Section End -->
-          </div>
-          <!-- Dropdown End -->
-        </li>
-        <!-- Calendar Notification Area -->
-      </ul>
-
-      <!-- User Area -->
-      <div class="relative" x-data="{ dropdownOpen: false }" @click.outside="dropdownOpen = false">
-        <a class="flex items-center gap-4" href="#" @click.prevent="dropdownOpen = ! dropdownOpen">
-          <span class="hidden text-right lg:block">
-            <span class="block text-sm font-medium text-black dark:text-white">Thomas Anree</span>
-            <span class="block text-xs font-medium">UX Designer</span>
-          </span>
-
-          <span class="h-12 w-12 rounded-full">
-            <img src="images/user-01.png" alt="User" />
-          </span>
-
-          <svg :class="dropdownOpen && 'rotate-180'" class="hidden fill-current sm:block" width="12" height="8"
-            viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M0.410765 0.910734C0.736202 0.585297 1.26384 0.585297 1.58928 0.910734L6.00002 5.32148L10.4108 0.910734C10.7362 0.585297 11.2638 0.585297 11.5893 0.910734C11.9147 1.23617 11.9147 1.76381 11.5893 2.08924L6.58928 7.08924C6.26384 7.41468 5.7362 7.41468 5.41077 7.08924L0.410765 2.08924C0.0853277 1.76381 0.0853277 1.23617 0.410765 0.910734Z"
-              fill="" />
-          </svg>
-        </a>
-
-        <!-- Dropdown Start -->
-        <div x-show="dropdownOpen"
-          class="absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-          <ul class="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
-            <li>
-              <a href="profile.html"
-                class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-                <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
-                    fill="" />
-                  <path
-                    d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
-                    fill="" />
-                </svg>
-                My Profile
-              </a>
-            </li>
-            <li>
-              <a href="messages.html"
-                class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-                <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M17.6687 1.44374C17.1187 0.893744 16.4312 0.618744 15.675 0.618744H7.42498C6.25623 0.618744 5.25935 1.58124 5.25935 2.78437V4.12499H4.29685C3.88435 4.12499 3.50623 4.46874 3.50623 4.91562C3.50623 5.36249 3.84998 5.70624 4.29685 5.70624H5.25935V10.2781H4.29685C3.88435 10.2781 3.50623 10.6219 3.50623 11.0687C3.50623 11.4812 3.84998 11.8594 4.29685 11.8594H5.25935V16.4312H4.29685C3.88435 16.4312 3.50623 16.775 3.50623 17.2219C3.50623 17.6687 3.84998 18.0125 4.29685 18.0125H5.25935V19.25C5.25935 20.4187 6.22185 21.4156 7.42498 21.4156H15.675C17.2218 21.4156 18.4937 20.1437 18.5281 18.5969V3.47187C18.4937 2.68124 18.2187 1.95937 17.6687 1.44374ZM16.9469 18.5625C16.9469 19.2844 16.3625 19.8344 15.6406 19.8344H7.3906C7.04685 19.8344 6.77185 19.5594 6.77185 19.2156V17.875H8.6281C9.0406 17.875 9.41873 17.5312 9.41873 17.0844C9.41873 16.6375 9.07498 16.2937 8.6281 16.2937H6.77185V11.7906H8.6281C9.0406 11.7906 9.41873 11.4469 9.41873 11C9.41873 10.5875 9.07498 10.2094 8.6281 10.2094H6.77185V5.63749H8.6281C9.0406 5.63749 9.41873 5.29374 9.41873 4.84687C9.41873 4.39999 9.07498 4.05624 8.6281 4.05624H6.77185V2.74999C6.77185 2.40624 7.04685 2.13124 7.3906 2.13124H15.6406C15.9844 2.13124 16.2937 2.26874 16.5687 2.50937C16.8094 2.74999 16.9469 3.09374 16.9469 3.43749V18.5625Z"
-                    fill="" />
-                </svg>
-                My Contacts
-              </a>
-            </li>
-            <li>
-              <a href="settings.html"
-                class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-                <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M20.8656 8.86874C20.5219 8.49062 20.0406 8.28437 19.525 8.28437H19.4219C19.25 8.28437 19.1125 8.18124 19.0781 8.04374C19.0437 7.90624 18.975 7.80312 18.9406 7.66562C18.8719 7.52812 18.9406 7.39062 19.0437 7.28749L19.1125 7.21874C19.4906 6.87499 19.6969 6.39374 19.6969 5.87812C19.6969 5.36249 19.525 4.88124 19.1469 4.50312L17.8062 3.12812C17.0844 2.37187 15.8469 2.33749 15.0906 3.09374L14.9875 3.16249C14.8844 3.26562 14.7125 3.29999 14.5406 3.23124C14.4031 3.16249 14.2656 3.09374 14.0937 3.05937C13.9219 2.99062 13.8187 2.85312 13.8187 2.71562V2.54374C13.8187 1.47812 12.9594 0.618744 11.8937 0.618744H9.96875C9.45312 0.618744 8.97187 0.824994 8.62812 1.16874C8.25 1.54687 8.07812 2.02812 8.07812 2.50937V2.64687C8.07812 2.78437 7.975 2.92187 7.8375 2.99062C7.76875 3.02499 7.73437 3.02499 7.66562 3.05937C7.52812 3.12812 7.35625 3.09374 7.25312 2.99062L7.18437 2.88749C6.84062 2.50937 6.35937 2.30312 5.84375 2.30312C5.32812 2.30312 4.84687 2.47499 4.46875 2.85312L3.09375 4.19374C2.3375 4.91562 2.30312 6.15312 3.05937 6.90937L3.12812 7.01249C3.23125 7.11562 3.26562 7.28749 3.19687 7.39062C3.12812 7.52812 3.09375 7.63124 3.025 7.76874C2.95625 7.90624 2.85312 7.97499 2.68125 7.97499H2.57812C2.0625 7.97499 1.58125 8.14687 1.20312 8.52499C0.824996 8.86874 0.618746 9.34999 0.618746 9.86562L0.584371 11.7906C0.549996 12.8562 1.40937 13.7156 2.475 13.75H2.57812C2.75 13.75 2.8875 13.8531 2.92187 13.9906C2.99062 14.0937 3.05937 14.1969 3.09375 14.3344C3.12812 14.4719 3.09375 14.6094 2.99062 14.7125L2.92187 14.7812C2.54375 15.125 2.3375 15.6062 2.3375 16.1219C2.3375 16.6375 2.50937 17.1187 2.8875 17.4969L4.22812 18.8719C4.95 19.6281 6.1875 19.6625 6.94375 18.9062L7.04687 18.8375C7.15 18.7344 7.32187 18.7 7.49375 18.7687C7.63125 18.8375 7.76875 18.9062 7.94062 18.9406C8.1125 19.0094 8.21562 19.1469 8.21562 19.2844V19.4219C8.21562 20.4875 9.075 21.3469 10.1406 21.3469H12.0656C13.1312 21.3469 13.9906 20.4875 13.9906 19.4219V19.2844C13.9906 19.1469 14.0937 19.0094 14.2312 18.9406C14.3 18.9062 14.3344 18.9062 14.4031 18.8719C14.575 18.8031 14.7125 18.8375 14.8156 18.9406L14.8844 19.0437C15.2281 19.4219 15.7094 19.6281 16.225 19.6281C16.7406 19.6281 17.2219 19.4562 17.6 19.0781L18.975 17.7375C19.7312 17.0156 19.7656 15.7781 19.0094 15.0219L18.9406 14.9187C18.8375 14.8156 18.8031 14.6437 18.8719 14.5406C18.9406 14.4031 18.975 14.3 19.0437 14.1625C19.1125 14.025 19.25 13.9562 19.3875 13.9562H19.4906H19.525C20.5562 13.9562 21.4156 13.1312 21.45 12.0656L21.4844 10.1406C21.4156 9.72812 21.2094 9.21249 20.8656 8.86874ZM19.8344 12.1C19.8344 12.3062 19.6625 12.4781 19.4562 12.4781H19.3531H19.3187C18.5281 12.4781 17.8062 12.9594 17.5312 13.6469C17.4969 13.75 17.4281 13.8531 17.3937 13.9562C17.0844 14.6437 17.2219 15.5031 17.7719 16.0531L17.8406 16.1562C17.9781 16.2937 17.9781 16.5344 17.8406 16.6719L16.4656 18.0125C16.3625 18.1156 16.2594 18.1156 16.1906 18.1156C16.1219 18.1156 16.0187 18.1156 15.9156 18.0125L15.8469 17.9094C15.2969 17.325 14.4719 17.1531 13.7156 17.4969L13.5781 17.5656C12.8219 17.875 12.3406 18.5625 12.3406 19.3531V19.4906C12.3406 19.6969 12.1687 19.8687 11.9625 19.8687H10.0375C9.83125 19.8687 9.65937 19.6969 9.65937 19.4906V19.3531C9.65937 18.5625 9.17812 17.8406 8.42187 17.5656C8.31875 17.5312 8.18125 17.4625 8.07812 17.4281C7.80312 17.2906 7.52812 17.2562 7.25312 17.2562C6.77187 17.2562 6.29062 17.4281 5.9125 17.8062L5.84375 17.8406C5.70625 17.9781 5.46562 17.9781 5.32812 17.8406L3.9875 16.4656C3.88437 16.3625 3.88437 16.2594 3.88437 16.1906C3.88437 16.1219 3.88437 16.0187 3.9875 15.9156L4.05625 15.8469C4.64062 15.2969 4.8125 14.4375 4.50312 13.75C4.46875 13.6469 4.43437 13.5437 4.36562 13.4406C4.09062 12.7187 3.40312 12.2031 2.6125 12.2031H2.50937C2.30312 12.2031 2.13125 12.0312 2.13125 11.825L2.16562 9.89999C2.16562 9.76249 2.23437 9.69374 2.26875 9.62499C2.30312 9.59062 2.40625 9.52187 2.54375 9.52187H2.64687C3.4375 9.55624 4.15937 9.07499 4.46875 8.35312C4.50312 8.24999 4.57187 8.14687 4.60625 8.04374C4.91562 7.35624 4.77812 6.49687 4.22812 5.94687L4.15937 5.84374C4.02187 5.70624 4.02187 5.46562 4.15937 5.32812L5.53437 3.98749C5.6375 3.88437 5.74062 3.88437 5.80937 3.88437C5.87812 3.88437 5.98125 3.88437 6.08437 3.98749L6.15312 4.09062C6.70312 4.67499 7.52812 4.84687 8.28437 4.53749L8.42187 4.46874C9.17812 4.15937 9.65937 3.47187 9.65937 2.68124V2.54374C9.65937 2.40624 9.72812 2.33749 9.7625 2.26874C9.79687 2.19999 9.9 2.16562 10.0375 2.16562H11.9625C12.1687 2.16562 12.3406 2.33749 12.3406 2.54374V2.68124C12.3406 3.47187 12.8219 4.19374 13.5781 4.46874C13.6812 4.50312 13.8187 4.57187 13.9219 4.60624C14.6437 4.94999 15.5031 4.81249 16.0875 4.26249L16.1906 4.19374C16.3281 4.05624 16.5687 4.05624 16.7062 4.19374L18.0469 5.56874C18.15 5.67187 18.15 5.77499 18.15 5.84374C18.15 5.91249 18.1156 6.01562 18.0469 6.11874L17.9781 6.18749C17.3594 6.70312 17.1875 7.56249 17.4625 8.24999C17.4969 8.35312 17.5312 8.45624 17.6 8.55937C17.875 9.28124 18.5625 9.79687 19.3531 9.79687H19.4562C19.5937 9.79687 19.6625 9.86562 19.7312 9.89999C19.8 9.93437 19.8344 10.0375 19.8344 10.175V12.1Z"
-                    fill="" />
-                  <path
-                    d="M11 6.32498C8.42189 6.32498 6.32501 8.42186 6.32501 11C6.32501 13.5781 8.42189 15.675 11 15.675C13.5781 15.675 15.675 13.5781 15.675 11C15.675 8.42186 13.5781 6.32498 11 6.32498ZM11 14.1281C9.28126 14.1281 7.87189 12.7187 7.87189 11C7.87189 9.28123 9.28126 7.87186 11 7.87186C12.7188 7.87186 14.1281 9.28123 14.1281 11C14.1281 12.7187 12.7188 14.1281 11 14.1281Z"
-                    fill="" />
-                </svg>
-                Account Settings
-              </a>
-            </li>
-          </ul>
-          <button
-            class="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
-            <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M15.5375 0.618744H11.6531C10.7594 0.618744 10.0031 1.37499 10.0031 2.26874V4.64062C10.0031 5.05312 10.3469 5.39687 10.7594 5.39687C11.1719 5.39687 11.55 5.05312 11.55 4.64062V2.23437C11.55 2.16562 11.5844 2.13124 11.6531 2.13124H15.5375C16.3625 2.13124 17.0156 2.78437 17.0156 3.60937V18.3562C17.0156 19.1812 16.3625 19.8344 15.5375 19.8344H11.6531C11.5844 19.8344 11.55 19.8 11.55 19.7312V17.3594C11.55 16.9469 11.2062 16.6031 10.7594 16.6031C10.3125 16.6031 10.0031 16.9469 10.0031 17.3594V19.7312C10.0031 20.625 10.7594 21.3812 11.6531 21.3812H15.5375C17.2219 21.3812 18.5625 20.0062 18.5625 18.3562V3.64374C18.5625 1.95937 17.1875 0.618744 15.5375 0.618744Z"
-                fill="" />
-              <path
-                d="M6.05001 11.7563H12.2031C12.6156 11.7563 12.9594 11.4125 12.9594 11C12.9594 10.5875 12.6156 10.2438 12.2031 10.2438H6.08439L8.21564 8.07813C8.52501 7.76875 8.52501 7.2875 8.21564 6.97812C7.90626 6.66875 7.42501 6.66875 7.11564 6.97812L3.67814 10.4844C3.36876 10.7938 3.36876 11.275 3.67814 11.5844L7.11564 15.0906C7.25314 15.2281 7.45939 15.3312 7.66564 15.3312C7.87189 15.3312 8.04376 15.2625 8.21564 15.125C8.52501 14.8156 8.52501 14.3344 8.21564 14.025L6.05001 11.7563Z"
-                fill="" />
-            </svg>
-            Log Out
-          </button>
-        </div>
-        <!-- Dropdown End -->
       </div>
-      <!-- User Area -->
-    </div>
-  </div>
-</header>
 
-<!-- Bottom Header Area -->
-<div id="headerBottom">
-  <div class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11 bg-white max-h-16 dark:bg-boxdark dark:drop-shadow-none">
+      <div class="flex items-center gap-3 2xsm:gap-7">
+        <ul class="flex items-center gap-2 2xsm:gap-4">
+          <li>
+            <!-- Dark Mode Toggler -->
+            <label :class="darkMode ? 'bg-primary' : 'bg-stroke'" class="relative m-0 block h-7.5 w-14 rounded-full">
+              <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode"
+                class="absolute top-0 z-50 m-0 h-full w-full cursor-pointer opacity-0" disabled />
+              <span :class="darkMode && '!right-1 !translate-x-full'"
+                class="absolute left-1 top-1/2 flex h-6 w-6 -translate-y-1/2 translate-x-0 items-center justify-center rounded-full bg-white shadow-switcher duration-75 ease-linear">
+                <span class="dark:hidden">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.99992 12.6666C10.5772 12.6666 12.6666 10.5772 12.6666 7.99992C12.6666 5.42259 10.5772 3.33325 7.99992 3.33325C5.42259 3.33325 3.33325 5.42259 3.33325 7.99992C3.33325 10.5772 5.42259 12.6666 7.99992 12.6666Z"
+                      fill="#969AA1" />
+                    <path
+                      d="M8.00008 15.3067C7.63341 15.3067 7.33342 15.0334 7.33342 14.6667V14.6134C7.33342 14.2467 7.63341 13.9467 8.00008 13.9467C8.36675 13.9467 8.66675 14.2467 8.66675 14.6134C8.66675 14.9801 8.36675 15.3067 8.00008 15.3067ZM12.7601 13.4267C12.5867 13.4267 12.4201 13.3601 12.2867 13.2334L12.2001 13.1467C11.9401 12.8867 11.9401 12.4667 12.2001 12.2067C12.4601 11.9467 12.8801 11.9467 13.1401 12.2067L13.2267 12.2934C13.4867 12.5534 13.4867 12.9734 13.2267 13.2334C13.1001 13.3601 12.9334 13.4267 12.7601 13.4267ZM3.24008 13.4267C3.06675 13.4267 2.90008 13.3601 2.76675 13.2334C2.50675 12.9734 2.50675 12.5534 2.76675 12.2934L2.85342 12.2067C3.11342 11.9467 3.53341 11.9467 3.79341 12.2067C4.05341 12.4667 4.05341 12.8867 3.79341 13.1467L3.70675 13.2334C3.58008 13.3601 3.40675 13.4267 3.24008 13.4267ZM14.6667 8.66675H14.6134C14.2467 8.66675 13.9467 8.36675 13.9467 8.00008C13.9467 7.63341 14.2467 7.33342 14.6134 7.33342C14.9801 7.33342 15.3067 7.63341 15.3067 8.00008C15.3067 8.36675 15.0334 8.66675 14.6667 8.66675ZM1.38675 8.66675H1.33341C0.966748 8.66675 0.666748 8.36675 0.666748 8.00008C0.666748 7.63341 0.966748 7.33342 1.33341 7.33342C1.70008 7.33342 2.02675 7.63341 2.02675 8.00008C2.02675 8.36675 1.75341 8.66675 1.38675 8.66675ZM12.6734 3.99341C12.5001 3.99341 12.3334 3.92675 12.2001 3.80008C11.9401 3.54008 11.9401 3.12008 12.2001 2.86008L12.2867 2.77341C12.5467 2.51341 12.9667 2.51341 13.2267 2.77341C13.4867 3.03341 13.4867 3.45341 13.2267 3.71341L13.1401 3.80008C13.0134 3.92675 12.8467 3.99341 12.6734 3.99341ZM3.32675 3.99341C3.15341 3.99341 2.98675 3.92675 2.85342 3.80008L2.76675 3.70675C2.50675 3.44675 2.50675 3.02675 2.76675 2.76675C3.02675 2.50675 3.44675 2.50675 3.70675 2.76675L3.79341 2.85342C4.05341 3.11342 4.05341 3.53341 3.79341 3.79341C3.66675 3.92675 3.49341 3.99341 3.32675 3.99341ZM8.00008 2.02675C7.63341 2.02675 7.33342 1.75341 7.33342 1.38675V1.33341C7.33342 0.966748 7.63341 0.666748 8.00008 0.666748C8.36675 0.666748 8.66675 0.966748 8.66675 1.33341C8.66675 1.70008 8.36675 2.02675 8.00008 2.02675Z"
+                      fill="#969AA1" />
+                  </svg>
+                </span>
+                <span class="hidden dark:inline-block">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M14.3533 10.62C14.2466 10.44 13.9466 10.16 13.1999 10.2933C12.7866 10.3667 12.3666 10.4 11.9466 10.38C10.3933 10.3133 8.98659 9.6 8.00659 8.5C7.13993 7.53333 6.60659 6.27333 6.59993 4.91333C6.59993 4.15333 6.74659 3.42 7.04659 2.72666C7.33993 2.05333 7.13326 1.7 6.98659 1.55333C6.83326 1.4 6.47326 1.18666 5.76659 1.48C3.03993 2.62666 1.35326 5.36 1.55326 8.28666C1.75326 11.04 3.68659 13.3933 6.24659 14.28C6.85993 14.4933 7.50659 14.62 8.17326 14.6467C8.27993 14.6533 8.38659 14.66 8.49326 14.66C10.7266 14.66 12.8199 13.6067 14.1399 11.8133C14.5866 11.1933 14.4666 10.8 14.3533 10.62Z"
+                      fill="#969AA1" />
+                  </svg>
+                </span>
+              </span>
+            </label>
+            <!-- Dark Mode Toggler -->
+          </li>
 
-  <!-- Select Country Area -->
-  <div class="flex items-center gap-2">
-    <label class="mb-0 block text-base font-medium text-black dark:text-white">
-      Current Status :
-    </label>
-    <div x-data="{ isOptionSelected: false }" class="relative z-20 bg-white dark:bg-form-input">
-      <select
-        class="text-base relative z-20 w-full appearance-none rounded-lg border border-stroke bg-transparent py-1 pl-3 pr-9 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
-        :class="isOptionSelected && 'text-black dark:text-white'" @change="isOptionSelected = true">
-        <option value="" class="text-red">Unavailable</option>
-        <option value="" class="text-body">Option 2</option>
-        <option value="" class="text-body">Option 3</option>
-      </select>
-      <span class="absolute right-2 top-1/2 z-20 -translate-y-1/2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="8" viewBox="0 0 16 8" fill="none">
-          <path
-            d="M7.99995 7.825C7.8312 7.825 7.69058 7.76875 7.54995 7.65625L1.0812 1.3C0.828076 1.04688 0.828076 0.653127 1.0812 0.400002C1.33433 0.146877 1.72808 0.146877 1.9812 0.400002L7.99995 6.27813L14.0187 0.343752C14.2718 0.0906265 14.6656 0.0906265 14.9187 0.343752C15.1718 0.596877 15.1718 0.990627 14.9187 1.24375L8.44995 7.6C8.30933 7.74063 8.1687 7.825 7.99995 7.825Z"
-            fill="#64748B" />
-        </svg>
-      </span>
-    </div>
-  </div>
-  <!-- Select Country Area -->
+          <!-- Notification Menu Area -->
+          <li class="relative" x-data="{ dropdownOpen: false, notifying: true }" @click.outside="dropdownOpen = false">
+            <a class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white focus:border-primary active:border-primary"
+              href="#" @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false">
+              <span :class="!notifying && 'hidden'"
+                class="absolute -top-0.5 right-0 z-1 h-2 w-2 rounded-full bg-meta-1">
+                <span
+                  class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
+              </span>
 
-  <!-- Bottom Header Right Area -->
-  <div class="flex items-center gap-2">
+              <svg class="fill-current duration-300 ease-in-out" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.1999 14.9343L15.6374 14.0624C15.5249 13.8937 15.4687 13.7249 15.4687 13.528V7.67803C15.4687 6.01865 14.7655 4.47178 13.4718 3.31865C12.4312 2.39053 11.0812 1.7999 9.64678 1.6874V1.1249C9.64678 0.787402 9.36553 0.478027 8.9999 0.478027C8.6624 0.478027 8.35303 0.759277 8.35303 1.1249V1.65928C8.29678 1.65928 8.24053 1.65928 8.18428 1.6874C4.92178 2.05303 2.4749 4.66865 2.4749 7.79053V13.528C2.44678 13.8093 2.39053 13.9499 2.33428 14.0343L1.7999 14.9343C1.63115 15.2155 1.63115 15.553 1.7999 15.8343C1.96865 16.0874 2.2499 16.2562 2.55928 16.2562H8.38115V16.8749C8.38115 17.2124 8.6624 17.5218 9.02803 17.5218C9.36553 17.5218 9.6749 17.2405 9.6749 16.8749V16.2562H15.4687C15.778 16.2562 16.0593 16.0874 16.228 15.8343C16.3968 15.553 16.3968 15.2155 16.1999 14.9343ZM3.23428 14.9905L3.43115 14.653C3.5999 14.3718 3.68428 14.0343 3.74053 13.6405V7.79053C3.74053 5.31553 5.70928 3.23428 8.3249 2.95303C9.92803 2.78428 11.503 3.2624 12.6562 4.2749C13.6687 5.1749 14.2312 6.38428 14.2312 7.67803V13.528C14.2312 13.9499 14.3437 14.3437 14.5968 14.7374L14.7655 14.9905H3.23428Z"
+                  fill="" />
+              </svg>
+            </a>
 
+            <!-- Dropdown Start -->
+            <div x-show="dropdownOpen"
+              class="absolute -right-27 mt-2.5 flex h-90 w-75 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
+              <div class="px-4.5 py-3">
+                <h5 class="text-sm font-medium text-bodydark2">Notification</h5>
+              </div>
 
-    <!-- <form action="" class=""> -->
-    <div class="max-w-sm mx-auto flex gap-2 items-center">
-      <div>
-        <div x-data="{openDropDown: false}" class="relative mb-0 inline-block">
-          <button @click.prevent="openDropDown = !openDropDown"
-            class="text-base relative z-20 w-full min-h-9 flex items-center justify-center appearance-none rounded-3xl border border-stroke bg-transparent py-1 px-4 outline-none transition focus:border-primary active:border-primary ">
-            <svg fill="none" aria-hidden="true" class="h-6 w-6 me-2" viewBox="0 0 20 15">
-              <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-              <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse">
-                <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-              </mask>
-              <g mask="url(#a)">
-                <path fill="#D02F44" fill-rule="evenodd"
-                  d="M19.6.5H0v.933h19.6V.5zm0 1.867H0V3.3h19.6v-.933zM0 4.233h19.6v.934H0v-.934zM19.6 6.1H0v.933h19.6V6.1zM0 7.967h19.6V8.9H0v-.933zm19.6 1.866H0v.934h19.6v-.934zM0 11.7h19.6v.933H0V11.7zm19.6 1.867H0v.933h19.6v-.933z"
-                  clip-rule="evenodd" />
-                <path fill="#46467F" d="M0 .5h8.4v6.533H0z" />
-                <g filter="url(#filter0_d_343_121520)">
-                  <path fill="url(#paint0_linear_343_121520)" fill-rule="evenodd"
-                    d="M1.867 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.866 0a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM7.467 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zM2.333 3.3a.467.467 0 100-.933.467.467 0 000 .933zm2.334-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.4.467a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm-2.334.466a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.466a.467.467 0 11-.933 0 .467.467 0 01.933 0zM1.4 4.233a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM6.533 4.7a.467.467 0 11-.933 0 .467.467 0 01.933 0zM7 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zM3.267 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0z"
-                    clip-rule="evenodd" />
+              <ul class="flex h-auto flex-col overflow-y-auto">
+                <li>
+                  <a class="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+                    href="#">
+                    <p class="text-sm">
+                      <span class="text-black dark:text-white">Edit your information in a swipe</span>
+                      Sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim.
+                    </p>
+
+                    <p class="text-xs">12 May, 2025</p>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+                    href="#">
+                    <p class="text-sm">
+                      <span class="text-black dark:text-white">It is a long established fact</span>
+                      that a reader will be distracted by the readable.
+                    </p>
+
+                    <p class="text-xs">24 Feb, 2025</p>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+                    href="#">
+                    <p class="text-sm">
+                      <span class="text-black dark:text-white">There are many variations</span>
+                      of passages of Lorem Ipsum available, but the majority have
+                      suffered
+                    </p>
+
+                    <p class="text-xs">04 Jan, 2025</p>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+                    href="#">
+                    <p class="text-sm">
+                      <span class="text-black dark:text-white">There are many variations</span>
+                      of passages of Lorem Ipsum available, but the majority have
+                      suffered
+                    </p>
+
+                    <p class="text-xs">01 Dec, 2024</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- Dropdown End -->
+          </li>
+          <!-- Notification Menu Area -->
+
+          <!-- Chat Notification Area -->
+          <li class="relative" x-data="{ dropdownOpen: false, notifying: true }" @click.outside="dropdownOpen = false">
+            <a class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white focus:border-primary active:border-primary"
+              href="#" @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false">
+              <span :class="!notifying && 'hidden'"
+                class="absolute -right-0.5 -top-0.5 z-1 h-2 w-2 rounded-full bg-meta-1">
+                <span
+                  class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
+              </span>
+
+              <svg class="fill-current duration-300 ease-in-out" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10.9688 1.57495H7.03135C3.43135 1.57495 0.506348 4.41558 0.506348 7.90308C0.506348 11.3906 2.75635 13.8375 8.26885 16.3125C8.40947 16.3687 8.52197 16.3968 8.6626 16.3968C8.85947 16.3968 9.02822 16.3406 9.19697 16.2281C9.47822 16.0593 9.64697 15.75 9.64697 15.4125V14.2031H10.9688C14.5688 14.2031 17.522 11.3625 17.522 7.87495C17.522 4.38745 14.5688 1.57495 10.9688 1.57495ZM10.9688 12.9937H9.3376C8.80322 12.9937 8.35322 13.4437 8.35322 13.9781V15.0187C3.6001 12.825 1.74385 10.8 1.74385 7.9312C1.74385 5.14683 4.10635 2.8687 7.03135 2.8687H10.9688C13.8657 2.8687 16.2563 5.14683 16.2563 7.9312C16.2563 10.7156 13.8657 12.9937 10.9688 12.9937Z"
+                  fill="" />
+                <path
+                  d="M5.42812 7.28442C5.0625 7.28442 4.78125 7.56567 4.78125 7.9313C4.78125 8.29692 5.0625 8.57817 5.42812 8.57817C5.79375 8.57817 6.075 8.29692 6.075 7.9313C6.075 7.56567 5.79375 7.28442 5.42812 7.28442Z"
+                  fill="" />
+                <path
+                  d="M9.00015 7.28442C8.63452 7.28442 8.35327 7.56567 8.35327 7.9313C8.35327 8.29692 8.63452 8.57817 9.00015 8.57817C9.33765 8.57817 9.64702 8.29692 9.64702 7.9313C9.64702 7.56567 9.33765 7.28442 9.00015 7.28442Z"
+                  fill="" />
+                <path
+                  d="M12.5719 7.28442C12.2063 7.28442 11.925 7.56567 11.925 7.9313C11.925 8.29692 12.2063 8.57817 12.5719 8.57817C12.9375 8.57817 13.2188 8.29692 13.2188 7.9313C13.2188 7.56567 12.9094 7.28442 12.5719 7.28442Z"
+                  fill="" />
+              </svg>
+            </a>
+
+            <!-- Dropdown Start -->
+            <div x-show="dropdownOpen"
+              class="absolute -right-16 mt-2.5 flex h-90 w-75 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
+              <div class="px-4.5 py-3">
+                <h5 class="text-sm font-medium text-bodydark2">Messages</h5>
+              </div>
+
+              <ul class="flex h-auto flex-col overflow-y-auto">
+                <li>
+                  <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+                    href="messages.html">
+                    <div class="h-12.5 w-12.5 rounded-full">
+                      <img src="images/user-02.png" alt="User" />
+                    </div>
+
+                    <div>
+                      <h6 class="text-sm font-medium text-black dark:text-white">
+                        Mariya Desoja
+                      </h6>
+                      <p class="text-sm">I like your confidence 💪</p>
+                      <p class="text-xs">2min ago</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+                    href="messages.html">
+                    <div class="h-12.5 w-12.5 rounded-full">
+                      <img src="images/user-01.png" alt="User" />
+                    </div>
+
+                    <div>
+                      <h6 class="text-sm font-medium text-black dark:text-white">
+                        Robert Jhon
+                      </h6>
+                      <p class="text-sm">Can you share your offer?</p>
+                      <p class="text-xs">10min ago</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+                    href="messages.html">
+                    <div class="h-12.5 w-12.5 rounded-full">
+                      <img src="images/user-03.png" alt="User" />
+                    </div>
+
+                    <div>
+                      <h6 class="text-sm font-medium text-black dark:text-white">
+                        Henry Dholi
+                      </h6>
+                      <p class="text-sm">I cam across your profile and...</p>
+                      <p class="text-xs">1day ago</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+                    href="messages.html">
+                    <div class="h-12.5 w-12.5 rounded-full">
+                      <img src="images/user-04.png" alt="User" />
+                    </div>
+
+                    <div>
+                      <h6 class="text-sm font-medium text-black dark:text-white">
+                        Cody Fisher
+                      </h6>
+                      <p class="text-sm">I’m waiting for you response!</p>
+                      <p class="text-xs">5days ago</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+                    href="messages.html">
+                    <div class="h-12.5 w-12.5 rounded-full">
+                      <img src="images/user-02.png" alt="User" />
+                    </div>
+
+                    <div>
+                      <h6 class="text-sm font-medium text-black dark:text-white">
+                        Mariya Desoja
+                      </h6>
+                      <p class="text-sm">I like your confidence 💪</p>
+                      <p class="text-xs">2min ago</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- Dropdown End -->
+          </li>
+          <!-- Chat Notification Area -->
+
+          <!-- Calendar Notification Area -->
+          <li class="relative" x-data="{ dropdownOpen: false, notifying: true }" @click.outside="dropdownOpen = false">
+            <a class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white focus:border-primary active:border-primary"
+              href="#" @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false">
+              <span :class="!notifying && 'hidden'"
+                class="absolute -right-0.5 -top-0.5 z-1 h-2 w-2 rounded-full bg-meta-1">
+                <span
+                  class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
+              </span>
+
+              <svg xmlns="http://www.w3.org/2000/svg" class="fill-current duration-300 ease-in-out" width="18"
+                height="18" viewBox="0 0 18 18">
+                <g clip-path="url(#clip0_34708_62)">
+                  <path
+                    d="M5.76543 10.2938H4.89355C4.7248 10.2938 4.6123 10.4063 4.6123 10.575V11.4188C4.6123 11.5875 4.7248 11.7 4.89355 11.7H5.76543C5.93418 11.7 6.04668 11.5875 6.04668 11.4188V10.575C6.04668 10.4344 5.90605 10.2938 5.76543 10.2938Z"
+                    fill="" />
+                  <path
+                    d="M9.42168 10.2938H8.5498C8.38105 10.2938 8.26855 10.4063 8.26855 10.575V11.4188C8.26855 11.5875 8.38105 11.7 8.5498 11.7H9.42168C9.59043 11.7 9.70293 11.5875 9.70293 11.4188V10.575C9.70293 10.4344 9.59043 10.2938 9.42168 10.2938Z"
+                    fill="" />
+                  <path
+                    d="M13.1062 10.2938H12.2344C12.0656 10.2938 11.9531 10.4063 11.9531 10.575V11.4188C11.9531 11.5875 12.0656 11.7 12.2344 11.7H13.1062C13.275 11.7 13.3875 11.5875 13.3875 11.4188V10.575C13.3875 10.4344 13.275 10.2938 13.1062 10.2938Z"
+                    fill="" />
+                  <path
+                    d="M5.76543 13.9219H4.89355C4.7248 13.9219 4.6123 14.0344 4.6123 14.2031V15.0469C4.6123 15.2156 4.7248 15.3281 4.89355 15.3281H5.76543C5.93418 15.3281 6.04668 15.2156 6.04668 15.0469V14.2031C6.04668 14.0625 5.90605 13.9219 5.76543 13.9219Z"
+                    fill="" />
+                  <path
+                    d="M9.42168 13.9219H8.5498C8.38105 13.9219 8.26855 14.0344 8.26855 14.2031V15.0469C8.26855 15.2156 8.38105 15.3281 8.5498 15.3281H9.42168C9.59043 15.3281 9.70293 15.2156 9.70293 15.0469V14.2031C9.70293 14.0625 9.59043 13.9219 9.42168 13.9219Z"
+                    fill="" />
+                  <path
+                    d="M13.1062 13.9219H12.2344C12.0656 13.9219 11.9531 14.0344 11.9531 14.2031V15.0469C11.9531 15.2156 12.0656 15.3281 12.2344 15.3281H13.1062C13.275 15.3281 13.3875 15.2156 13.3875 15.0469V14.2031C13.3875 14.0625 13.275 13.9219 13.1062 13.9219Z"
+                    fill="" />
+                  <path
+                    d="M15.7499 4.33125H9.64678V3.79688C10.2937 3.54375 10.7437 2.925 10.7437 2.19375C10.7437 1.2375 9.95615 0.478127 8.9999 0.478127C8.04365 0.478127 7.25615 1.2375 7.25615 2.19375C7.25615 2.925 7.70615 3.54375 8.35303 3.79688V4.33125H2.2499C1.29365 4.33125 0.478027 5.11875 0.478027 6.10313V15.75C0.478027 16.7063 1.26553 17.5219 2.2499 17.5219H15.7499C16.7062 17.5219 17.5218 16.7344 17.5218 15.75V6.075C17.5218 5.11875 16.7062 4.33125 15.7499 4.33125ZM8.9999 1.74375C9.25303 1.74375 9.47803 1.94063 9.47803 2.19375C9.47803 2.44688 9.28115 2.64375 8.9999 2.64375C8.71865 2.64375 8.52178 2.44688 8.52178 2.19375C8.52178 1.94063 8.74678 1.74375 8.9999 1.74375ZM2.2499 5.59688H15.7499C16.0312 5.59688 16.2562 5.82188 16.2562 6.10313V7.84688H1.77178V6.10313C1.77178 5.79375 1.96865 5.59688 2.2499 5.59688ZM15.7499 16.2563H2.2499C1.96865 16.2563 1.74365 16.0313 1.74365 15.75V9.08438H16.228V15.75C16.2562 16.0313 16.0312 16.2563 15.7499 16.2563Z"
+                    fill="" />
                 </g>
-              </g>
-              <defs>
-                <linearGradient id="paint0_linear_343_121520" x1=".933" x2=".933" y1="1.433" y2="6.1"
-                  gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#fff" />
-                  <stop offset="1" stop-color="#F0F0F0" />
-                </linearGradient>
-                <filter id="filter0_d_343_121520" width="6.533" height="5.667" x=".933" y="1.433"
-                  color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix in="SourceAlpha" result="hardAlpha"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                  <feOffset dy="1" />
-                  <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                  <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_343_121520" />
-                  <feBlend in="SourceGraphic" in2="effect1_dropShadow_343_121520" result="shape" />
-                </filter>
-              </defs>
-            </svg>
+                <defs>
+                  <clipPath id="clip0_34708_62">
+                    <rect width="18" height="18" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
 
-            <svg class="fill-current duration-200 ease-linear" :class="openDropDown && 'rotate-180'" width="12"
-              height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M0.564864 0.879232C0.564864 0.808624 0.600168 0.720364 0.653125 0.667408C0.776689 0.543843 0.970861 0.543844 1.09443 0.649756L5.82517 5.09807C5.91343 5.18633 6.07229 5.18633 6.17821 5.09807L10.9089 0.649756C11.0325 0.526192 11.2267 0.543844 11.3502 0.667408C11.4738 0.790972 11.4562 0.985145 11.3326 1.10871L6.60185 5.55702C6.26647 5.85711 5.73691 5.85711 5.41917 5.55702L0.670776 1.10871C0.600168 1.0381 0.564864 0.967492 0.564864 0.879232Z"
-                fill="" />
+
+            </a>
+
+            <!-- Dropdown Start -->
+            <div x-show="dropdownOpen"
+              class="absolute -right-16 mt-2.5 flex h-90 w-75 flex-col z-99 rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
+              <div class="px-4.5 py-3">
+                <h5 class="text-sm font-medium text-bodydark2">Calendar</h5>
+              </div>
+
+              <!-- ====== Calendar Section Start -->
+
+              <!-- ====== Calendar Section End -->
+            </div>
+            <!-- Dropdown End -->
+          </li>
+          <!-- Calendar Notification Area -->
+        </ul>
+
+        <!-- User Area -->
+        <div class="relative" x-data="{ dropdownOpen: false }" @click.outside="dropdownOpen = false">
+          <a class="flex items-center gap-4" href="#" @click.prevent="dropdownOpen = ! dropdownOpen">
+            <span class="hidden text-right lg:block">
+              <span class="block text-sm font-medium text-black dark:text-white">Thomas Anree</span>
+              <span class="block text-xs font-medium">UX Designer</span>
+            </span>
+
+            <span class="h-12 w-12 rounded-full">
+              <img src="images/user-01.png" alt="User" />
+            </span>
+
+            <svg :class="dropdownOpen && 'rotate-180'" class="hidden fill-current sm:block" width="12" height="8"
+              viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M1.4719 0.229332L6.00169 4.48868L10.5171 0.24288C10.9015 -0.133119 11.4504 -0.0312785 11.7497 0.267983C12.1344 0.652758 12.0332 1.2069 11.732 1.50812L11.7197 1.52041L6.97862 5.9781C6.43509 6.46442 5.57339 6.47872 5.03222 5.96853C5.03192 5.96825 5.03252 5.96881 5.03222 5.96853L0.271144 1.50833C0.123314 1.3605 -5.04223e-08 1.15353 -3.84322e-08 0.879226C-2.88721e-08 0.660517 0.0936127 0.428074 0.253705 0.267982C0.593641 -0.0719548 1.12269 -0.0699964 1.46204 0.220873L1.4719 0.229332ZM5.41917 5.55702C5.73691 5.85711 6.26647 5.85711 6.60185 5.55702L11.3326 1.10871C11.4562 0.985145 11.4738 0.790972 11.3502 0.667408C11.2267 0.543844 11.0325 0.526192 10.9089 0.649756L6.17821 5.09807C6.07229 5.18633 5.91343 5.18633 5.82517 5.09807L1.09443 0.649756C0.970861 0.543844 0.776689 0.543843 0.653125 0.667408C0.600168 0.720364 0.564864 0.808624 0.564864 0.879232C0.564864 0.967492 0.600168 1.0381 0.670776 1.10871L5.41917 5.55702Z"
+                d="M0.410765 0.910734C0.736202 0.585297 1.26384 0.585297 1.58928 0.910734L6.00002 5.32148L10.4108 0.910734C10.7362 0.585297 11.2638 0.585297 11.5893 0.910734C11.9147 1.23617 11.9147 1.76381 11.5893 2.08924L6.58928 7.08924C6.26384 7.41468 5.7362 7.41468 5.41077 7.08924L0.410765 2.08924C0.0853277 1.76381 0.0853277 1.23617 0.410765 0.910734Z"
                 fill="" />
             </svg>
-          </button>
-          <div x-show="openDropDown" @click.outside="openDropDown = false"
-            class="min-w-max absolute left-0 top-full z-40 mt-2 w-full rounded-md border border-stroke bg-white py-3 shadow-card dark:border-strokedark dark:bg-boxdark">
-            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-phone-button">
+          </a>
+
+          <!-- Dropdown Start -->
+          <div x-show="dropdownOpen"
+            class="absolute right-0 mt-4 flex w-62.5 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            <ul class="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
               <li>
-                <button type="button"
-                  class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                  role="menuitem">
-                  <span class="inline-flex items-center">
-                    <svg fill="none" aria-hidden="true" class="h-4 w-4 me-2" viewBox="0 0 20 15">
-                      <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                      <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
-                        maskUnits="userSpaceOnUse">
-                        <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                      </mask>
-                      <g mask="url(#a)">
-                        <path fill="#D02F44" fill-rule="evenodd"
-                          d="M19.6.5H0v.933h19.6V.5zm0 1.867H0V3.3h19.6v-.933zM0 4.233h19.6v.934H0v-.934zM19.6 6.1H0v.933h19.6V6.1zM0 7.967h19.6V8.9H0v-.933zm19.6 1.866H0v.934h19.6v-.934zM0 11.7h19.6v.933H0V11.7zm19.6 1.867H0v.933h19.6v-.933z"
-                          clip-rule="evenodd" />
-                        <path fill="#46467F" d="M0 .5h8.4v6.533H0z" />
-                        <g filter="url(#filter0_d_343_121520)">
-                          <path fill="url(#paint0_linear_343_121520)" fill-rule="evenodd"
-                            d="M1.867 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.866 0a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM7.467 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zM2.333 3.3a.467.467 0 100-.933.467.467 0 000 .933zm2.334-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.4.467a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm-2.334.466a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.466a.467.467 0 11-.933 0 .467.467 0 01.933 0zM1.4 4.233a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM6.533 4.7a.467.467 0 11-.933 0 .467.467 0 01.933 0zM7 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zM3.267 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0z"
-                            clip-rule="evenodd" />
-                        </g>
-                      </g>
-                      <defs>
-                        <linearGradient id="paint0_linear_343_121520" x1=".933" x2=".933" y1="1.433" y2="6.1"
-                          gradientUnits="userSpaceOnUse">
-                          <stop stop-color="#fff" />
-                          <stop offset="1" stop-color="#F0F0F0" />
-                        </linearGradient>
-                        <filter id="filter0_d_343_121520" width="6.533" height="5.667" x=".933" y="1.433"
-                          color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-                          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                          <feColorMatrix in="SourceAlpha" result="hardAlpha"
-                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                          <feOffset dy="1" />
-                          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_343_121520" />
-                          <feBlend in="SourceGraphic" in2="effect1_dropShadow_343_121520" result="shape" />
-                        </filter>
-                      </defs>
-                    </svg>
-                    United States (+1)
-                  </span>
-                </button>
+                <a href="profile.html"
+                  class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                  <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11 9.62499C8.42188 9.62499 6.35938 7.59687 6.35938 5.12187C6.35938 2.64687 8.42188 0.618744 11 0.618744C13.5781 0.618744 15.6406 2.64687 15.6406 5.12187C15.6406 7.59687 13.5781 9.62499 11 9.62499ZM11 2.16562C9.28125 2.16562 7.90625 3.50624 7.90625 5.12187C7.90625 6.73749 9.28125 8.07812 11 8.07812C12.7188 8.07812 14.0938 6.73749 14.0938 5.12187C14.0938 3.50624 12.7188 2.16562 11 2.16562Z"
+                      fill="" />
+                    <path
+                      d="M17.7719 21.4156H4.2281C3.5406 21.4156 2.9906 20.8656 2.9906 20.1781V17.0844C2.9906 13.7156 5.7406 10.9656 9.10935 10.9656H12.925C16.2937 10.9656 19.0437 13.7156 19.0437 17.0844V20.1781C19.0094 20.8312 18.4594 21.4156 17.7719 21.4156ZM4.53748 19.8687H17.4969V17.0844C17.4969 14.575 15.4344 12.5125 12.925 12.5125H9.07498C6.5656 12.5125 4.5031 14.575 4.5031 17.0844V19.8687H4.53748Z"
+                      fill="" />
+                  </svg>
+                  My Profile
+                </a>
               </li>
               <li>
-                <button type="button"
-                  class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                  role="menuitem">
-                  <span class="inline-flex items-center">
-                    <svg class="h-4 w-4 me-2" fill="none" viewBox="0 0 20 15">
-                      <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                      <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
-                        maskUnits="userSpaceOnUse">
-                        <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                      </mask>
-                      <g mask="url(#a)">
-                        <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
-                        <path fill="#fff" fill-rule="evenodd"
-                          d="M-.898-.842L7.467 4.8V-.433h4.667V4.8l8.364-5.642L21.542.706l-6.614 4.46H19.6v4.667h-4.672l6.614 4.46-1.044 1.549-8.365-5.642v5.233H7.467V10.2l-8.365 5.642-1.043-1.548 6.613-4.46H0V5.166h4.672L-1.941.706-.898-.842z"
-                          clip-rule="evenodd" />
-                        <path stroke="#DB1F35" stroke-linecap="round" stroke-width=".667"
-                          d="M13.067 4.933L21.933-.9M14.009 10.088l7.947 5.357M5.604 4.917L-2.686-.67M6.503 10.024l-9.189 6.093" />
-                        <path fill="#E6273E" fill-rule="evenodd"
-                          d="M0 8.9h8.4v5.6h2.8V8.9h8.4V6.1h-8.4V.5H8.4v5.6H0v2.8z" clip-rule="evenodd" />
-                      </g>
-                    </svg>
-                    United Kingdom (+44)
-                  </span>
-                </button>
+                <a href="messages.html"
+                  class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                  <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.6687 1.44374C17.1187 0.893744 16.4312 0.618744 15.675 0.618744H7.42498C6.25623 0.618744 5.25935 1.58124 5.25935 2.78437V4.12499H4.29685C3.88435 4.12499 3.50623 4.46874 3.50623 4.91562C3.50623 5.36249 3.84998 5.70624 4.29685 5.70624H5.25935V10.2781H4.29685C3.88435 10.2781 3.50623 10.6219 3.50623 11.0687C3.50623 11.4812 3.84998 11.8594 4.29685 11.8594H5.25935V16.4312H4.29685C3.88435 16.4312 3.50623 16.775 3.50623 17.2219C3.50623 17.6687 3.84998 18.0125 4.29685 18.0125H5.25935V19.25C5.25935 20.4187 6.22185 21.4156 7.42498 21.4156H15.675C17.2218 21.4156 18.4937 20.1437 18.5281 18.5969V3.47187C18.4937 2.68124 18.2187 1.95937 17.6687 1.44374ZM16.9469 18.5625C16.9469 19.2844 16.3625 19.8344 15.6406 19.8344H7.3906C7.04685 19.8344 6.77185 19.5594 6.77185 19.2156V17.875H8.6281C9.0406 17.875 9.41873 17.5312 9.41873 17.0844C9.41873 16.6375 9.07498 16.2937 8.6281 16.2937H6.77185V11.7906H8.6281C9.0406 11.7906 9.41873 11.4469 9.41873 11C9.41873 10.5875 9.07498 10.2094 8.6281 10.2094H6.77185V5.63749H8.6281C9.0406 5.63749 9.41873 5.29374 9.41873 4.84687C9.41873 4.39999 9.07498 4.05624 8.6281 4.05624H6.77185V2.74999C6.77185 2.40624 7.04685 2.13124 7.3906 2.13124H15.6406C15.9844 2.13124 16.2937 2.26874 16.5687 2.50937C16.8094 2.74999 16.9469 3.09374 16.9469 3.43749V18.5625Z"
+                      fill="" />
+                  </svg>
+                  My Contacts
+                </a>
               </li>
               <li>
-                <button type="button"
-                  class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                  role="menuitem">
-                  <span class="inline-flex items-center">
-                    <svg class="h-4 w-4 me-2" fill="none" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                      <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
-                        maskUnits="userSpaceOnUse">
-                        <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                      </mask>
-                      <g mask="url(#a)">
-                        <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
-                        <path fill="#fff" stroke="#fff" stroke-width=".667"
-                          d="M0 .167h-.901l.684.586 3.15 2.7v.609L-.194 6.295l-.14.1v1.24l.51-.319L3.83 5.033h.73L7.7 7.276a.488.488 0 00.601-.767L5.467 4.08v-.608l2.987-2.134a.667.667 0 00.28-.543V-.1l-.51.318L4.57 2.5h-.73L.66.229.572.167H0z" />
-                        <path fill="url(#paint0_linear_374_135177)" fill-rule="evenodd"
-                          d="M0 2.833V4.7h3.267v2.133c0 .369.298.667.666.667h.534a.667.667 0 00.666-.667V4.7H8.2a.667.667 0 00.667-.667V3.5a.667.667 0 00-.667-.667H5.133V.5H3.267v2.333H0z"
-                          clip-rule="evenodd" />
-                        <path fill="url(#paint1_linear_374_135177)" fill-rule="evenodd"
-                          d="M0 3.3h3.733V.5h.934v2.8H8.4v.933H4.667v2.8h-.934v-2.8H0V3.3z" clip-rule="evenodd" />
-                        <path fill="#fff" fill-rule="evenodd"
-                          d="M4.2 11.933l-.823.433.157-.916-.666-.65.92-.133.412-.834.411.834.92.134-.665.649.157.916-.823-.433zm9.8.7l-.66.194.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.194zm0-8.866l-.66.193.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.193zm2.8 2.8l-.66.193.193-.66-.193-.66.66.193.66-.193-.193.66.193.66-.66-.193zm-5.6.933l-.66.193.193-.66-.193-.66.66.194.66-.194-.193.66.193.66-.66-.193zm4.2 1.167l-.33.096.096-.33-.096-.33.33.097.33-.097-.097.33.097.33-.33-.096z"
-                          clip-rule="evenodd" />
-                      </g>
-                      <defs>
-                        <linearGradient id="paint0_linear_374_135177" x1="0" x2="0" y1=".5" y2="7.5"
-                          gradientUnits="userSpaceOnUse">
-                          <stop stop-color="#fff" />
-                          <stop offset="1" stop-color="#F0F0F0" />
-                        </linearGradient>
-                        <linearGradient id="paint1_linear_374_135177" x1="0" x2="0" y1=".5" y2="7.033"
-                          gradientUnits="userSpaceOnUse">
-                          <stop stop-color="#FF2E3B" />
-                          <stop offset="1" stop-color="#FC0D1B" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                    Australia (+61)
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button type="button"
-                  class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                  role="menuitem">
-                  <span class="inline-flex items-center">
-                    <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
-                      <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                      <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
-                        maskUnits="userSpaceOnUse">
-                        <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                      </mask>
-                      <g mask="url(#a)">
-                        <path fill="#262626" fill-rule="evenodd" d="M0 5.167h19.6V.5H0v4.667z" clip-rule="evenodd" />
-                        <g filter="url(#filter0_d_374_135180)">
-                          <path fill="#F01515" fill-rule="evenodd" d="M0 9.833h19.6V5.167H0v4.666z"
-                            clip-rule="evenodd" />
-                        </g>
-                        <g filter="url(#filter1_d_374_135180)">
-                          <path fill="#FFD521" fill-rule="evenodd" d="M0 14.5h19.6V9.833H0V14.5z" clip-rule="evenodd" />
-                        </g>
-                      </g>
-                      <defs>
-                        <filter id="filter0_d_374_135180" width="19.6" height="4.667" x="0" y="5.167"
-                          color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-                          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                          <feColorMatrix in="SourceAlpha" result="hardAlpha"
-                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                          <feOffset />
-                          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180" />
-                          <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape" />
-                        </filter>
-                        <filter id="filter1_d_374_135180" width="19.6" height="4.667" x="0" y="9.833"
-                          color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-                          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                          <feColorMatrix in="SourceAlpha" result="hardAlpha"
-                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                          <feOffset />
-                          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180" />
-                          <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape" />
-                        </filter>
-                      </defs>
-                    </svg>
-                    Germany (+49)
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button type="button"
-                  class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                  role="menuitem">
-                  <span class="inline-flex items-center">
-                    <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
-                      <rect width="19.1" height="13.5" x=".25" y=".75" fill="#fff" stroke="#F5F5F5" stroke-width=".5"
-                        rx="1.75" />
-                      <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
-                        maskUnits="userSpaceOnUse">
-                        <rect width="19.1" height="13.5" x=".25" y=".75" fill="#fff" stroke="#fff" stroke-width=".5"
-                          rx="1.75" />
-                      </mask>
-                      <g mask="url(#a)">
-                        <path fill="#F44653" d="M13.067.5H19.6v14h-6.533z" />
-                        <path fill="#1035BB" fill-rule="evenodd" d="M0 14.5h6.533V.5H0v14z" clip-rule="evenodd" />
-                      </g>
-                    </svg>
-                    France (+33)
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button type="button"
-                  class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                  role="menuitem">
-                  <span class="inline-flex items-center">
-                    <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
-                      <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                      <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0"
-                        maskUnits="userSpaceOnUse">
-                        <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                      </mask>
-                      <g mask="url(#a)">
-                        <path fill="#262626" fill-rule="evenodd" d="M0 5.167h19.6V.5H0v4.667z" clip-rule="evenodd" />
-                        <g filter="url(#filter0_d_374_135180)">
-                          <path fill="#F01515" fill-rule="evenodd" d="M0 9.833h19.6V5.167H0v4.666z"
-                            clip-rule="evenodd" />
-                        </g>
-                        <g filter="url(#filter1_d_374_135180)">
-                          <path fill="#FFD521" fill-rule="evenodd" d="M0 14.5h19.6V9.833H0V14.5z" clip-rule="evenodd" />
-                        </g>
-                      </g>
-                      <defs>
-                        <filter id="filter0_d_374_135180" width="19.6" height="4.667" x="0" y="5.167"
-                          color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-                          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                          <feColorMatrix in="SourceAlpha" result="hardAlpha"
-                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                          <feOffset />
-                          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180" />
-                          <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape" />
-                        </filter>
-                        <filter id="filter1_d_374_135180" width="19.6" height="4.667" x="0" y="9.833"
-                          color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-                          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                          <feColorMatrix in="SourceAlpha" result="hardAlpha"
-                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                          <feOffset />
-                          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180" />
-                          <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape" />
-                        </filter>
-                      </defs>
-                    </svg>
-                    Germany (+49)
-                  </span>
-                </button>
+                <a href="settings.html"
+                  class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+                  <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M20.8656 8.86874C20.5219 8.49062 20.0406 8.28437 19.525 8.28437H19.4219C19.25 8.28437 19.1125 8.18124 19.0781 8.04374C19.0437 7.90624 18.975 7.80312 18.9406 7.66562C18.8719 7.52812 18.9406 7.39062 19.0437 7.28749L19.1125 7.21874C19.4906 6.87499 19.6969 6.39374 19.6969 5.87812C19.6969 5.36249 19.525 4.88124 19.1469 4.50312L17.8062 3.12812C17.0844 2.37187 15.8469 2.33749 15.0906 3.09374L14.9875 3.16249C14.8844 3.26562 14.7125 3.29999 14.5406 3.23124C14.4031 3.16249 14.2656 3.09374 14.0937 3.05937C13.9219 2.99062 13.8187 2.85312 13.8187 2.71562V2.54374C13.8187 1.47812 12.9594 0.618744 11.8937 0.618744H9.96875C9.45312 0.618744 8.97187 0.824994 8.62812 1.16874C8.25 1.54687 8.07812 2.02812 8.07812 2.50937V2.64687C8.07812 2.78437 7.975 2.92187 7.8375 2.99062C7.76875 3.02499 7.73437 3.02499 7.66562 3.05937C7.52812 3.12812 7.35625 3.09374 7.25312 2.99062L7.18437 2.88749C6.84062 2.50937 6.35937 2.30312 5.84375 2.30312C5.32812 2.30312 4.84687 2.47499 4.46875 2.85312L3.09375 4.19374C2.3375 4.91562 2.30312 6.15312 3.05937 6.90937L3.12812 7.01249C3.23125 7.11562 3.26562 7.28749 3.19687 7.39062C3.12812 7.52812 3.09375 7.63124 3.025 7.76874C2.95625 7.90624 2.85312 7.97499 2.68125 7.97499H2.57812C2.0625 7.97499 1.58125 8.14687 1.20312 8.52499C0.824996 8.86874 0.618746 9.34999 0.618746 9.86562L0.584371 11.7906C0.549996 12.8562 1.40937 13.7156 2.475 13.75H2.57812C2.75 13.75 2.8875 13.8531 2.92187 13.9906C2.99062 14.0937 3.05937 14.1969 3.09375 14.3344C3.12812 14.4719 3.09375 14.6094 2.99062 14.7125L2.92187 14.7812C2.54375 15.125 2.3375 15.6062 2.3375 16.1219C2.3375 16.6375 2.50937 17.1187 2.8875 17.4969L4.22812 18.8719C4.95 19.6281 6.1875 19.6625 6.94375 18.9062L7.04687 18.8375C7.15 18.7344 7.32187 18.7 7.49375 18.7687C7.63125 18.8375 7.76875 18.9062 7.94062 18.9406C8.1125 19.0094 8.21562 19.1469 8.21562 19.2844V19.4219C8.21562 20.4875 9.075 21.3469 10.1406 21.3469H12.0656C13.1312 21.3469 13.9906 20.4875 13.9906 19.4219V19.2844C13.9906 19.1469 14.0937 19.0094 14.2312 18.9406C14.3 18.9062 14.3344 18.9062 14.4031 18.8719C14.575 18.8031 14.7125 18.8375 14.8156 18.9406L14.8844 19.0437C15.2281 19.4219 15.7094 19.6281 16.225 19.6281C16.7406 19.6281 17.2219 19.4562 17.6 19.0781L18.975 17.7375C19.7312 17.0156 19.7656 15.7781 19.0094 15.0219L18.9406 14.9187C18.8375 14.8156 18.8031 14.6437 18.8719 14.5406C18.9406 14.4031 18.975 14.3 19.0437 14.1625C19.1125 14.025 19.25 13.9562 19.3875 13.9562H19.4906H19.525C20.5562 13.9562 21.4156 13.1312 21.45 12.0656L21.4844 10.1406C21.4156 9.72812 21.2094 9.21249 20.8656 8.86874ZM19.8344 12.1C19.8344 12.3062 19.6625 12.4781 19.4562 12.4781H19.3531H19.3187C18.5281 12.4781 17.8062 12.9594 17.5312 13.6469C17.4969 13.75 17.4281 13.8531 17.3937 13.9562C17.0844 14.6437 17.2219 15.5031 17.7719 16.0531L17.8406 16.1562C17.9781 16.2937 17.9781 16.5344 17.8406 16.6719L16.4656 18.0125C16.3625 18.1156 16.2594 18.1156 16.1906 18.1156C16.1219 18.1156 16.0187 18.1156 15.9156 18.0125L15.8469 17.9094C15.2969 17.325 14.4719 17.1531 13.7156 17.4969L13.5781 17.5656C12.8219 17.875 12.3406 18.5625 12.3406 19.3531V19.4906C12.3406 19.6969 12.1687 19.8687 11.9625 19.8687H10.0375C9.83125 19.8687 9.65937 19.6969 9.65937 19.4906V19.3531C9.65937 18.5625 9.17812 17.8406 8.42187 17.5656C8.31875 17.5312 8.18125 17.4625 8.07812 17.4281C7.80312 17.2906 7.52812 17.2562 7.25312 17.2562C6.77187 17.2562 6.29062 17.4281 5.9125 17.8062L5.84375 17.8406C5.70625 17.9781 5.46562 17.9781 5.32812 17.8406L3.9875 16.4656C3.88437 16.3625 3.88437 16.2594 3.88437 16.1906C3.88437 16.1219 3.88437 16.0187 3.9875 15.9156L4.05625 15.8469C4.64062 15.2969 4.8125 14.4375 4.50312 13.75C4.46875 13.6469 4.43437 13.5437 4.36562 13.4406C4.09062 12.7187 3.40312 12.2031 2.6125 12.2031H2.50937C2.30312 12.2031 2.13125 12.0312 2.13125 11.825L2.16562 9.89999C2.16562 9.76249 2.23437 9.69374 2.26875 9.62499C2.30312 9.59062 2.40625 9.52187 2.54375 9.52187H2.64687C3.4375 9.55624 4.15937 9.07499 4.46875 8.35312C4.50312 8.24999 4.57187 8.14687 4.60625 8.04374C4.91562 7.35624 4.77812 6.49687 4.22812 5.94687L4.15937 5.84374C4.02187 5.70624 4.02187 5.46562 4.15937 5.32812L5.53437 3.98749C5.6375 3.88437 5.74062 3.88437 5.80937 3.88437C5.87812 3.88437 5.98125 3.88437 6.08437 3.98749L6.15312 4.09062C6.70312 4.67499 7.52812 4.84687 8.28437 4.53749L8.42187 4.46874C9.17812 4.15937 9.65937 3.47187 9.65937 2.68124V2.54374C9.65937 2.40624 9.72812 2.33749 9.7625 2.26874C9.79687 2.19999 9.9 2.16562 10.0375 2.16562H11.9625C12.1687 2.16562 12.3406 2.33749 12.3406 2.54374V2.68124C12.3406 3.47187 12.8219 4.19374 13.5781 4.46874C13.6812 4.50312 13.8187 4.57187 13.9219 4.60624C14.6437 4.94999 15.5031 4.81249 16.0875 4.26249L16.1906 4.19374C16.3281 4.05624 16.5687 4.05624 16.7062 4.19374L18.0469 5.56874C18.15 5.67187 18.15 5.77499 18.15 5.84374C18.15 5.91249 18.1156 6.01562 18.0469 6.11874L17.9781 6.18749C17.3594 6.70312 17.1875 7.56249 17.4625 8.24999C17.4969 8.35312 17.5312 8.45624 17.6 8.55937C17.875 9.28124 18.5625 9.79687 19.3531 9.79687H19.4562C19.5937 9.79687 19.6625 9.86562 19.7312 9.89999C19.8 9.93437 19.8344 10.0375 19.8344 10.175V12.1Z"
+                      fill="" />
+                    <path
+                      d="M11 6.32498C8.42189 6.32498 6.32501 8.42186 6.32501 11C6.32501 13.5781 8.42189 15.675 11 15.675C13.5781 15.675 15.675 13.5781 15.675 11C15.675 8.42186 13.5781 6.32498 11 6.32498ZM11 14.1281C9.28126 14.1281 7.87189 12.7187 7.87189 11C7.87189 9.28123 9.28126 7.87186 11 7.87186C12.7188 7.87186 14.1281 9.28123 14.1281 11C14.1281 12.7187 12.7188 14.1281 11 14.1281Z"
+                      fill="" />
+                  </svg>
+                  Account Settings
+                </a>
               </li>
             </ul>
+            <button
+              class="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+              <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.5375 0.618744H11.6531C10.7594 0.618744 10.0031 1.37499 10.0031 2.26874V4.64062C10.0031 5.05312 10.3469 5.39687 10.7594 5.39687C11.1719 5.39687 11.55 5.05312 11.55 4.64062V2.23437C11.55 2.16562 11.5844 2.13124 11.6531 2.13124H15.5375C16.3625 2.13124 17.0156 2.78437 17.0156 3.60937V18.3562C17.0156 19.1812 16.3625 19.8344 15.5375 19.8344H11.6531C11.5844 19.8344 11.55 19.8 11.55 19.7312V17.3594C11.55 16.9469 11.2062 16.6031 10.7594 16.6031C10.3125 16.6031 10.0031 16.9469 10.0031 17.3594V19.7312C10.0031 20.625 10.7594 21.3812 11.6531 21.3812H15.5375C17.2219 21.3812 18.5625 20.0062 18.5625 18.3562V3.64374C18.5625 1.95937 17.1875 0.618744 15.5375 0.618744Z"
+                  fill="" />
+                <path
+                  d="M6.05001 11.7563H12.2031C12.6156 11.7563 12.9594 11.4125 12.9594 11C12.9594 10.5875 12.6156 10.2438 12.2031 10.2438H6.08439L8.21564 8.07813C8.52501 7.76875 8.52501 7.2875 8.21564 6.97812C7.90626 6.66875 7.42501 6.66875 7.11564 6.97812L3.67814 10.4844C3.36876 10.7938 3.36876 11.275 3.67814 11.5844L7.11564 15.0906C7.25314 15.2281 7.45939 15.3312 7.66564 15.3312C7.87189 15.3312 8.04376 15.2625 8.21564 15.125C8.52501 14.8156 8.52501 14.3344 8.21564 14.025L6.05001 11.7563Z"
+                  fill="" />
+              </svg>
+              Log Out
+            </button>
           </div>
+          <!-- Dropdown End -->
         </div>
-
-      </div>
-
-
-      <!-- Language Selector Area-->
-
-      <!-- Calling Section -->
-
-      <div class="flex gap-2">
-        <input type="text" placeholder="(206) 235- 421"
-          class="max-w-45 min-h-9 rounded-xl border-[1.5px] border-stroke bg-transparent px-4 py-1 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-        <button id="headerDialingButton"
-          class="flex w-10 justify-center items-center rounded-xl border-[1.5px] border-stroke bg-transparent p-1 font-medium text-gray hover:bg-opacity-90">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M3.77762 11.9424C2.8296 10.2893 2.37185 8.93948 2.09584 7.57121C1.68762 5.54758 2.62181 3.57081 4.16938 2.30947C4.82345 1.77638 5.57323 1.95852 5.96 2.6524L6.83318 4.21891C7.52529 5.46057 7.87134 6.08139 7.8027 6.73959C7.73407 7.39779 7.26737 7.93386 6.33397 9.00601L3.77762 11.9424ZM3.77762 11.9424C5.69651 15.2883 8.70784 18.3013 12.0576 20.2224M12.0576 20.2224C13.7107 21.1704 15.0605 21.6282 16.4288 21.9042C18.4524 22.3124 20.4292 21.3782 21.6905 19.8306C22.2236 19.1766 22.0415 18.4268 21.3476 18.04L19.7811 17.1668C18.5394 16.4747 17.9186 16.1287 17.2604 16.1973C16.6022 16.2659 16.0661 16.7326 14.994 17.666L12.0576 20.2224Z"
-              stroke="#8A99AF" stroke-width="1.5" stroke-linejoin="round" />
-          </svg>
-        </button>
+        <!-- User Area -->
       </div>
     </div>
-    <!-- </form> -->
-    <!-- Calling Section -->
-
 
   </div>
-  <!-- Bottom Header Right Area -->
-</div>
+
+      <!-- Bottom Header Area -->
+<div id="headerBottom">
+    <div
+        class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11 bg-white max-h-16 dark:bg-boxdark dark:drop-shadow-none">
+
+        <!-- Select Country Area -->
+        <div class="flex items-center gap-2">
+            <label class="mb-0 block text-base font-medium text-black dark:text-white">
+                Current Status :
+            </label>
+
+            <div x-data="{openDropDown: false}" class="relative mb-0 inline-block">
+                <a href="#" @click.prevent="openDropDown = !openDropDown"
+                    class="inline-flex items-center justify-between gap-2.5 text-slate-600 min-w-28 appearance-none rounded-lg border border-stroke bg-transparent py-1 pl-4 pr-3.5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input">
+                    Unavailable
+                    <svg class="fill-current duration-200 ease-linear" :class="openDropDown && 'rotate-180'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                            d="M7.9999 11.4C7.8499 11.4 7.7249 11.35 7.5999 11.25L1.8499 5.60005C1.6249 5.37505 1.6249 5.02505 1.8499 4.80005C2.0749 4.57505 2.4249 4.57505 2.6499 4.80005L7.9999 10.025L13.3499 4.75005C13.5749 4.52505 13.9249 4.52505 14.1499 4.75005C14.3749 4.97505 14.3749 5.32505 14.1499 5.55005L8.3999 11.2C8.2749 11.325 8.1499 11.4 7.9999 11.4Z"
+                            fill="#64748B"></path>
+                    </svg>
+                </a>
+                <div x-show="openDropDown" @click.outside="openDropDown = false"
+                    class="absolute left-0 top-full z-40 mt-2 w-full rounded-md border border-stroke bg-white shadow-card dark:border-strokedark dark:bg-boxdark">
+                    <ul class="flex flex-col p-2">
+                        <li>
+                            <a href="#"
+                                class="flex px-2 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                                Unavailable
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                                Available
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                                Option 1
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                                Option 2
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- Select Country Area -->
+
+        <!-- Bottom Header Right Area -->
+        <div class="flex items-center gap-2">
+
+
+            <!-- <form action="" class=""> -->
+            <div class="max-w-sm mx-auto flex gap-2 items-center">
+                <div>
+                    <div x-data="{openDropDown: false}" class="relative mb-0 inline-block">
+                        <button @click.prevent="openDropDown = !openDropDown"
+                            class="text-base relative z-20  min-h-9 flex items-center justify-between gap-2 appearance-none rounded-lg border border-stroke bg-transparent py-1 px-2.5 outline-none transition focus:border-primary active:border-primary ">
+                            <div class="rounded-full overflow-hidden size-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_36668_1143)">
+                                        <rect x="1" y="1" width="24" height="24" rx="12" fill="white" />
+                                        <path d="M31.449 1H1V25.3041H31.449V1Z" fill="#B31942" />
+                                        <path
+                                            d="M1 3.8042H31.449ZM31.449 7.54329H1ZM1 11.2824H31.449ZM31.449 15.0215H1ZM1 18.7606H31.449ZM31.449 22.4997H1Z"
+                                            fill="#000008" />
+                                        <path
+                                            d="M1 3.8042H31.449M31.449 7.54329H1M1 11.2824H31.449M31.449 15.0215H1M1 18.7606H31.449M31.449 22.4997H1"
+                                            stroke="white" stroke-width="1.55796" />
+                                        <path d="M16.3926 1H1V14.0868H16.3926V1Z" fill="#0A3161" />
+                                        <path
+                                            d="M2.28311 1.56079L2.64941 2.91361L1.69043 2.07752H2.87579L1.91681 2.91361L2.28311 1.56079Z"
+                                            fill="white" />
+                                        <path
+                                            d="M2.28311 4.17822L2.64941 5.53104L1.69043 4.69495H2.87579L1.91681 5.53104L2.28311 4.17822Z"
+                                            fill="white" />
+                                        <path
+                                            d="M2.28311 6.79565L2.64941 8.14847L1.69043 7.31238H2.87579L1.91681 8.14847L2.28311 6.79565Z"
+                                            fill="white" />
+                                        <path
+                                            d="M2.28311 9.41309L2.64941 10.7659L1.69043 9.92982H2.87579L1.91681 10.7659L2.28311 9.41309Z"
+                                            fill="white" />
+                                        <path
+                                            d="M2.28311 12.0305L2.64941 13.3833L1.69043 12.5472H2.87579L1.91681 13.3833L2.28311 12.0305Z"
+                                            fill="white" />
+                                        <path
+                                            d="M3.56534 2.86963L3.93164 4.22245L2.97266 3.38636H4.15802L3.19904 4.22245L3.56534 2.86963Z"
+                                            fill="white" />
+                                        <path
+                                            d="M3.56534 5.48682L3.93164 6.83963L2.97266 6.00355H4.15802L3.19904 6.83963L3.56534 5.48682Z"
+                                            fill="white" />
+                                        <path
+                                            d="M3.56534 8.10425L3.93164 9.45706L2.97266 8.62098H4.15802L3.19904 9.45706L3.56534 8.10425Z"
+                                            fill="white" />
+                                        <path
+                                            d="M3.56534 10.7217L3.93164 12.0745L2.97266 11.2384H4.15802L3.19904 12.0745L3.56534 10.7217Z"
+                                            fill="white" />
+                                        <path
+                                            d="M4.84854 1.56104L5.21484 2.91385L4.25586 2.07777H5.44122L4.48224 2.91385L4.84854 1.56104Z"
+                                            fill="white" />
+                                        <path
+                                            d="M4.84854 4.17822L5.21484 5.53104L4.25586 4.69495H5.44122L4.48224 5.53104L4.84854 4.17822Z"
+                                            fill="white" />
+                                        <path
+                                            d="M4.84854 6.79565L5.21484 8.14847L4.25586 7.31238H5.44122L4.48224 8.14847L4.84854 6.79565Z"
+                                            fill="white" />
+                                        <path
+                                            d="M4.84854 9.41309L5.21484 10.7659L4.25586 9.92982H5.44122L4.48224 10.7659L4.84854 9.41309Z"
+                                            fill="white" />
+                                        <path
+                                            d="M4.84854 12.0305L5.21484 13.3833L4.25586 12.5472H5.44122L4.48224 13.3833L4.84854 12.0305Z"
+                                            fill="white" />
+                                        <path
+                                            d="M6.13174 2.86987L6.49804 4.22269L5.53906 3.3866H6.72443L5.76545 4.22269L6.13174 2.86987Z"
+                                            fill="white" />
+                                        <path
+                                            d="M6.13174 5.4873L6.49804 6.84012L5.53906 6.00403H6.72443L5.76545 6.84012L6.13174 5.4873Z"
+                                            fill="white" />
+                                        <path
+                                            d="M6.13174 8.10474L6.49804 9.45755L5.53906 8.62147H6.72443L5.76545 9.45755L6.13174 8.10474Z"
+                                            fill="white" />
+                                        <path
+                                            d="M6.13174 10.7219L6.49804 12.0747L5.53906 11.2387H6.72443L5.76545 12.0747L6.13174 10.7219Z"
+                                            fill="white" />
+                                        <path
+                                            d="M7.41397 1.56104L7.78027 2.91385L6.82129 2.07777H8.00665L7.04767 2.91385L7.41397 1.56104Z"
+                                            fill="white" />
+                                        <path
+                                            d="M7.41397 4.17822L7.78027 5.53104L6.82129 4.69495H8.00665L7.04767 5.53104L7.41397 4.17822Z"
+                                            fill="white" />
+                                        <path
+                                            d="M7.41397 6.79565L7.78027 8.14847L6.82129 7.31238H8.00665L7.04767 8.14847L7.41397 6.79565Z"
+                                            fill="white" />
+                                        <path
+                                            d="M7.41397 9.41309L7.78027 10.7659L6.82129 9.92982H8.00665L7.04767 10.7659L7.41397 9.41309Z"
+                                            fill="white" />
+                                        <path
+                                            d="M7.41397 12.0305L7.78027 13.3833L6.82129 12.5472H8.00665L7.04767 13.3833L7.41397 12.0305Z"
+                                            fill="white" />
+                                        <path
+                                            d="M8.69717 2.86987L9.06347 4.22269L8.10449 3.3866H9.28986L8.33088 4.22269L8.69717 2.86987Z"
+                                            fill="white" />
+                                        <path
+                                            d="M8.69717 5.4873L9.06347 6.84012L8.10449 6.00403H9.28986L8.33088 6.84012L8.69717 5.4873Z"
+                                            fill="white" />
+                                        <path
+                                            d="M8.69717 8.10474L9.06347 9.45755L8.10449 8.62147H9.28986L8.33088 9.45755L8.69717 8.10474Z"
+                                            fill="white" />
+                                        <path
+                                            d="M8.69717 10.7219L9.06347 12.0747L8.10449 11.2387H9.28986L8.33088 12.0747L8.69717 10.7219Z"
+                                            fill="white" />
+                                        <path
+                                            d="M9.9794 1.56104L10.3457 2.91385L9.38672 2.07777H10.5721L9.6131 2.91385L9.9794 1.56104Z"
+                                            fill="white" />
+                                        <path
+                                            d="M9.9794 4.17847L10.3457 5.53128L9.38672 4.6952H10.5721L9.6131 5.53128L9.9794 4.17847Z"
+                                            fill="white" />
+                                        <path
+                                            d="M9.9794 6.79565L10.3457 8.14847L9.38672 7.31238H10.5721L9.6131 8.14847L9.9794 6.79565Z"
+                                            fill="white" />
+                                        <path
+                                            d="M9.9794 9.41309L10.3457 10.7659L9.38672 9.92982H10.5721L9.6131 10.7659L9.9794 9.41309Z"
+                                            fill="white" />
+                                        <path
+                                            d="M9.9794 12.0305L10.3457 13.3833L9.38672 12.5472H10.5721L9.6131 13.3833L9.9794 12.0305Z"
+                                            fill="white" />
+                                        <path
+                                            d="M11.2626 2.86987L11.6289 4.22269L10.6699 3.3866H11.8553L10.8963 4.22269L11.2626 2.86987Z"
+                                            fill="white" />
+                                        <path
+                                            d="M11.2626 5.4873L11.6289 6.84012L10.6699 6.00403H11.8553L10.8963 6.84012L11.2626 5.4873Z"
+                                            fill="white" />
+                                        <path
+                                            d="M11.2626 8.10474L11.6289 9.45755L10.6699 8.62147H11.8553L10.8963 9.45755L11.2626 8.10474Z"
+                                            fill="white" />
+                                        <path
+                                            d="M11.2626 10.7222L11.6289 12.075L10.6699 11.2389H11.8553L10.8963 12.075L11.2626 10.7222Z"
+                                            fill="white" />
+                                        <path
+                                            d="M12.5448 1.56104L12.9111 2.91385L11.9521 2.07777H13.1375L12.1785 2.91385L12.5448 1.56104Z"
+                                            fill="white" />
+                                        <path
+                                            d="M12.5448 4.17847L12.9111 5.53128L11.9521 4.6952H13.1375L12.1785 5.53128L12.5448 4.17847Z"
+                                            fill="white" />
+                                        <path
+                                            d="M12.5448 6.79565L12.9111 8.14847L11.9521 7.31238H13.1375L12.1785 8.14847L12.5448 6.79565Z"
+                                            fill="white" />
+                                        <path
+                                            d="M12.5448 9.41309L12.9111 10.7659L11.9521 9.92982H13.1375L12.1785 10.7659L12.5448 9.41309Z"
+                                            fill="white" />
+                                        <path
+                                            d="M12.5448 12.0305L12.9111 13.3833L11.9521 12.5472H13.1375L12.1785 13.3833L12.5448 12.0305Z"
+                                            fill="white" />
+                                        <path
+                                            d="M13.828 2.86963L14.1943 4.22245L13.2354 3.38636H14.4207L13.4617 4.22245L13.828 2.86963Z"
+                                            fill="white" />
+                                        <path
+                                            d="M13.828 5.48706L14.1943 6.83988L13.2354 6.00379H14.4207L13.4617 6.83988L13.828 5.48706Z"
+                                            fill="white" />
+                                        <path
+                                            d="M13.828 8.10425L14.1943 9.45706L13.2354 8.62098H14.4207L13.4617 9.45706L13.828 8.10425Z"
+                                            fill="white" />
+                                        <path
+                                            d="M13.828 10.7217L14.1943 12.0745L13.2354 11.2384H14.4207L13.4617 12.0745L13.828 10.7217Z"
+                                            fill="white" />
+                                        <path
+                                            d="M15.1103 1.56104L15.4766 2.91385L14.5176 2.07777H15.7029L14.744 2.91385L15.1103 1.56104Z"
+                                            fill="white" />
+                                        <path
+                                            d="M15.1103 4.17847L15.4766 5.53128L14.5176 4.6952H15.7029L14.744 5.53128L15.1103 4.17847Z"
+                                            fill="white" />
+                                        <path
+                                            d="M15.1103 6.79565L15.4766 8.14847L14.5176 7.31238H15.7029L14.744 8.14847L15.1103 6.79565Z"
+                                            fill="white" />
+                                        <path
+                                            d="M15.1103 9.41309L15.4766 10.7659L14.5176 9.92982H15.7029L14.744 10.7659L15.1103 9.41309Z"
+                                            fill="white" />
+                                        <path
+                                            d="M15.1103 12.0305L15.4766 13.3833L14.5176 12.5472H15.7029L14.744 13.3833L15.1103 12.0305Z"
+                                            fill="white" />
+                                    </g>
+                                    <rect x="1" y="1" width="24" height="24" rx="12" stroke="#DEE4EE"
+                                        stroke-linejoin="round" />
+                                    <defs>
+                                        <clipPath id="clip0_36668_1143">
+                                            <rect x="1" y="1" width="24" height="24" rx="12" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+
+                            <svg class="fill-current duration-200 ease-linear" :class="openDropDown && 'rotate-180'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <path
+                                    d="M7.9999 11.4C7.8499 11.4 7.7249 11.35 7.5999 11.25L1.8499 5.60005C1.6249 5.37505 1.6249 5.02505 1.8499 4.80005C2.0749 4.57505 2.4249 4.57505 2.6499 4.80005L7.9999 10.025L13.3499 4.75005C13.5749 4.52505 13.9249 4.52505 14.1499 4.75005C14.3749 4.97505 14.3749 5.32505 14.1499 5.55005L8.3999 11.2C8.2749 11.325 8.1499 11.4 7.9999 11.4Z"
+                                    fill="#64748B" />
+                            </svg>
+                        </button>
+                        <div x-show="openDropDown" @click.outside="openDropDown = false"
+                            class="min-w-max absolute left-0 top-full z-40 mt-2 w-full rounded-md border border-stroke bg-white py-3 shadow-card dark:border-strokedark dark:bg-boxdark">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                                aria-labelledby="dropdown-phone-button">
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">
+                                        <span class="inline-flex items-center">
+                                            <svg fill="none" aria-hidden="true" class="h-4 w-4 me-2"
+                                                viewBox="0 0 20 15">
+                                                <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                <mask id="a" style="mask-type:luminance" width="20" height="15" x="0"
+                                                    y="0" maskUnits="userSpaceOnUse">
+                                                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                </mask>
+                                                <g mask="url(#a)">
+                                                    <path fill="#D02F44" fill-rule="evenodd"
+                                                        d="M19.6.5H0v.933h19.6V.5zm0 1.867H0V3.3h19.6v-.933zM0 4.233h19.6v.934H0v-.934zM19.6 6.1H0v.933h19.6V6.1zM0 7.967h19.6V8.9H0v-.933zm19.6 1.866H0v.934h19.6v-.934zM0 11.7h19.6v.933H0V11.7zm19.6 1.867H0v.933h19.6v-.933z"
+                                                        clip-rule="evenodd" />
+                                                    <path fill="#46467F" d="M0 .5h8.4v6.533H0z" />
+                                                    <g filter="url(#filter0_d_343_121520)">
+                                                        <path fill="url(#paint0_linear_343_121520)" fill-rule="evenodd"
+                                                            d="M1.867 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.866 0a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM7.467 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zM2.333 3.3a.467.467 0 100-.933.467.467 0 000 .933zm2.334-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.4.467a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm-2.334.466a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.466a.467.467 0 11-.933 0 .467.467 0 01.933 0zM1.4 4.233a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM6.533 4.7a.467.467 0 11-.933 0 .467.467 0 01.933 0zM7 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zM3.267 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0z"
+                                                            clip-rule="evenodd" />
+                                                    </g>
+                                                </g>
+                                                <defs>
+                                                    <linearGradient id="paint0_linear_343_121520" x1=".933" x2=".933"
+                                                        y1="1.433" y2="6.1" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#fff" />
+                                                        <stop offset="1" stop-color="#F0F0F0" />
+                                                    </linearGradient>
+                                                    <filter id="filter0_d_343_121520" width="6.533" height="5.667"
+                                                        x=".933" y="1.433" color-interpolation-filters="sRGB"
+                                                        filterUnits="userSpaceOnUse">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                        <feOffset dy="1" />
+                                                        <feColorMatrix
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                                        <feBlend in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_343_121520" />
+                                                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_343_121520"
+                                                            result="shape" />
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+                                            United States (+1)
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">
+                                        <span class="inline-flex items-center">
+                                            <svg class="h-4 w-4 me-2" fill="none" viewBox="0 0 20 15">
+                                                <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                <mask id="a" style="mask-type:luminance" width="20" height="15" x="0"
+                                                    y="0" maskUnits="userSpaceOnUse">
+                                                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                </mask>
+                                                <g mask="url(#a)">
+                                                    <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
+                                                    <path fill="#fff" fill-rule="evenodd"
+                                                        d="M-.898-.842L7.467 4.8V-.433h4.667V4.8l8.364-5.642L21.542.706l-6.614 4.46H19.6v4.667h-4.672l6.614 4.46-1.044 1.549-8.365-5.642v5.233H7.467V10.2l-8.365 5.642-1.043-1.548 6.613-4.46H0V5.166h4.672L-1.941.706-.898-.842z"
+                                                        clip-rule="evenodd" />
+                                                    <path stroke="#DB1F35" stroke-linecap="round" stroke-width=".667"
+                                                        d="M13.067 4.933L21.933-.9M14.009 10.088l7.947 5.357M5.604 4.917L-2.686-.67M6.503 10.024l-9.189 6.093" />
+                                                    <path fill="#E6273E" fill-rule="evenodd"
+                                                        d="M0 8.9h8.4v5.6h2.8V8.9h8.4V6.1h-8.4V.5H8.4v5.6H0v2.8z"
+                                                        clip-rule="evenodd" />
+                                                </g>
+                                            </svg>
+                                            United Kingdom (+44)
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">
+                                        <span class="inline-flex items-center">
+                                            <svg class="h-4 w-4 me-2" fill="none" viewBox="0 0 20 15"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                <mask id="a" style="mask-type:luminance" width="20" height="15" x="0"
+                                                    y="0" maskUnits="userSpaceOnUse">
+                                                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                </mask>
+                                                <g mask="url(#a)">
+                                                    <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
+                                                    <path fill="#fff" stroke="#fff" stroke-width=".667"
+                                                        d="M0 .167h-.901l.684.586 3.15 2.7v.609L-.194 6.295l-.14.1v1.24l.51-.319L3.83 5.033h.73L7.7 7.276a.488.488 0 00.601-.767L5.467 4.08v-.608l2.987-2.134a.667.667 0 00.28-.543V-.1l-.51.318L4.57 2.5h-.73L.66.229.572.167H0z" />
+                                                    <path fill="url(#paint0_linear_374_135177)" fill-rule="evenodd"
+                                                        d="M0 2.833V4.7h3.267v2.133c0 .369.298.667.666.667h.534a.667.667 0 00.666-.667V4.7H8.2a.667.667 0 00.667-.667V3.5a.667.667 0 00-.667-.667H5.133V.5H3.267v2.333H0z"
+                                                        clip-rule="evenodd" />
+                                                    <path fill="url(#paint1_linear_374_135177)" fill-rule="evenodd"
+                                                        d="M0 3.3h3.733V.5h.934v2.8H8.4v.933H4.667v2.8h-.934v-2.8H0V3.3z"
+                                                        clip-rule="evenodd" />
+                                                    <path fill="#fff" fill-rule="evenodd"
+                                                        d="M4.2 11.933l-.823.433.157-.916-.666-.65.92-.133.412-.834.411.834.92.134-.665.649.157.916-.823-.433zm9.8.7l-.66.194.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.194zm0-8.866l-.66.193.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.193zm2.8 2.8l-.66.193.193-.66-.193-.66.66.193.66-.193-.193.66.193.66-.66-.193zm-5.6.933l-.66.193.193-.66-.193-.66.66.194.66-.194-.193.66.193.66-.66-.193zm4.2 1.167l-.33.096.096-.33-.096-.33.33.097.33-.097-.097.33.097.33-.33-.096z"
+                                                        clip-rule="evenodd" />
+                                                </g>
+                                                <defs>
+                                                    <linearGradient id="paint0_linear_374_135177" x1="0" x2="0" y1=".5"
+                                                        y2="7.5" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#fff" />
+                                                        <stop offset="1" stop-color="#F0F0F0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="paint1_linear_374_135177" x1="0" x2="0" y1=".5"
+                                                        y2="7.033" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#FF2E3B" />
+                                                        <stop offset="1" stop-color="#FC0D1B" />
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                            Australia (+61)
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">
+                                        <span class="inline-flex items-center">
+                                            <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
+                                                <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                <mask id="a" style="mask-type:luminance" width="20" height="15" x="0"
+                                                    y="0" maskUnits="userSpaceOnUse">
+                                                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                </mask>
+                                                <g mask="url(#a)">
+                                                    <path fill="#262626" fill-rule="evenodd"
+                                                        d="M0 5.167h19.6V.5H0v4.667z" clip-rule="evenodd" />
+                                                    <g filter="url(#filter0_d_374_135180)">
+                                                        <path fill="#F01515" fill-rule="evenodd"
+                                                            d="M0 9.833h19.6V5.167H0v4.666z" clip-rule="evenodd" />
+                                                    </g>
+                                                    <g filter="url(#filter1_d_374_135180)">
+                                                        <path fill="#FFD521" fill-rule="evenodd"
+                                                            d="M0 14.5h19.6V9.833H0V14.5z" clip-rule="evenodd" />
+                                                    </g>
+                                                </g>
+                                                <defs>
+                                                    <filter id="filter0_d_374_135180" width="19.6" height="4.667" x="0"
+                                                        y="5.167" color-interpolation-filters="sRGB"
+                                                        filterUnits="userSpaceOnUse">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                        <feOffset />
+                                                        <feColorMatrix
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                                        <feBlend in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_374_135180" />
+                                                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180"
+                                                            result="shape" />
+                                                    </filter>
+                                                    <filter id="filter1_d_374_135180" width="19.6" height="4.667" x="0"
+                                                        y="9.833" color-interpolation-filters="sRGB"
+                                                        filterUnits="userSpaceOnUse">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                        <feOffset />
+                                                        <feColorMatrix
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                                        <feBlend in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_374_135180" />
+                                                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180"
+                                                            result="shape" />
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+                                            Germany (+49)
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">
+                                        <span class="inline-flex items-center">
+                                            <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
+                                                <rect width="19.1" height="13.5" x=".25" y=".75" fill="#fff"
+                                                    stroke="#F5F5F5" stroke-width=".5" rx="1.75" />
+                                                <mask id="a" style="mask-type:luminance" width="20" height="15" x="0"
+                                                    y="0" maskUnits="userSpaceOnUse">
+                                                    <rect width="19.1" height="13.5" x=".25" y=".75" fill="#fff"
+                                                        stroke="#fff" stroke-width=".5" rx="1.75" />
+                                                </mask>
+                                                <g mask="url(#a)">
+                                                    <path fill="#F44653" d="M13.067.5H19.6v14h-6.533z" />
+                                                    <path fill="#1035BB" fill-rule="evenodd" d="M0 14.5h6.533V.5H0v14z"
+                                                        clip-rule="evenodd" />
+                                                </g>
+                                            </svg>
+                                            France (+33)
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">
+                                        <span class="inline-flex items-center">
+                                            <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
+                                                <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                <mask id="a" style="mask-type:luminance" width="20" height="15" x="0"
+                                                    y="0" maskUnits="userSpaceOnUse">
+                                                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                </mask>
+                                                <g mask="url(#a)">
+                                                    <path fill="#262626" fill-rule="evenodd"
+                                                        d="M0 5.167h19.6V.5H0v4.667z" clip-rule="evenodd" />
+                                                    <g filter="url(#filter0_d_374_135180)">
+                                                        <path fill="#F01515" fill-rule="evenodd"
+                                                            d="M0 9.833h19.6V5.167H0v4.666z" clip-rule="evenodd" />
+                                                    </g>
+                                                    <g filter="url(#filter1_d_374_135180)">
+                                                        <path fill="#FFD521" fill-rule="evenodd"
+                                                            d="M0 14.5h19.6V9.833H0V14.5z" clip-rule="evenodd" />
+                                                    </g>
+                                                </g>
+                                                <defs>
+                                                    <filter id="filter0_d_374_135180" width="19.6" height="4.667" x="0"
+                                                        y="5.167" color-interpolation-filters="sRGB"
+                                                        filterUnits="userSpaceOnUse">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                        <feOffset />
+                                                        <feColorMatrix
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                                        <feBlend in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_374_135180" />
+                                                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180"
+                                                            result="shape" />
+                                                    </filter>
+                                                    <filter id="filter1_d_374_135180" width="19.6" height="4.667" x="0"
+                                                        y="9.833" color-interpolation-filters="sRGB"
+                                                        filterUnits="userSpaceOnUse">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                        <feOffset />
+                                                        <feColorMatrix
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                                        <feBlend in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_374_135180" />
+                                                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180"
+                                                            result="shape" />
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+                                            Germany (+49)
+                                        </span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Language Selector Area-->
+
+                <!-- Calling Section -->
+
+                <div class="flex gap-2">
+                    <input type="text" placeholder="(206) 235- 421"
+                        class="max-w-45 min-h-9 rounded-lg border-[1.5px] border-stroke bg-transparent px-4 py-1 font-normal text-black outline-none transition focus:border-primary active:border-primary   dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary " />
+                    <button id="headerDialingButton"
+                        class="flex w-10 justify-center items-center rounded-lg border-[1.5px] border-stroke bg-transparent p-1 font-medium text-gray hover:bg-opacity-90">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M3.77762 11.9424C2.8296 10.2893 2.37185 8.93948 2.09584 7.57121C1.68762 5.54758 2.62181 3.57081 4.16938 2.30947C4.82345 1.77638 5.57323 1.95852 5.96 2.6524L6.83318 4.21891C7.52529 5.46057 7.87134 6.08139 7.8027 6.73959C7.73407 7.39779 7.26737 7.93386 6.33397 9.00601L3.77762 11.9424ZM3.77762 11.9424C5.69651 15.2883 8.70784 18.3013 12.0576 20.2224M12.0576 20.2224C13.7107 21.1704 15.0605 21.6282 16.4288 21.9042C18.4524 22.3124 20.4292 21.3782 21.6905 19.8306C22.2236 19.1766 22.0415 18.4268 21.3476 18.04L19.7811 17.1668C18.5394 16.4747 17.9186 16.1287 17.2604 16.1973C16.6022 16.2659 16.0661 16.7326 14.994 17.666L12.0576 20.2224Z"
+                                stroke="#8A99AF" stroke-width="1.5" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- </form> -->
+            <!-- Calling Section -->
+
+
+        </div>
+        <!-- Bottom Header Right Area -->
+    </div>
 </div>
 <!-- Bottom Header Area -->
-
+</header>
       <!-- ===== Header End ===== -->
 
       <!-- ===== Main Content Start ===== -->
       <main>
 
-        <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+        <div class="mx-auto max-w-screen-2xl p-4 md:p-6">
 
           <!-- ====== Data Stats Start -->
           <div class="rounded-2xl border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -1412,7 +1644,7 @@
                         </div>
 
 
-                        <div class="flex gap-8 justify-end">
+                        <div class="flex gap-6 justify-end">
                           <button
                             class="inline-flex items-center justify-center rounded-md border border-stroke px-6.5 py-2 max-h-10 text-center font-medium text-black hover:bg-opacity-90 ">
                             Reset
