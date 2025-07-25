@@ -1,0 +1,543 @@
+<!-- Bottom Header Area -->
+<div id="headerBottom">
+    <div
+        class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11 bg-white max-h-16 dark:bg-boxdark dark:drop-shadow-none">
+
+        <!-- Select Country Area -->
+        <div class="flex items-center gap-2">
+            <label class="mb-0 block text-base font-medium text-black dark:text-white">
+                Current Status :
+            </label>
+
+            <div x-data="{openDropDown: false}" class="relative mb-0 inline-block">
+                <a href="#" @click.prevent="openDropDown = !openDropDown"
+                    class="inline-flex items-center justify-between gap-2.5 text-slate-600 min-w-28 appearance-none rounded-lg border border-stroke bg-transparent py-1 pl-4 pr-3.5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input">
+                    Unavailable
+                    <svg class="fill-current duration-200 ease-linear" :class="openDropDown && 'rotate-180'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                            d="M7.9999 11.4C7.8499 11.4 7.7249 11.35 7.5999 11.25L1.8499 5.60005C1.6249 5.37505 1.6249 5.02505 1.8499 4.80005C2.0749 4.57505 2.4249 4.57505 2.6499 4.80005L7.9999 10.025L13.3499 4.75005C13.5749 4.52505 13.9249 4.52505 14.1499 4.75005C14.3749 4.97505 14.3749 5.32505 14.1499 5.55005L8.3999 11.2C8.2749 11.325 8.1499 11.4 7.9999 11.4Z"
+                            fill="#64748B"></path>
+                    </svg>
+                </a>
+                <div x-show="openDropDown" @click.outside="openDropDown = false"
+                    class="absolute left-0 top-full z-40 mt-2 w-full rounded-md border border-stroke bg-white shadow-card dark:border-strokedark dark:bg-boxdark">
+                    <ul class="flex flex-col p-2">
+                        <li>
+                            <a href="#"
+                                class="flex px-2 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                                Unavailable
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                                Available
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                                Option 1
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                                Option 2
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- Select Country Area -->
+
+        <!-- Bottom Header Right Area -->
+        <div class="flex items-center gap-2">
+
+
+            <!-- <form action="" class=""> -->
+            <div class="max-w-sm mx-auto flex gap-2 items-center">
+                <div>
+                    <div x-data="{openDropDown: false}" class="relative mb-0 inline-block">
+                        <button @click.prevent="openDropDown = !openDropDown"
+                            class="text-base relative z-20  min-h-9 flex items-center justify-between gap-2 appearance-none rounded-lg border border-stroke bg-transparent py-1 px-2.5 outline-none transition focus:border-primary active:border-primary ">
+                            <div class="rounded-full overflow-hidden size-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_36668_1143)">
+                                        <rect x="1" y="1" width="24" height="24" rx="12" fill="white" />
+                                        <path d="M31.449 1H1V25.3041H31.449V1Z" fill="#B31942" />
+                                        <path
+                                            d="M1 3.8042H31.449ZM31.449 7.54329H1ZM1 11.2824H31.449ZM31.449 15.0215H1ZM1 18.7606H31.449ZM31.449 22.4997H1Z"
+                                            fill="#000008" />
+                                        <path
+                                            d="M1 3.8042H31.449M31.449 7.54329H1M1 11.2824H31.449M31.449 15.0215H1M1 18.7606H31.449M31.449 22.4997H1"
+                                            stroke="white" stroke-width="1.55796" />
+                                        <path d="M16.3926 1H1V14.0868H16.3926V1Z" fill="#0A3161" />
+                                        <path
+                                            d="M2.28311 1.56079L2.64941 2.91361L1.69043 2.07752H2.87579L1.91681 2.91361L2.28311 1.56079Z"
+                                            fill="white" />
+                                        <path
+                                            d="M2.28311 4.17822L2.64941 5.53104L1.69043 4.69495H2.87579L1.91681 5.53104L2.28311 4.17822Z"
+                                            fill="white" />
+                                        <path
+                                            d="M2.28311 6.79565L2.64941 8.14847L1.69043 7.31238H2.87579L1.91681 8.14847L2.28311 6.79565Z"
+                                            fill="white" />
+                                        <path
+                                            d="M2.28311 9.41309L2.64941 10.7659L1.69043 9.92982H2.87579L1.91681 10.7659L2.28311 9.41309Z"
+                                            fill="white" />
+                                        <path
+                                            d="M2.28311 12.0305L2.64941 13.3833L1.69043 12.5472H2.87579L1.91681 13.3833L2.28311 12.0305Z"
+                                            fill="white" />
+                                        <path
+                                            d="M3.56534 2.86963L3.93164 4.22245L2.97266 3.38636H4.15802L3.19904 4.22245L3.56534 2.86963Z"
+                                            fill="white" />
+                                        <path
+                                            d="M3.56534 5.48682L3.93164 6.83963L2.97266 6.00355H4.15802L3.19904 6.83963L3.56534 5.48682Z"
+                                            fill="white" />
+                                        <path
+                                            d="M3.56534 8.10425L3.93164 9.45706L2.97266 8.62098H4.15802L3.19904 9.45706L3.56534 8.10425Z"
+                                            fill="white" />
+                                        <path
+                                            d="M3.56534 10.7217L3.93164 12.0745L2.97266 11.2384H4.15802L3.19904 12.0745L3.56534 10.7217Z"
+                                            fill="white" />
+                                        <path
+                                            d="M4.84854 1.56104L5.21484 2.91385L4.25586 2.07777H5.44122L4.48224 2.91385L4.84854 1.56104Z"
+                                            fill="white" />
+                                        <path
+                                            d="M4.84854 4.17822L5.21484 5.53104L4.25586 4.69495H5.44122L4.48224 5.53104L4.84854 4.17822Z"
+                                            fill="white" />
+                                        <path
+                                            d="M4.84854 6.79565L5.21484 8.14847L4.25586 7.31238H5.44122L4.48224 8.14847L4.84854 6.79565Z"
+                                            fill="white" />
+                                        <path
+                                            d="M4.84854 9.41309L5.21484 10.7659L4.25586 9.92982H5.44122L4.48224 10.7659L4.84854 9.41309Z"
+                                            fill="white" />
+                                        <path
+                                            d="M4.84854 12.0305L5.21484 13.3833L4.25586 12.5472H5.44122L4.48224 13.3833L4.84854 12.0305Z"
+                                            fill="white" />
+                                        <path
+                                            d="M6.13174 2.86987L6.49804 4.22269L5.53906 3.3866H6.72443L5.76545 4.22269L6.13174 2.86987Z"
+                                            fill="white" />
+                                        <path
+                                            d="M6.13174 5.4873L6.49804 6.84012L5.53906 6.00403H6.72443L5.76545 6.84012L6.13174 5.4873Z"
+                                            fill="white" />
+                                        <path
+                                            d="M6.13174 8.10474L6.49804 9.45755L5.53906 8.62147H6.72443L5.76545 9.45755L6.13174 8.10474Z"
+                                            fill="white" />
+                                        <path
+                                            d="M6.13174 10.7219L6.49804 12.0747L5.53906 11.2387H6.72443L5.76545 12.0747L6.13174 10.7219Z"
+                                            fill="white" />
+                                        <path
+                                            d="M7.41397 1.56104L7.78027 2.91385L6.82129 2.07777H8.00665L7.04767 2.91385L7.41397 1.56104Z"
+                                            fill="white" />
+                                        <path
+                                            d="M7.41397 4.17822L7.78027 5.53104L6.82129 4.69495H8.00665L7.04767 5.53104L7.41397 4.17822Z"
+                                            fill="white" />
+                                        <path
+                                            d="M7.41397 6.79565L7.78027 8.14847L6.82129 7.31238H8.00665L7.04767 8.14847L7.41397 6.79565Z"
+                                            fill="white" />
+                                        <path
+                                            d="M7.41397 9.41309L7.78027 10.7659L6.82129 9.92982H8.00665L7.04767 10.7659L7.41397 9.41309Z"
+                                            fill="white" />
+                                        <path
+                                            d="M7.41397 12.0305L7.78027 13.3833L6.82129 12.5472H8.00665L7.04767 13.3833L7.41397 12.0305Z"
+                                            fill="white" />
+                                        <path
+                                            d="M8.69717 2.86987L9.06347 4.22269L8.10449 3.3866H9.28986L8.33088 4.22269L8.69717 2.86987Z"
+                                            fill="white" />
+                                        <path
+                                            d="M8.69717 5.4873L9.06347 6.84012L8.10449 6.00403H9.28986L8.33088 6.84012L8.69717 5.4873Z"
+                                            fill="white" />
+                                        <path
+                                            d="M8.69717 8.10474L9.06347 9.45755L8.10449 8.62147H9.28986L8.33088 9.45755L8.69717 8.10474Z"
+                                            fill="white" />
+                                        <path
+                                            d="M8.69717 10.7219L9.06347 12.0747L8.10449 11.2387H9.28986L8.33088 12.0747L8.69717 10.7219Z"
+                                            fill="white" />
+                                        <path
+                                            d="M9.9794 1.56104L10.3457 2.91385L9.38672 2.07777H10.5721L9.6131 2.91385L9.9794 1.56104Z"
+                                            fill="white" />
+                                        <path
+                                            d="M9.9794 4.17847L10.3457 5.53128L9.38672 4.6952H10.5721L9.6131 5.53128L9.9794 4.17847Z"
+                                            fill="white" />
+                                        <path
+                                            d="M9.9794 6.79565L10.3457 8.14847L9.38672 7.31238H10.5721L9.6131 8.14847L9.9794 6.79565Z"
+                                            fill="white" />
+                                        <path
+                                            d="M9.9794 9.41309L10.3457 10.7659L9.38672 9.92982H10.5721L9.6131 10.7659L9.9794 9.41309Z"
+                                            fill="white" />
+                                        <path
+                                            d="M9.9794 12.0305L10.3457 13.3833L9.38672 12.5472H10.5721L9.6131 13.3833L9.9794 12.0305Z"
+                                            fill="white" />
+                                        <path
+                                            d="M11.2626 2.86987L11.6289 4.22269L10.6699 3.3866H11.8553L10.8963 4.22269L11.2626 2.86987Z"
+                                            fill="white" />
+                                        <path
+                                            d="M11.2626 5.4873L11.6289 6.84012L10.6699 6.00403H11.8553L10.8963 6.84012L11.2626 5.4873Z"
+                                            fill="white" />
+                                        <path
+                                            d="M11.2626 8.10474L11.6289 9.45755L10.6699 8.62147H11.8553L10.8963 9.45755L11.2626 8.10474Z"
+                                            fill="white" />
+                                        <path
+                                            d="M11.2626 10.7222L11.6289 12.075L10.6699 11.2389H11.8553L10.8963 12.075L11.2626 10.7222Z"
+                                            fill="white" />
+                                        <path
+                                            d="M12.5448 1.56104L12.9111 2.91385L11.9521 2.07777H13.1375L12.1785 2.91385L12.5448 1.56104Z"
+                                            fill="white" />
+                                        <path
+                                            d="M12.5448 4.17847L12.9111 5.53128L11.9521 4.6952H13.1375L12.1785 5.53128L12.5448 4.17847Z"
+                                            fill="white" />
+                                        <path
+                                            d="M12.5448 6.79565L12.9111 8.14847L11.9521 7.31238H13.1375L12.1785 8.14847L12.5448 6.79565Z"
+                                            fill="white" />
+                                        <path
+                                            d="M12.5448 9.41309L12.9111 10.7659L11.9521 9.92982H13.1375L12.1785 10.7659L12.5448 9.41309Z"
+                                            fill="white" />
+                                        <path
+                                            d="M12.5448 12.0305L12.9111 13.3833L11.9521 12.5472H13.1375L12.1785 13.3833L12.5448 12.0305Z"
+                                            fill="white" />
+                                        <path
+                                            d="M13.828 2.86963L14.1943 4.22245L13.2354 3.38636H14.4207L13.4617 4.22245L13.828 2.86963Z"
+                                            fill="white" />
+                                        <path
+                                            d="M13.828 5.48706L14.1943 6.83988L13.2354 6.00379H14.4207L13.4617 6.83988L13.828 5.48706Z"
+                                            fill="white" />
+                                        <path
+                                            d="M13.828 8.10425L14.1943 9.45706L13.2354 8.62098H14.4207L13.4617 9.45706L13.828 8.10425Z"
+                                            fill="white" />
+                                        <path
+                                            d="M13.828 10.7217L14.1943 12.0745L13.2354 11.2384H14.4207L13.4617 12.0745L13.828 10.7217Z"
+                                            fill="white" />
+                                        <path
+                                            d="M15.1103 1.56104L15.4766 2.91385L14.5176 2.07777H15.7029L14.744 2.91385L15.1103 1.56104Z"
+                                            fill="white" />
+                                        <path
+                                            d="M15.1103 4.17847L15.4766 5.53128L14.5176 4.6952H15.7029L14.744 5.53128L15.1103 4.17847Z"
+                                            fill="white" />
+                                        <path
+                                            d="M15.1103 6.79565L15.4766 8.14847L14.5176 7.31238H15.7029L14.744 8.14847L15.1103 6.79565Z"
+                                            fill="white" />
+                                        <path
+                                            d="M15.1103 9.41309L15.4766 10.7659L14.5176 9.92982H15.7029L14.744 10.7659L15.1103 9.41309Z"
+                                            fill="white" />
+                                        <path
+                                            d="M15.1103 12.0305L15.4766 13.3833L14.5176 12.5472H15.7029L14.744 13.3833L15.1103 12.0305Z"
+                                            fill="white" />
+                                    </g>
+                                    <rect x="1" y="1" width="24" height="24" rx="12" stroke="#DEE4EE"
+                                        stroke-linejoin="round" />
+                                    <defs>
+                                        <clipPath id="clip0_36668_1143">
+                                            <rect x="1" y="1" width="24" height="24" rx="12" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+
+                            <svg class="fill-current duration-200 ease-linear" :class="openDropDown && 'rotate-180'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <path
+                                    d="M7.9999 11.4C7.8499 11.4 7.7249 11.35 7.5999 11.25L1.8499 5.60005C1.6249 5.37505 1.6249 5.02505 1.8499 4.80005C2.0749 4.57505 2.4249 4.57505 2.6499 4.80005L7.9999 10.025L13.3499 4.75005C13.5749 4.52505 13.9249 4.52505 14.1499 4.75005C14.3749 4.97505 14.3749 5.32505 14.1499 5.55005L8.3999 11.2C8.2749 11.325 8.1499 11.4 7.9999 11.4Z"
+                                    fill="#64748B" />
+                            </svg>
+                        </button>
+                        <div x-show="openDropDown" @click.outside="openDropDown = false"
+                            class="min-w-max absolute left-0 top-full z-40 mt-2 w-full rounded-md border border-stroke bg-white py-3 shadow-card dark:border-strokedark dark:bg-boxdark">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                                aria-labelledby="dropdown-phone-button">
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">
+                                        <span class="inline-flex items-center">
+                                            <svg fill="none" aria-hidden="true" class="h-4 w-4 me-2"
+                                                viewBox="0 0 20 15">
+                                                <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                <mask id="a" style="mask-type:luminance" width="20" height="15" x="0"
+                                                    y="0" maskUnits="userSpaceOnUse">
+                                                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                </mask>
+                                                <g mask="url(#a)">
+                                                    <path fill="#D02F44" fill-rule="evenodd"
+                                                        d="M19.6.5H0v.933h19.6V.5zm0 1.867H0V3.3h19.6v-.933zM0 4.233h19.6v.934H0v-.934zM19.6 6.1H0v.933h19.6V6.1zM0 7.967h19.6V8.9H0v-.933zm19.6 1.866H0v.934h19.6v-.934zM0 11.7h19.6v.933H0V11.7zm19.6 1.867H0v.933h19.6v-.933z"
+                                                        clip-rule="evenodd" />
+                                                    <path fill="#46467F" d="M0 .5h8.4v6.533H0z" />
+                                                    <g filter="url(#filter0_d_343_121520)">
+                                                        <path fill="url(#paint0_linear_343_121520)" fill-rule="evenodd"
+                                                            d="M1.867 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.866 0a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM7.467 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zM2.333 3.3a.467.467 0 100-.933.467.467 0 000 .933zm2.334-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.4.467a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm-2.334.466a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.466a.467.467 0 11-.933 0 .467.467 0 01.933 0zM1.4 4.233a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM6.533 4.7a.467.467 0 11-.933 0 .467.467 0 01.933 0zM7 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zM3.267 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0z"
+                                                            clip-rule="evenodd" />
+                                                    </g>
+                                                </g>
+                                                <defs>
+                                                    <linearGradient id="paint0_linear_343_121520" x1=".933" x2=".933"
+                                                        y1="1.433" y2="6.1" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#fff" />
+                                                        <stop offset="1" stop-color="#F0F0F0" />
+                                                    </linearGradient>
+                                                    <filter id="filter0_d_343_121520" width="6.533" height="5.667"
+                                                        x=".933" y="1.433" color-interpolation-filters="sRGB"
+                                                        filterUnits="userSpaceOnUse">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                        <feOffset dy="1" />
+                                                        <feColorMatrix
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                                        <feBlend in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_343_121520" />
+                                                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_343_121520"
+                                                            result="shape" />
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+                                            United States (+1)
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">
+                                        <span class="inline-flex items-center">
+                                            <svg class="h-4 w-4 me-2" fill="none" viewBox="0 0 20 15">
+                                                <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                <mask id="a" style="mask-type:luminance" width="20" height="15" x="0"
+                                                    y="0" maskUnits="userSpaceOnUse">
+                                                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                </mask>
+                                                <g mask="url(#a)">
+                                                    <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
+                                                    <path fill="#fff" fill-rule="evenodd"
+                                                        d="M-.898-.842L7.467 4.8V-.433h4.667V4.8l8.364-5.642L21.542.706l-6.614 4.46H19.6v4.667h-4.672l6.614 4.46-1.044 1.549-8.365-5.642v5.233H7.467V10.2l-8.365 5.642-1.043-1.548 6.613-4.46H0V5.166h4.672L-1.941.706-.898-.842z"
+                                                        clip-rule="evenodd" />
+                                                    <path stroke="#DB1F35" stroke-linecap="round" stroke-width=".667"
+                                                        d="M13.067 4.933L21.933-.9M14.009 10.088l7.947 5.357M5.604 4.917L-2.686-.67M6.503 10.024l-9.189 6.093" />
+                                                    <path fill="#E6273E" fill-rule="evenodd"
+                                                        d="M0 8.9h8.4v5.6h2.8V8.9h8.4V6.1h-8.4V.5H8.4v5.6H0v2.8z"
+                                                        clip-rule="evenodd" />
+                                                </g>
+                                            </svg>
+                                            United Kingdom (+44)
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">
+                                        <span class="inline-flex items-center">
+                                            <svg class="h-4 w-4 me-2" fill="none" viewBox="0 0 20 15"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                <mask id="a" style="mask-type:luminance" width="20" height="15" x="0"
+                                                    y="0" maskUnits="userSpaceOnUse">
+                                                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                </mask>
+                                                <g mask="url(#a)">
+                                                    <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
+                                                    <path fill="#fff" stroke="#fff" stroke-width=".667"
+                                                        d="M0 .167h-.901l.684.586 3.15 2.7v.609L-.194 6.295l-.14.1v1.24l.51-.319L3.83 5.033h.73L7.7 7.276a.488.488 0 00.601-.767L5.467 4.08v-.608l2.987-2.134a.667.667 0 00.28-.543V-.1l-.51.318L4.57 2.5h-.73L.66.229.572.167H0z" />
+                                                    <path fill="url(#paint0_linear_374_135177)" fill-rule="evenodd"
+                                                        d="M0 2.833V4.7h3.267v2.133c0 .369.298.667.666.667h.534a.667.667 0 00.666-.667V4.7H8.2a.667.667 0 00.667-.667V3.5a.667.667 0 00-.667-.667H5.133V.5H3.267v2.333H0z"
+                                                        clip-rule="evenodd" />
+                                                    <path fill="url(#paint1_linear_374_135177)" fill-rule="evenodd"
+                                                        d="M0 3.3h3.733V.5h.934v2.8H8.4v.933H4.667v2.8h-.934v-2.8H0V3.3z"
+                                                        clip-rule="evenodd" />
+                                                    <path fill="#fff" fill-rule="evenodd"
+                                                        d="M4.2 11.933l-.823.433.157-.916-.666-.65.92-.133.412-.834.411.834.92.134-.665.649.157.916-.823-.433zm9.8.7l-.66.194.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.194zm0-8.866l-.66.193.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.193zm2.8 2.8l-.66.193.193-.66-.193-.66.66.193.66-.193-.193.66.193.66-.66-.193zm-5.6.933l-.66.193.193-.66-.193-.66.66.194.66-.194-.193.66.193.66-.66-.193zm4.2 1.167l-.33.096.096-.33-.096-.33.33.097.33-.097-.097.33.097.33-.33-.096z"
+                                                        clip-rule="evenodd" />
+                                                </g>
+                                                <defs>
+                                                    <linearGradient id="paint0_linear_374_135177" x1="0" x2="0" y1=".5"
+                                                        y2="7.5" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#fff" />
+                                                        <stop offset="1" stop-color="#F0F0F0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="paint1_linear_374_135177" x1="0" x2="0" y1=".5"
+                                                        y2="7.033" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#FF2E3B" />
+                                                        <stop offset="1" stop-color="#FC0D1B" />
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                            Australia (+61)
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">
+                                        <span class="inline-flex items-center">
+                                            <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
+                                                <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                <mask id="a" style="mask-type:luminance" width="20" height="15" x="0"
+                                                    y="0" maskUnits="userSpaceOnUse">
+                                                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                </mask>
+                                                <g mask="url(#a)">
+                                                    <path fill="#262626" fill-rule="evenodd"
+                                                        d="M0 5.167h19.6V.5H0v4.667z" clip-rule="evenodd" />
+                                                    <g filter="url(#filter0_d_374_135180)">
+                                                        <path fill="#F01515" fill-rule="evenodd"
+                                                            d="M0 9.833h19.6V5.167H0v4.666z" clip-rule="evenodd" />
+                                                    </g>
+                                                    <g filter="url(#filter1_d_374_135180)">
+                                                        <path fill="#FFD521" fill-rule="evenodd"
+                                                            d="M0 14.5h19.6V9.833H0V14.5z" clip-rule="evenodd" />
+                                                    </g>
+                                                </g>
+                                                <defs>
+                                                    <filter id="filter0_d_374_135180" width="19.6" height="4.667" x="0"
+                                                        y="5.167" color-interpolation-filters="sRGB"
+                                                        filterUnits="userSpaceOnUse">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                        <feOffset />
+                                                        <feColorMatrix
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                                        <feBlend in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_374_135180" />
+                                                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180"
+                                                            result="shape" />
+                                                    </filter>
+                                                    <filter id="filter1_d_374_135180" width="19.6" height="4.667" x="0"
+                                                        y="9.833" color-interpolation-filters="sRGB"
+                                                        filterUnits="userSpaceOnUse">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                        <feOffset />
+                                                        <feColorMatrix
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                                        <feBlend in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_374_135180" />
+                                                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180"
+                                                            result="shape" />
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+                                            Germany (+49)
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">
+                                        <span class="inline-flex items-center">
+                                            <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
+                                                <rect width="19.1" height="13.5" x=".25" y=".75" fill="#fff"
+                                                    stroke="#F5F5F5" stroke-width=".5" rx="1.75" />
+                                                <mask id="a" style="mask-type:luminance" width="20" height="15" x="0"
+                                                    y="0" maskUnits="userSpaceOnUse">
+                                                    <rect width="19.1" height="13.5" x=".25" y=".75" fill="#fff"
+                                                        stroke="#fff" stroke-width=".5" rx="1.75" />
+                                                </mask>
+                                                <g mask="url(#a)">
+                                                    <path fill="#F44653" d="M13.067.5H19.6v14h-6.533z" />
+                                                    <path fill="#1035BB" fill-rule="evenodd" d="M0 14.5h6.533V.5H0v14z"
+                                                        clip-rule="evenodd" />
+                                                </g>
+                                            </svg>
+                                            France (+33)
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">
+                                        <span class="inline-flex items-center">
+                                            <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
+                                                <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                <mask id="a" style="mask-type:luminance" width="20" height="15" x="0"
+                                                    y="0" maskUnits="userSpaceOnUse">
+                                                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                                                </mask>
+                                                <g mask="url(#a)">
+                                                    <path fill="#262626" fill-rule="evenodd"
+                                                        d="M0 5.167h19.6V.5H0v4.667z" clip-rule="evenodd" />
+                                                    <g filter="url(#filter0_d_374_135180)">
+                                                        <path fill="#F01515" fill-rule="evenodd"
+                                                            d="M0 9.833h19.6V5.167H0v4.666z" clip-rule="evenodd" />
+                                                    </g>
+                                                    <g filter="url(#filter1_d_374_135180)">
+                                                        <path fill="#FFD521" fill-rule="evenodd"
+                                                            d="M0 14.5h19.6V9.833H0V14.5z" clip-rule="evenodd" />
+                                                    </g>
+                                                </g>
+                                                <defs>
+                                                    <filter id="filter0_d_374_135180" width="19.6" height="4.667" x="0"
+                                                        y="5.167" color-interpolation-filters="sRGB"
+                                                        filterUnits="userSpaceOnUse">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                        <feOffset />
+                                                        <feColorMatrix
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                                        <feBlend in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_374_135180" />
+                                                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180"
+                                                            result="shape" />
+                                                    </filter>
+                                                    <filter id="filter1_d_374_135180" width="19.6" height="4.667" x="0"
+                                                        y="9.833" color-interpolation-filters="sRGB"
+                                                        filterUnits="userSpaceOnUse">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" result="hardAlpha"
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                        <feOffset />
+                                                        <feColorMatrix
+                                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                                        <feBlend in2="BackgroundImageFix"
+                                                            result="effect1_dropShadow_374_135180" />
+                                                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180"
+                                                            result="shape" />
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+                                            Germany (+49)
+                                        </span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Language Selector Area-->
+
+                <!-- Calling Section -->
+
+                <div class="flex gap-2">
+                    <input type="text" placeholder="(206) 235- 421"
+                        class="max-w-45 min-h-9 rounded-lg border-[1.5px] border-stroke bg-transparent px-4 py-1 font-normal text-black outline-none transition focus:border-primary active:border-primary   dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary " />
+                    <button id="headerDialingButton"
+                        class="flex w-10 justify-center items-center rounded-lg border-[1.5px] border-stroke bg-transparent p-1 font-medium text-gray hover:bg-opacity-90">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M3.77762 11.9424C2.8296 10.2893 2.37185 8.93948 2.09584 7.57121C1.68762 5.54758 2.62181 3.57081 4.16938 2.30947C4.82345 1.77638 5.57323 1.95852 5.96 2.6524L6.83318 4.21891C7.52529 5.46057 7.87134 6.08139 7.8027 6.73959C7.73407 7.39779 7.26737 7.93386 6.33397 9.00601L3.77762 11.9424ZM3.77762 11.9424C5.69651 15.2883 8.70784 18.3013 12.0576 20.2224M12.0576 20.2224C13.7107 21.1704 15.0605 21.6282 16.4288 21.9042C18.4524 22.3124 20.4292 21.3782 21.6905 19.8306C22.2236 19.1766 22.0415 18.4268 21.3476 18.04L19.7811 17.1668C18.5394 16.4747 17.9186 16.1287 17.2604 16.1973C16.6022 16.2659 16.0661 16.7326 14.994 17.666L12.0576 20.2224Z"
+                                stroke="#8A99AF" stroke-width="1.5" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- </form> -->
+            <!-- Calling Section -->
+
+
+        </div>
+        <!-- Bottom Header Right Area -->
+    </div>
+</div>
+<!-- Bottom Header Area -->
+</header>
