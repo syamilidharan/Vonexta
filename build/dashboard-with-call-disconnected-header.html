@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carousel | TailAdmin - Tailwind CSS Admin Dashboard Template</title>
-  <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
 
-  <body
-    x-data="{ page: 'carousel', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
-    x-init="
-          darkMode = JSON.parse(localStorage.getItem('darkMode'));
-          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
-    :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}"
-  >
-    <!-- ===== Preloader Start ===== -->
-    <div
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Stocks Dashboard | TailAdmin - Tailwind CSS Admin Dashboard Template
+  </title>
+<link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
+
+<body
+  x-data="{ page: 'stocks', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
+  x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+  :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}">
+  <!-- ===== Preloader Start ===== -->
+  <div
   x-show="loaded"
   x-init="window.addEventListener('DOMContentLoaded', () => {setTimeout(() => loaded = false, 500)})"
   class="fixed left-0 top-0 z-999999 flex h-screen w-screen items-center justify-center bg-white dark:bg-black"
@@ -25,12 +27,12 @@
   ></div>
 </div>
 
-    <!-- ===== Preloader End ===== -->
+  <!-- ===== Preloader End ===== -->
 
-    <!-- ===== Page Wrapper Start ===== -->
-    <div class="flex h-screen overflow-hidden">
-      <!-- ===== Sidebar Start ===== -->
-      <aside :class="sidebarToggle ? 'translate-x-0' : '-translate-x-full'"
+  <!-- ===== Page Wrapper Start ===== -->
+  <div class="flex h-screen overflow-hidden">
+    <!-- ===== Sidebar Start ===== -->
+    <aside :class="sidebarToggle ? 'translate-x-0' : '-translate-x-full'"
   class="absolute left-0 top-0 z-999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0"
   @click.outside="sidebarToggle = false">
   <!-- SIDEBAR HEADER -->
@@ -605,14 +607,12 @@
 
   </div>
 </aside>
-      <!-- ===== Sidebar End ===== -->
+    <!-- ===== Sidebar End ===== -->
 
-      <!-- ===== Content Area Start ===== -->
-      <div
-        class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden"
-      >
-        <!-- ===== Header Start ===== -->
-        <header class="sticky top-0 z-999 flex w-full flex-col">
+    <!-- ===== Content Area Start ===== -->
+    <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+      <!-- ===== Header Start ===== -->
+      <header class="sticky top-0 z-999 flex w-full flex-col">
   <div class="bg-white border-b border-slate-100 dark:bg-boxdark dark:drop-shadow-none">
     <div class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6">
       <div class="flex items-center gap-2 sm:gap-4 lg:hidden">
@@ -1064,210 +1064,1010 @@
     </div>
 
   </div>
-        <!-- ===== Header End ===== -->
+      <!-- Bottom Header Live Call Area -->
+<div
+  class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6  bg-white max-h-16 dark:bg-boxdark dark:drop-shadow-none">
 
-        <!-- ===== Main Content Start ===== -->
-        <main>
-          <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
-            <!-- Breadcrumb Start -->
-            <div
-              class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
-            >
-              <h2 class="text-title-md2 font-bold text-black dark:text-white">
-                Carousel
-              </h2>
+  <!-- Select Country Area -->
+  <div class="">
+    <div class="flex items-center justify-between py-1 ">
+      <div
+        class="flex justify-center items-center gap-2 rounded-xl border border-red bg-orange-100 px-3 py-1 font-medium text-gray hover:bg-opacity-90">
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+          <circle cx="4" cy="4" r="4" fill="#fb5454" />
+        </svg>
+        <span class="text-base font-medium text-red">Call Disconnected</span>
+      </div>
+    </div>
+  </div>
+  <!-- Select Country Area -->
 
-              <nav>
-                <ol class="flex items-center gap-2">
-                  <li>
-                    <a class="font-medium" href="index.html">Dashboard /</a>
-                  </li>
-                  <li class="font-medium text-primary">Carousel</li>
-                </ol>
-              </nav>
-            </div>
-            <!-- Breadcrumb End -->
+  <!-- Bottom Header Right Area -->
+  <div class="flex items-center gap-2">
 
-            <div class="flex flex-col gap-7.5">
-              <div
-                class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark"
-              >
-                <div
-                  class="border-b border-stroke px-4 py-4 dark:border-strokedark sm:px-6 xl:px-7.5"
-                >
-                  <h3 class="font-medium text-black dark:text-white">
-                    Slider With Controls
-                  </h3>
+    <!-- Calling Section -->
+    <div class="flex gap-2">
+
+      <!-- Dialpad Area-->
+      <div class="relative" x-data="{ dropdownOpen: false, notifying: true }" @click.outside="dropdownOpen = false">
+
+        <button @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false"
+          class="relative flex justify-center items-center gap-2 rounded-xl border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-gray hover:bg-opacity-90 focus:border-primary active:border-primary focus:text-primary active:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M2 4C2 4.94281 2 5.41421 2.29289 5.70711C2.58579 6 3.05719 6 4 6C4.94281 6 5.41421 6 5.70711 5.70711C6 5.41421 6 4.94281 6 4C6 3.05719 6 2.58579 5.70711 2.29289C5.41421 2 4.94281 2 4 2C3.05719 2 2.58579 2 2.29289 2.29289C2 2.58579 2 3.05719 2 4Z"
+              stroke="#64748B" />
+            <path
+              d="M2 12C2 12.9428 2 13.4142 2.29289 13.7071C2.58579 14 3.05719 14 4 14C4.94281 14 5.41421 14 5.70711 13.7071C6 13.4142 6 12.9428 6 12C6 11.0572 6 10.5858 5.70711 10.2929C5.41421 10 4.94281 10 4 10C3.05719 10 2.58579 10 2.29289 10.2929C2 10.5858 2 11.0572 2 12Z"
+              stroke="#64748B" />
+            <path
+              d="M10 4C10 4.94281 10 5.41421 10.2929 5.70711C10.5858 6 11.0572 6 12 6C12.9428 6 13.4142 6 13.7071 5.70711C14 5.41421 14 4.94281 14 4C14 3.05719 14 2.58579 13.7071 2.29289C13.4142 2 12.9428 2 12 2C11.0572 2 10.5858 2 10.2929 2.29289C10 2.58579 10 3.05719 10 4Z"
+              stroke="#64748B" />
+            <path
+              d="M10 12C10 12.9428 10 13.4142 10.2929 13.7071C10.5858 14 11.0572 14 12 14C12.9428 14 13.4142 14 13.7071 13.7071C14 13.4142 14 12.9428 14 12C14 11.0572 14 10.5858 13.7071 10.2929C13.4142 10 12.9428 10 12 10C11.0572 10 10.5858 10 10.2929 10.2929C10 10.5858 10 11.0572 10 12Z"
+              stroke="#64748B" />
+            <path
+              d="M10 20C10 20.9428 10 21.4142 10.2929 21.7071C10.5858 22 11.0572 22 12 22C12.9428 22 13.4142 22 13.7071 21.7071C14 21.4142 14 20.9428 14 20C14 19.0572 14 18.5858 13.7071 18.2929C13.4142 18 12.9428 18 12 18C11.0572 18 10.5858 18 10.2929 18.2929C10 18.5858 10 19.0572 10 20Z"
+              stroke="#64748B" />
+            <path
+              d="M18 4C18 4.94281 18 5.41421 18.2929 5.70711C18.5858 6 19.0572 6 20 6C20.9428 6 21.4142 6 21.7071 5.70711C22 5.41421 22 4.94281 22 4C22 3.05719 22 2.58579 21.7071 2.29289C21.4142 2 20.9428 2 20 2C19.0572 2 18.5858 2 18.2929 2.29289C18 2.58579 18 3.05719 18 4Z"
+              stroke="#64748B" />
+            <path
+              d="M18 12C18 12.9428 18 13.4142 18.2929 13.7071C18.5858 14 19.0572 14 20 14C20.9428 14 21.4142 14 21.7071 13.7071C22 13.4142 22 12.9428 22 12C22 11.0572 22 10.5858 21.7071 10.2929C21.4142 10 20.9428 10 20 10C19.0572 10 18.5858 10 18.2929 10.2929C18 10.5858 18 11.0572 18 12Z"
+              stroke="#64748B" />
+          </svg>
+        </button>
+
+        <!-- Dropdown Start -->
+        <div x-show="dropdownOpen"
+          class="absolute -right-16 mt-1.5 flex h-max flex-col overflow-hidden rounded-lg border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 min-w-46 max-w-full ">
+
+          <div class="bg-white p-2 z-1">
+            <div class="bg-white">
+
+              <div class="flex flex-wrap rounded-xl bg-white max-w-sm mx-0 sm:mx-auto">
+                <div class="w-1/3 flex justify-center item-center py-1">
+                  <button
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">1</button>
                 </div>
-
-                <div class="p-4 sm:p-6 xl:p-10">
-                  <div class="swiper carouselOne">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <img
-                          src="images/carousel-01.jpg"
-                          alt="carousel"
-                        />
-                      </div>
-                      <div class="swiper-slide">
-                        <img
-                          src="images/carousel-02.jpg"
-                          alt="carousel"
-                        />
-                      </div>
-                      <div class="swiper-slide">
-                        <img
-                          src="images/carousel-03.jpg"
-                          alt="carousel"
-                        />
-                      </div>
-                    </div>
-                    <div class="swiper-button-next">
-                      <svg
-                        class="fill-current"
-                        width="12"
-                        height="20"
-                        viewBox="0 0 12 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.75938 19.4875C1.53438 19.4875 1.34687 19.4125 1.15937 19.2625C0.821875 18.925 0.821875 18.4 1.15937 18.0625L9.03437 9.99998L1.15937 1.97498C0.821875 1.63748 0.821875 1.11248 1.15937 0.774976C1.49687 0.437476 2.02187 0.437476 2.35937 0.774976L10.8344 9.39997C11.1719 9.73748 11.1719 10.2625 10.8344 10.6L2.35937 19.225C2.20937 19.375 1.98438 19.4875 1.75938 19.4875Z"
-                          fill=""
-                        />
-                      </svg>
-                    </div>
-                    <div class="swiper-button-prev">
-                      <svg
-                        class="fill-current"
-                        width="12"
-                        height="20"
-                        viewBox="0 0 12 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M10.2344 19.4875C10.0094 19.4875 9.78438 19.4125 9.63437 19.225L1.15937 10.6C0.821875 10.2625 0.821875 9.73748 1.15937 9.39997L9.63437 0.774976C9.97188 0.437476 10.4969 0.437476 10.8344 0.774976C11.1719 1.11248 11.1719 1.63748 10.8344 1.97498L2.95937 9.99998L10.8719 18.025C11.2094 18.3625 11.2094 18.8875 10.8719 19.225C10.6469 19.375 10.4594 19.4875 10.2344 19.4875Z"
-                          fill=""
-                        />
-                      </svg>
-                    </div>
-                  </div>
+                <div class="w-1/3 flex justify-center item-center p-1">
+                  <button
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">2</button>
                 </div>
-              </div>
-
-              <div
-                class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark"
-              >
-                <div
-                  class="border-b border-stroke px-4 py-4 dark:border-strokedark sm:px-6 xl:px-7.5"
-                >
-                  <h3 class="font-medium text-black dark:text-white">
-                    Slider With Indicators
-                  </h3>
+                <div class="w-1/3 flex justify-center item-center p-1">
+                  <button
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">3</button>
                 </div>
-
-                <div class="p-4 sm:p-6 xl:p-10">
-                  <div class="swiper carouselTwo">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <img
-                          src="images/carousel-02.jpg"
-                          alt="carousel"
-                        />
-                      </div>
-                      <div class="swiper-slide">
-                        <img
-                          src="images/carousel-03.jpg"
-                          alt="carousel"
-                        />
-                      </div>
-                      <div class="swiper-slide">
-                        <img
-                          src="images/carousel-01.jpg"
-                          alt="carousel"
-                        />
-                      </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                  </div>
+                <div class="w-1/3 flex justify-center item-center p-1">
+                  <button
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">4</button>
                 </div>
-              </div>
-
-              <div
-                class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark"
-              >
-                <div
-                  class="border-b border-stroke px-4 py-4 dark:border-strokedark sm:px-6 xl:px-7.5"
-                >
-                  <h3 class="font-medium text-black dark:text-white">
-                    Slider With Controls & Indicators
-                  </h3>
+                <div class="w-1/3 flex justify-center item-center p-1">
+                  <button
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">5</button>
                 </div>
-
-                <div class="p-4 sm:p-6 xl:p-10">
-                  <div class="swiper carouselThree">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <img
-                          src="images/carousel-03.jpg"
-                          alt="carousel"
-                        />
-                      </div>
-                      <div class="swiper-slide">
-                        <img
-                          src="images/carousel-01.jpg"
-                          alt="carousel"
-                        />
-                      </div>
-                      <div class="swiper-slide">
-                        <img
-                          src="images/carousel-02.jpg"
-                          alt="carousel"
-                        />
-                      </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next">
-                      <svg
-                        class="fill-current"
-                        width="12"
-                        height="20"
-                        viewBox="0 0 12 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.75938 19.4875C1.53438 19.4875 1.34687 19.4125 1.15937 19.2625C0.821875 18.925 0.821875 18.4 1.15937 18.0625L9.03437 9.99998L1.15937 1.97498C0.821875 1.63748 0.821875 1.11248 1.15937 0.774976C1.49687 0.437476 2.02187 0.437476 2.35937 0.774976L10.8344 9.39997C11.1719 9.73748 11.1719 10.2625 10.8344 10.6L2.35937 19.225C2.20937 19.375 1.98438 19.4875 1.75938 19.4875Z"
-                          fill=""
-                        />
-                      </svg>
-                    </div>
-                    <div class="swiper-button-prev">
-                      <svg
-                        class="fill-current"
-                        width="12"
-                        height="20"
-                        viewBox="0 0 12 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M10.2344 19.4875C10.0094 19.4875 9.78438 19.4125 9.63437 19.225L1.15937 10.6C0.821875 10.2625 0.821875 9.73748 1.15937 9.39997L9.63437 0.774976C9.97188 0.437476 10.4969 0.437476 10.8344 0.774976C11.1719 1.11248 11.1719 1.63748 10.8344 1.97498L2.95937 9.99998L10.8719 18.025C11.2094 18.3625 11.2094 18.8875 10.8719 19.225C10.6469 19.375 10.4594 19.4875 10.2344 19.4875Z"
-                          fill=""
-                        />
-                      </svg>
-                    </div>
-                  </div>
+                <div class="w-1/3 flex justify-center item-center p-1">
+                  <button
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">6</button>
+                </div>
+                <div class="w-1/3 flex justify-center item-center p-1">
+                  <button
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">7</button>
+                </div>
+                <div class="w-1/3 flex justify-center item-center p-1">
+                  <button
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">8</button>
+                </div>
+                <div class="w-1/3 flex justify-center item-center p-1">
+                  <button
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">9</button>
+                </div>
+                <div class="w-1/3 flex justify-center item-center p-1">
+                  <button
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">*</button>
+                </div>
+                <div class="w-1/3 flex justify-center item-center p-1">
+                  <button
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">0</button>
+                </div>
+                <div class="w-1/3 flex justify-center item-center p-1">
+                  <button
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">#</button>
                 </div>
               </div>
             </div>
           </div>
-        </main>
-        <!-- ===== Main Content End ===== -->
+
+        </div>
+        <!-- Dropdown End -->
       </div>
-      <!-- ===== Content Area End ===== -->
+      <!-- Dialpad Area-->
+
+      <!-- Hold Area Start-->
+      <div x-data="{ clicked: false }">
+        <button @click="clicked = !clicked"
+          :class="{ 'border-stroke bg-transparent text-slate-400 hover:border-orange-600 hover:text-orange-600': !clicked, 'border-orange-600 hover:border-orange-600 text-orange-600 hover:text-orange-600 ': clicked }"
+          class="flex justify-center items-center gap-2 rounded-xl border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium  ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current">
+            <path
+              d="M4 7C4 5.58579 4 4.87868 4.43934 4.43934C4.87868 4 5.58579 4 7 4C8.41421 4 9.12132 4 9.56066 4.43934C10 4.87868 10 5.58579 10 7V17C10 18.4142 10 19.1213 9.56066 19.5607C9.12132 20 8.41421 20 7 20C5.58579 20 4.87868 20 4.43934 19.5607C4 19.1213 4 18.4142 4 17V7Z"
+              stroke="" />
+            <path
+              d="M14 7C14 5.58579 14 4.87868 14.4393 4.43934C14.8787 4 15.5858 4 17 4C18.4142 4 19.1213 4 19.5607 4.43934C20 4.87868 20 5.58579 20 7V17C20 18.4142 20 19.1213 19.5607 19.5607C19.1213 20 18.4142 20 17 20C15.5858 20 14.8787 20 14.4393 19.5607C14 19.1213 14 18.4142 14 17V7Z"
+              stroke="" />
+          </svg>
+          <span>Hold</span>
+        </button>
+      </div>
+
+      <!-- Hold Area End-->
+
+      <!-- Transfer Area Start-->
+      <div class="relative" x-data="{ dropdownOpen: false, notifying: true }" @click.outside="dropdownOpen = false">
+
+        <button @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false"
+          class="flex justify-center items-center gap-2 rounded-xl border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-gray hover:bg-opacity-90 focus:border-primary active:border-primary focus:text-primary active:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M15 19V6.65856C15 5.65277 15 5.14987 15.3087 5.02472C15.6173 4.89956 15.9806 5.25517 16.7071 5.96637L19 8.21091"
+              stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M9 5V17.3414C9 18.3472 9 18.8501 8.69134 18.9753C8.38268 19.1004 8.01942 18.7448 7.29289 18.0336L5 15.7891"
+              stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span class="text-base font-medium text-slate-400 dark:text-white">Transfer</span>
+        </button>
+
+        <!-- ====== Hold dropdown Start -->
+        <div x-show="dropdownOpen"
+          class="absolute -right-16 mt-1.5 flex h-max flex-col  rounded-lg border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 w-max ">
+          <div x-data="
+                      {
+                      openTab: 1,
+                      activeClasses: 'text-primary border-primary',
+                      inactiveClasses: 'border-transparent',
+                      }
+                      " class=" w-full pt-4 p-6">
+            <div class="mb-6 flex flex-wrap gap-10 border-b border-stroke dark:border-strokedark sm:gap-10">
+              <a href="#" @click.prevent="openTab = 1" :class="openTab === 1 ? activeClasses : inactiveClasses"
+                class="flex justify-center items-center gap-2.5 border-b-2 py-2 text-sm font-medium hover:text-primary md:text-base active:text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  class="stroke-current">
+                  <path
+                    d="M12 7.5C12 9.433 10.433 11 8.5 11C6.567 11 5 9.433 5 7.5C5 5.567 6.567 4 8.5 4C10.433 4 12 5.567 12 7.5Z"
+                    stroke="" stroke-width="1.5" />
+                  <path d="M13.5 11C15.433 11 17 9.433 17 7.5C17 5.567 15.433 4 13.5 4" stroke="" stroke-width="1.5" />
+                  <path
+                    d="M13.1429 20H3.85714C2.83147 20 2 19.2325 2 18.2857C2 15.9188 4.07868 14 6.64286 14H10.3571C11.4023 14 12.3669 14.3188 13.1429 14.8568"
+                    stroke="" stroke-width="1.5" />
+                  <path d="M19 14V20M22 17H16" stroke="" stroke-width="1.5" />
+                </svg><span>Queue</span>
+              </a>
+              <a href="#" @click.prevent="openTab = 2" :class="openTab === 2 ? activeClasses : inactiveClasses"
+                class="flex justify-center items-center gap-2.5 border-b-2 py-2 text-sm font-medium hover:text-primary md:text-base active:text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  class="stroke-current">
+                  <path
+                    d="M17 8.5C17 5.73858 14.7614 3.5 12 3.5C9.23858 3.5 7 5.73858 7 8.5C7 11.2614 9.23858 13.5 12 13.5C14.7614 13.5 17 11.2614 17 8.5Z"
+                    stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M19 20.5C19 16.634 15.866 13.5 12 13.5C8.13401 13.5 5 16.634 5 20.5" stroke=""
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg><span>Agent</span>
+              </a>
+              <a href="#" @click.prevent="openTab = 3" :class="openTab === 3 ? activeClasses : inactiveClasses"
+                class="flex justify-center items-center gap-2.5 border-b-2 py-2 text-sm font-medium hover:text-primary md:text-base active:text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  class="stroke-current">
+                  <path
+                    d="M4.74038 14.3685L6.69351 12.9816C7.24445 12.5904 7.80305 12.3282 8.44034 12.1585C9.17201 11.9636 9.5 11.5644 9.5 10.711C9.5 8.54629 14.5 8.31595 14.5 10.711C14.5 11.5644 14.828 11.9636 15.5597 12.1585C16.202 12.3295 16.7599 12.5934 17.3065 12.9816L19.2596 14.3685C20.1434 14.9961 20.5547 15.2995 20.7842 15.7819C21 16.2358 21 16.768 21 17.8324C21 19.7461 21 20.703 20.4642 21.3164C19.8152 22.0593 18.128 21.9955 17.0917 21.9955H6.90833C5.87197 21.9955 4.21909 22.0986 3.5358 21.3164C3 20.703 3 19.7461 3 17.8324C3 16.768 3 16.2358 3.21584 15.7819C3.44526 15.2995 3.85662 14.9961 4.74038 14.3685Z"
+                    stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M14 17C14 18.1046 13.1046 19 12 19C10.8954 19 10 18.1046 10 17C10 15.8954 10.8954 15 12 15C13.1046 15 14 15.8954 14 17Z"
+                    stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M6.96014 3.69772C5.6417 4.07415 4.69384 4.54112 3.82645 5.10455C2.45318 5.9966 1.86443 7.60404 2.02607 9.15513C2.09439 9.81068 2.62064 10.1241 3.23089 9.95455C3.69451 9.82571 4.15888 9.7003 4.61961 9.56364C5.96706 9.16397 6.28399 8.67812 6.47124 7.29885L6.96014 3.69772ZM6.96014 3.69772C10.2186 2.76743 13.7814 2.76743 17.0399 3.69772M17.0399 3.69772C18.3583 4.07415 19.3062 4.54112 20.1735 5.10455C21.5468 5.9966 22.1356 7.60404 21.9739 9.15513C21.9056 9.81068 21.3794 10.1241 20.7691 9.95455C20.3055 9.82571 19.8411 9.7003 19.3804 9.56364C18.0329 9.16397 17.716 8.67812 17.5288 7.29885L17.0399 3.69772Z"
+                    stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg><span>Phone Number</span>
+              </a>
+
+            </div>
+            <div>
+              <div x-show="openTab === 1" class="font-medium leading-relaxed">
+                <div class="flex gap-2 items-center mb-4">
+                  <label class="mb-0 block text-base font-medium text-slate-500 dark:text-white">
+                    Select a Queue:
+                  </label>
+
+                  <div x-data="{openDropDown: false}" class="relative mb-0 inline-block flex-grow">
+                    <a href="#" @click.prevent="openDropDown = !openDropDown"
+                      class="inline-flex items-center justify-between w-full gap-2.5 text-slate-400 min-w-28 appearance-none rounded-lg border border-stroke bg-transparent py-1 pl-4 pr-3.5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input">
+                      Select a Queue
+                      <svg class="fill-current duration-200 ease-linear" :class="openDropDown && 'rotate-180'"
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                          d="M7.9999 11.4C7.8499 11.4 7.7249 11.35 7.5999 11.25L1.8499 5.60005C1.6249 5.37505 1.6249 5.02505 1.8499 4.80005C2.0749 4.57505 2.4249 4.57505 2.6499 4.80005L7.9999 10.025L13.3499 4.75005C13.5749 4.52505 13.9249 4.52505 14.1499 4.75005C14.3749 4.97505 14.3749 5.32505 14.1499 5.55005L8.3999 11.2C8.2749 11.325 8.1499 11.4 7.9999 11.4Z"
+                          fill="#64748B"></path>
+                      </svg>
+                    </a>
+                    <div x-show="openDropDown" @click.outside="openDropDown = false"
+                      class="absolute left-0 top-full z-40 mt-2 w-full rounded-md border border-stroke bg-white shadow-card dark:border-strokedark dark:bg-boxdark">
+                      <ul class="flex flex-col p-2">
+                        <li>
+                          <a href="#"
+                            class="flex px-2 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                            Select a Queue
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                            Option 1
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                            Option 2
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                            Option 3
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="flex gap-3.5">
+                  <button
+                    class="flex grow justify-center items-center gap-2 rounded border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-500 hover:bg-opacity-90 hover:border-primary hover:text-primary focus:border-primary active:border-primary focus:text-primary active:text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                      class="stroke-current">
+                      <path
+                        d="M19.7498 9H7.40831C6.40252 9 5.89962 9 5.77447 8.69134C5.64932 8.38268 6.00492 8.01942 6.71612 7.29289L8.96066 5"
+                        stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M5.74976 15H18.0912C19.097 15 19.5999 15 19.7251 15.3087C19.8502 15.6173 19.4946 15.9806 18.7834 16.7071L16.5389 19"
+                        stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="text-base font-medium ">Transfer</span>
+                  </button>
+                  <button
+                    class="flex grow justify-center items-center gap-2 rounded border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-500 hover:bg-opacity-90 hover:border-primary hover:text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                      class="stroke-current">
+                      <path
+                        d="M19.7498 9H7.40831C6.40252 9 5.89962 9 5.77447 8.69134C5.64932 8.38268 6.00492 8.01942 6.71612 7.29289L8.96066 5"
+                        stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M5.74976 15H18.0912C19.097 15 19.5999 15 19.7251 15.3087C19.8502 15.6173 19.4946 15.9806 18.7834 16.7071L16.5389 19"
+                        stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="text-base font-medium">Conference</span>
+                  </button>
+                </div>
+              </div>
+              <div x-show="openTab === 2" class="font-medium leading-relaxed" style="display: none">
+                <div class="flex gap-2 items-center mb-4">
+                  <label class="mb-0 block text-base font-medium text-slate-500 dark:text-white">
+                    Select Agent :
+                  </label>
+
+                  <div x-data="{openDropDown: false}" class="relative mb-0 inline-block flex-grow">
+                    <a href="#" @click.prevent="openDropDown = !openDropDown"
+                      class="inline-flex items-center justify-between w-full gap-2.5 text-slate-400 min-w-28 appearance-none rounded-lg border border-stroke bg-transparent py-1 pl-4 pr-3.5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input">
+                      <span class="flex gap-2 items-center"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"
+                          viewBox="0 0 8 8" fill="none">
+                          <circle cx="4" cy="4" r="3.5" fill="#FB5454" />
+                          <circle cx="4" cy="4" r="3.5" stroke="black" />
+                          <circle cx="4" cy="4" r="3.5" stroke="black" stroke-opacity="0.2" />
+                        </svg>
+                        Luis Test Dev 2</span>
+                      <svg class="fill-current duration-200 ease-linear" :class="openDropDown && 'rotate-180'"
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                          d="M7.9999 11.4C7.8499 11.4 7.7249 11.35 7.5999 11.25L1.8499 5.60005C1.6249 5.37505 1.6249 5.02505 1.8499 4.80005C2.0749 4.57505 2.4249 4.57505 2.6499 4.80005L7.9999 10.025L13.3499 4.75005C13.5749 4.52505 13.9249 4.52505 14.1499 4.75005C14.3749 4.97505 14.3749 5.32505 14.1499 5.55005L8.3999 11.2C8.2749 11.325 8.1499 11.4 7.9999 11.4Z"
+                          fill="#64748B"></path>
+                      </svg>
+                    </a>
+                    <div x-show="openDropDown" @click.outside="openDropDown = false"
+                      class="absolute left-0 top-full z-40 mt-2 w-full rounded-md border border-stroke bg-white shadow-card dark:border-strokedark dark:bg-boxdark">
+                      <ul class="flex flex-col p-2">
+                        <li>
+                          <a href="#"
+                            class="flex px-2 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                            Luis Test Dev 2
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                            Option 1
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                            Option 2
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                            Option 3
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+
+
+                </div>
+                <div class="flex gap-3.5">
+                  <button
+                    class="flex grow justify-center items-center gap-2 rounded border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-500 hover:bg-opacity-90 hover:border-primary hover:text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                      class="stroke-current">
+                      <path
+                        d="M19.7498 9H7.40831C6.40252 9 5.89962 9 5.77447 8.69134C5.64932 8.38268 6.00492 8.01942 6.71612 7.29289L8.96066 5"
+                        stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M5.74976 15H18.0912C19.097 15 19.5999 15 19.7251 15.3087C19.8502 15.6173 19.4946 15.9806 18.7834 16.7071L16.5389 19"
+                        stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="text-base font-medium ">Transfer</span>
+                  </button>
+                  <button
+                    class="flex grow justify-center items-center gap-2 rounded border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-500 hover:bg-opacity-90 hover:border-primary hover:text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                      class="stroke-current">
+                      <path
+                        d="M19.7498 9H7.40831C6.40252 9 5.89962 9 5.77447 8.69134C5.64932 8.38268 6.00492 8.01942 6.71612 7.29289L8.96066 5"
+                        stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M5.74976 15H18.0912C19.097 15 19.5999 15 19.7251 15.3087C19.8502 15.6173 19.4946 15.9806 18.7834 16.7071L16.5389 19"
+                        stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="text-base font-medium">Conference</span>
+                  </button>
+                </div>
+              </div>
+              <div x-show="openTab === 3" class="font-medium leading-relaxed" style="display: none">
+                <div class="flex gap-2 items-center mb-4">
+                  <label class="mb-0 block text-base font-medium text-slate-500 dark:text-white">
+                    Phone Number :
+                  </label>
+
+                  <div x-data="{openDropDown: false}" class="relative mb-0 inline-block flex-grow">
+                    <a href="#" @click.prevent="openDropDown = !openDropDown"
+                      class="inline-flex items-center justify-between w-full gap-2.5 text-slate-400 min-w-28 appearance-none rounded-lg border border-stroke bg-transparent py-1 pl-4 pr-3.5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input">
+                      (206) 235- 421
+                      <svg class="fill-current duration-200 ease-linear" :class="openDropDown && 'rotate-180'"
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                          d="M7.9999 11.4C7.8499 11.4 7.7249 11.35 7.5999 11.25L1.8499 5.60005C1.6249 5.37505 1.6249 5.02505 1.8499 4.80005C2.0749 4.57505 2.4249 4.57505 2.6499 4.80005L7.9999 10.025L13.3499 4.75005C13.5749 4.52505 13.9249 4.52505 14.1499 4.75005C14.3749 4.97505 14.3749 5.32505 14.1499 5.55005L8.3999 11.2C8.2749 11.325 8.1499 11.4 7.9999 11.4Z"
+                          fill="#64748B"></path>
+                      </svg>
+                    </a>
+                    <div x-show="openDropDown" @click.outside="openDropDown = false"
+                      class="absolute left-0 top-full z-40 mt-2 w-full rounded-md border border-stroke bg-white shadow-card dark:border-strokedark dark:bg-boxdark">
+                      <ul class="flex flex-col p-2">
+                        <li>
+                          <a href="#"
+                            class="flex px-2 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                            (206) 235- 421
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                            Option 1
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                            Option 2
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                            Option 3
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="flex gap-3.5">
+                  <button
+                    class="flex grow justify-center items-center gap-2 rounded border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-500 hover:bg-opacity-90 hover:border-primary hover:text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                      class="stroke-current">
+                      <path
+                        d="M19.7498 9H7.40831C6.40252 9 5.89962 9 5.77447 8.69134C5.64932 8.38268 6.00492 8.01942 6.71612 7.29289L8.96066 5"
+                        stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M5.74976 15H18.0912C19.097 15 19.5999 15 19.7251 15.3087C19.8502 15.6173 19.4946 15.9806 18.7834 16.7071L16.5389 19"
+                        stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="text-base font-medium ">Transfer</span>
+                  </button>
+                  <button
+                    class="flex grow justify-center items-center gap-2 rounded border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-500 hover:bg-opacity-90 hover:border-primary hover:text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                      class="stroke-current">
+                      <path
+                        d="M19.7498 9H7.40831C6.40252 9 5.89962 9 5.77447 8.69134C5.64932 8.38268 6.00492 8.01942 6.71612 7.29289L8.96066 5"
+                        stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M5.74976 15H18.0912C19.097 15 19.5999 15 19.7251 15.3087C19.8502 15.6173 19.4946 15.9806 18.7834 16.7071L16.5389 19"
+                        stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="text-base font-medium">Conference</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ====== Hold dropdown End -->
+      </div>
+
+      <!--Trasfer Area End-->
+
+      <!-- Calling Section -->
+      <div class="flex gap-2" x-data="{modalOpen: false}">
+
+        <button @click="modalOpen = true"
+          class="flex justify-center items-center gap-2 rounded-xl border-[1.5px] border-red bg-transparent px-3 py-2 font-medium text-gray hover:bg-opacity-90">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M16.7133 13.5937C18.1939 13.9846 19.2229 14.4792 20.1589 15.0848C21.5432 15.9804 22.1367 17.5944 21.9737 19.1517C21.9049 19.8099 21.3744 20.1246 20.7592 19.9544L19.3705 19.57C18.2697 19.2653 17.7193 19.1129 17.3837 18.71C17.0481 18.307 17.0086 17.751 16.9296 16.6391L16.7133 13.5937ZM16.7133 13.5937C13.7164 12.8025 10.2871 12.8016 7.28669 13.5937M7.28669 13.5937C5.80606 13.9846 4.77711 14.4792 3.84113 15.0848C2.45683 15.9804 1.86334 17.5944 2.02628 19.1517C2.09514 19.8099 2.62563 20.1246 3.24078 19.9544L4.62954 19.57C5.73032 19.2653 6.28071 19.1129 6.61631 18.71C6.95191 18.307 6.9914 17.751 7.07038 16.6391L7.28669 13.5937Z"
+              stroke="#FB5454" stroke-width="1.5" stroke-linejoin="round" />
+            <path d="M12 4V6.85714M18 7.57143L15.6001 9M6 7.57143L8.39987 9" stroke="#FB5454" stroke-width="1.5"
+              stroke-linejoin="round" />
+          </svg>
+          <span class="text-base font-medium text-red">Hang Up</span>
+        </button>
+        <div x-show="modalOpen" x-transition
+    class="fixed left-0 top-0 z-999999 flex h-full min-h-screen w-full items-center justify-center bg-black/90 px-4 py-5">
+    <div @click.outside="modalOpen = false"
+        class="w-full max-w-142.5 rounded-lg bg-white p-6 text-center dark:bg-boxdark ">
+        <div class="flex justify-between items-center mb-6">
+            <h3 class="text-title-sm2 font-bold text-slate-900 dark:text-white">
+                Select Outcome
+            </h3>
+            <button @click="modalOpen = false"
+                class="block text-center font-medium text-slate-900   hover:text-white dark:border-strokedark dark:bg-meta-4 dark:text-white ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6.00081 17.9992M17.9992 18L6 6.00085" stroke="black" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+
+        <!--Accordion starts-->
+        <div class="flex flex-col mb-3">
+            <!-- Accordion Item -->
+            <div x-data="{ accordionOpen: false }" class="dark:shadow-none mb-4 border border-stroke rounded-lg">
+                <button @click="accordionOpen = !accordionOpen"
+                    class="flex w-full items-center  px-4 py-2 border-b border-stroke">
+                    <div class="flex items-center justify-between w-full">
+                        <div class="flex items-center gap-1">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+                                    fill="none">
+                                    <circle cx="20" cy="20" r="19.5" fill="#EFF4FB" stroke="#D7E5F9" />
+                                    <path
+                                        d="M23.334 18.334L25.1252 18.8713C26.2695 19.2147 26.8417 19.3863 27.1712 19.8292C27.5007 20.272 27.5007 20.8694 27.5007 22.0641V28.334"
+                                        stroke="#64748B" stroke-linejoin="round" />
+                                    <path d="M16.666 17.5H19.166M16.666 20.8333H19.166" stroke="#64748B"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M20.0007 28.3327V25.8327C20.0007 25.047 20.0007 24.6542 19.7566 24.4101C19.5125 24.166 19.1197 24.166 18.334 24.166H17.5007C16.715 24.166 16.3221 24.166 16.0781 24.4101C15.834 24.6542 15.834 25.047 15.834 25.8327V28.3327"
+                                        stroke="#64748B" stroke-linejoin="round" />
+                                    <path d="M11.666 28.334H28.3327" stroke="#64748B" stroke-linecap="round" />
+                                    <path
+                                        d="M12.5 28.3327V15.5971C12.5 13.5048 12.5 12.4586 13.1593 11.9396C13.8186 11.4205 14.7895 11.7023 16.7313 12.2659L20.8979 13.4754C22.0697 13.8155 22.6556 13.9856 22.9944 14.4491C23.3333 14.9126 23.3333 15.5439 23.3333 16.8065V28.3327"
+                                        stroke="#64748B" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-medium text-slate-800 dark:text-white">
+                                    Undefined
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-end">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
+                                fill="none" :class="accordionOpen && 'rotate-180'"
+                                class="duration-200 ease-in-out fill-current">
+                                <path
+                                    d="M8.99995 12.825C8.8312 12.825 8.69058 12.7688 8.54995 12.6563L2.0812 6.30002C1.82808 6.0469 1.82808 5.65315 2.0812 5.40002C2.33433 5.1469 2.72808 5.1469 2.9812 5.40002L8.99995 11.2781L15.0187 5.34377C15.2718 5.09065 15.6656 5.09065 15.9187 5.34377C16.1718 5.5969 16.1718 5.99065 15.9187 6.24377L9.44995 12.6C9.30933 12.7406 9.1687 12.825 8.99995 12.825Z"
+                                    fill="" />
+                            </svg>
+
+                        </div>
+                    </div>
+                </button>
+
+                <div x-show="accordionOpen" class="duration-200 ease-in-out  p-4 pb-0 ">
+                    <!-- ====== Form checkbox -->
+                    <form class="flex">
+                        <div class="flex flex-wrap">
+
+                            <div x-data="{ checkboxToggle: false }" class="w-1/2 mb-4">
+                                <label for="AnswerMachineAuto"
+                                    class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                    <div class="relative">
+                                        <input type="checkbox" id="AnswerMachineAuto" class="sr-only"
+                                            @change="checkboxToggle = !checkboxToggle" />
+                                        <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                            class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                            <span :class="checkboxToggle && '!opacity-100'" class="opacity-0">
+                                                <svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                        fill="#3056D3" stroke="#3056D3" stroke-width="0.4"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    Answer Machine Auto
+                                </label>
+                            </div>
+
+                            <div x-data="{ checkboxToggle: false }" class="w-1/2 mb-4">
+                                <label for="Busy"
+                                    class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                    <div class="relative">
+                                        <input type="checkbox" id="Busy" class="sr-only"
+                                            @change="checkboxToggle = !checkboxToggle" />
+                                        <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                            class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                            <span :class="checkboxToggle && '!opacity-100'" class="opacity-0">
+                                                <svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                        fill="#3056D3" stroke="#3056D3" stroke-width="0.4"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    Busy
+                                </label>
+                            </div>
+
+                            <div x-data="{ checkboxToggle: false }" class="w-1/2 mb-4">
+                                <label for="DoNotCall"
+                                    class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                    <div class="relative">
+                                        <input type="checkbox" id="DoNotCall" class="sr-only"
+                                            @change="checkboxToggle = !checkboxToggle" />
+                                        <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                            class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                            <span :class="checkboxToggle && '!opacity-100'" class="opacity-0">
+                                                <svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                        fill="#3056D3" stroke="#3056D3" stroke-width="0.4"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    Do Not Call
+                                </label>
+                            </div>
+
+                            <div x-data="{ checkboxToggle: false }" class="w-1/2 mb-4">
+                                <label for="ScheduleCallbackYes"
+                                    class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                    <div class="relative">
+                                        <input type="checkbox" id="ScheduleCallbackYes" class="sr-only"
+                                            @change="checkboxToggle = !checkboxToggle" />
+                                        <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                            class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                            <span :class="checkboxToggle && '!opacity-100'" class="opacity-0">
+                                                <svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                        fill="#3056D3" stroke="#3056D3" stroke-width="0.4"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    Schedule Callback Yes
+                                </label>
+                            </div>
+
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Accordion Item Ends -->
+
+            <!-- Accordion Item -->
+            <div x-data="{ accordionOpen: false }"
+                class="dark:shadow-none mb-4 border border-stroke rounded-lg hover:bg-slate-50 focus:bg-slate-50">
+                <button @click="accordionOpen = !accordionOpen" data-active-classes="bg-slate-50"
+                    class="flex w-full items-center px-4 py-2 border-b border-stroke">
+                    <div class="flex items-center justify-between w-full">
+                        <div class="flex items-center gap-1">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+                                    fill="none">
+                                    <circle cx="20" cy="20" r="19.5" fill="#EFF4FB" stroke="#D7E5F9" />
+                                    <path
+                                        d="M23.334 18.334L25.1252 18.8713C26.2695 19.2147 26.8417 19.3863 27.1712 19.8292C27.5007 20.272 27.5007 20.8694 27.5007 22.0641V28.334"
+                                        stroke="#64748B" stroke-linejoin="round" />
+                                    <path d="M16.666 17.5H19.166M16.666 20.8333H19.166" stroke="#64748B"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M20.0007 28.3327V25.8327C20.0007 25.047 20.0007 24.6542 19.7566 24.4101C19.5125 24.166 19.1197 24.166 18.334 24.166H17.5007C16.715 24.166 16.3221 24.166 16.0781 24.4101C15.834 24.6542 15.834 25.047 15.834 25.8327V28.3327"
+                                        stroke="#64748B" stroke-linejoin="round" />
+                                    <path d="M11.666 28.334H28.3327" stroke="#64748B" stroke-linecap="round" />
+                                    <path
+                                        d="M12.5 28.3327V15.5971C12.5 13.5048 12.5 12.4586 13.1593 11.9396C13.8186 11.4205 14.7895 11.7023 16.7313 12.2659L20.8979 13.4754C22.0697 13.8155 22.6556 13.9856 22.9944 14.4491C23.3333 14.9126 23.3333 15.5439 23.3333 16.8065V28.3327"
+                                        stroke="#64748B" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-medium text-slate-800 dark:text-white">
+                                    Undefined
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-end">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
+                                fill="none" :class="accordionOpen && 'rotate-180'"
+                                class="duration-200 ease-in-out fill-current">
+                                <path
+                                    d="M8.99995 12.825C8.8312 12.825 8.69058 12.7688 8.54995 12.6563L2.0812 6.30002C1.82808 6.0469 1.82808 5.65315 2.0812 5.40002C2.33433 5.1469 2.72808 5.1469 2.9812 5.40002L8.99995 11.2781L15.0187 5.34377C15.2718 5.09065 15.6656 5.09065 15.9187 5.34377C16.1718 5.5969 16.1718 5.99065 15.9187 6.24377L9.44995 12.6C9.30933 12.7406 9.1687 12.825 8.99995 12.825Z"
+                                    fill="" />
+                            </svg>
+
+                        </div>
+                    </div>
+                </button>
+
+                <div x-show="accordionOpen" class="duration-200 ease-in-out p-4 pb-0">
+                    <form class="flex">
+                        <div class="flex flex-wrap w-full">
+
+                            <div x-data="{ checkboxToggle: false }" class="w-1/2 mb-4">
+                                <label for="AnswerMachines"
+                                    class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                    <div class="relative">
+                                        <input type="checkbox" id="AnswerMachines" class="sr-only"
+                                            @change="checkboxToggle = !checkboxToggle" />
+                                        <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                            class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                            <span :class="checkboxToggle && '!opacity-100'" class="opacity-0">
+                                                <svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                        fill="#3056D3" stroke="#3056D3" stroke-width="0.4"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    Answer Machines
+                                </label>
+                            </div>
+
+                            <div x-data="{ checkboxToggle: false }" class="w-1/2 mb-4">
+                                <label for="VM"
+                                    class="flex cursor-pointer select-none items-center text-sm font-medium">
+                                    <div class="relative">
+                                        <input type="checkbox" id="VM" class="sr-only"
+                                            @change="checkboxToggle = !checkboxToggle" />
+                                        <div :class="checkboxToggle && 'border-primary bg-gray dark:bg-transparent'"
+                                            class="mr-4 flex h-5 w-5 items-center justify-center rounded border">
+                                            <span :class="checkboxToggle && '!opacity-100'" class="opacity-0">
+                                                <svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                                                        fill="#3056D3" stroke="#3056D3" stroke-width="0.4"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    VM
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Accordion Item Ends -->
+
+        </div>
+        <!--Accordion Ends-->
+
+        <!-- <div class="flex flex-wrap">
+            <div class="flex gap-2 items-center mb-4">
+                  <label class="mb-0 block text-base font-medium text-slate-800 dark:text-white">
+                    Set your status to :
+                  </label>
+                  <div x-data="{ isOptionSelected: false }" class="relative z-20 bg-white dark:bg-form-input grow">
+                    <select
+                      class="relative z-20 w-full text-slate-600 min-w-28 appearance-none rounded-lg border border-stroke bg-transparent py-1 pl-4 pr-5.5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
+                      :class="isOptionSelected && 'text-slate-600 dark:text-white'" @change="isOptionSelected = true">
+                      <option value="" class="">Available</option>                      
+                      <option value="" class="">Testing</option>
+                      <option value="" class="">Lunch</option>
+                      <option value="" class="">Bathroom</option>
+                    </select>
+                    <span class="absolute right-0.5 top-1/2 z-20 -translate-y-1/2">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.8">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+                            fill="#637381"></path>
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+        </div> -->
+
+        <div class="flex flex-wrap">
+            <div class="flex gap-2 items-center mb-4">
+                <p class="mb-0 block text-base font-medium text-slate-800 dark:text-white">
+                    Set your status to :
+                </p>
+                <div x-data="{openDropDown: false}" class="relative mb-0 inline-block">
+                    <a href="#" @click.prevent="openDropDown = !openDropDown"
+                        class="inline-flex items-center gap-2.5 text-slate-600 min-w-28 appearance-none rounded-lg border border-stroke bg-transparent py-1 pl-4 pr-5.5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input">
+                        Available
+                        <svg class="fill-current duration-200 ease-linear" :class="openDropDown && 'rotate-180'"
+                            width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.564864 0.879232C0.564864 0.808624 0.600168 0.720364 0.653125 0.667408C0.776689 0.543843 0.970861 0.543844 1.09443 0.649756L5.82517 5.09807C5.91343 5.18633 6.07229 5.18633 6.17821 5.09807L10.9089 0.649756C11.0325 0.526192 11.2267 0.543844 11.3502 0.667408C11.4738 0.790972 11.4562 0.985145 11.3326 1.10871L6.60185 5.55702C6.26647 5.85711 5.73691 5.85711 5.41917 5.55702L0.670776 1.10871C0.600168 1.0381 0.564864 0.967492 0.564864 0.879232Z"
+                                fill="" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M1.4719 0.229332L6.00169 4.48868L10.5171 0.24288C10.9015 -0.133119 11.4504 -0.0312785 11.7497 0.267983C12.1344 0.652758 12.0332 1.2069 11.732 1.50812L11.7197 1.52041L6.97862 5.9781C6.43509 6.46442 5.57339 6.47872 5.03222 5.96853C5.03192 5.96825 5.03252 5.96881 5.03222 5.96853L0.271144 1.50833C0.123314 1.3605 -5.04223e-08 1.15353 -3.84322e-08 0.879226C-2.88721e-08 0.660517 0.0936127 0.428074 0.253705 0.267982C0.593641 -0.0719548 1.12269 -0.0699964 1.46204 0.220873L1.4719 0.229332ZM5.41917 5.55702C5.73691 5.85711 6.26647 5.85711 6.60185 5.55702L11.3326 1.10871C11.4562 0.985145 11.4738 0.790972 11.3502 0.667408C11.2267 0.543844 11.0325 0.526192 10.9089 0.649756L6.17821 5.09807C6.07229 5.18633 5.91343 5.18633 5.82517 5.09807L1.09443 0.649756C0.970861 0.543844 0.776689 0.543843 0.653125 0.667408C0.600168 0.720364 0.564864 0.808624 0.564864 0.879232C0.564864 0.967492 0.600168 1.0381 0.670776 1.10871L5.41917 5.55702Z"
+                                fill="" />
+                        </svg>
+                    </a>
+                    <div x-show="openDropDown" @click.outside="openDropDown = false"
+                        class="absolute left-0 top-full z-40 mt-2 w-full rounded-md border border-stroke bg-white shadow-card dark:border-strokedark dark:bg-boxdark">
+                        <ul class="flex flex-col p-2">
+                            <li>
+                                <a href="#"
+                                    class="flex px-2 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                                    Available
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                                    Testing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                                    Lunch
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex px-5 py-2 font-medium hover:bg-indigo-50 rounded hover:text-primary dark:hover:bg-meta-4">
+                                    Bathroom
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <!-- ===== Page Wrapper End ===== -->
-  <script defer src="bundle.js"></script></body>
+</div>
+      </div>
+
+      <!-- Calling Section -->
+    </div>
+
+    <!-- Calling Section -->
+
+
+  </div>
+  <!-- Bottom Header Right Area -->
+</div>
+<!-- Bottom Header Live Call Area -->
+</header>
+      <!-- ===== Header End ===== -->
+
+      <!-- ===== Main Content Start ===== -->
+      <main>
+
+        <div class="mx-auto max-w-full p-4 md:p-6">
+
+          <!-- ====== Data Stats Start -->
+          <div class="rounded-2xl border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+
+            <div x-data="
+                      {
+                      openTab: 1,
+                      activeClasses: 'text-primary border-primary',
+                      inactiveClasses: 'border-transparent',
+                      }
+                      " class="mb-14 w-full pt-4 p-7.5">
+              <div class="mb-6 flex flex-wrap gap-5 border-b border-stroke dark:border-strokedark sm:gap-10">
+                <a href="#" @click.prevent="openTab = 1" :class="openTab === 1 ? activeClasses : inactiveClasses"
+                  class="border-b-2 py-4 text-sm font-medium hover:text-primary md:text-base">
+                  Customer Information
+                </a>
+                <a href="#" @click.prevent="openTab = 2" :class="openTab === 2 ? activeClasses : inactiveClasses"
+                  class="border-b-2 py-4 text-sm font-medium hover:text-primary md:text-base">
+                  Plan Information
+                </a>
+                <a href="#" @click.prevent="openTab = 3" :class="openTab === 3 ? activeClasses : inactiveClasses"
+                  class="border-b-2 py-4 text-sm font-medium hover:text-primary md:text-base">
+                  Testing Web Tab
+                </a>
+
+              </div>
+              <div>
+                <div x-show="openTab === 1" class="font-medium leading-relaxed">
+                  <div>
+                    <form action="#">
+                      <div class="p-0">
+                        <div class="mb-6 flex flex-col gap-6 xl:flex-row">
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              First name
+                            </label>
+                            <input type="text" placeholder="Enter your first name"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              Last name
+                            </label>
+                            <input type="text" placeholder="Enter your last name"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              Gender
+                            </label>
+                            <input type="text" placeholder="Enter your gender"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+                        </div>
+
+                        <div class="mb-6">
+                          <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                            Address 1
+                          </label>
+                          <input type="text" placeholder="Enter your Address 1"
+                            class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                        </div>
+
+                        <div class="mb-6 flex flex-col gap-6 xl:flex-row">
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              City
+                            </label>
+                            <input type="text" placeholder="Enter your city"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              State
+                            </label>
+                            <input type="text" placeholder="Enter your state"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              Zip code
+                            </label>
+                            <input type="text" placeholder="Enter your Zip code"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+                        </div>
+
+                        <div class="mb-10 flex flex-col gap-6 xl:flex-row">
+
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              Medicare Password
+                            </label>
+                            <input type="password" placeholder="Enter your Medicare Password"
+                              autocomplete="new-password"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+
+                          <div class="w-full xl:w-1/3">
+                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                              Medicare ID
+                            </label>
+                            <input type="text" placeholder="Enter your Medicare ID"
+                              class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                          </div>
+                        </div>
+
+
+                        <div class="flex gap-8 justify-end">
+                          <button
+                            class="inline-flex items-center justify-center rounded-md border border-stroke px-6.5 py-2 max-h-10 text-center font-medium text-black hover:bg-opacity-90 ">
+                            Reset
+                          </button>
+                          <button
+                            class="inline-flex items-center justify-center rounded-md bg-primary px-6.5 py-2 max-h-10 text-center font-medium text-white hover:bg-opacity-90 ">
+                            Submit
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div x-show="openTab === 2" class="font-medium leading-relaxed" style="display: none">
+                  Tab2 ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse luctus ligula nec dolor placerat, a consequat
+                  elit volutpat. Quisque nibh lacus, posuere et turpis in,
+                  pretium facilisis nisl. Proin congue sem vel sollicitudin
+                  sagittis. Class aptent taciti sociosqu ad litora torquent
+                  per conubia nostra, per
+                </div>
+                <div x-show="openTab === 3" class="font-medium leading-relaxed" style="display: none">
+                  Tab3 ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse luctus ligula nec dolor placerat, a consequat
+                  elit volutpat. Quisque nibh lacus, posuere et turpis in,
+                  pretium facilisis nisl. Proin congue sem vel sollicitudin
+                  sagittis. Class aptent taciti sociosqu ad litora torquent
+                  per conubia nostra, per
+                </div>
+                <div x-show="openTab === 4" class="font-medium leading-relaxed" style="display: none">
+                  Tab4 Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Officia nisi, doloribus nulla cumque molestias
+                  corporis eaque harum vero! Quas sit odit optio debitis
+                  nulla quisquam, dolorum quaerat animi iusto quod.
+                </div>
+                <div x-show="openTab === 5" class="font-medium leading-relaxed" style="display: none">
+                  Tab5 Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Officia nisi, doloribus nulla cumque molestias
+                  corporis eaque harum vero! Quas sit odit optio debitis
+                  nulla quisquam, dolorum quaerat animi iusto quod.
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- ====== Data Stats End -->
+
+
+        </div>
+      </main>
+      <!-- ===== Main Content End ===== -->
+    </div>
+    <!-- ===== Content Area End ===== -->
+  </div>
+  <!-- ===== Page Wrapper End ===== -->
+<script defer src="bundle.js"></script></body>
+
 </html>
