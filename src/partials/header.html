@@ -1,3 +1,15 @@
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.18/index.global.min.js'></script>
+<script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+
+    </script>
 <header class="sticky top-0 z-999 flex w-full flex-col">
   <div class="bg-white border-b border-slate-100 dark:bg-boxdark dark:drop-shadow-none">
     <div class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6">
@@ -354,7 +366,7 @@
               </div>
 
               <!-- ====== Calendar Section Start -->
-
+              <div id='calendar'></div>
               <!-- ====== Calendar Section End -->
             </div>
             <!-- Dropdown End -->
