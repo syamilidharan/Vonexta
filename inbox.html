@@ -67,32 +67,37 @@
             :class="openTab === 1 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M14.0002 25.6666C9.3254 25.6666 6.98802 25.6666 5.53576 24.129C4.0835 22.5913 4.0835 20.1163 4.0835 15.1666C4.0835 10.2169 4.0835 7.74201 5.53576 6.20432C6.98802 4.66663 9.3254 4.66663 14.0002 4.66663C18.6749 4.66663 21.0123 4.66663 22.4646 6.20432C23.9168 7.74201 23.9168 10.2169 23.9168 15.1666C23.9168 20.1163 23.9168 22.5913 22.4646 24.129C21.0123 25.6666 18.6749 25.6666 14.0002 25.6666Z"
-               stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M9.3335 4.66671V2.33337"  stroke-linecap="round" />
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9.3335 4.66671V2.33337" stroke-linecap="round" />
             <path d="M18.6665 4.66671V2.33337" stroke-linecap="round" />
             <path
               d="M16.3545 11.0747C16.3545 12.3634 15.3099 13.408 14.0213 13.408C12.7326 13.408 11.688 12.3634 11.688 11.0747C11.688 9.78609 12.7326 8.74146 14.0213 8.74146C15.3099 8.74146 16.3545 9.78609 16.3545 11.0747Z"
               stroke-linecap="round" stroke-linejoin="round" />
             <path
               d="M9.40697 19.5021C10.6417 17.6012 12.6025 16.8889 14.0213 16.8903C15.4399 16.8918 17.3434 17.6012 18.578 19.5021C18.6578 19.625 18.6799 19.7764 18.6078 19.9041C18.319 20.4162 17.4225 21.4322 16.775 21.5012C16.0309 21.5803 14.0845 21.5913 14.0228 21.5917C13.961 21.5913 11.9545 21.5803 11.2101 21.5012C10.5625 21.4322 9.66595 20.4162 9.37719 19.9041C9.30515 19.7764 9.32715 19.625 9.40697 19.5021Z"
-               stroke-linecap="round" stroke-linejoin="round" />
+              stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <spn class="absolute left-5.5 z-20 ml-4 whitespace-nowrap rounded-md bg-slate-900 px-2 py-1 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100">Contacts</spn>
+          <spn
+            class="absolute left-5.5 z-20 ml-4 whitespace-nowrap rounded-md bg-slate-900 px-2 py-1 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100">
+            Contacts</spn>
         </a>
         <a href="#" @click.prevent="openTab = 2" :class="openTab === 2 ? activeClasses : inactiveClasses"
           class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
+          <span class="absolute size-5 p-1 text-xs bg-red rounded-full flex justify-center items-center -left-0.5 -top-1.5">3</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
             class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
             :class="openTab === 2 ? 'bg-black' : 'bg-transparent'">
-            <path d="M8.75 14H15.75M8.75 9.33337H12.25"  stroke-linejoin="round" />
+            <path d="M8.75 14H15.75M8.75 9.33337H12.25" stroke-linejoin="round" />
             <path
               d="M9.9165 23.3334C11.1419 24.348 12.6168 24.9945 14.3073 25.1053C15.6392 25.1927 17.0298 25.1926 18.3591 25.1053C18.8168 25.0753 19.3158 24.9675 19.7454 24.7929C20.2234 24.5986 20.4626 24.5014 20.5842 24.5161C20.7056 24.5308 20.8819 24.6592 21.2345 24.9157C21.8561 25.368 22.6391 25.693 23.8004 25.6651C24.3876 25.651 24.6813 25.6438 24.8126 25.4228C24.9441 25.2016 24.7804 24.8954 24.4529 24.2832C23.9989 23.4339 23.7112 22.4618 24.1472 21.6828C24.898 20.5701 25.5357 19.2525 25.6289 17.8294C25.679 17.0648 25.679 16.2728 25.6289 15.5082C25.5669 14.5599 25.3367 13.6586 24.9679 12.8334"
-               stroke-linejoin="round" />
+              stroke-linejoin="round" />
             <path
               d="M14.4027 20.4013C18.5509 20.1281 21.8551 16.8081 22.1269 12.6402C22.1801 11.8246 22.1801 10.9799 22.1269 10.1643C21.8551 5.99635 18.5509 2.67639 14.4027 2.4032C12.9875 2.31001 11.5099 2.31019 10.0977 2.4032C5.9495 2.67639 2.64529 5.99635 2.3734 10.1643C2.3202 10.9799 2.3202 11.8246 2.3734 12.6402C2.47242 14.1582 3.15007 15.5637 3.94784 16.7506C4.41105 17.5814 4.10535 18.6184 3.62287 19.5242C3.275 20.1773 3.10106 20.5039 3.24072 20.7398C3.38037 20.9757 3.69234 20.9832 4.31626 20.9983C5.55014 21.028 6.38216 20.6814 7.04261 20.199C7.41718 19.9253 7.60447 19.7885 7.73355 19.7728C7.86263 19.7571 8.11666 19.8607 8.62464 20.068C9.08119 20.2543 9.6113 20.3692 10.0977 20.4013C11.5099 20.4943 12.9875 20.4944 14.4027 20.4013Z"
-               stroke-linejoin="round" />
+              stroke-linejoin="round" />
           </svg>
-          <spn class="absolute left-5.5 z-20 ml-4 whitespace-nowrap rounded-md bg-slate-900 px-2 py-1 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100">SMS</spn>
+          <spn
+            class="absolute left-5.5 z-20 ml-4 whitespace-nowrap rounded-md bg-slate-900 px-2 py-1 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100">
+            SMS</spn>
         </a>
         <a href="#" @click.prevent="openTab = 3" :class="openTab === 3 ? activeClasses : inactiveClasses"
           class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
@@ -101,21 +106,27 @@
             :class="openTab === 3 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M4.40738 13.9328C3.30136 12.0042 2.76732 10.4294 2.44531 8.83312C1.96905 6.47222 3.05894 4.16599 4.86444 2.69442C5.62752 2.07249 6.50226 2.28498 6.95349 3.09451L7.9722 4.9221C8.77966 6.37071 9.18339 7.095 9.10331 7.8629C9.02324 8.6308 8.47876 9.25621 7.38979 10.5071L4.40738 13.9328ZM4.40738 13.9328C6.64609 17.8364 10.1593 21.3516 14.0674 23.5928M14.0674 23.5928C15.996 24.6988 17.5707 25.2329 19.1671 25.5549C21.528 26.0312 23.8342 24.9413 25.3057 23.1357C25.9277 22.3727 25.7152 21.498 24.9057 21.0467L23.0781 20.028C21.6295 19.2205 20.9052 18.8169 20.1373 18.8969C19.3694 18.9769 18.7439 19.5214 17.4932 20.6104L14.0674 23.5928Z"
-               stroke-linejoin="round" />
+              stroke-linejoin="round" />
           </svg>
-          <spn class="absolute left-5.5 z-20 ml-4 whitespace-nowrap rounded-md bg-slate-900 px-2 py-1 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100">Call</spn>
+          <spn
+            class="absolute left-5.5 z-20 ml-4 whitespace-nowrap rounded-md bg-slate-900 px-2 py-1 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100">
+            Call</spn>
         </a>
         <a href="#" @click.prevent="openTab = 4" :class="openTab === 4 ? activeClasses : inactiveClasses"
           class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
+          <span class="absolute size-5 p-1 text-xs bg-red rounded-full flex justify-center items-center -left-0.5 -top-0.5">2</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
             class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
             :class="openTab === 4 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M4.40738 13.9328C3.30136 12.0042 2.76732 10.4294 2.44531 8.83312C1.96905 6.47222 3.05894 4.16599 4.86444 2.69442C5.62752 2.07249 6.50226 2.28498 6.95349 3.09451L7.9722 4.9221C8.77966 6.37071 9.18339 7.095 9.10331 7.8629C9.02324 8.6308 8.47876 9.25621 7.38979 10.5071L4.40738 13.9328ZM4.40738 13.9328C6.64609 17.8364 10.1593 21.3516 14.0674 23.5928M14.0674 23.5928C15.996 24.6988 17.5707 25.2329 19.1671 25.5549C21.528 26.0312 23.8342 24.9413 25.3057 23.1357C25.9277 22.3727 25.7152 21.498 24.9057 21.0467L23.0781 20.028C21.6295 19.2205 20.9052 18.8169 20.1373 18.8969C19.3694 18.9769 18.7439 19.5214 17.4932 20.6104L14.0674 23.5928Z"
-               stroke-linejoin="round" />
-            <path d="M16.3335 3.5V6.76667M22.1087 5.89258L19.7988 8.20246M24.5002 11.6667H21.2335"  stroke-linecap="round" />
+              stroke-linejoin="round" />
+            <path d="M16.3335 3.5V6.76667M22.1087 5.89258L19.7988 8.20246M24.5002 11.6667H21.2335"
+              stroke-linecap="round" />
           </svg>
-          <spn class="absolute left-5.5 z-20 ml-4 whitespace-nowrap rounded-md bg-slate-900 px-2 py-1 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100">Queues</spn>
+          <spn
+            class="absolute left-5.5 z-20 ml-4 whitespace-nowrap rounded-md bg-slate-900 px-2 py-1 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100">
+            Queues</spn>
         </a>
       </div>
       <div class="h-full flex-grow pr-4 pl-2.5">
@@ -385,13 +396,20 @@
                   <div class="flex items-center justify-between py-2 w-full ">
                     <div class="flex items-center gap-1 w-full">
                       <div class="h-8 w-8 overflow-hidden rounded-full flex justify-center items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
-                          <rect x="0.5" y="0.5" width="26" height="26" rx="13" stroke="#DEE4EE" />
-                          <path d="M19.5 10.1667V7.5H16.8333M15.5 11.5L19.2294 7.77057" stroke="#8A99AF"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                          <path
-                            d="M11.6055 9.30815L11.3371 8.70417C11.1615 8.30925 11.0738 8.11179 10.9425 7.96067C10.778 7.77129 10.5636 7.63196 10.3238 7.55857C10.1324 7.5 9.91631 7.5 9.48414 7.5C8.85194 7.5 8.53583 7.5 8.27049 7.62153C7.95791 7.76468 7.67562 8.07552 7.56315 8.4004C7.46767 8.67619 7.49502 8.95962 7.54972 9.52647C8.13194 15.5601 11.4399 18.8681 17.4735 19.4503C18.0404 19.505 18.3238 19.5323 18.5996 19.4369C18.9245 19.3244 19.2353 19.0421 19.3785 18.7295C19.5 18.4641 19.5 18.1481 19.5 17.5159C19.5 17.0837 19.5 16.8676 19.4415 16.6762C19.3681 16.4363 19.2287 16.2219 19.0393 16.0575C18.8882 15.9262 18.6907 15.8385 18.2958 15.6629L17.6919 15.3945C17.2641 15.2044 17.0503 15.1094 16.833 15.0887C16.6251 15.0689 16.4154 15.0981 16.2207 15.1739C16.0173 15.2531 15.8375 15.4029 15.478 15.7025C15.1201 16.0008 14.9411 16.1499 14.7225 16.2298C14.5287 16.3006 14.2724 16.3269 14.0682 16.2967C13.8379 16.2628 13.6615 16.1686 13.3089 15.9801C12.2115 15.3937 11.6064 14.7885 11.0199 13.6911C10.8314 13.3385 10.7372 13.1621 10.7032 12.9318C10.6732 12.7276 10.6994 12.4713 10.7702 12.2775C10.8501 12.0589 10.9992 11.8799 11.2975 11.522C11.5971 11.1625 11.7469 10.9827 11.8261 10.7793C11.9019 10.5846 11.9311 10.3749 11.9113 10.167C11.8906 9.94968 11.7956 9.73584 11.6055 9.30815Z"
-                            stroke="#8A99AF" stroke-linecap="round" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                          <rect x="1" y="1.00073" width="26" height="26" rx="13" stroke="#8A99AF" />
+                          <g clip-path="url(#clip0_36689_1169)">
+                            <path
+                              d="M8.51858 13.9622C7.88656 12.8602 7.58139 11.9603 7.39739 11.0481C7.12524 9.69904 7.74804 8.38119 8.77975 7.5403C9.21579 7.18491 9.71565 7.30633 9.9735 7.76892L10.5556 8.81326C11.017 9.64103 11.2477 10.0549 11.202 10.4937C11.1562 10.9325 10.8451 11.2899 10.2228 12.0047L8.51858 13.9622ZM8.51858 13.9622C9.79783 16.1928 11.8054 18.2015 14.0386 19.4822M14.0386 19.4822C15.1406 20.1143 16.0405 20.4194 16.9527 20.6034C18.3018 20.8756 19.6196 20.2528 20.4605 19.2211C20.8159 18.785 20.6945 18.2852 20.2319 18.0273L19.1876 17.4452C18.3598 16.9838 17.9459 16.7531 17.5071 16.7988C17.0683 16.8446 16.7109 17.1557 15.9962 17.778L14.0386 19.4822Z"
+                              stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15.3335 8.00073V9.8674M18.6336 9.36792L17.3137 10.6879M20.0002 12.6674H18.1335"
+                              stroke="white" stroke-linecap="round" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_36689_1169">
+                              <rect width="16" height="16" fill="white" transform="translate(6 6.00073)" />
+                            </clipPath>
+                          </defs>
                         </svg>
                       </div>
                       <div>
@@ -401,32 +419,22 @@
                         <p class="text-xs min-w-29">(206) 235- 421</p>
                       </div>
                     </div>
-                    <div class="flex flex-col justify-end w-full">
-                      <div x-data="{openDropDown: false}" class="relative text-right">
-                        <button @click="openDropDown = !openDropDown">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                            fill="none">
-                            <path d="M7.99731 8H8.00331" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                            <path d="M11.9999 8H12.0059" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                            <path d="M3.99988 8H4.00586" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                          </svg>
-                        </button>
-                        <div x-show="openDropDown" @click.outside="openDropDown = false"
-                          class="absolute right-0 top-full z-40 w-37.5 space-y-1 rounded bg-slate-500 p-2 shadow-card dark:bg-boxdark-2">
-                          <button
-                            class="w-full rounded px-3 py-1.5 text-left text-sm hover:bg-slate-600 dark:hover:bg-graydark">
-                            Edit
-                          </button>
-                          <button
-                            class="w-full rounded px-3 py-1.5 text-left text-sm hover:bg-slate-600 dark:hover:bg-graydark">
-                            Delete
-                          </button>
-                        </div>
-                      </div>
-                      <p class="text-right text-slate-500">NaNs</p>
+                    <div class="flex flex-col justify-end">
+                      <button class="border-2 rounded-full p-0.5 border-dotted border-slate-700 hover:border-[#10B981]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                          <rect x="0.5" y="0.000732422" width="24" height="24" rx="12" fill="#10B981" />
+                          <g clip-path="url(#clip0_36819_9434)">
+                            <path
+                              d="M7.01858 11.9622C6.38656 10.8602 6.08139 9.9603 5.89739 9.04813C5.62524 7.69904 6.24804 6.38119 7.27975 5.5403C7.71579 5.18491 8.21565 5.30633 8.4735 5.76892L9.05562 6.81326C9.51702 7.64103 9.74772 8.05491 9.70197 8.49371C9.65621 8.93251 9.34508 9.28989 8.72281 10.0047L7.01858 11.9622ZM7.01858 11.9622C8.29783 14.1928 10.3054 16.2015 12.5386 17.4822M12.5386 17.4822C13.6406 18.1143 14.5405 18.4194 15.4527 18.6034C16.8018 18.8756 18.1196 18.2528 18.9605 17.2211C19.3159 16.785 19.1945 16.2852 18.7319 16.0273L17.6876 15.4452C16.8598 14.9838 16.4459 14.7531 16.0071 14.7988C15.5683 14.8446 15.2109 15.1557 14.4962 15.778L12.5386 17.4822Z"
+                              stroke="white" stroke-width="1.5" stroke-linejoin="round" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_36819_9434">
+                              <rect width="16" height="16" fill="white" transform="translate(4.5 4.00073)" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </button>
                     </div>
                   </div>
 
@@ -434,13 +442,20 @@
                   <div class="flex items-center w-full justify-between py-2 ">
                     <div class="flex items-center gap-1 w-full">
                       <div class="h-8 w-8 overflow-hidden rounded-full flex justify-center items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
-                          <rect x="0.5" y="0.5" width="26" height="26" rx="13" stroke="#DEE4EE" />
-                          <path d="M19.5 10.1667V7.5H16.8333M15.5 11.5L19.2294 7.77057" stroke="#8A99AF"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                          <path
-                            d="M11.6055 9.30815L11.3371 8.70417C11.1615 8.30925 11.0738 8.11179 10.9425 7.96067C10.778 7.77129 10.5636 7.63196 10.3238 7.55857C10.1324 7.5 9.91631 7.5 9.48414 7.5C8.85194 7.5 8.53583 7.5 8.27049 7.62153C7.95791 7.76468 7.67562 8.07552 7.56315 8.4004C7.46767 8.67619 7.49502 8.95962 7.54972 9.52647C8.13194 15.5601 11.4399 18.8681 17.4735 19.4503C18.0404 19.505 18.3238 19.5323 18.5996 19.4369C18.9245 19.3244 19.2353 19.0421 19.3785 18.7295C19.5 18.4641 19.5 18.1481 19.5 17.5159C19.5 17.0837 19.5 16.8676 19.4415 16.6762C19.3681 16.4363 19.2287 16.2219 19.0393 16.0575C18.8882 15.9262 18.6907 15.8385 18.2958 15.6629L17.6919 15.3945C17.2641 15.2044 17.0503 15.1094 16.833 15.0887C16.6251 15.0689 16.4154 15.0981 16.2207 15.1739C16.0173 15.2531 15.8375 15.4029 15.478 15.7025C15.1201 16.0008 14.9411 16.1499 14.7225 16.2298C14.5287 16.3006 14.2724 16.3269 14.0682 16.2967C13.8379 16.2628 13.6615 16.1686 13.3089 15.9801C12.2115 15.3937 11.6064 14.7885 11.0199 13.6911C10.8314 13.3385 10.7372 13.1621 10.7032 12.9318C10.6732 12.7276 10.6994 12.4713 10.7702 12.2775C10.8501 12.0589 10.9992 11.8799 11.2975 11.522C11.5971 11.1625 11.7469 10.9827 11.8261 10.7793C11.9019 10.5846 11.9311 10.3749 11.9113 10.167C11.8906 9.94968 11.7956 9.73584 11.6055 9.30815Z"
-                            stroke="#8A99AF" stroke-linecap="round" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                          <rect x="1" y="1.00073" width="26" height="26" rx="13" stroke="#8A99AF" />
+                          <g clip-path="url(#clip0_36689_1169)">
+                            <path
+                              d="M8.51858 13.9622C7.88656 12.8602 7.58139 11.9603 7.39739 11.0481C7.12524 9.69904 7.74804 8.38119 8.77975 7.5403C9.21579 7.18491 9.71565 7.30633 9.9735 7.76892L10.5556 8.81326C11.017 9.64103 11.2477 10.0549 11.202 10.4937C11.1562 10.9325 10.8451 11.2899 10.2228 12.0047L8.51858 13.9622ZM8.51858 13.9622C9.79783 16.1928 11.8054 18.2015 14.0386 19.4822M14.0386 19.4822C15.1406 20.1143 16.0405 20.4194 16.9527 20.6034C18.3018 20.8756 19.6196 20.2528 20.4605 19.2211C20.8159 18.785 20.6945 18.2852 20.2319 18.0273L19.1876 17.4452C18.3598 16.9838 17.9459 16.7531 17.5071 16.7988C17.0683 16.8446 16.7109 17.1557 15.9962 17.778L14.0386 19.4822Z"
+                              stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15.3335 8.00073V9.8674M18.6336 9.36792L17.3137 10.6879M20.0002 12.6674H18.1335"
+                              stroke="white" stroke-linecap="round" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_36689_1169">
+                              <rect width="16" height="16" fill="white" transform="translate(6 6.00073)" />
+                            </clipPath>
+                          </defs>
                         </svg>
                       </div>
                       <div>
@@ -450,32 +465,22 @@
                         <p class="text-xs min-w-29">(206) 235- 421</p>
                       </div>
                     </div>
-                    <div class="flex flex-col w-full justify-end">
-                      <div x-data="{openDropDown: false}" class="relative text-right">
-                        <button @click="openDropDown = !openDropDown">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                            fill="none">
-                            <path d="M7.99731 8H8.00331" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                            <path d="M11.9999 8H12.0059" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                            <path d="M3.99988 8H4.00586" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                          </svg>
-                        </button>
-                        <div x-show="openDropDown" @click.outside="openDropDown = false"
-                          class="absolute right-0 top-full z-40 w-37.5 space-y-1 rounded bg-slate-500 p-2 shadow-card dark:bg-boxdark-2">
-                          <button
-                            class="w-full rounded px-3 py-1.5 text-left text-sm hover:bg-slate-600 dark:hover:bg-graydark">
-                            Edit
-                          </button>
-                          <button
-                            class="w-full rounded px-3 py-1.5 text-left text-sm hover:bg-slate-600 dark:hover:bg-graydark">
-                            Delete
-                          </button>
-                        </div>
-                      </div>
-                      <p class="text-right text-slate-500">0s</p>
+                    <div class="flex flex-col justify-end">
+                      <button class="border-2 rounded-full p-0.5 border-dotted border-slate-700 hover:border-[#10B981]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                          <rect x="0.5" y="0.000732422" width="24" height="24" rx="12" fill="#10B981" />
+                          <g clip-path="url(#clip0_36819_9434)">
+                            <path
+                              d="M7.01858 11.9622C6.38656 10.8602 6.08139 9.9603 5.89739 9.04813C5.62524 7.69904 6.24804 6.38119 7.27975 5.5403C7.71579 5.18491 8.21565 5.30633 8.4735 5.76892L9.05562 6.81326C9.51702 7.64103 9.74772 8.05491 9.70197 8.49371C9.65621 8.93251 9.34508 9.28989 8.72281 10.0047L7.01858 11.9622ZM7.01858 11.9622C8.29783 14.1928 10.3054 16.2015 12.5386 17.4822M12.5386 17.4822C13.6406 18.1143 14.5405 18.4194 15.4527 18.6034C16.8018 18.8756 18.1196 18.2528 18.9605 17.2211C19.3159 16.785 19.1945 16.2852 18.7319 16.0273L17.6876 15.4452C16.8598 14.9838 16.4459 14.7531 16.0071 14.7988C15.5683 14.8446 15.2109 15.1557 14.4962 15.778L12.5386 17.4822Z"
+                              stroke="white" stroke-width="1.5" stroke-linejoin="round" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_36819_9434">
+                              <rect width="16" height="16" fill="white" transform="translate(4.5 4.00073)" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </button>
                     </div>
                   </div>
 
@@ -497,13 +502,20 @@
                   <div class="flex items-center justify-between py-2 w-full ">
                     <div class="flex items-center gap-1 w-full">
                       <div class="h-8 w-8 overflow-hidden rounded-full flex justify-center items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
-                          <rect x="0.5" y="0.5" width="26" height="26" rx="13" stroke="#DEE4EE" />
-                          <path d="M19.5 10.1667V7.5H16.8333M15.5 11.5L19.2294 7.77057" stroke="#8A99AF"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                          <path
-                            d="M11.6055 9.30815L11.3371 8.70417C11.1615 8.30925 11.0738 8.11179 10.9425 7.96067C10.778 7.77129 10.5636 7.63196 10.3238 7.55857C10.1324 7.5 9.91631 7.5 9.48414 7.5C8.85194 7.5 8.53583 7.5 8.27049 7.62153C7.95791 7.76468 7.67562 8.07552 7.56315 8.4004C7.46767 8.67619 7.49502 8.95962 7.54972 9.52647C8.13194 15.5601 11.4399 18.8681 17.4735 19.4503C18.0404 19.505 18.3238 19.5323 18.5996 19.4369C18.9245 19.3244 19.2353 19.0421 19.3785 18.7295C19.5 18.4641 19.5 18.1481 19.5 17.5159C19.5 17.0837 19.5 16.8676 19.4415 16.6762C19.3681 16.4363 19.2287 16.2219 19.0393 16.0575C18.8882 15.9262 18.6907 15.8385 18.2958 15.6629L17.6919 15.3945C17.2641 15.2044 17.0503 15.1094 16.833 15.0887C16.6251 15.0689 16.4154 15.0981 16.2207 15.1739C16.0173 15.2531 15.8375 15.4029 15.478 15.7025C15.1201 16.0008 14.9411 16.1499 14.7225 16.2298C14.5287 16.3006 14.2724 16.3269 14.0682 16.2967C13.8379 16.2628 13.6615 16.1686 13.3089 15.9801C12.2115 15.3937 11.6064 14.7885 11.0199 13.6911C10.8314 13.3385 10.7372 13.1621 10.7032 12.9318C10.6732 12.7276 10.6994 12.4713 10.7702 12.2775C10.8501 12.0589 10.9992 11.8799 11.2975 11.522C11.5971 11.1625 11.7469 10.9827 11.8261 10.7793C11.9019 10.5846 11.9311 10.3749 11.9113 10.167C11.8906 9.94968 11.7956 9.73584 11.6055 9.30815Z"
-                            stroke="#8A99AF" stroke-linecap="round" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                          <rect x="1" y="1.00073" width="26" height="26" rx="13" stroke="#8A99AF" />
+                          <g clip-path="url(#clip0_36689_1169)">
+                            <path
+                              d="M8.51858 13.9622C7.88656 12.8602 7.58139 11.9603 7.39739 11.0481C7.12524 9.69904 7.74804 8.38119 8.77975 7.5403C9.21579 7.18491 9.71565 7.30633 9.9735 7.76892L10.5556 8.81326C11.017 9.64103 11.2477 10.0549 11.202 10.4937C11.1562 10.9325 10.8451 11.2899 10.2228 12.0047L8.51858 13.9622ZM8.51858 13.9622C9.79783 16.1928 11.8054 18.2015 14.0386 19.4822M14.0386 19.4822C15.1406 20.1143 16.0405 20.4194 16.9527 20.6034C18.3018 20.8756 19.6196 20.2528 20.4605 19.2211C20.8159 18.785 20.6945 18.2852 20.2319 18.0273L19.1876 17.4452C18.3598 16.9838 17.9459 16.7531 17.5071 16.7988C17.0683 16.8446 16.7109 17.1557 15.9962 17.778L14.0386 19.4822Z"
+                              stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15.3335 8.00073V9.8674M18.6336 9.36792L17.3137 10.6879M20.0002 12.6674H18.1335"
+                              stroke="white" stroke-linecap="round" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_36689_1169">
+                              <rect width="16" height="16" fill="white" transform="translate(6 6.00073)" />
+                            </clipPath>
+                          </defs>
                         </svg>
                       </div>
                       <div>
@@ -513,32 +525,22 @@
                         <p class="text-xs min-w-29">(206) 235- 421</p>
                       </div>
                     </div>
-                    <div class="flex flex-col justify-end w-full">
-                      <div x-data="{openDropDown: false}" class="relative text-right">
-                        <button @click="openDropDown = !openDropDown">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                            fill="none">
-                            <path d="M7.99731 8H8.00331" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                            <path d="M11.9999 8H12.0059" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                            <path d="M3.99988 8H4.00586" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                          </svg>
-                        </button>
-                        <div x-show="openDropDown" @click.outside="openDropDown = false"
-                          class="absolute right-0 top-full z-40 w-37.5 space-y-1 rounded bg-slate-500 p-2 shadow-card dark:bg-boxdark-2">
-                          <button
-                            class="w-full rounded px-3 py-1.5 text-left text-sm hover:bg-slate-600 dark:hover:bg-graydark">
-                            Edit
-                          </button>
-                          <button
-                            class="w-full rounded px-3 py-1.5 text-left text-sm hover:bg-slate-600 dark:hover:bg-graydark">
-                            Delete
-                          </button>
-                        </div>
-                      </div>
-                      <p class="text-right text-slate-500">NaNs</p>
+                    <div class="flex flex-col justify-end">
+                      <button class="border-2 rounded-full p-0.5 border-dotted border-slate-700 hover:border-[#10B981]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                          <rect x="0.5" y="0.000732422" width="24" height="24" rx="12" fill="#10B981" />
+                          <g clip-path="url(#clip0_36819_9434)">
+                            <path
+                              d="M7.01858 11.9622C6.38656 10.8602 6.08139 9.9603 5.89739 9.04813C5.62524 7.69904 6.24804 6.38119 7.27975 5.5403C7.71579 5.18491 8.21565 5.30633 8.4735 5.76892L9.05562 6.81326C9.51702 7.64103 9.74772 8.05491 9.70197 8.49371C9.65621 8.93251 9.34508 9.28989 8.72281 10.0047L7.01858 11.9622ZM7.01858 11.9622C8.29783 14.1928 10.3054 16.2015 12.5386 17.4822M12.5386 17.4822C13.6406 18.1143 14.5405 18.4194 15.4527 18.6034C16.8018 18.8756 18.1196 18.2528 18.9605 17.2211C19.3159 16.785 19.1945 16.2852 18.7319 16.0273L17.6876 15.4452C16.8598 14.9838 16.4459 14.7531 16.0071 14.7988C15.5683 14.8446 15.2109 15.1557 14.4962 15.778L12.5386 17.4822Z"
+                              stroke="white" stroke-width="1.5" stroke-linejoin="round" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_36819_9434">
+                              <rect width="16" height="16" fill="white" transform="translate(4.5 4.00073)" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </button>
                     </div>
                   </div>
 
@@ -546,13 +548,20 @@
                   <div class="flex items-center w-full justify-between py-2 ">
                     <div class="flex items-center gap-1 w-full">
                       <div class="h-8 w-8 overflow-hidden rounded-full flex justify-center items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
-                          <rect x="0.5" y="0.5" width="26" height="26" rx="13" stroke="#DEE4EE" />
-                          <path d="M19.5 10.1667V7.5H16.8333M15.5 11.5L19.2294 7.77057" stroke="#8A99AF"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                          <path
-                            d="M11.6055 9.30815L11.3371 8.70417C11.1615 8.30925 11.0738 8.11179 10.9425 7.96067C10.778 7.77129 10.5636 7.63196 10.3238 7.55857C10.1324 7.5 9.91631 7.5 9.48414 7.5C8.85194 7.5 8.53583 7.5 8.27049 7.62153C7.95791 7.76468 7.67562 8.07552 7.56315 8.4004C7.46767 8.67619 7.49502 8.95962 7.54972 9.52647C8.13194 15.5601 11.4399 18.8681 17.4735 19.4503C18.0404 19.505 18.3238 19.5323 18.5996 19.4369C18.9245 19.3244 19.2353 19.0421 19.3785 18.7295C19.5 18.4641 19.5 18.1481 19.5 17.5159C19.5 17.0837 19.5 16.8676 19.4415 16.6762C19.3681 16.4363 19.2287 16.2219 19.0393 16.0575C18.8882 15.9262 18.6907 15.8385 18.2958 15.6629L17.6919 15.3945C17.2641 15.2044 17.0503 15.1094 16.833 15.0887C16.6251 15.0689 16.4154 15.0981 16.2207 15.1739C16.0173 15.2531 15.8375 15.4029 15.478 15.7025C15.1201 16.0008 14.9411 16.1499 14.7225 16.2298C14.5287 16.3006 14.2724 16.3269 14.0682 16.2967C13.8379 16.2628 13.6615 16.1686 13.3089 15.9801C12.2115 15.3937 11.6064 14.7885 11.0199 13.6911C10.8314 13.3385 10.7372 13.1621 10.7032 12.9318C10.6732 12.7276 10.6994 12.4713 10.7702 12.2775C10.8501 12.0589 10.9992 11.8799 11.2975 11.522C11.5971 11.1625 11.7469 10.9827 11.8261 10.7793C11.9019 10.5846 11.9311 10.3749 11.9113 10.167C11.8906 9.94968 11.7956 9.73584 11.6055 9.30815Z"
-                            stroke="#8A99AF" stroke-linecap="round" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                          <rect x="1" y="1.00073" width="26" height="26" rx="13" stroke="#8A99AF" />
+                          <g clip-path="url(#clip0_36689_1169)">
+                            <path
+                              d="M8.51858 13.9622C7.88656 12.8602 7.58139 11.9603 7.39739 11.0481C7.12524 9.69904 7.74804 8.38119 8.77975 7.5403C9.21579 7.18491 9.71565 7.30633 9.9735 7.76892L10.5556 8.81326C11.017 9.64103 11.2477 10.0549 11.202 10.4937C11.1562 10.9325 10.8451 11.2899 10.2228 12.0047L8.51858 13.9622ZM8.51858 13.9622C9.79783 16.1928 11.8054 18.2015 14.0386 19.4822M14.0386 19.4822C15.1406 20.1143 16.0405 20.4194 16.9527 20.6034C18.3018 20.8756 19.6196 20.2528 20.4605 19.2211C20.8159 18.785 20.6945 18.2852 20.2319 18.0273L19.1876 17.4452C18.3598 16.9838 17.9459 16.7531 17.5071 16.7988C17.0683 16.8446 16.7109 17.1557 15.9962 17.778L14.0386 19.4822Z"
+                              stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15.3335 8.00073V9.8674M18.6336 9.36792L17.3137 10.6879M20.0002 12.6674H18.1335"
+                              stroke="white" stroke-linecap="round" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_36689_1169">
+                              <rect width="16" height="16" fill="white" transform="translate(6 6.00073)" />
+                            </clipPath>
+                          </defs>
                         </svg>
                       </div>
                       <div>
@@ -562,32 +571,22 @@
                         <p class="text-xs min-w-29">(206) 235- 421</p>
                       </div>
                     </div>
-                    <div class="flex flex-col w-full justify-end">
-                      <div x-data="{openDropDown: false}" class="relative text-right">
-                        <button @click="openDropDown = !openDropDown">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                            fill="none">
-                            <path d="M7.99731 8H8.00331" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                            <path d="M11.9999 8H12.0059" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                            <path d="M3.99988 8H4.00586" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                          </svg>
-                        </button>
-                        <div x-show="openDropDown" @click.outside="openDropDown = false"
-                          class="absolute right-0 top-full z-40 w-37.5 space-y-1 rounded bg-slate-500 p-2 shadow-card dark:bg-boxdark-2">
-                          <button
-                            class="w-full rounded px-3 py-1.5 text-left text-sm hover:bg-slate-600 dark:hover:bg-graydark">
-                            Edit
-                          </button>
-                          <button
-                            class="w-full rounded px-3 py-1.5 text-left text-sm hover:bg-slate-600 dark:hover:bg-graydark">
-                            Delete
-                          </button>
-                        </div>
-                      </div>
-                      <p class="text-right text-slate-500">0s</p>
+                    <div class="flex flex-col justify-end">
+                      <button class="border-2 rounded-full p-0.5 border-dotted border-slate-700 hover:border-[#10B981]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                          <rect x="0.5" y="0.000732422" width="24" height="24" rx="12" fill="#10B981" />
+                          <g clip-path="url(#clip0_36819_9434)">
+                            <path
+                              d="M7.01858 11.9622C6.38656 10.8602 6.08139 9.9603 5.89739 9.04813C5.62524 7.69904 6.24804 6.38119 7.27975 5.5403C7.71579 5.18491 8.21565 5.30633 8.4735 5.76892L9.05562 6.81326C9.51702 7.64103 9.74772 8.05491 9.70197 8.49371C9.65621 8.93251 9.34508 9.28989 8.72281 10.0047L7.01858 11.9622ZM7.01858 11.9622C8.29783 14.1928 10.3054 16.2015 12.5386 17.4822M12.5386 17.4822C13.6406 18.1143 14.5405 18.4194 15.4527 18.6034C16.8018 18.8756 18.1196 18.2528 18.9605 17.2211C19.3159 16.785 19.1945 16.2852 18.7319 16.0273L17.6876 15.4452C16.8598 14.9838 16.4459 14.7531 16.0071 14.7988C15.5683 14.8446 15.2109 15.1557 14.4962 15.778L12.5386 17.4822Z"
+                              stroke="white" stroke-width="1.5" stroke-linejoin="round" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_36819_9434">
+                              <rect width="16" height="16" fill="white" transform="translate(4.5 4.00073)" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </button>
                     </div>
                   </div>
 
@@ -612,7 +611,19 @@
         class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden pb-5"
       >
         <!-- ===== Header Start ===== -->
-        <header class="sticky top-0 z-999 flex w-full flex-col">
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.18/index.global.min.js'></script>
+<script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+
+    </script>
+<header class="sticky top-0 z-999 flex w-full flex-col">
   <div class="bg-white border-b border-slate-100 dark:bg-boxdark dark:drop-shadow-none">
     <div class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6">
       <div class="flex items-center gap-2 sm:gap-4 lg:hidden">
@@ -968,7 +979,7 @@
               </div>
 
               <!-- ====== Calendar Section Start -->
-
+              <div id='calendar'></div>
               <!-- ====== Calendar Section End -->
             </div>
             <!-- Dropdown End -->
