@@ -5,6 +5,7 @@ import "flatpickr/dist/flatpickr.min.css";
 import "nouislider/dist/nouislider.css";
 import "dropzone/dist/dropzone.css";
 import "../css/style.css";
+import "../css/calendar.css";
 
 import Alpine from "alpinejs";
 import persist from "@alpinejs/persist";

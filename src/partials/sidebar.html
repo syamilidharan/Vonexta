@@ -51,7 +51,8 @@
         </a>
         <a href="#" @click.prevent="openTab = 2" :class="openTab === 2 ? activeClasses : inactiveClasses"
           class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
-          <span class="absolute size-5 p-1 text-xs bg-red rounded-full flex justify-center items-center -left-0.5 -top-1.5">3</span>
+          <span
+            class="absolute size-5 p-1 text-xs bg-red rounded-full flex justify-center items-center -left-0.5 -top-1.5">3</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
             class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
             :class="openTab === 2 ? 'bg-black' : 'bg-transparent'">
@@ -82,7 +83,8 @@
         </a>
         <a href="#" @click.prevent="openTab = 4" :class="openTab === 4 ? activeClasses : inactiveClasses"
           class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
-          <span class="absolute size-5 p-1 text-xs bg-red rounded-full flex justify-center items-center -left-0.5 -top-0.5">2</span>
+          <span
+            class="absolute size-5 p-1 text-xs bg-red rounded-full flex justify-center items-center -left-0.5 -top-0.5">2</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
             class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
             :class="openTab === 4 ? 'bg-black' : 'bg-transparent'">
@@ -122,7 +124,7 @@
             <h4 class="text-base font-medium">Conversations</h4>
             <div
               class="flex w-full h-full  flex-col overflow-auto pt-2 bg-slate-700 dark:bg-slate-700 min-h-150 justify-between">
-              <div class="flex  max-h-full flex-col overflow overflow-auto">
+              <div class="flex h-full flex-col overflow overflow-auto">
 
 
                 <div x-data="{
@@ -134,91 +136,303 @@
     { id: 3, name: 'Robert Jhon', avatar: './images/user-03.png', message: 'Can you share your...' },
     { id: 4, name: 'Cody Fisher', avatar: './images/user-04.png', message: 'I\'m waiting for your...' }
   ]
-}">
+}" class="flex h-full flex-col">
 
 
 
-                  <div x-show="currentView === 'list'" class="no-scrollbar max-h-full space-y-2.5 overflow-auto">
-                    <form class="sticky mb-2">
-                      <input type="text"
-                        class="w-full rounded border border-slate-500 bg-slate-900 py-2.5 pl-7 pr-4 text-sm outline-none focus:border-primary dark:border-slate-900 dark:bg-slate-900"
-                        placeholder="Search messages ..." />
-                      <button class="absolute left-1.5 top-1/2 -translate-y-1/2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                          <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M9.16663 3.33329C5.94496 3.33329 3.33329 5.94496 3.33329 9.16663C3.33329 12.3883 5.94496 15 9.16663 15C12.3883 15 15 12.3883 15 9.16663C15 5.94496 12.3883 3.33329 9.16663 3.33329ZM1.66663 9.16663C1.66663 5.02449 5.02449 1.66663 9.16663 1.66663C13.3088 1.66663 16.6666 5.02449 16.6666 9.16663C16.6666 13.3088 13.3088 16.6666 9.16663 16.6666C5.02449 16.6666 1.66663 13.3088 1.66663 9.16663Z"
-                            fill="#64748B" />
-                          <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M13.2857 13.2857C13.6111 12.9603 14.1388 12.9603 14.4642 13.2857L18.0892 16.9107C18.4147 17.2361 18.4147 17.7638 18.0892 18.0892C17.7638 18.4147 17.2361 18.4147 16.9107 18.0892L13.2857 14.4642C12.9603 14.1388 12.9603 13.6111 13.2857 13.2857Z"
-                            fill="#64748B" />
-                        </svg>
-                      </button>
-                    </form>
+                  <div x-show="currentView === 'list'"
+                    class="no-scrollbar flex flex-col h-full justify-between space-y-2 overflow-auto">
+                    <div>
+                      <form class="sticky mb-2">
+                        <input type="text" id="search"
+                          class="w-full rounded border border-slate-500 bg-slate-900 py-2.5 pl-8 pr-4 text-sm outline-none focus:border-primary dark:border-slate-900 dark:bg-slate-900"
+                          placeholder="Search messages ..." />
+                        <button class="absolute left-1.5 top-1/2 -translate-y-1/2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
+                            fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M9.16663 3.33329C5.94496 3.33329 3.33329 5.94496 3.33329 9.16663C3.33329 12.3883 5.94496 15 9.16663 15C12.3883 15 15 12.3883 15 9.16663C15 5.94496 12.3883 3.33329 9.16663 3.33329ZM1.66663 9.16663C1.66663 5.02449 5.02449 1.66663 9.16663 1.66663C13.3088 1.66663 16.6666 5.02449 16.6666 9.16663C16.6666 13.3088 13.3088 16.6666 9.16663 16.6666C5.02449 16.6666 1.66663 13.3088 1.66663 9.16663Z"
+                              fill="#64748B" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M13.2857 13.2857C13.6111 12.9603 14.1388 12.9603 14.4642 13.2857L18.0892 16.9107C18.4147 17.2361 18.4147 17.7638 18.0892 18.0892C17.7638 18.4147 17.2361 18.4147 16.9107 18.0892L13.2857 14.4642C12.9603 14.1388 12.9603 13.6111 13.2857 13.2857Z"
+                              fill="#64748B" />
+                          </svg>
+                        </button>
+                      </form>
 
 
-                    <template x-for="chat in chats" :key="chat.id">
-                      <div @click="selectedChat = chat; currentView = 'detail'"
-                        class="flex cursor-pointer items-center px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
-                        <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                          <img :src="chat.avatar" alt="profile" class="object-cover object-center size-7" />
-                          <span
-                            class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
+                      <template x-for="chat in chats" :key="chat.id">
+                        <div @click="selectedChat = chat; currentView = 'detail'"
+                          class="flex cursor-pointer items-center px-0.5 py-0.5 mb-2 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400">
+                          <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
+                            <img :src="chat.avatar" alt="profile" class="object-cover object-center size-7" />
+                            <span
+                              class="absolute bottom-0.5 right-0.5 block w-1.5 h-1.5 rounded-full border border-gray-2 bg-success"></span>
+                          </div>
+                          <div class="w-full">
+                            <h5 class="text-sm font-medium text-white" x-text="chat.name"></h5>
+                            <p class="text-xs font-medium text-slate-300" x-text="chat.message"></p>
+                          </div>
                         </div>
-                        <div class="w-full">
-                          <h5 class="text-sm font-medium text-white" x-text="chat.name"></h5>
-                          <p class="text-xs font-medium text-slate-300" x-text="chat.message"></p>
+                      </template>
+                    </div>
+
+
+                    <div class="pt-6 pb-10 bg-slate-700">
+                      <!--Accordion starts-->
+                      <div class="flex flex-col mb-3">
+                        <!-- Accordion Item -->
+                        <div x-data="{ accordionOpen: false }" @click.outside="accordionOpen = false">
+                          <button @click="accordionOpen = !accordionOpen" class="flex w-full items-center ">
+                            <div class="flex items-center justify-between py-2 w-full">
+                              <div class="flex items-center gap-1">
+                                <div class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                    fill="none">
+                                    <path d="M5.83337 5.83337H5.84085M10.8259 5.83337H10.8334" stroke="#DEE4EE"
+                                      stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.9925 12.0834H15M11.6666 12.0834H11.6741" stroke="#DEE4EE"
+                                      stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                      d="M8.33337 13.3333C8.33337 15.6345 10.572 17.5 13.3334 17.5C14.0894 17.5 14.8061 17.3601 15.4485 17.1099C15.6055 17.0487 15.776 17.0267 15.9417 17.0574L18.3334 17.5L17.7903 15.8085C17.711 15.5615 17.7563 15.2944 17.8813 15.067C18.1715 14.5391 18.3334 13.952 18.3334 13.3333C18.3334 11.0321 16.0948 9.16663 13.3334 9.16663C10.572 9.16663 8.33337 11.0321 8.33337 13.3333Z"
+                                      stroke="#DEE4EE" stroke-linejoin="round" />
+                                    <path
+                                      d="M14.8942 9.37375C14.9637 9.03617 15 8.68842 15 8.33333C15 5.11168 12.0152 2.5 8.33329 2.5C4.65139 2.5 1.66663 5.11168 1.66663 8.33333C1.66663 9.26033 1.91373 10.1368 2.35346 10.9151C2.47581 11.1317 2.51638 11.3878 2.44365 11.6256L1.66663 14.1667L4.92841 13.5328C5.10148 13.4992 5.28013 13.5228 5.44262 13.5912C6.3463 13.9718 7.36778 14.1798 8.43313 14.166"
+                                      stroke="#DEE4EE" stroke-linejoin="round" />
+                                  </svg>
+                                </div>
+                                <div>
+                                  <h4 class="text-sm font-medium text-white dark:text-white">
+                                    New Conversations
+                                  </h4>
+                                </div>
+                              </div>
+                              <div class="flex flex-col justify-end">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
+                                  fill="none" :class="accordionOpen && 'rotate-180'" class="duration-200 ease-in-out ">
+                                  <path
+                                    d="M8.99995 12.825C8.8312 12.825 8.69058 12.7688 8.54995 12.6563L2.0812 6.30002C1.82808 6.0469 1.82808 5.65315 2.0812 5.40002C2.33433 5.1469 2.72808 5.1469 2.9812 5.40002L8.99995 11.2781L15.0187 5.34377C15.2718 5.09065 15.6656 5.09065 15.9187 5.34377C16.1718 5.5969 16.1718 5.99065 15.9187 6.24377L9.44995 12.6C9.30933 12.7406 9.1687 12.825 8.99995 12.825Z"
+                                    fill="#DEE4EE" />
+                                </svg>
+
+                              </div>
+                            </div>
+                          </button>
+
+                          <div x-show="accordionOpen" class=" mt-2 mb-3 duration-200 ease-in-out">
+
+                            <form>
+                              <div class="sticky mb-2">
+                                <input type="text" id="phone"
+                                  class="w-full rounded border border-slate-500 bg-slate-900 py-2.5 pl-8 pr-4 text-sm outline-none focus:border-primary dark:border-slate-900 dark:bg-slate-900"
+                                  placeholder="(206) 235- 421" />
+                                <span class="absolute left-1.5 top-1/2 -translate-y-1/2">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                    fill="none">
+                                    <path
+                                      d="M1.66663 3.33329C1.66663 4.11897 1.66663 4.5118 1.9107 4.75588C2.15478 4.99996 2.54762 4.99996 3.33329 4.99996C4.11897 4.99996 4.5118 4.99996 4.75588 4.75588C4.99996 4.5118 4.99996 4.11897 4.99996 3.33329C4.99996 2.54762 4.99996 2.15478 4.75588 1.9107C4.5118 1.66663 4.11897 1.66663 3.33329 1.66663C2.54762 1.66663 2.15478 1.66663 1.9107 1.9107C1.66663 2.15478 1.66663 2.54762 1.66663 3.33329Z"
+                                      stroke="#DEE4EE" />
+                                    <path
+                                      d="M1.66663 10C1.66663 10.7857 1.66663 11.1785 1.9107 11.4226C2.15478 11.6667 2.54762 11.6667 3.33329 11.6667C4.11897 11.6667 4.5118 11.6667 4.75588 11.4226C4.99996 11.1785 4.99996 10.7857 4.99996 10C4.99996 9.21437 4.99996 8.82154 4.75588 8.57746C4.5118 8.33337 4.11897 8.33337 3.33329 8.33337C2.54762 8.33337 2.15478 8.33337 1.9107 8.57746C1.66663 8.82154 1.66663 9.21437 1.66663 10Z"
+                                      stroke="#DEE4EE" />
+                                    <path
+                                      d="M8.33337 3.33329C8.33337 4.11897 8.33337 4.5118 8.57746 4.75588C8.82154 4.99996 9.21437 4.99996 10 4.99996C10.7857 4.99996 11.1785 4.99996 11.4226 4.75588C11.6667 4.5118 11.6667 4.11897 11.6667 3.33329C11.6667 2.54762 11.6667 2.15478 11.4226 1.9107C11.1785 1.66663 10.7857 1.66663 10 1.66663C9.21437 1.66663 8.82154 1.66663 8.57746 1.9107C8.33337 2.15478 8.33337 2.54762 8.33337 3.33329Z"
+                                      stroke="#DEE4EE" />
+                                    <path
+                                      d="M8.33337 10C8.33337 10.7857 8.33337 11.1785 8.57746 11.4226C8.82154 11.6667 9.21437 11.6667 10 11.6667C10.7857 11.6667 11.1785 11.6667 11.4226 11.4226C11.6667 11.1785 11.6667 10.7857 11.6667 10C11.6667 9.21437 11.6667 8.82154 11.4226 8.57746C11.1785 8.33337 10.7857 8.33337 10 8.33337C9.21437 8.33337 8.82154 8.33337 8.57746 8.57746C8.33337 8.82154 8.33337 9.21437 8.33337 10Z"
+                                      stroke="#DEE4EE" />
+                                    <path
+                                      d="M8.33337 16.6667C8.33337 17.4523 8.33337 17.8452 8.57746 18.0892C8.82154 18.3333 9.21437 18.3333 10 18.3333C10.7857 18.3333 11.1785 18.3333 11.4226 18.0892C11.6667 17.8452 11.6667 17.4523 11.6667 16.6667C11.6667 15.881 11.6667 15.4882 11.4226 15.2441C11.1785 15 10.7857 15 10 15C9.21437 15 8.82154 15 8.57746 15.2441C8.33337 15.4882 8.33337 15.881 8.33337 16.6667Z"
+                                      stroke="#DEE4EE" />
+                                    <path
+                                      d="M15 3.33329C15 4.11897 15 4.5118 15.2441 4.75588C15.4882 4.99996 15.881 4.99996 16.6667 4.99996C17.4523 4.99996 17.8452 4.99996 18.0892 4.75588C18.3333 4.5118 18.3333 4.11897 18.3333 3.33329C18.3333 2.54762 18.3333 2.15478 18.0892 1.9107C17.8452 1.66663 17.4523 1.66663 16.6667 1.66663C15.881 1.66663 15.4882 1.66663 15.2441 1.9107C15 2.15478 15 2.54762 15 3.33329Z"
+                                      stroke="#DEE4EE" />
+                                    <path
+                                      d="M15 10C15 10.7857 15 11.1785 15.2441 11.4226C15.4882 11.6667 15.881 11.6667 16.6667 11.6667C17.4523 11.6667 17.8452 11.6667 18.0892 11.4226C18.3333 11.1785 18.3333 10.7857 18.3333 10C18.3333 9.21437 18.3333 8.82154 18.0892 8.57746C17.8452 8.33337 17.4523 8.33337 16.6667 8.33337C15.881 8.33337 15.4882 8.33337 15.2441 8.57746C15 8.82154 15 9.21437 15 10Z"
+                                      stroke="#DEE4EE" />
+                                  </svg>
+                                </span>
+                              </div>
+                              <div class="sticky mb-2">
+                                <div class=""
+                                  x-data="{ message: '', showEmojis: false, emojis: ['😊', '😅', '😴', '😳', '😇', '👍', '👎', '👋', '💯'] }">
+                                  <div class="relative flex items-center">
+
+                                    <button @click="showEmojis = !showEmojis" class="absolute left-1.5 top-2.5">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_36848_12714)">
+                                          <path
+                                            d="M10.0003 18.3334C14.6027 18.3334 18.3337 14.6025 18.3337 10.0001C18.3337 5.39771 14.6027 1.66675 10.0003 1.66675C5.39795 1.66675 1.66699 5.39771 1.66699 10.0001C1.66699 14.6025 5.39795 18.3334 10.0003 18.3334Z"
+                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                          <path
+                                            d="M6.66699 12.5C7.42709 13.512 8.63724 14.1667 10.0003 14.1667C11.3634 14.1667 12.5736 13.512 13.3337 12.5"
+                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                          <path d="M6.67447 7.5H6.66699M13.3337 7.5H13.3262" stroke="white"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                          <clipPath id="clip0_36848_12714">
+                                            <rect width="20" height="20" fill="white" />
+                                          </clipPath>
+                                        </defs>
+                                      </svg>
+                                    </button>
+
+                                    <textarea x-model="message" @click="showEmojis = false"
+                                      class="w-full rounded border border-slate-500 bg-slate-900 py-2.5 pl-8 pr-8 text-sm outline-none focus:border-primary dark:border-slate-900 dark:bg-slate-900"
+                                      placeholder="Type your message..."></textarea>
+
+                                    <button @click="message = ''; showEmojis = false" :disabled="!message"
+                                      class="absolute right-1.5 top-2.5">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                        fill="none">
+                                        <path
+                                          d="M7.83029 3.75H6.96224C4.50701 3.75 3.27939 3.75 2.51665 4.48223C1.75391 5.21447 1.75391 6.39298 1.75391 8.75V12.0833C1.75391 14.4403 1.75391 15.6188 2.51665 16.3511C3.27939 17.0833 4.50701 17.0833 6.96224 17.0833H10.4678C12.923 17.0833 14.1506 17.0833 14.9133 16.3511C15.4075 15.8767 15.5815 15.2149 15.6428 14.1667"
+                                          stroke="#64748B" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                        <path
+                                          d="M13.4723 5.83341V3.21137C13.4723 3.04866 13.6097 2.91675 13.7792 2.91675C13.8605 2.91675 13.9386 2.94779 13.9962 3.00304L17.9396 6.78879C18.1362 6.97743 18.2465 7.2333 18.2465 7.50008C18.2465 7.76686 18.1362 8.02273 17.9396 8.21137L13.9962 11.9971C13.9386 12.0524 13.8605 12.0834 13.7792 12.0834C13.6097 12.0834 13.4723 11.9515 13.4723 11.7887V9.16675H10.9298C7.39583 9.16675 6.09375 12.0834 6.09375 12.0834V10.0001C6.09375 7.6989 8.03696 5.83341 10.434 5.83341H13.4723Z"
+                                          stroke="#64748B" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round" />
+                                      </svg>
+                                    </button>
+
+                                    <div x-show="showEmojis" @click.away="showEmojis = false" x-transition
+                                      class="absolute bottom-full left-0vmb-2 w-20 border border-slate-500 bg-slate-900 rounded-lg shadow-xl p-1 grid grid-cols-3 gap-1">
+                                      <template x-for="emoji in emojis">
+                                        <button @click="message += emoji; showEmojis = false"
+                                          class="text-base hover:bg-gray-200 rounded-md transition duration-150 ease-in-out"
+                                          x-text="emoji"></button>
+                                      </template>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+
+                          </div>
                         </div>
                       </div>
-                    </template>
+                      <!--Accordion Ends-->
+
+                    </div>
                   </div>
 
                   <template x-if="selectedChat">
-                    <div x-show="currentView === 'detail'" style="display: none;">
+                    <div x-show="currentView === 'detail'" style="display: none;" class="h-full">
+                      <div class="flex flex-col h-full justify-between">
+                        <div>
+                          <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center">
+                              <div class=" mr-3.5 h-7 w-full max-w-7 rounded-full">
+                                <img :src="selectedChat.avatar" alt="profile"
+                                  class="object-cover object-center size-7" />
 
-                      <div class="flex items-center justify-between mb-2">
-                        <div class="flex items-center">
-                          <div class=" mr-3.5 h-7 w-full max-w-7 rounded-full">
-                            <img :src="selectedChat.avatar" alt="profile" class="object-cover object-center size-7" />
-
-                          </div>
-                          <div>
-                            <p class="text-sm font-medium" x-text="selectedChat.name"></p>
-                            <!-- <div class="relative  text-xs text-slate-300">
+                              </div>
+                              <div>
+                                <p class="text-sm font-medium" x-text="selectedChat.name"></p>
+                                <!-- <div class="relative  text-xs text-slate-300">
                               <span>Online</span>
                               <span
                                 class="absolute top-0 -left-2 block h-2 w-2 rounded-full border-2 border-gray-2 bg-success"></span>
                             </div> -->
+                              </div>
+                            </div>
+                            <button @click="currentView = 'list'; selectedChat = null"
+                              class="mb-4 flex items-center gap-2 text-sm font-medium text-white hover:text-slate-300">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <path d="M12 4.00073L4.00054 12.0002M11.9995 12.0007L4 4.0013" stroke="white"
+                                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                              </svg>
+
+                            </button>
                           </div>
+
+
+                          <div class="flex flex-col items-center gap-2 mb-2">
+                            <span class="text-slate-400">Feb 21, 2025</span>
+                            <div class="p-2 rounded-lg rounded-tl-none bg-slate-800 w-full">
+                              <p class="text-sm font-normal">Lorem ipsum dolororooor </p>
+                              <p class="text-sm font-normal">10:25 AM </p>
+                            </div>
+                            <div class="p-2 rounded-lg rounded-br-none bg-indigo-400 w-full">
+                              <p class="text-sm font-normal">Lorem ipsum dolororooor </p>
+                              <p class="text-sm font-normal">10:25 AM </p>
+                            </div>
+                          </div>
+
+                          <div class="flex flex-col items-center gap-2">
+                            <span class="text-slate-400">Feb 22, 2025</span>
+                            <div class="p-2 rounded-lg rounded-br-none bg-indigo-400 w-full">
+                              <p class="text-sm font-normal">Lorem ipsum dolororooor </p>
+                              <p class="text-sm font-normal">10:25 AM </p>
+                            </div>
+                          </div>
+
                         </div>
-                        <button @click="currentView = 'list'; selectedChat = null"
-                          class="mb-4 flex items-center gap-2 text-sm font-medium text-white hover:text-slate-300">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                            fill="none">
-                            <path d="M12 4.00073L4.00054 12.0002M11.9995 12.0007L4 4.0013" stroke="white"
-                              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
 
-                        </button>
-                      </div>
+                        <div class="flex flex-col pb-10">
 
+                          <div class=""
+                            x-data="{ message: '', showEmojis: false, emojis: ['😊', '😅', '😴', '😳', '😇', '👍', '👎', '👋', '💯'] }">
+                            <div class="relative flex items-center">
 
-                      <div class="flex flex-col items-center gap-2 mb-2">
-                        <span class="text-slate-400">Feb 21, 2025</span>
-                        <div class="p-2 rounded-lg rounded-tl-none bg-slate-800 w-full">
-                          <p class="text-sm font-normal">Lorem ipsum dolororooor </p>
-                          <p class="text-sm font-normal">10:25 AM </p>
-                        </div>
-                        <div class="p-2 rounded-lg rounded-br-none bg-indigo-400 w-full">
-                          <p class="text-sm font-normal">Lorem ipsum dolororooor </p>
-                          <p class="text-sm font-normal">10:25 AM </p>
-                        </div>
-                      </div>
+                              <button @click="showEmojis = !showEmojis" class="absolute left-1.5 top-2.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                  fill="none">
+                                  <g clip-path="url(#clip0_36848_12714)">
+                                    <path
+                                      d="M10.0003 18.3334C14.6027 18.3334 18.3337 14.6025 18.3337 10.0001C18.3337 5.39771 14.6027 1.66675 10.0003 1.66675C5.39795 1.66675 1.66699 5.39771 1.66699 10.0001C1.66699 14.6025 5.39795 18.3334 10.0003 18.3334Z"
+                                      stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                      stroke-linejoin="round" />
+                                    <path
+                                      d="M6.66699 12.5C7.42709 13.512 8.63724 14.1667 10.0003 14.1667C11.3634 14.1667 12.5736 13.512 13.3337 12.5"
+                                      stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                      stroke-linejoin="round" />
+                                    <path d="M6.67447 7.5H6.66699M13.3337 7.5H13.3262" stroke="white" stroke-width="1.5"
+                                      stroke-linecap="round" stroke-linejoin="round" />
+                                  </g>
+                                  <defs>
+                                    <clipPath id="clip0_36848_12714">
+                                      <rect width="20" height="20" fill="white" />
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                              </button>
 
-                      <div class="flex flex-col items-center gap-2">
-                        <span class="text-slate-400">Feb 22, 2025</span>
-                        <div class="p-2 rounded-lg rounded-br-none bg-indigo-400 w-full">
-                          <p class="text-sm font-normal">Lorem ipsum dolororooor </p>
-                          <p class="text-sm font-normal">10:25 AM </p>
+                              <textarea x-model="message" @click="showEmojis = false"
+                                class="w-full rounded border border-slate-500 bg-slate-900 py-2.5 pl-8 pr-8 text-sm outline-none focus:border-primary dark:border-slate-900 dark:bg-slate-900"
+                                placeholder="Type your message..."></textarea>
+
+                              <button @click="message = ''; showEmojis = false" :disabled="!message"
+                                class="absolute right-1.5 top-2.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                  fill="none">
+                                  <path
+                                    d="M7.83029 3.75H6.96224C4.50701 3.75 3.27939 3.75 2.51665 4.48223C1.75391 5.21447 1.75391 6.39298 1.75391 8.75V12.0833C1.75391 14.4403 1.75391 15.6188 2.51665 16.3511C3.27939 17.0833 4.50701 17.0833 6.96224 17.0833H10.4678C12.923 17.0833 14.1506 17.0833 14.9133 16.3511C15.4075 15.8767 15.5815 15.2149 15.6428 14.1667"
+                                    stroke="#64748B" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                  <path
+                                    d="M13.4723 5.83341V3.21137C13.4723 3.04866 13.6097 2.91675 13.7792 2.91675C13.8605 2.91675 13.9386 2.94779 13.9962 3.00304L17.9396 6.78879C18.1362 6.97743 18.2465 7.2333 18.2465 7.50008C18.2465 7.76686 18.1362 8.02273 17.9396 8.21137L13.9962 11.9971C13.9386 12.0524 13.8605 12.0834 13.7792 12.0834C13.6097 12.0834 13.4723 11.9515 13.4723 11.7887V9.16675H10.9298C7.39583 9.16675 6.09375 12.0834 6.09375 12.0834V10.0001C6.09375 7.6989 8.03696 5.83341 10.434 5.83341H13.4723Z"
+                                    stroke="#64748B" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                </svg>
+                              </button>
+
+                              <div x-show="showEmojis" @click.away="showEmojis = false" x-transition
+                                class="absolute bottom-full left-0vmb-2 w-20 border border-slate-500 bg-slate-900 rounded-lg shadow-xl p-1 grid grid-cols-3 gap-1">
+                                <template x-for="emoji in emojis">
+                                  <button @click="message += emoji; showEmojis = false"
+                                    class="text-base hover:bg-gray-200 rounded-md transition duration-150 ease-in-out"
+                                    x-text="emoji"></button>
+                                </template>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
 
@@ -227,123 +441,7 @@
                 </div>
               </div>
 
-              <div class="pt-6 pb-10 bg-slate-700">
-                <!--Accordion starts-->
-                <div class="flex flex-col mb-3">
-                  <!-- Accordion Item -->
-                  <div x-data="{ accordionOpen: false }" @click.outside="accordionOpen = false">
-                    <button @click="accordionOpen = !accordionOpen" class="flex w-full items-center ">
-                      <div class="flex items-center justify-between py-2 w-full">
-                        <div class="flex items-center gap-1">
-                          <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
-                              fill="none">
-                              <path d="M5.83337 5.83337H5.84085M10.8259 5.83337H10.8334" stroke="#DEE4EE"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                              <path d="M14.9925 12.0834H15M11.6666 12.0834H11.6741" stroke="#DEE4EE"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                              <path
-                                d="M8.33337 13.3333C8.33337 15.6345 10.572 17.5 13.3334 17.5C14.0894 17.5 14.8061 17.3601 15.4485 17.1099C15.6055 17.0487 15.776 17.0267 15.9417 17.0574L18.3334 17.5L17.7903 15.8085C17.711 15.5615 17.7563 15.2944 17.8813 15.067C18.1715 14.5391 18.3334 13.952 18.3334 13.3333C18.3334 11.0321 16.0948 9.16663 13.3334 9.16663C10.572 9.16663 8.33337 11.0321 8.33337 13.3333Z"
-                                stroke="#DEE4EE" stroke-linejoin="round" />
-                              <path
-                                d="M14.8942 9.37375C14.9637 9.03617 15 8.68842 15 8.33333C15 5.11168 12.0152 2.5 8.33329 2.5C4.65139 2.5 1.66663 5.11168 1.66663 8.33333C1.66663 9.26033 1.91373 10.1368 2.35346 10.9151C2.47581 11.1317 2.51638 11.3878 2.44365 11.6256L1.66663 14.1667L4.92841 13.5328C5.10148 13.4992 5.28013 13.5228 5.44262 13.5912C6.3463 13.9718 7.36778 14.1798 8.43313 14.166"
-                                stroke="#DEE4EE" stroke-linejoin="round" />
-                            </svg>
-                          </div>
-                          <div>
-                            <h4 class="text-sm font-medium text-white dark:text-white">
-                              New Conversations
-                            </h4>
-                          </div>
-                        </div>
-                        <div class="flex flex-col justify-end">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"
-                            :class="accordionOpen && 'rotate-180'" class="duration-200 ease-in-out ">
-                            <path
-                              d="M8.99995 12.825C8.8312 12.825 8.69058 12.7688 8.54995 12.6563L2.0812 6.30002C1.82808 6.0469 1.82808 5.65315 2.0812 5.40002C2.33433 5.1469 2.72808 5.1469 2.9812 5.40002L8.99995 11.2781L15.0187 5.34377C15.2718 5.09065 15.6656 5.09065 15.9187 5.34377C16.1718 5.5969 16.1718 5.99065 15.9187 6.24377L9.44995 12.6C9.30933 12.7406 9.1687 12.825 8.99995 12.825Z"
-                              fill="#DEE4EE" />
-                          </svg>
 
-                        </div>
-                      </div>
-                    </button>
-
-                    <div x-show="accordionOpen" class=" mt-2 mb-3 duration-200 ease-in-out">
-                      <!-- ====== Chat List -->
-                      <div x-data="{ activeChat: null }" @click.away="activeChat = null"
-                        class="no-scrollbar max-h-full space-y-2.5 ">
-                        <!-- Chat List Item -->
-                        <div
-                          class="flex cursor-pointer items-center px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400"
-                          :class="{ 'bg-slate-500 border-slate-400': activeChat === 1 }" @click="activeChat = 1">
-                          <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                            <img src="./images/user/user-01.png" alt="profile"
-                              class="object-cover object-center size-7" />
-                            <span
-                              class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
-                          </div>
-                          <div class="w-full">
-                            <h5 class="text-sm font-medium text-white dark:text-white">
-                              Henry Dholi
-                            </h5>
-                            <p class="text-xs font-medium text-slate-300">
-                              I cam across your..
-                            </p>
-                          </div>
-                        </div>
-                        <!-- Chat List Item -->
-                        <div
-                          class="flex cursor-pointer items-center px-1.5 py-1.5 border border-slate-700 rounded-lg hover:bg-slate-500 hover:border-slate-400"
-                          :class="{ 'bg-slate-500 border-slate-400': activeChat === 2 }" @click="activeChat = 2">
-                          <div class="relative mr-3.5 h-7 w-full max-w-7 rounded-full">
-                            <img src="./images/user/user-02.png" alt="profile"
-                              class="object-cover object-center size-7" />
-                            <span
-                              class="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-gray-2 bg-success"></span>
-                          </div>
-                          <div class="w-full">
-                            <h5 class="text-sm font-medium text-white dark:text-white">
-                              Mariya Desoja
-                            </h5>
-                            <p class="text-xs font-medium text-slate-300">
-                              I like your confid..
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-                <!--Accordion Ends-->
-
-                <a class="flex gap-2 w-full" href="tel:(206) 235- 421">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path
-                      d="M1.66663 3.33329C1.66663 4.11897 1.66663 4.5118 1.9107 4.75588C2.15478 4.99996 2.54762 4.99996 3.33329 4.99996C4.11897 4.99996 4.5118 4.99996 4.75588 4.75588C4.99996 4.5118 4.99996 4.11897 4.99996 3.33329C4.99996 2.54762 4.99996 2.15478 4.75588 1.9107C4.5118 1.66663 4.11897 1.66663 3.33329 1.66663C2.54762 1.66663 2.15478 1.66663 1.9107 1.9107C1.66663 2.15478 1.66663 2.54762 1.66663 3.33329Z"
-                      stroke="#DEE4EE" />
-                    <path
-                      d="M1.66663 10C1.66663 10.7857 1.66663 11.1785 1.9107 11.4226C2.15478 11.6667 2.54762 11.6667 3.33329 11.6667C4.11897 11.6667 4.5118 11.6667 4.75588 11.4226C4.99996 11.1785 4.99996 10.7857 4.99996 10C4.99996 9.21437 4.99996 8.82154 4.75588 8.57746C4.5118 8.33337 4.11897 8.33337 3.33329 8.33337C2.54762 8.33337 2.15478 8.33337 1.9107 8.57746C1.66663 8.82154 1.66663 9.21437 1.66663 10Z"
-                      stroke="#DEE4EE" />
-                    <path
-                      d="M8.33337 3.33329C8.33337 4.11897 8.33337 4.5118 8.57746 4.75588C8.82154 4.99996 9.21437 4.99996 10 4.99996C10.7857 4.99996 11.1785 4.99996 11.4226 4.75588C11.6667 4.5118 11.6667 4.11897 11.6667 3.33329C11.6667 2.54762 11.6667 2.15478 11.4226 1.9107C11.1785 1.66663 10.7857 1.66663 10 1.66663C9.21437 1.66663 8.82154 1.66663 8.57746 1.9107C8.33337 2.15478 8.33337 2.54762 8.33337 3.33329Z"
-                      stroke="#DEE4EE" />
-                    <path
-                      d="M8.33337 10C8.33337 10.7857 8.33337 11.1785 8.57746 11.4226C8.82154 11.6667 9.21437 11.6667 10 11.6667C10.7857 11.6667 11.1785 11.6667 11.4226 11.4226C11.6667 11.1785 11.6667 10.7857 11.6667 10C11.6667 9.21437 11.6667 8.82154 11.4226 8.57746C11.1785 8.33337 10.7857 8.33337 10 8.33337C9.21437 8.33337 8.82154 8.33337 8.57746 8.57746C8.33337 8.82154 8.33337 9.21437 8.33337 10Z"
-                      stroke="#DEE4EE" />
-                    <path
-                      d="M8.33337 16.6667C8.33337 17.4523 8.33337 17.8452 8.57746 18.0892C8.82154 18.3333 9.21437 18.3333 10 18.3333C10.7857 18.3333 11.1785 18.3333 11.4226 18.0892C11.6667 17.8452 11.6667 17.4523 11.6667 16.6667C11.6667 15.881 11.6667 15.4882 11.4226 15.2441C11.1785 15 10.7857 15 10 15C9.21437 15 8.82154 15 8.57746 15.2441C8.33337 15.4882 8.33337 15.881 8.33337 16.6667Z"
-                      stroke="#DEE4EE" />
-                    <path
-                      d="M15 3.33329C15 4.11897 15 4.5118 15.2441 4.75588C15.4882 4.99996 15.881 4.99996 16.6667 4.99996C17.4523 4.99996 17.8452 4.99996 18.0892 4.75588C18.3333 4.5118 18.3333 4.11897 18.3333 3.33329C18.3333 2.54762 18.3333 2.15478 18.0892 1.9107C17.8452 1.66663 17.4523 1.66663 16.6667 1.66663C15.881 1.66663 15.4882 1.66663 15.2441 1.9107C15 2.15478 15 2.54762 15 3.33329Z"
-                      stroke="#DEE4EE" />
-                    <path
-                      d="M15 10C15 10.7857 15 11.1785 15.2441 11.4226C15.4882 11.6667 15.881 11.6667 16.6667 11.6667C17.4523 11.6667 17.8452 11.6667 18.0892 11.4226C18.3333 11.1785 18.3333 10.7857 18.3333 10C18.3333 9.21437 18.3333 8.82154 18.0892 8.57746C17.8452 8.33337 17.4523 8.33337 16.6667 8.33337C15.881 8.33337 15.4882 8.33337 15.2441 8.57746C15 8.82154 15 9.21437 15 10Z"
-                      stroke="#DEE4EE" />
-                  </svg>
-                  <p class="text-sm">(206) 235- 421</p>
-                </a>
-              </div>
             </div>
           </div>
 
@@ -366,15 +464,16 @@
                       <div class="h-8 w-8 overflow-hidden rounded-full flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                           <rect x="1" y="1.00073" width="26" height="26" rx="13" stroke="#8A99AF" />
-                          <g clip-path="url(#clip0_36689_1169)">
+                          <g clip-path="url(#clip0_36829_20595)">
                             <path
-                              d="M8.51858 13.9622C7.88656 12.8602 7.58139 11.9603 7.39739 11.0481C7.12524 9.69904 7.74804 8.38119 8.77975 7.5403C9.21579 7.18491 9.71565 7.30633 9.9735 7.76892L10.5556 8.81326C11.017 9.64103 11.2477 10.0549 11.202 10.4937C11.1562 10.9325 10.8451 11.2899 10.2228 12.0047L8.51858 13.9622ZM8.51858 13.9622C9.79783 16.1928 11.8054 18.2015 14.0386 19.4822M14.0386 19.4822C15.1406 20.1143 16.0405 20.4194 16.9527 20.6034C18.3018 20.8756 19.6196 20.2528 20.4605 19.2211C20.8159 18.785 20.6945 18.2852 20.2319 18.0273L19.1876 17.4452C18.3598 16.9838 17.9459 16.7531 17.5071 16.7988C17.0683 16.8446 16.7109 17.1557 15.9962 17.778L14.0386 19.4822Z"
+                              d="M8.51858 13.9623C7.88656 12.8602 7.5814 11.9603 7.39739 11.0481C7.12524 9.69904 7.74804 8.38119 8.77975 7.5403C9.2158 7.18491 9.71565 7.30633 9.9735 7.76892L10.5556 8.81326C11.017 9.64103 11.2477 10.0549 11.202 10.4937C11.1562 10.9325 10.8451 11.2899 10.2228 12.0047L8.51858 13.9623ZM8.51858 13.9623C9.79784 16.1929 11.8054 18.2015 14.0386 19.4823M14.0386 19.4823C15.1406 20.1143 16.0405 20.4195 16.9527 20.6035C18.3018 20.8756 19.6196 20.2528 20.4605 19.2211C20.8159 18.7851 20.6945 18.2852 20.2319 18.0273L19.1876 17.4452C18.3598 16.9838 17.9459 16.7531 17.5071 16.7989C17.0683 16.8446 16.7109 17.1557 15.9962 17.778L14.0386 19.4823Z"
+                              stroke="white" stroke-linejoin="round" />
+                            <path
+                              d="M14.8178 13.1829L19.3332 8.66748M14.8178 13.1829C15.1546 13.5197 16.7434 13.1897 17.2232 13.1829M14.8178 13.1829C14.4809 12.846 14.8109 11.2572 14.8178 10.7774"
                               stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M15.3335 8.00073V9.8674M18.6336 9.36792L17.3137 10.6879M20.0002 12.6674H18.1335"
-                              stroke="white" stroke-linecap="round" />
                           </g>
                           <defs>
-                            <clipPath id="clip0_36689_1169">
+                            <clipPath id="clip0_36829_20595">
                               <rect width="16" height="16" fill="white" transform="translate(6 6.00073)" />
                             </clipPath>
                           </defs>
@@ -382,7 +481,7 @@
                       </div>
                       <div>
                         <h4 class="text-xs font-medium text-white dark:text-white">
-                          RED Queue
+                          Inbound
                         </h4>
                         <p class="text-xs min-w-29">(206) 235- 421</p>
                       </div>
@@ -412,15 +511,16 @@
                       <div class="h-8 w-8 overflow-hidden rounded-full flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                           <rect x="1" y="1.00073" width="26" height="26" rx="13" stroke="#8A99AF" />
-                          <g clip-path="url(#clip0_36689_1169)">
+                          <g clip-path="url(#clip0_36829_20606)">
                             <path
-                              d="M8.51858 13.9622C7.88656 12.8602 7.58139 11.9603 7.39739 11.0481C7.12524 9.69904 7.74804 8.38119 8.77975 7.5403C9.21579 7.18491 9.71565 7.30633 9.9735 7.76892L10.5556 8.81326C11.017 9.64103 11.2477 10.0549 11.202 10.4937C11.1562 10.9325 10.8451 11.2899 10.2228 12.0047L8.51858 13.9622ZM8.51858 13.9622C9.79783 16.1928 11.8054 18.2015 14.0386 19.4822M14.0386 19.4822C15.1406 20.1143 16.0405 20.4194 16.9527 20.6034C18.3018 20.8756 19.6196 20.2528 20.4605 19.2211C20.8159 18.785 20.6945 18.2852 20.2319 18.0273L19.1876 17.4452C18.3598 16.9838 17.9459 16.7531 17.5071 16.7988C17.0683 16.8446 16.7109 17.1557 15.9962 17.778L14.0386 19.4822Z"
+                              d="M8.51858 13.9623C7.88656 12.8602 7.5814 11.9603 7.39739 11.0481C7.12524 9.69904 7.74804 8.38119 8.77975 7.5403C9.2158 7.18491 9.71565 7.30633 9.9735 7.76892L10.5556 8.81326C11.017 9.64103 11.2477 10.0549 11.202 10.4937C11.1562 10.9325 10.8451 11.2899 10.2228 12.0047L8.51858 13.9623ZM8.51858 13.9623C9.79784 16.1929 11.8054 18.2015 14.0386 19.4823M14.0386 19.4823C15.1406 20.1143 16.0405 20.4195 16.9527 20.6035C18.3018 20.8756 19.6196 20.2528 20.4605 19.2211C20.8159 18.7851 20.6945 18.2852 20.2319 18.0273L19.1876 17.4452C18.3598 16.9838 17.9459 16.7531 17.5071 16.7989C17.0683 16.8446 16.7109 17.1557 15.9962 17.778L14.0386 19.4823Z"
+                              stroke="white" stroke-linejoin="round" />
+                            <path
+                              d="M19.1819 8.81873L14.6665 13.3341M19.1819 8.81873C18.845 8.48185 17.2562 8.81191 16.7764 8.81873M19.1819 8.81873C19.5188 9.15561 19.1888 10.7444 19.1819 11.2242"
                               stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M15.3335 8.00073V9.8674M18.6336 9.36792L17.3137 10.6879M20.0002 12.6674H18.1335"
-                              stroke="white" stroke-linecap="round" />
                           </g>
                           <defs>
-                            <clipPath id="clip0_36689_1169">
+                            <clipPath id="clip0_36829_20606">
                               <rect width="16" height="16" fill="white" transform="translate(6 6.00073)" />
                             </clipPath>
                           </defs>
@@ -428,7 +528,92 @@
                       </div>
                       <div>
                         <h4 class="font-medium text-xs text-white dark:text-white">
-                          RED Queue
+                          Outbound
+                        </h4>
+                        <p class="text-xs min-w-29">(206) 235- 421</p>
+                      </div>
+                    </div>
+                    <div class="flex flex-col justify-end">
+                      <button class="border-2 rounded-full p-0.5 border-dotted border-slate-700 hover:border-[#10B981]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                          <rect x="0.5" y="0.000732422" width="24" height="24" rx="12" fill="#10B981" />
+                          <g clip-path="url(#clip0_36819_9434)">
+                            <path
+                              d="M7.01858 11.9622C6.38656 10.8602 6.08139 9.9603 5.89739 9.04813C5.62524 7.69904 6.24804 6.38119 7.27975 5.5403C7.71579 5.18491 8.21565 5.30633 8.4735 5.76892L9.05562 6.81326C9.51702 7.64103 9.74772 8.05491 9.70197 8.49371C9.65621 8.93251 9.34508 9.28989 8.72281 10.0047L7.01858 11.9622ZM7.01858 11.9622C8.29783 14.1928 10.3054 16.2015 12.5386 17.4822M12.5386 17.4822C13.6406 18.1143 14.5405 18.4194 15.4527 18.6034C16.8018 18.8756 18.1196 18.2528 18.9605 17.2211C19.3159 16.785 19.1945 16.2852 18.7319 16.0273L17.6876 15.4452C16.8598 14.9838 16.4459 14.7531 16.0071 14.7988C15.5683 14.8446 15.2109 15.1557 14.4962 15.778L12.5386 17.4822Z"
+                              stroke="white" stroke-width="1.5" stroke-linejoin="round" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_36819_9434">
+                              <rect width="16" height="16" fill="white" transform="translate(4.5 4.00073)" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center w-full justify-between py-2 ">
+                    <div class="flex items-center gap-1 w-full">
+                      <div class="h-8 w-8 overflow-hidden rounded-full flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                          <rect x="1" y="1.00098" width="26" height="26" rx="13" stroke="#8A99AF" />
+                          <g clip-path="url(#clip0_36829_20617)">
+                            <path
+                              d="M8.51858 13.9627C7.88656 12.8607 7.5814 11.9608 7.39739 11.0486C7.12524 9.69953 7.74804 8.38168 8.77975 7.54079C9.2158 7.18539 9.71565 7.30682 9.9735 7.76941L10.5556 8.81375C11.017 9.64152 11.2477 10.0554 11.202 10.4942C11.1562 10.933 10.8451 11.2904 10.2228 12.0051L8.51858 13.9627ZM8.51858 13.9627C9.79784 16.1933 11.8054 18.202 14.0386 19.4827M14.0386 19.4827C15.1406 20.1147 16.0405 20.4199 16.9527 20.6039C18.3018 20.8761 19.6196 20.2533 20.4605 19.2215C20.8159 18.7855 20.6945 18.2857 20.2319 18.0278L19.1876 17.4457C18.3598 16.9843 17.9459 16.7536 17.5071 16.7993C17.0683 16.8451 16.7109 17.1562 15.9962 17.7785L14.0386 19.4827Z"
+                              stroke="white" stroke-linejoin="round" />
+                            <path
+                              d="M19.9998 9.66764H14.6665M19.9998 9.66764C19.9998 10.1345 18.6703 11.0066 18.3332 11.3343M19.9998 9.66764C19.9998 9.20082 18.6703 8.32866 18.3332 8.00098"
+                              stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_36829_20617">
+                              <rect width="16" height="16" fill="white" transform="translate(6 6.00098)" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 class="font-medium text-xs text-white dark:text-white">
+                          Auto Outbound
+                        </h4>
+                        <p class="text-xs min-w-29">(206) 235- 421</p>
+                      </div>
+                    </div>
+                    <div class="flex flex-col justify-end">
+                      <button class="border-2 rounded-full p-0.5 border-dotted border-slate-700 hover:border-[#10B981]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                          <rect x="0.5" y="0.000732422" width="24" height="24" rx="12" fill="#10B981" />
+                          <g clip-path="url(#clip0_36819_9434)">
+                            <path
+                              d="M7.01858 11.9622C6.38656 10.8602 6.08139 9.9603 5.89739 9.04813C5.62524 7.69904 6.24804 6.38119 7.27975 5.5403C7.71579 5.18491 8.21565 5.30633 8.4735 5.76892L9.05562 6.81326C9.51702 7.64103 9.74772 8.05491 9.70197 8.49371C9.65621 8.93251 9.34508 9.28989 8.72281 10.0047L7.01858 11.9622ZM7.01858 11.9622C8.29783 14.1928 10.3054 16.2015 12.5386 17.4822M12.5386 17.4822C13.6406 18.1143 14.5405 18.4194 15.4527 18.6034C16.8018 18.8756 18.1196 18.2528 18.9605 17.2211C19.3159 16.785 19.1945 16.2852 18.7319 16.0273L17.6876 15.4452C16.8598 14.9838 16.4459 14.7531 16.0071 14.7988C15.5683 14.8446 15.2109 15.1557 14.4962 15.778L12.5386 17.4822Z"
+                              stroke="white" stroke-width="1.5" stroke-linejoin="round" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_36819_9434">
+                              <rect width="16" height="16" fill="white" transform="translate(4.5 4.00073)" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center w-full justify-between py-2 ">
+                    <div class="flex items-center gap-1 w-full">
+                      <div class="h-8 w-8 overflow-hidden rounded-full flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                          <rect x="1" y="1.00098" width="26" height="26" rx="13" stroke="#8A99AF" />
+                          <path
+                            d="M17.1424 15.0633C18.1294 15.3239 18.8154 15.6536 19.4394 16.0574C20.3623 16.6544 20.758 17.7304 20.6493 18.7686C20.6034 19.2074 20.2498 19.4172 19.8396 19.3038L18.9138 19.0475C18.18 18.8444 17.813 18.7428 17.5893 18.4742C17.3656 18.2055 17.3392 17.8348 17.2866 17.0936L17.1424 15.0633ZM17.1424 15.0633C15.1444 14.5358 12.8582 14.5352 10.858 15.0633M10.858 15.0633C9.87087 15.3239 9.1849 15.6536 8.56092 16.0574C7.63805 16.6544 7.24239 17.7304 7.35102 18.7686C7.39692 19.2074 7.75058 19.4172 8.16068 19.3038L9.08652 19.0475C9.82038 18.8444 10.1873 18.7428 10.411 18.4742C10.6348 18.2055 10.6611 17.8348 10.7138 17.0936L10.858 15.0633Z"
+                            stroke="white" stroke-linejoin="round" />
+                          <path
+                            d="M10.9998 9.01005L12.5856 10.6398C13.2523 11.3249 13.5856 11.6675 13.9998 11.6675C14.414 11.6675 14.7474 11.3249 15.414 10.6398L17.3332 8.66748M12.9998 8.80551C12.562 8.79929 11.112 8.49807 10.8045 8.80551C10.4971 9.11295 10.7983 10.563 10.8045 11.0008"
+                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 class="font-medium text-xs text-white dark:text-white">
+                          Missed Call
                         </h4>
                         <p class="text-xs min-w-29">(206) 235- 421</p>
                       </div>
