@@ -11,7 +11,7 @@
 
             <div x-data="{openDropDown: false}" class="relative mb-0 inline-block">
                 <a href="#" @click.prevent="openDropDown = !openDropDown"
-                    class="inline-flex items-center justify-between gap-2.5 text-slate-600 min-w-28 appearance-none rounded-lg border border-stroke bg-transparent py-1 pl-4 pr-3.5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input">
+                    class="inline-flex items-center justify-between gap-2.5 text-slate-600 dark:text-slate-300 min-w-28 appearance-none rounded-lg border border-stroke bg-transparent py-1 pl-4 pr-3.5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input">
                     Unavailable
                     <svg class="fill-current duration-200 ease-linear" :class="openDropDown && 'rotate-180'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path
@@ -63,7 +63,7 @@
                 <div>
                     <div x-data="{openDropDown: false}" class="relative mb-0 inline-block">
                         <button @click.prevent="openDropDown = !openDropDown"
-                            class="text-base relative z-20  min-h-9 flex items-center justify-between gap-2 appearance-none rounded-lg border border-stroke bg-transparent py-1 px-2.5 outline-none transition focus:border-primary active:border-primary ">
+                            class="text-base dark:text-white relative z-20  min-h-9 flex items-center justify-between gap-2 appearance-none rounded-lg border border-stroke bg-transparent py-2 px-2.5 outline-none transition focus:border-primary active:border-primary ">
                             <div class="rounded-full overflow-hidden size-6">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"
                                     fill="none">
@@ -242,7 +242,7 @@
                                 fill="none">
                                 <path
                                     d="M7.9999 11.4C7.8499 11.4 7.7249 11.35 7.5999 11.25L1.8499 5.60005C1.6249 5.37505 1.6249 5.02505 1.8499 4.80005C2.0749 4.57505 2.4249 4.57505 2.6499 4.80005L7.9999 10.025L13.3499 4.75005C13.5749 4.52505 13.9249 4.52505 14.1499 4.75005C14.3749 4.97505 14.3749 5.32505 14.1499 5.55005L8.3999 11.2C8.2749 11.325 8.1499 11.4 7.9999 11.4Z"
-                                    fill="#64748B" />
+                                    fill="" />
                             </svg>
                         </button>
                         <div x-show="openDropDown" @click.outside="openDropDown = false"
@@ -520,13 +520,13 @@
 
                 <div class="flex gap-2">
                     <input type="text" placeholder="(206) 235- 421"
-                        class="max-w-45 min-h-9 rounded-lg border-[1.5px] border-stroke bg-transparent px-4 py-1 font-normal text-black outline-none transition focus:border-primary active:border-primary   dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary " />
+                        class="max-w-45 min-h-9 rounded-lg border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-400 dark:text-white hover:bg-opacity-90 focus:border-primary active:border-primary focus:text-primary active:text-primary" />
                     <button id="headerDialingButton"
-                        class="flex w-10 justify-center items-center rounded-lg border-[1.5px] border-stroke bg-transparent p-1 font-medium text-gray hover:bg-opacity-90">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        class="flex w-10 justify-center items-center rounded-lg border-[1.5px] border-stroke bg-transparent p-1 font-medium text-slate-400 dark:text-white hover:bg-opacity-90">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current">
                             <path
                                 d="M3.77762 11.9424C2.8296 10.2893 2.37185 8.93948 2.09584 7.57121C1.68762 5.54758 2.62181 3.57081 4.16938 2.30947C4.82345 1.77638 5.57323 1.95852 5.96 2.6524L6.83318 4.21891C7.52529 5.46057 7.87134 6.08139 7.8027 6.73959C7.73407 7.39779 7.26737 7.93386 6.33397 9.00601L3.77762 11.9424ZM3.77762 11.9424C5.69651 15.2883 8.70784 18.3013 12.0576 20.2224M12.0576 20.2224C13.7107 21.1704 15.0605 21.6282 16.4288 21.9042C18.4524 22.3124 20.4292 21.3782 21.6905 19.8306C22.2236 19.1766 22.0415 18.4268 21.3476 18.04L19.7811 17.1668C18.5394 16.4747 17.9186 16.1287 17.2604 16.1973C16.6022 16.2659 16.0661 16.7326 14.994 17.666L12.0576 20.2224Z"
-                                stroke="#8A99AF" stroke-width="1.5" stroke-linejoin="round" />
+                                stroke="" stroke-width="1.5" stroke-linejoin="round" />
                         </svg>
                     </button>
                 </div>

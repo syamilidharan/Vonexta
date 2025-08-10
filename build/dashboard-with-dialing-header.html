@@ -33,7 +33,7 @@
   <div class="flex h-screen overflow-hidden">
     <!-- ===== Sidebar Start ===== -->
     <aside :class="sidebarToggle ? 'translate-x-0' : '-translate-x-full'"
-  class="absolute left-0 top-0 z-999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0"
+  class="absolute left-0 top-0 z-999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear  lg:static lg:translate-x-0"
   @click.outside="sidebarToggle = false">
   <!-- SIDEBAR HEADER -->
   <div class="flex items-center justify-center gap-2 px-6 py-5.5 lg:py-6.5 ml-12.5 bg-slate-700">
@@ -58,14 +58,14 @@
 
     <div x-data="{
         openTab: 1,
-        activeClasses: 'bg-slate-700 text-white stroke-white',
-        inactiveClasses: 'bg-transparent dark:bg-meta-4 text-slate-300 dark:text-white stroke-slate-400',
+        activeClasses: 'bg-slate-700 text-white stroke-white ',
+        inactiveClasses: 'bg-transparent dark:bg-meta-4 text-slate-300 dark:text-white stroke-slate-400 dark:hover:text-white',
         }" class=" w-full p-0 flex flex-row  bg-slate-700 h-full">
       <div class=" flex flex-col gap-2.5 max-w-12.5 bg-black px-2 py-3">
         <a href="#" @click.prevent="openTab = 1" :class="openTab === 1 ? activeClasses : inactiveClasses"
           class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none p-1  text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg dark:hover:bg-black"
             :class="openTab === 1 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M14.0002 25.6666C9.3254 25.6666 6.98802 25.6666 5.53576 24.129C4.0835 22.5913 4.0835 20.1163 4.0835 15.1666C4.0835 10.2169 4.0835 7.74201 5.53576 6.20432C6.98802 4.66663 9.3254 4.66663 14.0002 4.66663C18.6749 4.66663 21.0123 4.66663 22.4646 6.20432C23.9168 7.74201 23.9168 10.2169 23.9168 15.1666C23.9168 20.1163 23.9168 22.5913 22.4646 24.129C21.0123 25.6666 18.6749 25.6666 14.0002 25.6666Z"
@@ -88,7 +88,7 @@
           <span
             class="absolute size-5 p-1 text-xs bg-red rounded-full flex justify-center items-center -left-0.5 -top-1.5">3</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg dark:hover:bg-black"
             :class="openTab === 2 ? 'bg-black' : 'bg-transparent'">
             <path d="M8.75 14H15.75M8.75 9.33337H12.25" stroke-linejoin="round" />
             <path
@@ -105,7 +105,7 @@
         <a href="#" @click.prevent="openTab = 3" :class="openTab === 3 ? activeClasses : inactiveClasses"
           class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg dark:hover:bg-black"
             :class="openTab === 3 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M4.40738 13.9328C3.30136 12.0042 2.76732 10.4294 2.44531 8.83312C1.96905 6.47222 3.05894 4.16599 4.86444 2.69442C5.62752 2.07249 6.50226 2.28498 6.95349 3.09451L7.9722 4.9221C8.77966 6.37071 9.18339 7.095 9.10331 7.8629C9.02324 8.6308 8.47876 9.25621 7.38979 10.5071L4.40738 13.9328ZM4.40738 13.9328C6.64609 17.8364 10.1593 21.3516 14.0674 23.5928M14.0674 23.5928C15.996 24.6988 17.5707 25.2329 19.1671 25.5549C21.528 26.0312 23.8342 24.9413 25.3057 23.1357C25.9277 22.3727 25.7152 21.498 24.9057 21.0467L23.0781 20.028C21.6295 19.2205 20.9052 18.8169 20.1373 18.8969C19.3694 18.9769 18.7439 19.5214 17.4932 20.6104L14.0674 23.5928Z"
@@ -120,7 +120,7 @@
           <span
             class="absolute size-5 p-1 text-xs bg-red rounded-full flex justify-center items-center -left-0.5 -top-0.5">2</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg dark:hover:bg-black"
             :class="openTab === 4 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M4.40738 13.9328C3.30136 12.0042 2.76732 10.4294 2.44531 8.83312C1.96905 6.47222 3.05894 4.16599 4.86444 2.69442C5.62752 2.07249 6.50226 2.28498 6.95349 3.09451L7.9722 4.9221C8.77966 6.37071 9.18339 7.095 9.10331 7.8629C9.02324 8.6308 8.47876 9.25621 7.38979 10.5071L4.40738 13.9328ZM4.40738 13.9328C6.64609 17.8364 10.1593 21.3516 14.0674 23.5928M14.0674 23.5928C15.996 24.6988 17.5707 25.2329 19.1671 25.5549C21.528 26.0312 23.8342 24.9413 25.3057 23.1357C25.9277 22.3727 25.7152 21.498 24.9057 21.0467L23.0781 20.028C21.6295 19.2205 20.9052 18.8169 20.1373 18.8969C19.3694 18.9769 18.7439 19.5214 17.4932 20.6104L14.0674 23.5928Z"
@@ -177,7 +177,7 @@
                   <div x-show="currentView === 'list'"
                     class="no-scrollbar flex flex-col h-full justify-between space-y-2 overflow-auto">
                     <div>
-                      <form class="sticky mb-2">
+                      <!-- <form class="sticky mb-2">
                         <input type="text" id="search"
                           class="w-full rounded border border-slate-500 bg-slate-900 py-2.5 pl-8 pr-4 text-sm outline-none focus:border-primary dark:border-slate-900 dark:bg-slate-900"
                           placeholder="Search messages ..." />
@@ -192,7 +192,7 @@
                               fill="#64748B" />
                           </svg>
                         </button>
-                      </form>
+                      </form> -->
 
 
                       <template x-for="chat in chats" :key="chat.id">
@@ -844,7 +844,7 @@
   }
 </style>
 <header class="sticky top-0 z-999 flex w-full flex-col">
-  <div class="bg-white border-b border-slate-100 dark:bg-boxdark dark:drop-shadow-none">
+  <div class="bg-white border-b border-slate-100 dark:bg-boxdark dark:drop-shadow-none z-99">
     <div class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6">
       <div class="flex items-center gap-2 sm:gap-4 lg:hidden">
         <!-- Hamburger Toggle BTN -->
@@ -921,7 +921,7 @@
             <!-- Dark Mode Toggler -->
             <label :class="darkMode ? 'bg-primary' : 'bg-stroke'" class="relative m-0 block h-7.5 w-14 rounded-full">
               <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode"
-                class="absolute top-0 z-50 m-0 h-full w-full cursor-pointer opacity-0" disabled />
+                class="absolute top-0 z-50 m-0 h-full w-full cursor-pointer opacity-0"  />
               <span :class="darkMode && '!right-1 !translate-x-full'"
                 class="absolute left-1 top-1/2 flex h-6 w-6 -translate-y-1/2 translate-x-0 items-center justify-center rounded-full bg-white shadow-switcher duration-75 ease-linear">
                 <span class="dark:hidden">
@@ -966,7 +966,7 @@
 
             <!-- Dropdown Start -->
             <div x-show="dropdownOpen"
-              class="absolute -right-27 mt-2.5 flex h-90 w-75 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
+              class="absolute -right-27 mt-2.5 flex h-90 w-75 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-slate-600 dark:bg-boxdark sm:right-0 sm:w-80">
               <div class="px-4.5 py-3">
                 <h5 class="text-sm font-medium text-bodydark2">Notification</h5>
               </div>
@@ -1054,7 +1054,7 @@
 
             <!-- Dropdown Start -->
             <div x-show="dropdownOpen"
-              class="absolute -right-16 mt-2.5 flex h-90 w-75 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
+              class="absolute -right-16 mt-2.5 flex h-90 w-75 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-slate-600 dark:bg-boxdark sm:right-0 sm:w-80">
               <div class="px-4.5 py-3">
                 <h5 class="text-sm font-medium text-bodydark2">Messages</h5>
               </div>
@@ -1193,7 +1193,7 @@
 
             <!-- Dropdown Start -->
             <div x-show="dropdownOpen"
-              class="absolute -right-16 mt-2.5 flex h-90 w-75 flex-col z-99 rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
+              class="absolute -right-16 mt-2.5 flex h-90 w-75 flex-col z-99 rounded-sm border border-stroke bg-white shadow-default dark:border-slate-600 dark:bg-boxdark sm:right-0 sm:w-80">
               <div class="px-4.5 py-3">
                 <h5 class="text-sm font-medium text-bodydark2">Calendar</h5>
               </div>
@@ -1229,7 +1229,7 @@
 
           <!-- Dropdown Start -->
           <div x-show="dropdownOpen"
-            class="absolute right-0 mt-4 flex w-62.5 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            class="absolute right-0 mt-4 flex w-62.5 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-slate-600 dark:bg-boxdark">
             <ul class="flex flex-col gap-5 border-b border-stroke px-6 py-4 dark:border-strokedark">
 
               <li>
@@ -1851,7 +1851,7 @@
 
                         <div class="flex gap-8 justify-end">
                           <button
-                            class="inline-flex items-center justify-center rounded-md border border-stroke px-6.5 py-2 max-h-10 text-center font-medium text-black hover:bg-opacity-90 ">
+                            class="inline-flex items-center justify-center rounded-md border border-stroke px-6.5 py-2 max-h-10 text-center font-medium text-black hover:bg-opacity-90 dark:text-white">
                             Reset
                           </button>
                           <button

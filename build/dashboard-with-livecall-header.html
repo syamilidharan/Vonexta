@@ -33,7 +33,7 @@
   <div class="flex h-screen overflow-hidden">
     <!-- ===== Sidebar Start ===== -->
     <aside :class="sidebarToggle ? 'translate-x-0' : '-translate-x-full'"
-  class="absolute left-0 top-0 z-999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0"
+  class="absolute left-0 top-0 z-999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear  lg:static lg:translate-x-0"
   @click.outside="sidebarToggle = false">
   <!-- SIDEBAR HEADER -->
   <div class="flex items-center justify-center gap-2 px-6 py-5.5 lg:py-6.5 ml-12.5 bg-slate-700">
@@ -58,14 +58,14 @@
 
     <div x-data="{
         openTab: 1,
-        activeClasses: 'bg-slate-700 text-white stroke-white',
-        inactiveClasses: 'bg-transparent dark:bg-meta-4 text-slate-300 dark:text-white stroke-slate-400',
+        activeClasses: 'bg-slate-700 text-white stroke-white ',
+        inactiveClasses: 'bg-transparent dark:bg-meta-4 text-slate-300 dark:text-white stroke-slate-400 dark:hover:text-white',
         }" class=" w-full p-0 flex flex-row  bg-slate-700 h-full">
       <div class=" flex flex-col gap-2.5 max-w-12.5 bg-black px-2 py-3">
         <a href="#" @click.prevent="openTab = 1" :class="openTab === 1 ? activeClasses : inactiveClasses"
           class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none p-1  text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg dark:hover:bg-black"
             :class="openTab === 1 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M14.0002 25.6666C9.3254 25.6666 6.98802 25.6666 5.53576 24.129C4.0835 22.5913 4.0835 20.1163 4.0835 15.1666C4.0835 10.2169 4.0835 7.74201 5.53576 6.20432C6.98802 4.66663 9.3254 4.66663 14.0002 4.66663C18.6749 4.66663 21.0123 4.66663 22.4646 6.20432C23.9168 7.74201 23.9168 10.2169 23.9168 15.1666C23.9168 20.1163 23.9168 22.5913 22.4646 24.129C21.0123 25.6666 18.6749 25.6666 14.0002 25.6666Z"
@@ -88,7 +88,7 @@
           <span
             class="absolute size-5 p-1 text-xs bg-red rounded-full flex justify-center items-center -left-0.5 -top-1.5">3</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg dark:hover:bg-black"
             :class="openTab === 2 ? 'bg-black' : 'bg-transparent'">
             <path d="M8.75 14H15.75M8.75 9.33337H12.25" stroke-linejoin="round" />
             <path
@@ -105,7 +105,7 @@
         <a href="#" @click.prevent="openTab = 3" :class="openTab === 3 ? activeClasses : inactiveClasses"
           class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg dark:hover:bg-black"
             :class="openTab === 3 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M4.40738 13.9328C3.30136 12.0042 2.76732 10.4294 2.44531 8.83312C1.96905 6.47222 3.05894 4.16599 4.86444 2.69442C5.62752 2.07249 6.50226 2.28498 6.95349 3.09451L7.9722 4.9221C8.77966 6.37071 9.18339 7.095 9.10331 7.8629C9.02324 8.6308 8.47876 9.25621 7.38979 10.5071L4.40738 13.9328ZM4.40738 13.9328C6.64609 17.8364 10.1593 21.3516 14.0674 23.5928M14.0674 23.5928C15.996 24.6988 17.5707 25.2329 19.1671 25.5549C21.528 26.0312 23.8342 24.9413 25.3057 23.1357C25.9277 22.3727 25.7152 21.498 24.9057 21.0467L23.0781 20.028C21.6295 19.2205 20.9052 18.8169 20.1373 18.8969C19.3694 18.9769 18.7439 19.5214 17.4932 20.6104L14.0674 23.5928Z"
@@ -120,7 +120,7 @@
           <span
             class="absolute size-5 p-1 text-xs bg-red rounded-full flex justify-center items-center -left-0.5 -top-0.5">2</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto duration-300 ease-in-out p-1 rounded-lg"
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg dark:hover:bg-black"
             :class="openTab === 4 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M4.40738 13.9328C3.30136 12.0042 2.76732 10.4294 2.44531 8.83312C1.96905 6.47222 3.05894 4.16599 4.86444 2.69442C5.62752 2.07249 6.50226 2.28498 6.95349 3.09451L7.9722 4.9221C8.77966 6.37071 9.18339 7.095 9.10331 7.8629C9.02324 8.6308 8.47876 9.25621 7.38979 10.5071L4.40738 13.9328ZM4.40738 13.9328C6.64609 17.8364 10.1593 21.3516 14.0674 23.5928M14.0674 23.5928C15.996 24.6988 17.5707 25.2329 19.1671 25.5549C21.528 26.0312 23.8342 24.9413 25.3057 23.1357C25.9277 22.3727 25.7152 21.498 24.9057 21.0467L23.0781 20.028C21.6295 19.2205 20.9052 18.8169 20.1373 18.8969C19.3694 18.9769 18.7439 19.5214 17.4932 20.6104L14.0674 23.5928Z"
@@ -177,7 +177,7 @@
                   <div x-show="currentView === 'list'"
                     class="no-scrollbar flex flex-col h-full justify-between space-y-2 overflow-auto">
                     <div>
-                      <form class="sticky mb-2">
+                      <!-- <form class="sticky mb-2">
                         <input type="text" id="search"
                           class="w-full rounded border border-slate-500 bg-slate-900 py-2.5 pl-8 pr-4 text-sm outline-none focus:border-primary dark:border-slate-900 dark:bg-slate-900"
                           placeholder="Search messages ..." />
@@ -192,7 +192,7 @@
                               fill="#64748B" />
                           </svg>
                         </button>
-                      </form>
+                      </form> -->
 
 
                       <template x-for="chat in chats" :key="chat.id">
@@ -844,7 +844,7 @@
   }
 </style>
 <header class="sticky top-0 z-999 flex w-full flex-col">
-  <div class="bg-white border-b border-slate-100 dark:bg-boxdark dark:drop-shadow-none">
+  <div class="bg-white border-b border-slate-100 dark:bg-boxdark dark:drop-shadow-none z-99">
     <div class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6">
       <div class="flex items-center gap-2 sm:gap-4 lg:hidden">
         <!-- Hamburger Toggle BTN -->
@@ -921,7 +921,7 @@
             <!-- Dark Mode Toggler -->
             <label :class="darkMode ? 'bg-primary' : 'bg-stroke'" class="relative m-0 block h-7.5 w-14 rounded-full">
               <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode"
-                class="absolute top-0 z-50 m-0 h-full w-full cursor-pointer opacity-0" disabled />
+                class="absolute top-0 z-50 m-0 h-full w-full cursor-pointer opacity-0"  />
               <span :class="darkMode && '!right-1 !translate-x-full'"
                 class="absolute left-1 top-1/2 flex h-6 w-6 -translate-y-1/2 translate-x-0 items-center justify-center rounded-full bg-white shadow-switcher duration-75 ease-linear">
                 <span class="dark:hidden">
@@ -966,7 +966,7 @@
 
             <!-- Dropdown Start -->
             <div x-show="dropdownOpen"
-              class="absolute -right-27 mt-2.5 flex h-90 w-75 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
+              class="absolute -right-27 mt-2.5 flex h-90 w-75 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-slate-600 dark:bg-boxdark sm:right-0 sm:w-80">
               <div class="px-4.5 py-3">
                 <h5 class="text-sm font-medium text-bodydark2">Notification</h5>
               </div>
@@ -1054,7 +1054,7 @@
 
             <!-- Dropdown Start -->
             <div x-show="dropdownOpen"
-              class="absolute -right-16 mt-2.5 flex h-90 w-75 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
+              class="absolute -right-16 mt-2.5 flex h-90 w-75 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-slate-600 dark:bg-boxdark sm:right-0 sm:w-80">
               <div class="px-4.5 py-3">
                 <h5 class="text-sm font-medium text-bodydark2">Messages</h5>
               </div>
@@ -1193,7 +1193,7 @@
 
             <!-- Dropdown Start -->
             <div x-show="dropdownOpen"
-              class="absolute -right-16 mt-2.5 flex h-90 w-75 flex-col z-99 rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80">
+              class="absolute -right-16 mt-2.5 flex h-90 w-75 flex-col z-99 rounded-sm border border-stroke bg-white shadow-default dark:border-slate-600 dark:bg-boxdark sm:right-0 sm:w-80">
               <div class="px-4.5 py-3">
                 <h5 class="text-sm font-medium text-bodydark2">Calendar</h5>
               </div>
@@ -1229,7 +1229,7 @@
 
           <!-- Dropdown Start -->
           <div x-show="dropdownOpen"
-            class="absolute right-0 mt-4 flex w-62.5 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            class="absolute right-0 mt-4 flex w-62.5 z-99 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-slate-600 dark:bg-boxdark">
             <ul class="flex flex-col gap-5 border-b border-stroke px-6 py-4 dark:border-strokedark">
 
               <li>
@@ -1321,7 +1321,7 @@
   <div class="">
     <div class="flex items-center justify-between py-1 ">
       <div
-        class="flex justify-center items-center gap-2 rounded-xl border border-green-500 bg-green-50 px-3 py-1 font-medium text-gray hover:bg-opacity-90">
+        class="flex justify-center items-center gap-2 rounded-xl border border-green-500 bg-green-50 dark:bg-slate-900 px-3 py-1 font-medium text-gray hover:bg-opacity-90">
         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
           <circle cx="4" cy="4" r="4" fill="#10B981" />
         </svg>
@@ -1342,87 +1342,87 @@
       <div class="relative" x-data="{ dropdownOpen: false, notifying: true }" @click.outside="dropdownOpen = false">
 
         <button @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false"
-          class="relative flex justify-center items-center gap-2 rounded-xl border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-gray hover:bg-opacity-90 focus:border-primary active:border-primary focus:text-primary active:text-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          class="relative flex justify-center items-center gap-2 rounded-xl border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-400 dark:text-white hover:bg-opacity-90 focus:border-primary active:border-primary focus:text-primary active:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current">
             <path
               d="M2 4C2 4.94281 2 5.41421 2.29289 5.70711C2.58579 6 3.05719 6 4 6C4.94281 6 5.41421 6 5.70711 5.70711C6 5.41421 6 4.94281 6 4C6 3.05719 6 2.58579 5.70711 2.29289C5.41421 2 4.94281 2 4 2C3.05719 2 2.58579 2 2.29289 2.29289C2 2.58579 2 3.05719 2 4Z"
-              stroke="#64748B" />
+              stroke="" />
             <path
               d="M2 12C2 12.9428 2 13.4142 2.29289 13.7071C2.58579 14 3.05719 14 4 14C4.94281 14 5.41421 14 5.70711 13.7071C6 13.4142 6 12.9428 6 12C6 11.0572 6 10.5858 5.70711 10.2929C5.41421 10 4.94281 10 4 10C3.05719 10 2.58579 10 2.29289 10.2929C2 10.5858 2 11.0572 2 12Z"
-              stroke="#64748B" />
+              stroke="" />
             <path
               d="M10 4C10 4.94281 10 5.41421 10.2929 5.70711C10.5858 6 11.0572 6 12 6C12.9428 6 13.4142 6 13.7071 5.70711C14 5.41421 14 4.94281 14 4C14 3.05719 14 2.58579 13.7071 2.29289C13.4142 2 12.9428 2 12 2C11.0572 2 10.5858 2 10.2929 2.29289C10 2.58579 10 3.05719 10 4Z"
-              stroke="#64748B" />
+              stroke="" />
             <path
               d="M10 12C10 12.9428 10 13.4142 10.2929 13.7071C10.5858 14 11.0572 14 12 14C12.9428 14 13.4142 14 13.7071 13.7071C14 13.4142 14 12.9428 14 12C14 11.0572 14 10.5858 13.7071 10.2929C13.4142 10 12.9428 10 12 10C11.0572 10 10.5858 10 10.2929 10.2929C10 10.5858 10 11.0572 10 12Z"
-              stroke="#64748B" />
+              stroke="" />
             <path
               d="M10 20C10 20.9428 10 21.4142 10.2929 21.7071C10.5858 22 11.0572 22 12 22C12.9428 22 13.4142 22 13.7071 21.7071C14 21.4142 14 20.9428 14 20C14 19.0572 14 18.5858 13.7071 18.2929C13.4142 18 12.9428 18 12 18C11.0572 18 10.5858 18 10.2929 18.2929C10 18.5858 10 19.0572 10 20Z"
-              stroke="#64748B" />
+              stroke="" />
             <path
               d="M18 4C18 4.94281 18 5.41421 18.2929 5.70711C18.5858 6 19.0572 6 20 6C20.9428 6 21.4142 6 21.7071 5.70711C22 5.41421 22 4.94281 22 4C22 3.05719 22 2.58579 21.7071 2.29289C21.4142 2 20.9428 2 20 2C19.0572 2 18.5858 2 18.2929 2.29289C18 2.58579 18 3.05719 18 4Z"
-              stroke="#64748B" />
+              stroke="" />
             <path
               d="M18 12C18 12.9428 18 13.4142 18.2929 13.7071C18.5858 14 19.0572 14 20 14C20.9428 14 21.4142 14 21.7071 13.7071C22 13.4142 22 12.9428 22 12C22 11.0572 22 10.5858 21.7071 10.2929C21.4142 10 20.9428 10 20 10C19.0572 10 18.5858 10 18.2929 10.2929C18 10.5858 18 11.0572 18 12Z"
-              stroke="#64748B" />
+              stroke="" />
           </svg>
         </button>
 
         <!-- Dropdown Start -->
         <div x-show="dropdownOpen"
-          class="absolute -right-16 mt-1.5 flex h-max flex-col overflow-hidden rounded-lg border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 min-w-46 max-w-full ">
+          class="absolute -right-16 mt-1.5 flex h-max flex-col overflow-hidden rounded-lg border border-stroke bg-white shadow-default dark:border-slate-600 dark:bg-boxdark sm:right-0 min-w-46 max-w-full ">
 
-          <div class="bg-white p-2 z-1">
-            <div class="bg-white">
+          <div class=" p-2 z-1">
+            <div class="">
 
-              <div class="flex flex-wrap rounded-xl bg-white max-w-sm mx-0 sm:mx-auto">
+              <div class="flex flex-wrap rounded-xl  max-w-sm mx-0 sm:mx-auto">
                 <div class="w-1/3 flex justify-center item-center py-1">
                   <button
-                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">1</button>
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-slate-600 dark:text-white dark:hover:bg-slate-500">1</button>
                 </div>
                 <div class="w-1/3 flex justify-center item-center p-1">
                   <button
-                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">2</button>
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-slate-600 dark:text-white dark:hover:bg-slate-500">2</button>
                 </div>
                 <div class="w-1/3 flex justify-center item-center p-1">
                   <button
-                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">3</button>
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-slate-600 dark:text-white dark:hover:bg-slate-500">3</button>
                 </div>
                 <div class="w-1/3 flex justify-center item-center p-1">
                   <button
-                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">4</button>
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-slate-600 dark:text-white dark:hover:bg-slate-500">4</button>
                 </div>
                 <div class="w-1/3 flex justify-center item-center p-1">
                   <button
-                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">5</button>
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-slate-600 dark:text-white dark:hover:bg-slate-500">5</button>
                 </div>
                 <div class="w-1/3 flex justify-center item-center p-1">
                   <button
-                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">6</button>
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-slate-600 dark:text-white dark:hover:bg-slate-500">6</button>
                 </div>
                 <div class="w-1/3 flex justify-center item-center p-1">
                   <button
-                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">7</button>
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-slate-600 dark:text-white dark:hover:bg-slate-500">7</button>
                 </div>
                 <div class="w-1/3 flex justify-center item-center p-1">
                   <button
-                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">8</button>
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-slate-600 dark:text-white dark:hover:bg-slate-500">8</button>
                 </div>
                 <div class="w-1/3 flex justify-center item-center p-1">
                   <button
-                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">9</button>
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-slate-600 dark:text-white dark:hover:bg-slate-500">9</button>
                 </div>
                 <div class="w-1/3 flex justify-center item-center p-1">
                   <button
-                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">*</button>
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-slate-600 dark:text-white dark:hover:bg-slate-500">*</button>
                 </div>
                 <div class="w-1/3 flex justify-center item-center p-1">
                   <button
-                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">0</button>
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-slate-600 dark:text-white dark:hover:bg-slate-500">0</button>
                 </div>
                 <div class="w-1/3 flex justify-center item-center p-1">
                   <button
-                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200">#</button>
+                    class="size-12 text-base text-black font-bold rounded-full bg-neutral-100 hover:bg-neutral-200 dark:bg-slate-600 dark:text-white dark:hover:bg-slate-500">#</button>
                 </div>
               </div>
             </div>
@@ -1436,7 +1436,7 @@
       <!-- Hold Area Start-->
       <div x-data="{ clicked: false }">
         <button @click="clicked = !clicked"
-          :class="{ 'border-stroke bg-transparent text-slate-400 hover:border-orange-600 hover:text-orange-600': !clicked, 'border-orange-600 hover:border-orange-600 text-orange-600 hover:text-orange-600 ': clicked }"
+          :class="{ 'border-stroke bg-transparent text-slate-400 dark:text-white hover:border-orange-600 hover:text-orange-600 dark:hover:border-orange-600 dark:hover:text-orange-600': !clicked, 'border-orange-600 hover:border-orange-600 text-orange-600 hover:text-orange-600 dark:hover:border-orange-600 dark:hover:text-orange-600': clicked }"
           class="flex justify-center items-center gap-2 rounded-xl border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium  ">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current">
             <path
@@ -1446,7 +1446,7 @@
               d="M14 7C14 5.58579 14 4.87868 14.4393 4.43934C14.8787 4 15.5858 4 17 4C18.4142 4 19.1213 4 19.5607 4.43934C20 4.87868 20 5.58579 20 7V17C20 18.4142 20 19.1213 19.5607 19.5607C19.1213 20 18.4142 20 17 20C15.5858 20 14.8787 20 14.4393 19.5607C14 19.1213 14 18.4142 14 17V7Z"
               stroke="" />
           </svg>
-          <span>Hold</span>
+          <span >Hold</span>
         </button>
       </div>
 
@@ -1456,21 +1456,21 @@
       <div class="relative" x-data="{ dropdownOpen: false, notifying: true }" @click.outside="dropdownOpen = false">
 
         <button @click.prevent="dropdownOpen = ! dropdownOpen; notifying = false"
-          class="flex justify-center items-center gap-2 rounded-xl border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-gray hover:bg-opacity-90 focus:border-primary active:border-primary focus:text-primary active:text-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          class="flex justify-center items-center gap-2 rounded-xl border-[1.5px] border-stroke bg-transparent px-3 py-2 font-medium text-slate-400 dark:text-white hover:bg-opacity-90 focus:border-primary active:border-primary focus:text-primary active:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"  class="stroke-current">
             <path
               d="M15 19V6.65856C15 5.65277 15 5.14987 15.3087 5.02472C15.6173 4.89956 15.9806 5.25517 16.7071 5.96637L19 8.21091"
-              stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             <path
               d="M9 5V17.3414C9 18.3472 9 18.8501 8.69134 18.9753C8.38268 19.1004 8.01942 18.7448 7.29289 18.0336L5 15.7891"
-              stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span class="text-base font-medium text-slate-400 dark:text-white">Transfer</span>
+          <span class="">Transfer</span>
         </button>
 
         <!-- ====== Hold dropdown Start -->
         <div x-show="dropdownOpen"
-          class="absolute -right-16 mt-1.5 flex h-max flex-col  rounded-lg border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 w-max ">
+          class="absolute -right-16 mt-1.5 flex h-max flex-col  rounded-lg border border-stroke bg-white shadow-default dark:border-slate-600 dark:bg-boxdark sm:right-0 w-max ">
           <div x-data="
                       {
                       openTab: 1,
@@ -2264,7 +2264,7 @@
 
                         <div class="flex gap-8 justify-end">
                           <button
-                            class="inline-flex items-center justify-center rounded-md border border-stroke px-6.5 py-2 max-h-10 text-center font-medium text-black hover:bg-opacity-90 ">
+                            class="inline-flex items-center justify-center rounded-md border border-stroke px-6.5 py-2 max-h-10 text-center font-medium text-black hover:bg-opacity-90 dark:text-white">
                             Reset
                           </button>
                           <button
