@@ -25,13 +25,13 @@
     <div x-data="{
         openTab: 1,
         activeClasses: 'bg-slate-700 text-white stroke-white ',
-        inactiveClasses: 'bg-transparent dark:bg-meta-4 text-slate-300 dark:text-white stroke-slate-400 dark:hover:text-white',
+        inactiveClasses: 'bg-transparent  text-slate-300 stroke-slate-400',
         }" class=" w-full p-0 flex flex-row  bg-slate-700 h-full">
       <div class=" flex flex-col gap-2.5 max-w-12.5 bg-black px-2 py-3">
         <a href="#" @click.prevent="openTab = 1" :class="openTab === 1 ? activeClasses : inactiveClasses"
-          class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none p-1  text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
+          class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none p-1  text-xs font-medium hover:bg-slate-700 hover:text-white  md:text-xs lg:px-0 text-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto duration-300 ease-in-out p-1 rounded-lg dark:hover:bg-black"
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg "
             :class="openTab === 1 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M14.0002 25.6666C9.3254 25.6666 6.98802 25.6666 5.53576 24.129C4.0835 22.5913 4.0835 20.1163 4.0835 15.1666C4.0835 10.2169 4.0835 7.74201 5.53576 6.20432C6.98802 4.66663 9.3254 4.66663 14.0002 4.66663C18.6749 4.66663 21.0123 4.66663 22.4646 6.20432C23.9168 7.74201 23.9168 10.2169 23.9168 15.1666C23.9168 20.1163 23.9168 22.5913 22.4646 24.129C21.0123 25.6666 18.6749 25.6666 14.0002 25.6666Z"
@@ -50,11 +50,11 @@
             Contacts</spn>
         </a>
         <a href="#" @click.prevent="openTab = 2" :class="openTab === 2 ? activeClasses : inactiveClasses"
-          class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
+          class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white  md:text-xs lg:px-0 text-center">
           <span
             class="absolute size-5 p-1 text-xs bg-red rounded-full flex justify-center items-center -left-0.5 -top-1.5">3</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto duration-300 ease-in-out p-1 rounded-lg dark:hover:bg-black"
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg "
             :class="openTab === 2 ? 'bg-black' : 'bg-transparent'">
             <path d="M8.75 14H15.75M8.75 9.33337H12.25" stroke-linejoin="round" />
             <path
@@ -69,9 +69,9 @@
             SMS</spn>
         </a>
         <a href="#" @click.prevent="openTab = 3" :class="openTab === 3 ? activeClasses : inactiveClasses"
-          class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
+          class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white  md:text-xs lg:px-0 text-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto duration-300 ease-in-out p-1 rounded-lg dark:hover:bg-black"
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg "
             :class="openTab === 3 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M4.40738 13.9328C3.30136 12.0042 2.76732 10.4294 2.44531 8.83312C1.96905 6.47222 3.05894 4.16599 4.86444 2.69442C5.62752 2.07249 6.50226 2.28498 6.95349 3.09451L7.9722 4.9221C8.77966 6.37071 9.18339 7.095 9.10331 7.8629C9.02324 8.6308 8.47876 9.25621 7.38979 10.5071L4.40738 13.9328ZM4.40738 13.9328C6.64609 17.8364 10.1593 21.3516 14.0674 23.5928M14.0674 23.5928C15.996 24.6988 17.5707 25.2329 19.1671 25.5549C21.528 26.0312 23.8342 24.9413 25.3057 23.1357C25.9277 22.3727 25.7152 21.498 24.9057 21.0467L23.0781 20.028C21.6295 19.2205 20.9052 18.8169 20.1373 18.8969C19.3694 18.9769 18.7439 19.5214 17.4932 20.6104L14.0674 23.5928Z"
@@ -82,11 +82,11 @@
             Call</spn>
         </a>
         <a href="#" @click.prevent="openTab = 4" :class="openTab === 4 ? activeClasses : inactiveClasses"
-          class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white dark:hover:bg-white md:text-xs lg:px-0 text-center">
+          class="group relative flex items-center justify-center size-10.5 rounded-xl rounded-tr-none rounded-br-none  p-1 text-xs font-medium hover:bg-slate-700 hover:text-white  md:text-xs lg:px-0 text-center">
           <span
             class="absolute size-5 p-1 text-xs bg-red rounded-full flex justify-center items-center -left-0.5 -top-0.5">2</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"
-            class="mx-auto duration-300 ease-in-out p-1 rounded-lg dark:hover:bg-black"
+            class="mx-auto duration-300 ease-in-out p-1 rounded-lg "
             :class="openTab === 4 ? 'bg-black' : 'bg-transparent'">
             <path
               d="M4.40738 13.9328C3.30136 12.0042 2.76732 10.4294 2.44531 8.83312C1.96905 6.47222 3.05894 4.16599 4.86444 2.69442C5.62752 2.07249 6.50226 2.28498 6.95349 3.09451L7.9722 4.9221C8.77966 6.37071 9.18339 7.095 9.10331 7.8629C9.02324 8.6308 8.47876 9.25621 7.38979 10.5071L4.40738 13.9328ZM4.40738 13.9328C6.64609 17.8364 10.1593 21.3516 14.0674 23.5928M14.0674 23.5928C15.996 24.6988 17.5707 25.2329 19.1671 25.5549C21.528 26.0312 23.8342 24.9413 25.3057 23.1357C25.9277 22.3727 25.7152 21.498 24.9057 21.0467L23.0781 20.028C21.6295 19.2205 20.9052 18.8169 20.1373 18.8969C19.3694 18.9769 18.7439 19.5214 17.4932 20.6104L14.0674 23.5928Z"
@@ -533,23 +533,7 @@
                         <p class="text-xs min-w-29">(206) 235- 421</p>
                       </div>
                     </div>
-                    <div class="flex flex-col justify-end">
-                      <button class="border-2 rounded-full p-0.5 border-dotted border-slate-700 hover:border-[#10B981]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                          <rect x="0.5" y="0.000732422" width="24" height="24" rx="12" fill="#10B981" />
-                          <g clip-path="url(#clip0_36819_9434)">
-                            <path
-                              d="M7.01858 11.9622C6.38656 10.8602 6.08139 9.9603 5.89739 9.04813C5.62524 7.69904 6.24804 6.38119 7.27975 5.5403C7.71579 5.18491 8.21565 5.30633 8.4735 5.76892L9.05562 6.81326C9.51702 7.64103 9.74772 8.05491 9.70197 8.49371C9.65621 8.93251 9.34508 9.28989 8.72281 10.0047L7.01858 11.9622ZM7.01858 11.9622C8.29783 14.1928 10.3054 16.2015 12.5386 17.4822M12.5386 17.4822C13.6406 18.1143 14.5405 18.4194 15.4527 18.6034C16.8018 18.8756 18.1196 18.2528 18.9605 17.2211C19.3159 16.785 19.1945 16.2852 18.7319 16.0273L17.6876 15.4452C16.8598 14.9838 16.4459 14.7531 16.0071 14.7988C15.5683 14.8446 15.2109 15.1557 14.4962 15.778L12.5386 17.4822Z"
-                              stroke="white" stroke-width="1.5" stroke-linejoin="round" />
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_36819_9434">
-                              <rect width="16" height="16" fill="white" transform="translate(4.5 4.00073)" />
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      </button>
-                    </div>
+                    
                   </div>
 
                   <div class="flex items-center w-full justify-between py-2 ">
@@ -579,23 +563,7 @@
                         <p class="text-xs min-w-29">(206) 235- 421</p>
                       </div>
                     </div>
-                    <div class="flex flex-col justify-end">
-                      <button class="border-2 rounded-full p-0.5 border-dotted border-slate-700 hover:border-[#10B981]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                          <rect x="0.5" y="0.000732422" width="24" height="24" rx="12" fill="#10B981" />
-                          <g clip-path="url(#clip0_36819_9434)">
-                            <path
-                              d="M7.01858 11.9622C6.38656 10.8602 6.08139 9.9603 5.89739 9.04813C5.62524 7.69904 6.24804 6.38119 7.27975 5.5403C7.71579 5.18491 8.21565 5.30633 8.4735 5.76892L9.05562 6.81326C9.51702 7.64103 9.74772 8.05491 9.70197 8.49371C9.65621 8.93251 9.34508 9.28989 8.72281 10.0047L7.01858 11.9622ZM7.01858 11.9622C8.29783 14.1928 10.3054 16.2015 12.5386 17.4822M12.5386 17.4822C13.6406 18.1143 14.5405 18.4194 15.4527 18.6034C16.8018 18.8756 18.1196 18.2528 18.9605 17.2211C19.3159 16.785 19.1945 16.2852 18.7319 16.0273L17.6876 15.4452C16.8598 14.9838 16.4459 14.7531 16.0071 14.7988C15.5683 14.8446 15.2109 15.1557 14.4962 15.778L12.5386 17.4822Z"
-                              stroke="white" stroke-width="1.5" stroke-linejoin="round" />
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_36819_9434">
-                              <rect width="16" height="16" fill="white" transform="translate(4.5 4.00073)" />
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      </button>
-                    </div>
+                    
                   </div>
 
                   <div class="flex items-center w-full justify-between py-2 ">
@@ -618,23 +586,7 @@
                         <p class="text-xs min-w-29">(206) 235- 421</p>
                       </div>
                     </div>
-                    <div class="flex flex-col justify-end">
-                      <button class="border-2 rounded-full p-0.5 border-dotted border-slate-700 hover:border-[#10B981]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                          <rect x="0.5" y="0.000732422" width="24" height="24" rx="12" fill="#10B981" />
-                          <g clip-path="url(#clip0_36819_9434)">
-                            <path
-                              d="M7.01858 11.9622C6.38656 10.8602 6.08139 9.9603 5.89739 9.04813C5.62524 7.69904 6.24804 6.38119 7.27975 5.5403C7.71579 5.18491 8.21565 5.30633 8.4735 5.76892L9.05562 6.81326C9.51702 7.64103 9.74772 8.05491 9.70197 8.49371C9.65621 8.93251 9.34508 9.28989 8.72281 10.0047L7.01858 11.9622ZM7.01858 11.9622C8.29783 14.1928 10.3054 16.2015 12.5386 17.4822M12.5386 17.4822C13.6406 18.1143 14.5405 18.4194 15.4527 18.6034C16.8018 18.8756 18.1196 18.2528 18.9605 17.2211C19.3159 16.785 19.1945 16.2852 18.7319 16.0273L17.6876 15.4452C16.8598 14.9838 16.4459 14.7531 16.0071 14.7988C15.5683 14.8446 15.2109 15.1557 14.4962 15.778L12.5386 17.4822Z"
-                              stroke="white" stroke-width="1.5" stroke-linejoin="round" />
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_36819_9434">
-                              <rect width="16" height="16" fill="white" transform="translate(4.5 4.00073)" />
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      </button>
-                    </div>
+                    
                   </div>
 
                 </div>
